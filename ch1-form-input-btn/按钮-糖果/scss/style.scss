@@ -1,0 +1,274 @@
+@import "compass";
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:600);
+
+/***************/
+
+$btn-1: #A3F7BF;
+$btn-2: #E4F68F;
+$btn-3: #FFD460;
+$btn-4: #FFD478;
+$btn-5: #96EAB7;
+$btn-6: #53CDD8;
+$btn-7: #A6ACEC;
+$btn-8: #ACE7EF;
+$btn-9: #CEFFF1;
+$bg: #27323A;
+
+/**************/
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  box-sizing: border-box;
+  background-color: $bg;
+  text-align: center;
+}
+
+button {
+  margin: 30px 20px;
+  padding: 15px 20px;
+  border-radius: 10px;
+  border: 2px solid;
+  font: 16px 'Open Sans', sans-serif;
+  text-transform: uppercase;
+  background: none;
+  outline: none;
+  cursor: pointer;
+  transition: all .5s;
+}
+
+/* btn-1 */
+
+.btn-1 {
+  color: $btn-1;
+  border-color: $btn-1;
+  background: linear-gradient(left, $btn-1, $btn-1) no-repeat;
+  background-size: 0% 100%;
+  &:hover {
+    background-size: 100% 100%;
+    color: $bg;
+  }
+}
+
+/* btn-2 */
+
+.btn-2 {
+  color: $btn-2;
+  border-color: $btn-2;
+  background: linear-gradient(left, $btn-2, $btn-2) no-repeat;
+  background-size: 100% 0%;
+  &:hover {
+    background-size: 100% 100%;
+    color: $bg;
+  }
+}
+
+/* btn-3 */
+
+.btn-3 {
+  color: $btn-3;
+  border-color: $btn-3;
+  position: relative;
+  overflow: hidden;
+  &:before {
+    content:"";
+    position: absolute;
+    top: 0;
+    right: -5px;
+    width: 0;
+    height: 100%;
+    background-color: $btn-3;
+    z-index: -1;
+    transition: all .5s;
+  }
+  &:hover {
+    color: $bg; 
+    &:hover:before {
+      width: 110%;
+    }
+  }
+}
+
+/* btn-4 */
+
+.btn-4 {
+  color: $btn-4;
+  border-color: $btn-4;
+  position: relative;
+  overflow: hidden;
+  &:before {
+    content: "";
+    background-color: $btn-4;
+    transform: skew(45deg, 0);
+    width: 0;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: -30px;
+    z-index: -1;
+    transition: all .5s;
+  }
+  &:hover {
+    color: $bg;
+    &:before {
+      width: 150%;
+    }
+  }
+}
+
+/* btn-5 */
+
+.btn-5 {
+  color: $btn-5;
+  border-color: $btn-5;
+  position: relative;
+  overflow: hidden;
+  &:before {
+    content:"";
+    position: absolute;
+    bottom: 0;
+    left: -5px;
+    width: 110%;
+    height: 0;
+    background-color: $btn-5;
+    z-index: -1;
+    transition: all .5s;
+  }
+  &:hover {
+    color: $bg;
+    &:before {
+      height: 100%;
+    }
+  }
+}
+
+/* btn-6 */
+
+.btn-6 {
+  color: $btn-6;
+  border-color: $btn-6;
+  position: relative;
+  overflow: hidden;
+  &:before {
+    content: "";
+    background-color: $btn-6;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    right: -30px;
+    height: 100%;
+    width: 0;
+    transform: skew(45deg, 0);
+    transition: all .5s;
+  }
+  &:hover {
+    color: $bg;
+    &:before {
+      width: 150%;
+    }
+  }
+}
+
+/* btn-7 */
+
+.btn-7 {
+  color: $btn-7;
+  border-color: $btn-7;
+  overflow: hidden; 
+  position: relative;
+  &:before,
+  &:after {
+    content: "";
+    height: 100%;
+    width: 0;
+    position: absolute;
+    z-index: -1;
+    background-color: $btn-7;
+    top: 0;
+    transition: all 0.25s;
+  }
+  &:before {
+    left: 0;
+  }
+  &:after {
+    right: 0;
+  }
+  &:hover {
+    color: $bg;
+    &:before,
+    &:after {
+      width: 50%;
+    }
+  }
+}
+
+/* btn-8 */
+
+.btn-8 {
+  color: $btn-8;
+  border-color: $btn-8;
+  overflow: hidden; 
+  position: relative;
+  &:before,
+  &:after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    height: 100%;
+    width: 0;
+    top: 0;
+    background-color: $btn-8;
+    transition: all .4s;
+  }
+  &:before {
+    left: -30px;
+    transform: skew(-45deg, 0);
+  }
+  &:after {
+    right: -30px;
+    transform: skew(-45deg, 0);
+  }
+  &:hover {
+    color: $bg;
+    &:before,
+    &:after {
+      width: 80%;
+    }
+  }
+}
+
+/* btn-9 */
+
+.btn-9 {
+  color: $btn-9;
+  border-color: $btn-9;
+  overflow: hidden; 
+  position: relative;
+  &:before,
+  &:after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    background-color: $btn-9;
+    width: 100%;
+    height: 0;
+    left: 0;
+    transition: all .25s;
+  }
+  &:before {
+    bottom: 50%;
+  }
+  &:after {
+    top: 50%;
+  }
+  &:hover {
+    color: $bg;
+    &:before,
+    &:after {
+      height: 50%;
+    }
+  }
+}

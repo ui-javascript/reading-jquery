@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>balloon.css-纯CSS3简单实用的tooltips工具提示效果库|DEMO_jQuery之家-自由分享jQuery、html5、css3的插件库</title>
+	<link rel="stylesheet" href="css/styles.css">
+      <link rel="stylesheet" href="css/balloon.css">
+      <link rel="stylesheet" href="css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="css/htmleaf-demo.css">
+	<!--[if IE]>
+		<script src="http://libs.useso.com/js/html5shiv/3.7/html5shiv.min.js"></script>
+	<![endif]-->
+</head>
+<body>
+	<div class="htmleaf-container">
+		<header class="htmleaf-header">
+			<h1>balloon.css-纯CSS3简单实用的tooltips工具提示效果库 <span>Balloon.css lets you add tooltips to elements without JavaScript and in just a few lines of CSS</span></h1>
+			<div class="htmleaf-links">
+				<a class="htmleaf-icon icon-htmleaf-home-outline" href="http://www.htmleaf.com/" title="jQuery之家" target="_blank"><span> jQuery之家</span></a>
+				<a class="htmleaf-icon icon-htmleaf-arrow-forward-outline" href="http://www.htmleaf.com/css3/css3donghua/201603163221.html" title="返回下载页" target="_blank"><span> 返回下载页</span></a>
+			</div>
+		</header>
+		<main>
+        	<div class="container">
+            <div class="samples">
+                <h2>Positioning</h2>
+                <p>For positioning, use <code>data-balloon-pos</code> attribute with one of the values: <code>up</code>, <code>down</code>, <code>left</code> or <code>right</code></p>
+                <div class="sample">
+                    <pre><code class="language-markup">&lt;button data-balloon="Whats up!" data-balloon-pos="up">Hover me!&lt;/button></code></pre>
+                    <div class="example">
+                        <button data-balloon="Whats up!" data-balloon-pos="up">Hover me!</button>
+                    </div>
+                </div>
+
+                <div class="sample">
+                    <pre><code class="language-markup">&lt;button data-balloon="Whats up!" data-balloon-pos="left">Hover me!&lt;/button></code></pre>
+                    <div class="example">
+                        <button data-balloon="Whats up!" data-balloon-pos="left">Hover me!</button>
+                    </div>
+                </div>
+
+                <div class="sample">
+                    <pre><code class="language-markup">&lt;button data-balloon="Whats up!" data-balloon-pos="right">Hover me!&lt;/button></code></pre>
+                    <div class="example">
+                        <button data-balloon="Whats up!" data-balloon-pos="right">Hover me!</button>
+                    </div>
+                </div>
+
+                <div class="sample">
+                    <pre><code class="language-markup">&lt;button data-balloon="Whats up!" data-balloon-pos="down">Hover me!&lt;/button></code></pre>
+                    <div class="example">
+                        <button data-balloon="Whats up!" data-balloon-pos="down">Hover me!</button>
+                    </div>
+                </div>
+
+                <h2>Length</h2>
+                <p>By default, tooltips will always remain single-line no matter their length. You can change this behavior by using the attribute <code>data-balloon-length</code> with one of the values: <code>small</code>, <code>medium</code>, <code>large</code> or <code>fit</code>.</p>
+
+                <div class="sample">
+                    <pre><code class="language-markup">&lt;button data-balloon-length="small" data-balloon="Hi." data-balloon-pos="up">Hover me!&lt;/button></code></pre>
+                    <div class="example">
+                        <button data-balloon="Hi" data-balloon-pos="up" data-balloon-length="small">I'm a small tooltip</button>
+                    </div>
+                </div>
+
+                <div class="sample">
+                    <pre><code class="language-markup">&lt;button data-balloon-length="medium" data-balloon="Now that's a super big text we have over here right? Lorem ipsum dolor sit I'm done." data-balloon-pos="up">I'm a medium tooltip.&lt;/button></code></pre>
+                    <div class="example">
+                        <button data-balloon="Now that's a super big text we have over here right? Lorem ipsum dolor sit I'm done." data-balloon-pos="up" data-balloon-length="medium">I'm a medium tooltip.</button>
+                    </div>
+                </div>
+
+                <div class="sample">
+                    <pre><code class="language-markup">&lt;button data-balloon-length="large" data-balloon="What about something really big? This may surpass your window dimensions. Imagine you're on that boring class with that boring teacher and you didn't slept so well last night. Suddenly you're sleeping in class. Can you believe it?!" data-balloon-pos="up">I'm a large tooltip&lt;/button></code></pre>
+                    <div class="example">
+                        <button data-balloon="What about something really big? This may surpass your window dimensions. Imagine you're on that boring class with that boring teacher and you didn't slept so well last night. Suddenly you're sleeping in class. Can you believe it?!" data-balloon-pos="up" data-balloon-length="large">I'm a large tooltip</button>
+                    </div>
+                </div>
+
+                <div class="sample">
+                    <pre><code class="language-markup">&lt;button data-balloon-length="xlarge" data-balloon="What about something really big? This may surpass your window dimensions. Imagine you're on that boring class with that boring teacher and you didn't slept so well last night. Suddenly you're sleeping in class. Can you believe it?!" data-balloon-pos="up">I'm a Xlarge tooltip&lt;/button></code></pre>
+                    <div class="example">
+                        <button data-balloon="What about something really big? This may surpass your window dimensions. Imagine you're on that boring class with that boring teacher and you didn't slept so well last night. Suddenly you're sleeping in class. Can you believe it?!" data-balloon-pos="up" data-balloon-length="xlarge">I'm a Xlarge tooltip</button>
+                    </div>
+                </div>
+
+                <div class="sample">
+                    <pre><code class="language-markup">&lt;button data-balloon-length="fit" data-balloon="What about something really big? This may surpass your window dimensions. Imagine you're on that boring class with that boring teacher and you didn't slept so well last night. Suddenly you're sleeping in class. Can you believe it?!" data-balloon-pos="up">My width fill fit to element&lt;/button></code></pre>
+                    <div class="example">
+                        <button data-balloon-length="fit" data-balloon="What about something really big? This may surpass your window dimensions. Imagine you're on that boring class with that boring teacher and you didn't slept so well last night. Suddenly you're sleeping in class. Can you believe it?!" data-balloon-pos="up">My width fill fit to element</button>
+                    </div>
+                </div>
+
+                <h2>Glyphs and Icon Fonts</h2>
+                <p>You can also add any HTML special character to your tooltips, or even use third-party Icon fonts:</p>
+
+                <div class="sample">
+                    <pre><code class="language-markup">&lt;button data-balloon="HTML special characters: &amp;#9787; &amp;#9986; &amp;#9820;" data-balloon-pos="up">Hover me!&lt;/button></code></pre>
+                    <div class="example">
+                        <button data-balloon="HTML special characters: &#9787; &#9986; &#9820;" data-balloon-pos="up">Hover me!</button>
+                    </div>
+                </div>
+
+                <div class="sample">
+                    <pre><code class="language-markup">&lt;button data-balloon="Emojis: 😀 😬 😁 😂 😃 😄 😅 😆" data-balloon-pos="up">Hover me!&lt;/button></code></pre>
+                    <div class="example">
+                        <button data-balloon="Emojis: 😀 😬 😁 😂 😃 😄 😅 😆" data-balloon-pos="up">Hover me!</button>
+                    </div>
+                </div>
+
+                <div class="sample">
+                    <pre><code class="language-markup">&lt;button class="fa" data-balloon="Font Awesome: &amp;#xf030; &amp;#xf133; &amp;#xf1fc; &amp;#xf03e; &amp;#xf1f8;" data-balloon-pos="up">Hover me!&lt;/button></code></pre>
+                    <div class="example">
+                        <button class="fa" data-balloon="Font Awesome: &#xf030; &#xf133; &#xf1fc; &#xf03e; &#xf1f8;" data-balloon-pos="up">Hover me!</button>
+                    </div>
+                </div>
+            </div>
+
+    </main>
+		<div class="related">
+		    <h3>如果你喜欢这个插件，那么你可能也喜欢:</h3>
+		    <a href="http://www.htmleaf.com/jQuery/Tooltips/201509102553.html">
+			  <img src="related/1.jpg" width="300" alt="Protip | 功能强大的jQuery tooltip插件"/>
+			  <h3>Protip | 功能强大的jQuery tooltip插件</h3>
+			</a>
+			<a href="http://www.htmleaf.com/jQuery/Tooltips/201507272304.html">
+			  <img src="related/2.jpg" width="300" alt="纯js轻量级tooltips工具提示插件"/>
+			  <h3>纯js轻量级tooltips工具提示插件</h3>
+			</a>
+		</div>
+	</div>
+	<script src="js/prism.js"></script>
+      <script async defer id="github-bjs" src="js/buttons.js"></script>
+</body>
+</html>
