@@ -6,6 +6,7 @@
         canvas, context, canvas2, context2,
         height, width, xAxis, yAxis,
         draw;
+
     /**
      * Init function.
      *
@@ -26,6 +27,7 @@
         context.save();
         draw();
     }
+
     /**
      * Draw animation function.
      *
@@ -63,6 +65,7 @@
     };
     draw.seconds = 0;
     draw.t = 0;
+
     /**
      * Function to draw axes
      */
@@ -76,6 +79,7 @@
         context.moveTo(yAxis + Math.PI * unit, xAxis + 5);
         context.lineTo(yAxis + Math.PI * unit, xAxis - 5);
     }
+
     /**
      * Function to draw sine
      *
@@ -94,6 +98,7 @@
             context.lineTo(i, unit * y + xAxis);
         }
     }
+
     /*
      * Function to draw circle
      */
@@ -101,6 +106,7 @@
         context.moveTo(yAxis + unit, xAxis);
         context.arc(yAxis, xAxis, unit, 0, 2 * Math.PI, false);
     }
+
     /**
      * Function to draw arrow
      */
@@ -133,5 +139,6 @@
         context.fill();
         context.stroke();
     }
+
     Humble.Trig.init()
 })();

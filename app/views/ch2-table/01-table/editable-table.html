@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>基于jQuery和PureCSS的可编辑表格DEMO演示</title>
+    <title>可编辑表格</title>
     <link href="https://cdn.bootcss.com/pure/1.0.0/pure-min.css" rel="stylesheet">
 
     <style>
@@ -21,7 +21,7 @@
 <body>
 
 
-<h1>Editable table example</h1>
+<h1>可编辑单元格</h1>
 <table id="editable" class="pure-table pure-table-bordered">
     <thead>
     <tr>
@@ -58,18 +58,23 @@
 
 
 <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
-<script src="mindmup-editabletable.js"></script>
+
+<script src="../../../static/scripts/table/table-edit.js"></script>
 <script>
     $('#editable').editableTableWidget();
+
     $('#editable td.uneditable').on('change', function (evt, newValue) {
         return false;
     });
 
     $('#editable td').on('change', function (evt, newValue) {
-        $.post("script.php", {value: newValue})
-            .done(function (data) {
-                alert("Data Loaded: " + data);
-            });
+        $.post("script.php",
+            {
+                value: newValue
+            }
+        ).done(function (data) {
+            alert("Data Loaded: " + data);
+        });
 
     });
 </script>
