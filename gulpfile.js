@@ -98,12 +98,12 @@ gulp.task('images', function () {
 // 雪碧图
 // 此功能是单一的并不与其他功能串联
 gulp.task('sprite', function() {
-    return gulp.src('app/static/images/tmp/!(sprite.png|*.css)')
+    return gulp.src('app/static/images/sprite/!(sprite.png|*.css)')
         .pipe(spritesmith({
             imgName: 'ico.png',
             cssName: 'sprite.css'
         }))
-        .pipe(gulp.dest('app/static/images'));
+        .pipe(gulp.dest('dist/static/images'));
 });
 
 // 浏览器同步刷新
