@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="space.qmen.lot.dao.RenterDao">
+    <resultMap id="BaseResultMap" type="space.qmen.lot.domain.Renter">
+        <result column="id" property="id" />
+        <result column="real_name" property="realName" />
+        <result column="gender" property="gender" />
+        <result column="tel" property="tel" />
+        <result column="password" property="password" />
+        <result column="salt" property="salt" />
+        <result column="status" property="status" />
+        <result column="plate_num" property="plateNum" />
+        <result column="id_card_num" property="idCardNum" />
+        <result column="nick_name" property="nickName" />
+        <result column="icon" property="icon" />
+        <result column="introduction" property="introduction" />
+    </resultMap>
+
+    <parameterMap id="Renter" type="space.qmen.lot.domain.Renter"/>
+
+    <sql id="Base_Column_List">
+        id, real_name, gender, tel, password, salt, status, plate_num,
+        id_card_num, nick_name, icon, introduction
+    </sql>
+
+    <select id="findById" resultMap="BaseResultMap" parameterType="java.lang.Long">
+        select
+        <include refid="Base_Column_List" />
+        from renter
+        where id = #{id}
+    </select>
+
+    <select id="findAllRenter" resultMap="BaseResultMap" >
+        select
+        <include refid="Base_Column_List" />
+        from renter
+    </select>
+
+    <insert id="saveRenter" parameterMap="Renter" useGeneratedKeys="true" keyProperty="id">
+        insert into
+        renter(id, real_name, gender, tel, password, salt, status, plate_num,
+        id_card_num, nick_name, icon, introduction)
+        values
+        (#{id},#{realName},#{gender},#{tel},
+        #{password},#{salt},#{status},#{plateNum}, #{idCardNum},
+        #{nickName},#{icon},#{introduction})
+    </insert>
+
+    <update id="updateRenter" parameterMap="Renter">
+        update
+        renter
+        set
+        <if test="realName!=null">
+            real_name = #{realName},
+        </if>
+        <if test="gender!=null">
+            gender = #{gender},
+        </if>
+        <if test="tel!=null">
+            tel = #{tel},
+        </if>
+        <if test="password!=null">
+            password = #{password},
+        </if>
+        <if test="salt!=null">
+            salt = #{salt},
+        </if>
+        <if test="status!=null">
+            status = #{status},
+        </if>
+        plate_num = #{plateNum},
+        id_card_num = #{idCardNum},
+        nick_name = #{nickName},
+        icon = #{icon},
+        introduction = #{introduction}
+        where
+        id = #{id}
+    </update>
+
+    <delete id="deleteRenter" parameterType="java.lang.Long">
+        delete from
+        renter
+        where
+        id = #{id}
+    </delete>
+</mapper>

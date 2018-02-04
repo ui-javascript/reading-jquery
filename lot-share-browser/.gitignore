@@ -1,0 +1,14 @@
+.DS_Store
+node_modules/
+npm-debug.log
+.editorconfig
+dist/
+
+tmp
+upload
+uploads
+
+*.iml
+# .idea 允许上传
+
+
