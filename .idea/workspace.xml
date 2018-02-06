@@ -2,9 +2,126 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d67158d3-f4cb-463b-b047-43b5524bb9b0" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lot-share-browser/LICENSE" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lot-share-browser/.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/static/css/table.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/static/images/ico.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/static/images/sprite.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/static/scripts/table/table-edit.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/views/ch1-form-input/01-btn/btn-3d.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/views/ch1-form-input/01-btn/btn-pure-hover.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/views/ch1-form-input/01-btn/jquery-loading-button-带等待/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/views/ch1-form-input/01-btn/jquery-loading-button-带等待/test/bootstrap.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/views/ch1-form-input/01-btn/jquery-loading-button-带等待/test/bootstrap.jquery.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/views/ch1-form-input/01-btn/pure-css3-button-animation-按钮/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/views/ch1-form-input/01-btn/pure-css3-shine-button-按钮发光/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/views/ch1-form-input/01-btn/手绘-按钮/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/views/ch1-form-input/01-btn/按钮-糖果/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/views/ch1-form-input/01-btn/按钮划过-灵感/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/views/ch1-form-input/01-btn/按钮删除提醒-灵感/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/views/ch1-form-input/01-btn/按钮边框-画圆动画/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/views/ch1-form-input/01-btn/汉堡按钮-变形/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/views/ch1-form-input/01-btn/滑过按钮-动画/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/views/ch1-form-input/01-btn/表单提交按钮-带进度/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/views/ch1-form-input/02-checkbox-radio/check-group-better.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/views/ch1-form-input/02-checkbox-radio/checkbox-better.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/views/ch1-form-input/02-checkbox-radio/jquery-checkbox-color-多选框/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/views/ch1-form-input/02-checkbox-radio/复选框-优化/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/views/ch1-form-input/03-register-login/Material Design-提交表单/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/views/ch1-form-input/03-register-login/Material Design-注册登录/forgot-password.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/views/ch1-form-input/03-register-login/Material Design-注册登录/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/views/ch1-form-input/03-register-login/Material Design-注册登录/register.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/views/ch1-form-input/03-register-login/Material Design-用户登录/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/views/ch1-form-input/03-register-login/login-pure.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/views/ch1-form-input/03-register-login/简洁时尚-用户登录/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/views/ch1-form-input/04-switcher/switcher-pure.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/views/ch1-form-input/04-switcher/滑块-材料设计/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/views/ch1-form-input/05-uploader/html5-upload-form-上传/assets/fonts/jquery.filer-icons/jquery-filer-preview.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/views/ch1-form-input/05-uploader/html5-upload-form-上传/demo.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/views/ch1-form-input/05-uploader/html5-upload-form-上传/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/views/ch1-form-input/06-search/搜索框-略丑/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/views/ch1-form-input/07-select/jquery-world-city-select-多级联动/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/views/ch1-form-input/08-input-placeholder/input-placeholder-美化/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/views/ch1-form-input/08-input-placeholder/输入框-placeholder美化/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/views/ch1-form-input/09-tree/jquery-ajax-tree-menu-树状菜单/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/views/ch1-form-input/10-score-star/jquery-slider-score-打分插件/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/views/ch1-form-input/10-score-star/点赞红心按钮/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/views/ch1-form-input/11-todo-transfer/jquery-list-content-change-穿梭框/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/views/ch2-table/01-table/editable-table.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/views/ch3-tip-loading/01-tooltip/balloon.css-CSS3-tooltips/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/views/ch3-tip-loading/01-tooltip/tooltips提示框/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/views/ch3-tip-loading/01-tooltip/tooltips提示框/index2.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/views/ch3-tip-loading/01-tooltip/tooltips提示框/index3.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/views/ch3-tip-loading/01-tooltip/tooltips提示框/index4.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/views/ch3-tip-loading/01-tooltip/消息提示/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/views/ch3-tip-loading/02-loading/53-CSS3-loading/animations/ball-8bits.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/views/ch3-tip-loading/02-loading/53-CSS3-loading/animations/ball-atom.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/views/ch3-tip-loading/02-loading/53-CSS3-loading/animations/ball-beat.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/views/ch3-tip-loading/02-loading/53-CSS3-loading/animations/ball-circus.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/views/ch3-tip-loading/02-loading/53-CSS3-loading/animations/ball-climbing-dot.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/views/ch3-tip-loading/02-loading/53-CSS3-loading/animations/ball-clip-rotate-multiple.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/views/ch3-tip-loading/02-loading/53-CSS3-loading/animations/ball-clip-rotate-pulse.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/views/ch3-tip-loading/02-loading/53-CSS3-loading/animations/ball-clip-rotate.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/views/ch3-tip-loading/02-loading/53-CSS3-loading/animations/ball-elastic-dots.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/views/ch3-tip-loading/02-loading/53-CSS3-loading/animations/ball-fall.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/views/ch3-tip-loading/02-loading/53-CSS3-loading/animations/ball-fussion.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/views/ch3-tip-loading/02-loading/53-CSS3-loading/animations/ball-grid-beat.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/views/ch3-tip-loading/02-loading/53-CSS3-loading/animations/ball-grid-pulse.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/views/ch3-tip-loading/02-loading/53-CSS3-loading/animations/ball-newton-cradle.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/views/ch3-tip-loading/02-loading/53-CSS3-loading/animations/ball-pulse-rise.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/views/ch3-tip-loading/02-loading/53-CSS3-loading/animations/ball-pulse-sync.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/views/ch3-tip-loading/02-loading/53-CSS3-loading/animations/ball-pulse.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/views/ch3-tip-loading/02-loading/53-CSS3-loading/animations/ball-rotate.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/views/ch3-tip-loading/02-loading/53-CSS3-loading/animations/ball-running-dots.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/views/ch3-tip-loading/02-loading/53-CSS3-loading/animations/ball-scale-multiple.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/views/ch3-tip-loading/02-loading/53-CSS3-loading/animations/ball-scale-pulse.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/views/ch3-tip-loading/02-loading/53-CSS3-loading/animations/ball-scale-ripple-multiple.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/views/ch3-tip-loading/02-loading/53-CSS3-loading/animations/ball-scale-ripple.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/views/ch3-tip-loading/02-loading/53-CSS3-loading/animations/ball-scale.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/views/ch3-tip-loading/02-loading/53-CSS3-loading/animations/ball-spin-clockwise-fade-rotating.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/views/ch3-tip-loading/02-loading/53-CSS3-loading/animations/ball-spin-clockwise-fade.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/views/ch3-tip-loading/02-loading/53-CSS3-loading/animations/ball-spin-clockwise.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/views/ch3-tip-loading/02-loading/53-CSS3-loading/animations/ball-spin-fade-rotating.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/views/ch3-tip-loading/02-loading/53-CSS3-loading/animations/ball-spin-fade.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/views/ch3-tip-loading/02-loading/53-CSS3-loading/animations/ball-spin-rotate.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/views/ch3-tip-loading/02-loading/53-CSS3-loading/animations/ball-spin.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/views/ch3-tip-loading/02-loading/53-CSS3-loading/animations/ball-square-clockwise-spin.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/views/ch3-tip-loading/02-loading/53-CSS3-loading/animations/ball-square-spin.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/views/ch3-tip-loading/02-loading/53-CSS3-loading/animations/ball-triangle-path.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/views/ch3-tip-loading/02-loading/53-CSS3-loading/animations/ball-zig-zag-deflect.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/views/ch3-tip-loading/02-loading/53-CSS3-loading/animations/ball-zig-zag.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/views/ch3-tip-loading/02-loading/53-CSS3-loading/animations/cog.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/views/ch3-tip-loading/02-loading/53-CSS3-loading/animations/cube-transition.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/views/ch3-tip-loading/02-loading/53-CSS3-loading/animations/fire.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/views/ch3-tip-loading/02-loading/53-CSS3-loading/animations/line-scale-party.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/views/ch3-tip-loading/02-loading/53-CSS3-loading/animations/line-scale-pulse-out-rapid.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/views/ch3-tip-loading/02-loading/53-CSS3-loading/animations/line-scale-pulse-out.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/views/ch3-tip-loading/02-loading/53-CSS3-loading/animations/line-scale.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/views/ch3-tip-loading/02-loading/53-CSS3-loading/animations/line-spin-clockwise-fade-rotating.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/views/ch3-tip-loading/02-loading/53-CSS3-loading/animations/line-spin-clockwise-fade.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/views/ch3-tip-loading/02-loading/53-CSS3-loading/animations/line-spin-fade-rotating.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/views/ch3-tip-loading/02-loading/53-CSS3-loading/animations/line-spin-fade.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/views/ch3-tip-loading/02-loading/53-CSS3-loading/animations/pacman.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/views/ch3-tip-loading/02-loading/53-CSS3-loading/animations/square-jelly-box.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/views/ch3-tip-loading/02-loading/53-CSS3-loading/animations/square-loader.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/views/ch3-tip-loading/02-loading/53-CSS3-loading/animations/square-spin.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/views/ch3-tip-loading/02-loading/53-CSS3-loading/animations/timer.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/views/ch3-tip-loading/02-loading/53-CSS3-loading/animations/triangle-skew-spin.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/views/ch3-tip-loading/02-loading/53-CSS3-loading/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/views/ch3-tip-loading/02-loading/CSS3-Loading/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/views/ch3-tip-loading/02-loading/loading/css3-matches-loading-火柴/index2.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/views/ch3-tip-loading/02-loading/loading/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/views/ch3-tip-loading/02-loading/创意-Loading-robot/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/views/ch3-tip-loading/02-loading/创意loading-文字/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/views/ch3-tip-loading/03-progress/Bootstrap-飞机跑道-进度条/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/views/ch3-tip-loading/03-progress/文章-阅读进度/how-audiences-reacted-to-the-star-wars.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/views/ch3-tip-loading/03-progress/文章-阅读进度/how-star-wars-brought-kim-and-kanye.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/views/ch3-tip-loading/03-progress/文章-阅读进度/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/views/ch3-tip-loading/03-progress/文章-阅读进度/the-ultimate-star-wars-dictionary.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/views/ch3-tip-loading/04-remark/手机-标记/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/views/ch4-list/列表-榜单/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/views/ch5-chart/01-chart/css3-3d-column-chart-立体统计/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/views/ch5-chart/02-math/html5-css3-sina-sin函数/index.html" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -15,18 +132,7 @@
   </component>
   <component name="ChangesViewManager" flattened_view="false" />
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="8" column="5" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -148,9 +254,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -163,11 +267,26 @@
               <item name="comp-data" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="comp-data" type="b2602c69:ProjectViewProjectNode" />
+              <item name="comp-data" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="comp-data" type="b2602c69:ProjectViewProjectNode" />
+              <item name="comp-data" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scratches" />
       <pane id="AndroidView" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -351,9 +470,9 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Gulp.js.sprite" />
-        <item index="1" class="java.lang.String" itemvalue="Gulp.js.default" />
-        <item index="2" class="java.lang.String" itemvalue="Gulp.js.clean" />
+        <item index="0" class="java.lang.String" itemvalue="Gulp.js.clean" />
+        <item index="1" class="java.lang.String" itemvalue="Gulp.js.sprite" />
+        <item index="2" class="java.lang.String" itemvalue="Gulp.js.default" />
         <item index="3" class="java.lang.String" itemvalue="npm.run" />
         <item index="4" class="java.lang.String" itemvalue="Gulp.js.watchLessCompile" />
       </list>
@@ -380,6 +499,8 @@
       <workItem from="1517734747867" duration="52000" />
       <workItem from="1517737255385" duration="1016000" />
       <workItem from="1517738298676" duration="485000" />
+      <workItem from="1517739089359" duration="259000" />
+      <workItem from="1517881346518" duration="281000" />
     </task>
     <task id="LOCAL-00001" summary="gulp config adjust">
       <created>1517726027724</created>
@@ -402,11 +523,18 @@
       <option name="project" value="LOCAL" />
       <updated>1517737630607</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="adjust">
+      <created>1517739317538</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1517739317538</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12036000" />
+    <option name="totallyTimeSpent" value="12576000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -419,7 +547,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -438,12 +565,12 @@
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28478262" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13478261" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28695652" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32089552" sideWeight="0.37209302" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2423913" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20255864" sideWeight="0.38316584" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20255864" sideWeight="0.61683416" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.37065217" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33695653" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20682302" sideWeight="0.28151986" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20682302" sideWeight="0.7184801" order="0" side_tool="false" content_ui="combo" />
       <window_info id="JRebel" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -499,6 +626,7 @@
         <entry key="MAIN">
           <value>
             <State>
+              <option name="LONG_EDGES_VISIBLE" value="true" />
               <option name="RECENTLY_FILTERED_USER_GROUPS">
                 <collection />
               </option>
@@ -536,6 +664,14 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/frontend.js" />
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
@@ -593,20 +729,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/_node-sass@3.13.1@node-sass/lib/binding.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="35" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/_node-sass@3.13.1@node-sass/lib/binding.js" />
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -708,13 +831,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gulpfile.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="713">
-          <caret line="105" column="32" lean-forward="false" selection-start-line="105" selection-start-column="32" selection-end-line="105" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lot-share-browser/.gitignore" />
     <entry file="file://$PROJECT_DIR$/lot-share-browser/LICENSE" />
     <entry file="file://$PROJECT_DIR$/lot-share-browser/README.md">
@@ -758,8 +874,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="8" column="5" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+        <state relative-caret-position="102">
+          <caret line="53" column="21" lean-forward="true" selection-start-line="53" selection-start-column="21" selection-end-line="53" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="35" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gulpfile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="121" column="20" lean-forward="false" selection-start-line="121" selection-start-column="20" selection-end-line="121" selection-end-column="20" />
           <folding />
         </state>
       </provider>
