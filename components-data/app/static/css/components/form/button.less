@@ -1,0 +1,43 @@
+/**
+ * 按钮
+ *
+ * ========================
+ */
+
+// 按钮组
+.btn-group {
+  //.mt(md);
+
+  button {
+    .ml();
+
+    &:first-child {
+      //.no-ml();
+    }
+  }
+}
+
+// 资质资格监管按钮
+.zzzg-btn {
+  width: 314px;
+  height: 136px;
+  line-height: 136px;
+  text-align: center;
+  vertical-align: middle;
+  background: url(../../../images/button/btn_normal.png);
+  color: @white;
+  .cursor();
+
+  // 链接式按钮修复
+  display: block;
+  text-decoration: none;
+
+  &:hover,
+  &.active {
+    background: url(../../../images/button/btn_hover.png);
+  }
+}
+
+.zzzg-navbar-btn {
+
+}

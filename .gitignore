@@ -1,11 +1,6 @@
 node_modules
 npm-debug.log
 
-*.iml
-
-.editorconfig
-
-
 *.class
 
 # Mobile Tools for Java (J2ME)
@@ -21,7 +16,7 @@ hs_err_pid*
 
 # netbeans
 nbproject/private/
-build/
+#build/
 nbbuild/
 
 # the dist file could make some problems
@@ -38,6 +33,7 @@ nb-configuration.xml
 
 # Intellij
 *.iws
+*.iml
 
 # Mac
 .DS_Store
@@ -57,4 +53,3 @@ RemoteSystemsTempFiles/
 .recommenders
 
 out
-
