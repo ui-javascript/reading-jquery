@@ -2,62 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d67158d3-f4cb-463b-b047-43b5524bb9b0" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/static/css/animate/_import.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/static/css/animate/animate.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/static/css/components/_import.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/static/css/components/base/_import.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/static/css/components/base/article.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/static/css/components/base/base.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/static/css/components/base/card.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/static/css/components/base/reset.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/static/css/components/form/_import.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/static/css/components/form/button.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/static/css/components/form/input.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/static/css/components/form/tip.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/static/css/components/layout/_import.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/static/css/components/layout/layout.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/static/css/components/layout/modal.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/static/css/components/nav/_import.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/static/css/components/nav/breadcrumb.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/static/css/components/nav/nav.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/static/css/components/table/_import.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/static/css/components/table/list.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/static/css/components/table/table.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/static/css/output/_import.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/static/css/output/zzzg/zzzg.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/static/css/output/zzzg/zzzg.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/static/css/theme/_import.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/static/css/theme/addon/_import.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/static/css/theme/addon/addon.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/static/css/theme/layui/_import.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/static/css/theme/layui/layui-diy.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/static/css/theme/page/_import.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/static/css/theme/page/page-layer.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/static/css/theme/page/page-tab.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/static/css/theme/page/page.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/static/css/utilities/_import.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/static/css/utilities/util-animate.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/static/css/utilities/util-decoration.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/static/css/utilities/util-layout.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/static/css/variables/_import.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/static/css/variables/color.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/static/css/variables/ie.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/static/css/variables/size.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vue-multi-page-master/.editorconfig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vue-multi-page-master/build/build.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vue-multi-page-master/build/dev-client.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vue-multi-page-master/build/dev-server.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vue-multi-page-master/build/utils.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vue-multi-page-master/build/webpack.base.conf.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vue-multi-page-master/build/webpack.dev.conf.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vue-multi-page-master/build/webpack.prod.conf.js" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/components-data/app/static/css/table/table-edit.scss" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/static/css/theme/zzzg/_output.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/static/css/theme/zzzg/_output.less" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/components-data/app/static/css/output/_import.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/components-data/app/static/css/output/zzzg/zzzg.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/components-data/app/static/css/output/zzzg/zzzg.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/components-data/app/static/css/theme/_import.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/components-data/app/static/css/theme/page/_import.less" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components-data/app/static/images/sprite/progress02.png" afterPath="$PROJECT_DIR$/components-data/app/static/images/sprite/progress02.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components-data/app/static/css/components/_import.less" afterPath="$PROJECT_DIR$/components-data/app/static/css/components/_import.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components-data/app/static/css/variables/color.less" afterPath="$PROJECT_DIR$/components-data/app/static/css/variables/color.less" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components-data/gulpfile.js" afterPath="$PROJECT_DIR$/components-data/gulpfile.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vue-multi-page-master/config/index.js" afterPath="$PROJECT_DIR$/vue-multi-page-master/config/index.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/components-data/app/static/css/theme/addon/_import.less" afterPath="$PROJECT_DIR$/components-data/app/static/css/components/addon/_import.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/components-data/app/static/css/theme/addon/addon.less" afterPath="$PROJECT_DIR$/components-data/app/static/css/components/addon/addon.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/components-data/app/static/css/theme/page/page-layer.less" afterPath="$PROJECT_DIR$/components-data/app/static/css/theme/zzzg/page-layer.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/components-data/app/static/css/theme/page/page-tab.less" afterPath="$PROJECT_DIR$/components-data/app/static/css/theme/zzzg/page-tab.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/components-data/app/static/css/theme/page/page.less" afterPath="$PROJECT_DIR$/components-data/app/static/css/theme/zzzg/page.less" />
     </list>
     <ignored path="$PROJECT_DIR$/lot-share-service/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -87,6 +49,7 @@
       <find>.DS_Store</find>
       <find>node_modules</find>
       <find>q-table-edit</find>
+      <find>png</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -119,9 +82,20 @@
         <option value="$PROJECT_DIR$/lot-share-service/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/vue-multi-page-master/config/index.js" />
         <option value="$PROJECT_DIR$/vue-multi-page-master/src/module/about/App.vue" />
-        <option value="$PROJECT_DIR$/components-data/gulpfile.js" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/components-data/app/static/css/table/table-edit.scss" />
+        <option value="$PROJECT_DIR$/components-data/app/static/css/output/zzzg/zzzg.less" />
+        <option value="$PROJECT_DIR$/components-data/app/static/css/output/_import.less" />
+        <option value="$PROJECT_DIR$/components-data/app/static/css/theme/page/_import.less" />
+        <option value="$PROJECT_DIR$/components-data/app/static/css/theme/_import.less" />
+        <option value="$PROJECT_DIR$/components-data/app/static/css/theme/zzzg/zzzg.less" />
+        <option value="$PROJECT_DIR$/components-data/app/static/css/components/_import.less" />
+        <option value="$PROJECT_DIR$/components-data/app/static/css/components/addon/_import.less" />
+        <option value="$PROJECT_DIR$/components-data/app/static/css/theme/zzzg/_output.less" />
+        <option value="$PROJECT_DIR$/components-data/app/static/css/variables/color.less" />
+        <option value="$PROJECT_DIR$/components-data/app/static/css/zzzg/_output.css" />
+        <option value="$PROJECT_DIR$/components-data/gulpfile.js" />
+        <option value="$PROJECT_DIR$/components-data/app/static/css/theme/zzzg/page.less" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -234,6 +208,42 @@
               <item name="comp-data" type="462c0819:PsiDirectoryNode" />
               <item name="components-data" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="comp-data" type="b2602c69:ProjectViewProjectNode" />
+              <item name="comp-data" type="462c0819:PsiDirectoryNode" />
+              <item name="components-data" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="comp-data" type="b2602c69:ProjectViewProjectNode" />
+              <item name="comp-data" type="462c0819:PsiDirectoryNode" />
+              <item name="components-data" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="comp-data" type="b2602c69:ProjectViewProjectNode" />
+              <item name="comp-data" type="462c0819:PsiDirectoryNode" />
+              <item name="components-data" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="comp-data" type="b2602c69:ProjectViewProjectNode" />
+              <item name="comp-data" type="462c0819:PsiDirectoryNode" />
+              <item name="components-data" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+              <item name="theme" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="comp-data" type="b2602c69:ProjectViewProjectNode" />
+              <item name="comp-data" type="462c0819:PsiDirectoryNode" />
+              <item name="components-data" type="462c0819:PsiDirectoryNode" />
+              <item name="dist" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -255,16 +265,16 @@
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="F:\workspace-comp\comp-data\app\static\scripts\table" />
-      <recent name="F:\workspace-comp\comp-data\app\views\ch2-table\static\plus\mindmup-editabletable" />
-      <recent name="F:\workspace-comp\comp-data\app\static\css\table" />
-      <recent name="F:\workspace-comp\comp-data\app\static\css" />
-      <recent name="F:\workspace-comp\comp-data\app\views" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="F:\workspace-comp\comp-data\app\static\images\sprite" />
       <recent name="F:\workspace-comp\comp-data\dist\static\images" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\workspace-components\comp-data\components-data\app\static\css\components" />
+      <recent name="F:\workspace-components\comp-data\components-data\app\static\css\theme\zzzg" />
+      <recent name="F:\workspace-comp\comp-data\app\static\scripts\table" />
+      <recent name="F:\workspace-comp\comp-data\app\views\ch2-table\static\plus\mindmup-editabletable" />
+      <recent name="F:\workspace-comp\comp-data\app\static\css\table" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -398,6 +408,16 @@
       <arguments />
       <envs />
     </configuration>
+    <configuration name="default (1)" type="js.build_tools.gulp" factoryName="Gulp.js" temporary="true">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile>$PROJECT_DIR$/components-data/gulpfile.js</gulpfile>
+      <tasks>
+        <task>default</task>
+      </tasks>
+      <arguments />
+      <envs />
+    </configuration>
     <configuration name="default" type="js.build_tools.gulp" factoryName="Gulp.js" temporary="true">
       <node-interpreter>project</node-interpreter>
       <node-options />
@@ -406,15 +426,6 @@
         <task>default</task>
       </tasks>
       <arguments />
-      <envs />
-    </configuration>
-    <configuration name="run" type="js.build_tools.npm" factoryName="npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="run" />
-      </scripts>
-      <node-interpreter value="project" />
       <envs />
     </configuration>
     <configuration name="sprite" type="js.build_tools.gulp" factoryName="Gulp.js" temporary="true">
@@ -428,19 +439,19 @@
       <envs />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="npm.run" />
-      <item index="1" class="java.lang.String" itemvalue="Gulp.js.default" />
-      <item index="2" class="java.lang.String" itemvalue="Gulp.js.clean" />
-      <item index="3" class="java.lang.String" itemvalue="Gulp.js.sprite" />
-      <item index="4" class="java.lang.String" itemvalue="Application.Application" />
+      <item index="0" class="java.lang.String" itemvalue="Gulp.js.default" />
+      <item index="1" class="java.lang.String" itemvalue="Gulp.js.clean" />
+      <item index="2" class="java.lang.String" itemvalue="Gulp.js.sprite" />
+      <item index="3" class="java.lang.String" itemvalue="Application.Application" />
+      <item index="4" class="java.lang.String" itemvalue="Gulp.js.default (1)" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Application.Application" />
-        <item index="1" class="java.lang.String" itemvalue="Gulp.js.clean" />
-        <item index="2" class="java.lang.String" itemvalue="Gulp.js.sprite" />
-        <item index="3" class="java.lang.String" itemvalue="Gulp.js.default" />
-        <item index="4" class="java.lang.String" itemvalue="npm.run" />
+        <item index="0" class="java.lang.String" itemvalue="Gulp.js.default (1)" />
+        <item index="1" class="java.lang.String" itemvalue="Application.Application" />
+        <item index="2" class="java.lang.String" itemvalue="Gulp.js.clean" />
+        <item index="3" class="java.lang.String" itemvalue="Gulp.js.sprite" />
+        <item index="4" class="java.lang.String" itemvalue="Gulp.js.default" />
       </list>
     </recent_temporary>
   </component>
@@ -467,7 +478,7 @@
       <workItem from="1517738298676" duration="485000" />
       <workItem from="1517739089359" duration="259000" />
       <workItem from="1517881346518" duration="3858000" />
-      <workItem from="1520818473402" duration="1661000" />
+      <workItem from="1520818473402" duration="3506000" />
     </task>
     <task id="LOCAL-00001" summary="gulp config adjust">
       <created>1517726027724</created>
@@ -511,11 +522,18 @@
       <option name="project" value="LOCAL" />
       <updated>1520818752579</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="adjust gulp task">
+      <created>1520820189144</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1520820189144</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17814000" />
+    <option name="totallyTimeSpent" value="19659000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -530,39 +548,39 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="JRebel Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="JRebel Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="JRebel Executor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="JRebel Executor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Tail" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Tail" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4902174" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4902174" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4576087" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.47608694" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38586956" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22014925" sideWeight="0.29045644" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22014925" sideWeight="0.7095436" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.525" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.5282609" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38586956" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22014925" sideWeight="0.23157895" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20309168" sideWeight="0.76842105" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="JRebel" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32089552" sideWeight="0.37209302" order="3" side_tool="true" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -641,7 +659,8 @@
     <MESSAGE value="add lot-share" />
     <MESSAGE value="adjust" />
     <MESSAGE value="新增Vue多页面解决方案" />
-    <option name="LAST_COMMIT_MESSAGE" value="新增Vue多页面解决方案" />
+    <MESSAGE value="adjust gulp task" />
+    <option name="LAST_COMMIT_MESSAGE" value="adjust gulp task" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -650,133 +669,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/static/css/table/table-edit.scss" />
-    <entry file="file://$PROJECT_DIR$/app/views/ch2-table/01-table/editable-table.html" />
-    <entry file="file://$PROJECT_DIR$/package.json" />
-    <entry file="file://$PROJECT_DIR$/lot-share-service/src/main/resources/mapper/OwnerMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-901">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lot-share-service/src/main/resources/mapper/SpaceMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lot-share-service/src/main/resources/mapper/CityMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lot-share-service/src/main/resources/mapper/CommunityMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lot-share-service/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-228">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lot-share-service/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="247">
-            <caret line="13" column="17" lean-forward="false" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
-            <folding />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lot-share-service/src/main/java/space/qmen/lot/dao/CityDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="21" column="7" lean-forward="true" selection-start-line="21" selection-start-column="7" selection-end-line="21" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lot-share-service/src/main/java/space/qmen/lot/domain/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lot-share-service/src/main/java/space/qmen/lot/domain/Space.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lot-share-service/src/main/java/space/qmen/lot/domain/Rule.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lot-share-service/src/main/java/space/qmen/lot/domain/Role.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lot-share-service/src/main/java/space/qmen/lot/domain/Resource.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lot-share-service/src/main/java/space/qmen/lot/domain/Renter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lot-share-service/src/main/java/space/qmen/lot/domain/Plan.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lot-share-service/src/main/java/space/qmen/lot/domain/Owner.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lot-share-service/src/main/java/space/qmen/lot/domain/Community.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lot-share-service/src/main/java/space/qmen/lot/domain/City.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/mysql/mysql-connector-java/5.1.39/mysql-connector-java-5.1.39-sources.jar!/com/mysql/jdbc/Util.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="275">
@@ -979,7 +871,7 @@
         <state relative-caret-position="36">
           <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="3" selection-end-column="17" />
           <folding>
-            <element signature="e#86#134#0" expanded="true" />
+            <element signature="e#86#134#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -989,16 +881,6 @@
         <state relative-caret-position="95">
           <caret line="5" column="7" lean-forward="true" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/components-data/gulpfile.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="97" column="3" lean-forward="true" selection-start-line="97" selection-start-column="3" selection-end-line="97" selection-end-column="3" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1018,10 +900,178 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/components-data/dist/static/scripts/table/table-edit.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components-data/app/static/css/output/zzzg/zzzg.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="39" lean-forward="false" selection-start-line="0" selection-start-column="39" selection-end-line="0" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components-data/app/static/css/output/zzzg/zzzg.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="3" column="21" lean-forward="false" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components-data/app/static/css/theme/page/_import.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components-data/app/static/css/theme/_import.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components-data/app/static/css/output/_import.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="9" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components-data/app/static/css/components/addon/_import.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="1" column="16" lean-forward="true" selection-start-line="1" selection-start-column="16" selection-end-line="1" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components-data/app/static/css/components/_import.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components-data/app/static/css/animate/animate.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components-data/app/static/css/theme/zzzg/page-tab.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components-data/app/static/css/variables/_import.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components-data/app/static/css/components/addon/addon.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="14" column="8" lean-forward="false" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components-data/app/static/css/variables/color.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="8" column="20" lean-forward="false" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components-data/dist/static/css/zzzg/_output.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="2306" lean-forward="false" selection-start-line="0" selection-start-column="2303" selection-end-line="0" selection-end-column="2306" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components-data/app/static/css/zzzg/_output.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="2185" lean-forward="false" selection-start-line="0" selection-start-column="2185" selection-end-line="0" selection-end-column="2185" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components-data/gulpfile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="70" column="44" lean-forward="true" selection-start-line="70" selection-start-column="44" selection-end-line="70" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components-data/app/static/css/theme/zzzg/_output.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="40" lean-forward="false" selection-start-line="0" selection-start-column="40" selection-end-line="0" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components-data/dist/static/css/theme/zzzg/_output.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="4854" lean-forward="false" selection-start-line="0" selection-start-column="4851" selection-end-line="0" selection-end-column="4854" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components-data/app/static/css/theme/zzzg/page-layer.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components-data/app/static/css/theme/zzzg/page.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components-data/app/static/css/theme/zzzg/_output.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="11" column="8" lean-forward="true" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="494">
-          <caret line="54" column="3" lean-forward="false" selection-start-line="54" selection-start-column="3" selection-end-line="54" selection-end-column="3" />
+        <state relative-caret-position="166">
+          <caret line="54" column="3" lean-forward="true" selection-start-line="54" selection-start-column="3" selection-end-line="54" selection-end-column="3" />
           <folding />
         </state>
       </provider>

@@ -44,18 +44,18 @@ gulp.task('js', function () {
 
 // scss编译
 gulp.task('sass', function(cb) { // cb是传入的回调函数
-    return gulp.src('app/static/css/**/*.scss')
+    return gulp.src("app/static/css/theme/**/_output.scss")
         .pipe(plumber())
         .pipe(sass())
         // .pipe(concat({ext: '.css'}))
         // .pipe(rename('all.min.css'))
         .pipe(minifyCss())
         .pipe(autoprefixer({
-            browsers: ['> 1%', 'not ie <= 8']
+            // browsers: ['> 1%', 'not ie <= 8']
         }))
         // .pipe(sourcemaps.write())
-        .pipe(gulp.dest('app/static/css'))
-        .pipe(gulp.dest('dist/static/css'))
+        .pipe(gulp.dest('app/static/css/theme'))
+        .pipe(gulp.dest('dist/static/css/theme'))
 
     // console.log('sass 文件处理完毕！');
     // cb(err);        // 如果 err 不是 null 和 undefined，流程会被结束掉，'two' 不会被执行
@@ -64,14 +64,14 @@ gulp.task('sass', function(cb) { // cb是传入的回调函数
 
 // less编译
 gulp.task('less', function () {
-    return gulp.src('app/static/css/**/*.less')
+    return gulp.src("app/static/css/theme/**/_output.less")
         .pipe(plumber())
         .pipe(less())
         .pipe(autoprefixer())
         // .pipe(concat({ext: '.css'})) //合并
         .pipe(minifyCss())
-        .pipe(gulp.dest('app/static/css'))
-        .pipe(gulp.dest('app/static/css'))
+        .pipe(gulp.dest('app/static/css/theme'))
+        .pipe(gulp.dest('dist/static/css/theme'))
 });
 
 // HTML压缩
@@ -94,6 +94,7 @@ gulp.task('images', function () {
             multipass: true, //类型：Boolean 默认：false 多次优化svg直到完全优化
             use: [pngquant()] // 使用 pngquant 深度压缩 png 图片
         }))
+        .pipe(gulp.dest('app/static/images'))
         .pipe(gulp.dest('dist/static/images'))
 });
 
@@ -137,7 +138,8 @@ gulp.task('public', function () {
 // watch监听
 gulp.task('watch', function () {
     gulp.watch('app/static/scripts/**/*.js', ['js']);
-    gulp.watch('app/static/css/**/*.less', ['sass', 'less']);
+    gulp.watch('app/static/css/**/*.less', ['less']);
+    gulp.watch('app/static/css/**/*.scss', ['sass']);
     gulp.watch('app/views/**/*.html', ['html']);
 });
 
