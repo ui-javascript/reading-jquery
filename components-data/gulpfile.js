@@ -39,7 +39,7 @@ gulp.task('js', function () {
         // .pipe(concat({ext: '.js'})) //合并同一目录下的所有文件
         .pipe(babel())
         .pipe(uglify())
-        .pipe(gulp.dest('dist/static/scripts'))
+        .pipe(gulp.dest('app/static/js'))
 });
 
 // scss编译
@@ -55,7 +55,6 @@ gulp.task('sass', function(cb) { // cb是传入的回调函数
         }))
         // .pipe(sourcemaps.write())
         .pipe(gulp.dest('app/static/css/theme'))
-        .pipe(gulp.dest('dist/static/css/theme'))
 
     // console.log('sass 文件处理完毕！');
     // cb(err);        // 如果 err 不是 null 和 undefined，流程会被结束掉，'two' 不会被执行
@@ -71,7 +70,6 @@ gulp.task('less', function () {
         // .pipe(concat({ext: '.css'})) //合并
         .pipe(minifyCss())
         .pipe(gulp.dest('app/static/css/theme'))
-        .pipe(gulp.dest('dist/static/css/theme'))
 });
 
 // HTML压缩
@@ -79,7 +77,7 @@ gulp.task('html', function () {
     return gulp.src('app/views/**/*.html')
         .pipe(plumber())
         .pipe(minifyHtml())
-        .pipe(gulp.dest('dist/views'))
+        .pipe(gulp.dest('app/html'))
 });
 
 
@@ -95,7 +93,6 @@ gulp.task('images', function () {
             use: [pngquant()] // 使用 pngquant 深度压缩 png 图片
         }))
         .pipe(gulp.dest('app/static/images'))
-        .pipe(gulp.dest('dist/static/images'))
 });
 
 // 雪碧图
@@ -106,7 +103,7 @@ gulp.task('sprite', function() {
             imgName: 'ico.png',
             cssName: 'sprite.css'
         }))
-        .pipe(gulp.dest('dist/static/images'));
+        .pipe(gulp.dest('app/static/images'));
 });
 
 // 浏览器同步刷新
@@ -122,7 +119,7 @@ gulp.task('sprite', function() {
 
 // 删除dist/*下的所有文件
 gulp.task('clean', function () {
-    return gulp.src('dist/*', {read: false})
+    return gulp.src(['app/html/*', 'app/static/js/*'], {read: false})
         .pipe(clean())
 });
 
