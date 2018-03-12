@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/comp-data.iml" filepath="$PROJECT_DIR$/.idea/comp-data.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lot-share-service/lotshareservice.iml" filepath="$PROJECT_DIR$/lot-share-service/lotshareservice.iml" />
     </modules>
   </component>
 </project>

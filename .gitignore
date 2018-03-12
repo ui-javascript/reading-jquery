@@ -1,11 +1,6 @@
-tmp
-upload
-uploads
-
 node_modules
 npm-debug.log
 
-*/.DS_Store
 *.iml
 
 .editorconfig
