@@ -1,15 +1,5 @@
-tmp
-upload
-uploads
-
 node_modules
 npm-debug.log
-
-*/.DS_Store
-*.iml
-
-.editorconfig
-
 
 *.class
 
@@ -44,6 +34,7 @@ nb-configuration.xml
 # Intellij
 .idea
 *.iws
+*.iml
 
 # Mac
 .DS_Store
@@ -63,7 +54,4 @@ RemoteSystemsTempFiles/
 .recommenders
 
 out
-
-
-
-
+#dist
