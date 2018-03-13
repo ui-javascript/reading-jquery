@@ -2,132 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d67158d3-f4cb-463b-b047-43b5524bb9b0" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/html/ch1-form-input/01-btn/btn-3d.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/html/ch1-form-input/01-btn/btn-pure-hover.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/html/ch1-form-input/01-btn/jquery-loading-button-带等待/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/html/ch1-form-input/01-btn/jquery-loading-button-带等待/test/bootstrap.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/html/ch1-form-input/01-btn/jquery-loading-button-带等待/test/bootstrap.jquery.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/html/ch1-form-input/01-btn/pure-css3-button-animation-按钮/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/html/ch1-form-input/01-btn/pure-css3-shine-button-按钮发光/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/html/ch1-form-input/01-btn/手绘-按钮/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/html/ch1-form-input/01-btn/按钮-糖果/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/html/ch1-form-input/01-btn/按钮划过-灵感/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/html/ch1-form-input/01-btn/按钮删除提醒-灵感/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/html/ch1-form-input/01-btn/按钮边框-画圆动画/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/html/ch1-form-input/01-btn/汉堡按钮-变形/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/html/ch1-form-input/01-btn/滑过按钮-动画/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/html/ch1-form-input/01-btn/表单提交按钮-带进度/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/html/ch1-form-input/02-checkbox-radio/check-group-better.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/html/ch1-form-input/02-checkbox-radio/checkbox-better.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/html/ch1-form-input/02-checkbox-radio/jquery-checkbox-color-多选框/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/html/ch1-form-input/02-checkbox-radio/复选框-优化/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/html/ch1-form-input/03-register-login/Material Design-提交表单/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/html/ch1-form-input/03-register-login/Material Design-注册登录/forgot-password.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/html/ch1-form-input/03-register-login/Material Design-注册登录/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/html/ch1-form-input/03-register-login/Material Design-注册登录/register.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/html/ch1-form-input/03-register-login/Material Design-用户登录/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/html/ch1-form-input/03-register-login/login-pure.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/html/ch1-form-input/03-register-login/简洁时尚-用户登录/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/html/ch1-form-input/04-switcher/switcher-pure.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/html/ch1-form-input/04-switcher/滑块-材料设计/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/html/ch1-form-input/05-uploader/html5-upload-form-上传/assets/fonts/jquery.filer-icons/jquery-filer-preview.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/html/ch1-form-input/05-uploader/html5-upload-form-上传/demo.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/html/ch1-form-input/05-uploader/html5-upload-form-上传/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/html/ch1-form-input/06-search/搜索框-略丑/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/html/ch1-form-input/07-select/jquery-world-city-select-多级联动/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/html/ch1-form-input/08-input-placeholder/input-placeholder-美化/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/html/ch1-form-input/08-input-placeholder/输入框-placeholder美化/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/html/ch1-form-input/09-tree/jquery-ajax-tree-menu-树状菜单/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/html/ch1-form-input/10-score-star/jquery-slider-score-打分插件/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/html/ch1-form-input/10-score-star/点赞红心按钮/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/html/ch1-form-input/11-todo-transfer/jquery-list-content-change-穿梭框/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/html/ch2-table/01-table/editable-table.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/html/ch3-tip-loading/01-tooltip/balloon.css-CSS3-tooltips/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/html/ch3-tip-loading/01-tooltip/tooltips提示框/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/html/ch3-tip-loading/01-tooltip/tooltips提示框/index2.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/html/ch3-tip-loading/01-tooltip/tooltips提示框/index3.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/html/ch3-tip-loading/01-tooltip/tooltips提示框/index4.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/html/ch3-tip-loading/01-tooltip/消息提示/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/html/ch3-tip-loading/02-loading/53-CSS3-loading/animations/ball-8bits.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/html/ch3-tip-loading/02-loading/53-CSS3-loading/animations/ball-atom.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/html/ch3-tip-loading/02-loading/53-CSS3-loading/animations/ball-beat.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/html/ch3-tip-loading/02-loading/53-CSS3-loading/animations/ball-circus.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/html/ch3-tip-loading/02-loading/53-CSS3-loading/animations/ball-climbing-dot.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/html/ch3-tip-loading/02-loading/53-CSS3-loading/animations/ball-clip-rotate-multiple.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/html/ch3-tip-loading/02-loading/53-CSS3-loading/animations/ball-clip-rotate-pulse.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/html/ch3-tip-loading/02-loading/53-CSS3-loading/animations/ball-clip-rotate.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/html/ch3-tip-loading/02-loading/53-CSS3-loading/animations/ball-elastic-dots.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/html/ch3-tip-loading/02-loading/53-CSS3-loading/animations/ball-fall.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/html/ch3-tip-loading/02-loading/53-CSS3-loading/animations/ball-fussion.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/html/ch3-tip-loading/02-loading/53-CSS3-loading/animations/ball-grid-beat.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/html/ch3-tip-loading/02-loading/53-CSS3-loading/animations/ball-grid-pulse.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/html/ch3-tip-loading/02-loading/53-CSS3-loading/animations/ball-newton-cradle.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/html/ch3-tip-loading/02-loading/53-CSS3-loading/animations/ball-pulse-rise.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/html/ch3-tip-loading/02-loading/53-CSS3-loading/animations/ball-pulse-sync.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/html/ch3-tip-loading/02-loading/53-CSS3-loading/animations/ball-pulse.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/html/ch3-tip-loading/02-loading/53-CSS3-loading/animations/ball-rotate.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/html/ch3-tip-loading/02-loading/53-CSS3-loading/animations/ball-running-dots.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/html/ch3-tip-loading/02-loading/53-CSS3-loading/animations/ball-scale-multiple.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/html/ch3-tip-loading/02-loading/53-CSS3-loading/animations/ball-scale-pulse.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/html/ch3-tip-loading/02-loading/53-CSS3-loading/animations/ball-scale-ripple-multiple.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/html/ch3-tip-loading/02-loading/53-CSS3-loading/animations/ball-scale-ripple.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/html/ch3-tip-loading/02-loading/53-CSS3-loading/animations/ball-scale.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/html/ch3-tip-loading/02-loading/53-CSS3-loading/animations/ball-spin-clockwise-fade-rotating.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/html/ch3-tip-loading/02-loading/53-CSS3-loading/animations/ball-spin-clockwise-fade.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/html/ch3-tip-loading/02-loading/53-CSS3-loading/animations/ball-spin-clockwise.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/html/ch3-tip-loading/02-loading/53-CSS3-loading/animations/ball-spin-fade-rotating.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/html/ch3-tip-loading/02-loading/53-CSS3-loading/animations/ball-spin-fade.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/html/ch3-tip-loading/02-loading/53-CSS3-loading/animations/ball-spin-rotate.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/html/ch3-tip-loading/02-loading/53-CSS3-loading/animations/ball-spin.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/html/ch3-tip-loading/02-loading/53-CSS3-loading/animations/ball-square-clockwise-spin.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/html/ch3-tip-loading/02-loading/53-CSS3-loading/animations/ball-square-spin.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/html/ch3-tip-loading/02-loading/53-CSS3-loading/animations/ball-triangle-path.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/html/ch3-tip-loading/02-loading/53-CSS3-loading/animations/ball-zig-zag-deflect.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/html/ch3-tip-loading/02-loading/53-CSS3-loading/animations/ball-zig-zag.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/html/ch3-tip-loading/02-loading/53-CSS3-loading/animations/cog.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/html/ch3-tip-loading/02-loading/53-CSS3-loading/animations/cube-transition.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/html/ch3-tip-loading/02-loading/53-CSS3-loading/animations/fire.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/html/ch3-tip-loading/02-loading/53-CSS3-loading/animations/line-scale-party.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/html/ch3-tip-loading/02-loading/53-CSS3-loading/animations/line-scale-pulse-out-rapid.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/html/ch3-tip-loading/02-loading/53-CSS3-loading/animations/line-scale-pulse-out.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/html/ch3-tip-loading/02-loading/53-CSS3-loading/animations/line-scale.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/html/ch3-tip-loading/02-loading/53-CSS3-loading/animations/line-spin-clockwise-fade-rotating.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/html/ch3-tip-loading/02-loading/53-CSS3-loading/animations/line-spin-clockwise-fade.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/html/ch3-tip-loading/02-loading/53-CSS3-loading/animations/line-spin-fade-rotating.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/html/ch3-tip-loading/02-loading/53-CSS3-loading/animations/line-spin-fade.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/html/ch3-tip-loading/02-loading/53-CSS3-loading/animations/pacman.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/html/ch3-tip-loading/02-loading/53-CSS3-loading/animations/square-jelly-box.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/html/ch3-tip-loading/02-loading/53-CSS3-loading/animations/square-loader.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/html/ch3-tip-loading/02-loading/53-CSS3-loading/animations/square-spin.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/html/ch3-tip-loading/02-loading/53-CSS3-loading/animations/timer.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/html/ch3-tip-loading/02-loading/53-CSS3-loading/animations/triangle-skew-spin.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/html/ch3-tip-loading/02-loading/53-CSS3-loading/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/html/ch3-tip-loading/02-loading/CSS3-Loading/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/html/ch3-tip-loading/02-loading/loading/css3-matches-loading-火柴/index2.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/html/ch3-tip-loading/02-loading/loading/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/html/ch3-tip-loading/02-loading/创意-Loading-robot/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/html/ch3-tip-loading/02-loading/创意loading-文字/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/html/ch3-tip-loading/03-progress/Bootstrap-飞机跑道-进度条/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/html/ch3-tip-loading/03-progress/文章-阅读进度/how-audiences-reacted-to-the-star-wars.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/html/ch3-tip-loading/03-progress/文章-阅读进度/how-star-wars-brought-kim-and-kanye.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/html/ch3-tip-loading/03-progress/文章-阅读进度/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/html/ch3-tip-loading/03-progress/文章-阅读进度/the-ultimate-star-wars-dictionary.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/html/ch3-tip-loading/04-remark/手机-标记/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/html/ch4-list/列表-榜单/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/html/ch5-chart/01-chart/css3-3d-column-chart-立体统计/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/html/ch5-chart/02-math/html5-css3-sina-sin函数/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/static/css/theme/natural/_output.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/static/css/theme/natural/_output.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components-data/app/static/js/table/table-edit.js" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/components-data/app/views/ch1-form-input/01-btn/按钮边框-画圆动画/css/default.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/components-data/app/views/ch1-form-input/01-btn/按钮边框-画圆动画/css/normalize.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/components-data/app/views/ch1-form-input/01-btn/按钮边框-画圆动画/css/styles.css" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components-data/app/static/css/components/form/button.less" afterPath="$PROJECT_DIR$/components-data/app/static/css/components/form/button.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components-data/app/static/css/theme/zzzg/_output.css" afterPath="$PROJECT_DIR$/components-data/app/static/css/theme/zzzg/_output.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components-data/app/views/ch1-form-input/01-btn/按钮边框-画圆动画/index.html" afterPath="$PROJECT_DIR$/components-data/app/views/ch1-form-input/01-btn/按钮边框-画圆动画/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components-data/gulpfile.js" afterPath="$PROJECT_DIR$/components-data/gulpfile.js" />
     </list>
     <ignored path="$PROJECT_DIR$/lot-share-service/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -561,7 +436,7 @@
       <workItem from="1517738298676" duration="485000" />
       <workItem from="1517739089359" duration="259000" />
       <workItem from="1517881346518" duration="3858000" />
-      <workItem from="1520818473402" duration="4613000" />
+      <workItem from="1520818473402" duration="5861000" />
     </task>
     <task id="LOCAL-00001" summary="gulp config adjust">
       <created>1517726027724</created>
@@ -619,11 +494,18 @@
       <option name="project" value="LOCAL" />
       <updated>1520822044283</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="adjust gulp task">
+      <created>1520823161963</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1520823161963</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20766000" />
+    <option name="totallyTimeSpent" value="22014000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -655,11 +537,11 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6021739" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.52717394" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32173914" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38586956" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22014925" sideWeight="0.23157895" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16151386" sideWeight="0.76842105" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16471216" sideWeight="0.76842105" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="JRebel" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
