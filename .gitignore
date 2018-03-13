@@ -26,7 +26,7 @@ hs_err_pid*
 
 # netbeans
 nbproject/private/
-build/
+#build/
 nbbuild/
 
 # the dist file could make some problems
@@ -42,6 +42,7 @@ nb-configuration.xml
 .settings/
 
 # Intellij
+.idea
 *.iws
 
 # Mac
