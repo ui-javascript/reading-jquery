@@ -1,70 +1,74 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>jQuery美化版复选框checkbox DEMO演示</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery美化版复选框checkbox DEMO演示</title>
 
-<link rel="stylesheet" type="text/css" href="css/zzsc-demo.css">
-<link rel="stylesheet" href="css/highlight-9.5.0.min.css">
-<link rel="stylesheet" href="dist/css/checkbix.min.css">
-<link rel="stylesheet" href="demo/demo.css">
+    <link rel="stylesheet" type="text/css" href="css/zzsc-demo.css">
+    <link rel="stylesheet" href="css/highlight-9.5.0.min.css">
+    <link rel="stylesheet" href="dist/css/checkbix.min.css">
+    <link rel="stylesheet" href="demo/demo.css">
 
 </head>
 <body>
 <div class="content">
-	<h3>Default</h3>
-		<input id="mycheckbox" type="checkbox" class="checkbix" data-text="Checkbix">
+    <h3>Default</h3>
+    <input id="mycheckbox" type="checkbox" class="checkbix" data-text="Checkbix">
 
-	<pre><code class="html">
+    <pre><code class="html">
 	&lt;input id="mycheckbox" type="checkbox" class="checkbix" data-text="Checkbix"&gt;
 	</code></pre>
 
-		<h3>Size</h3>
-		<input id="mycheckbox2" type="checkbox" class="checkbix" data-text="Large, checked" data-size="large" checked>
-	<pre><code class="html">
+    <h3>Size</h3>
+    <input id="mycheckbox2" type="checkbox" class="checkbix" data-text="Large, checked" data-size="large" checked>
+    <pre><code class="html">
 	&lt;input id="myothercheckbox" type="checkbox" class="checkbix" data-text="Checkbix. Large, checked" data-size="large" checked&gt;
 	</code></pre>
 
-		<h3>Shape</h3>
+    <h3>Shape</h3>
 
-		<p>Square is default</p>
+    <p>Square is default</p>
 
-		<input id="mycheckbox3" type="checkbox" class="checkbix" data-shape="circled" data-text="Circled">
-	<pre><code class="html">
+    <input id="mycheckbox3" type="checkbox" class="checkbix" data-shape="circled" data-text="Circled">
+    <pre><code class="html">
 	&lt;input id="mycheckbox3" type="checkbox" class="checkbix" data-text="Circled. Large, checked" data-shape="circled"&gt;
 	</code></pre>
 
-		<h3>Colors</h3>
-		<input id="mycheckbox4" type="checkbox" class="checkbix" data-shape="circled" data-color="black" data-text="Black, circled" checked>
-	<pre><code class="html">
+    <h3>Colors</h3>
+    <input id="mycheckbox4" type="checkbox" class="checkbix" data-shape="circled" data-color="black"
+           data-text="Black, circled" checked>
+    <pre><code class="html">
 	&lt;input id="mycheckbox4" type="checkbox" class="checkbix" data-shape="circled" data-color="black" data-text="Black, circled" checked&gt;
 	</code></pre>
 
-		<input id="mycheckbox5" type="checkbox" class="checkbix" data-color="blue" data-text="Blue" checked>
-	<pre><code class="html">
+    <input id="mycheckbox5" type="checkbox" class="checkbix" data-color="blue" data-text="Blue" checked>
+    <pre><code class="html">
 	&lt;input id="mycheckbox5" type="checkbox" class="checkbix" data-color="blue" data-text="Blue" checked&gt;
 	</code></pre>
 
-		<input id="mycheckbox6" type="checkbox" class="checkbix" data-shape="circled" data-size="large" data-color="red" data-text="Red, large" checked>
-	<pre><code class="html">
+    <input id="mycheckbox6" type="checkbox" class="checkbix" data-shape="circled" data-size="large" data-color="red"
+           data-text="Red, large" checked>
+    <pre><code class="html">
 	&lt;input id="mycheckbox6" type="checkbox" class="checkbix" data-size="large" data-color="red" data-text="Red, large" checked&gt;
 	</code></pre>
 
-		<input id="mycheckbox7" type="checkbox" class="checkbix" data-color="gray" data-text="Gray" checked>
-	<pre><code class="html">
+    <input id="mycheckbox7" type="checkbox" class="checkbix" data-color="gray" data-text="Gray" checked>
+    <pre><code class="html">
 	&lt;input id="mycheckbox7" type="checkbox" class="checkbix" data-color="gray" data-text="Gray" checked&gt;
 	</code></pre>
 
-		<input id="mycheckbox8" type="checkbox" class="checkbix" data-shape="circled" data-color="orange" data-text="Orange, circled" checked>
-	<pre><code class="html">
+    <input id="mycheckbox8" type="checkbox" class="checkbix" data-shape="circled" data-color="orange"
+           data-text="Orange, circled" checked>
+    <pre><code class="html">
 	&lt;input id="mycheckbox8" type="checkbox" class="checkbix" data-shape="circled" data-color="orange" data-text="Orange, circled" checked&gt;
 	</code></pre>
 
-	<h3>Customize ARIA label</h3>
-		<input id="mycheckbox9" type="checkbox" class="checkbix" data-shape="circled" data-color="black" data-text="Black, circled" data-arialabel="Checkbix is nice" checked>
-	<pre><code class="html">
+    <h3>Customize ARIA label</h3>
+    <input id="mycheckbox9" type="checkbox" class="checkbix" data-shape="circled" data-color="black"
+           data-text="Black, circled" data-arialabel="Checkbix is nice" checked>
+    <pre><code class="html">
 	&lt;input id="mycheckbox9" type="checkbox" class="checkbix" data-shape="circled" data-color="orange" data-text="Black, circled" data-arialabel="Checkbix is nice" checked&gt;
 	</code></pre>
 </div>
@@ -73,12 +77,12 @@
 <script>hljs.initHighlightingOnLoad();</script>
 <script src="dist/js/checkbix.min.js"></script>
 <script>
-	Checkbix.init();
+    Checkbix.init();
 </script>
 
 <div style="text-align:center;clear:both">
-<script src="/gg_bd_ad_720x90.js"></script>
-<script src="/follow.js"></script>
+    <script src="/gg_bd_ad_720x90.js"></script>
+    <script src="/follow.js"></script>
 </div>
 
 </body>
