@@ -16,6 +16,9 @@ var gulp = require('gulp'),
 
     less = require('gulp-less'),
     sass = require('gulp-sass'),
+    bourbon = require("bourbon").includePaths,
+    neat = require("bourbon-neat").includePaths,
+
     minifyCss = require('gulp-minify-css'),
     cleanCss = require('gulp-clean-css'),
     autoprefixer = require('gulp-autoprefixer'),
@@ -31,6 +34,9 @@ var gulp = require('gulp'),
     browserSync = require('browser-sync'),
     reload = browserSync.reload;
 
+var paths = {
+    scss: ["app/static/scss/**/*.scss"]
+};
 
 // JS压缩
 gulp.task('js', function () {
@@ -43,10 +49,14 @@ gulp.task('js', function () {
 });
 
 // scss编译
-gulp.task('sass', function(cb) { // cb是传入的回调函数
-    return gulp.src("app/static/css/theme/**/_output.scss")
-        .pipe(plumber())
-        .pipe(sass())
+gulp.task('sass', function (cb) { // cb是传入的回调函数
+
+    return gulp.src("app/static/scss/**/*.scss")
+        // .pipe(plumber())
+        .pipe(sass({
+            sourcemaps: true,
+            includePaths: [bourbon, neat]
+        }))
         // .pipe(concat({ext: '.css'}))
         // .pipe(rename('all.min.css'))
         .pipe(minifyCss())
@@ -54,9 +64,16 @@ gulp.task('sass', function(cb) { // cb是传入的回调函数
             // browsers: ['> 1%', 'not ie <= 8']
         }))
         // .pipe(sourcemaps.write())
-        .pipe(gulp.dest('app/static/css/theme'))
+        .pipe(gulp.dest('app/static/scss'))
 
-    // console.log('sass 文件处理完毕！');
+    // return gulp.src(paths.scss)
+    //     .pipe(sass({
+    //         sourcemaps: true,
+    //         includePaths: [bourbon, neat]
+    //     }))
+    //     .pipe(autoprefixer("last 2 versions"))
+    //     .pipe(gulp.dest("./source/assets/stylesheets"))
+
     // cb(err);        // 如果 err 不是 null 和 undefined，流程会被结束掉，'two' 不会被执行
 });
 
@@ -97,7 +114,7 @@ gulp.task('images', function () {
 
 // 雪碧图
 // 此功能是单一的并不与其他功能串联
-gulp.task('sprite', function() {
+gulp.task('sprite', function () {
     return gulp.src('app/static/images/sprite/!(sprite.png|*.css)')
         .pipe(spritesmith({
             imgName: 'ico.png',
@@ -135,8 +152,10 @@ gulp.task('public', function () {
 // watch监听
 gulp.task('watch', function () {
     gulp.watch('app/static/scripts/**/*.js', ['js']);
+    gulp.watch('app/static/scss/**/*.scss', ['sass']);
+    // gulp.watch(paths.scss, ["sass"]);
     gulp.watch('app/static/css/**/*.less', ['less']);
-    gulp.watch('app/static/css/**/*.scss', ['sass']);
+
     // gulp.watch('app/views/**/*.html', ['html']);
 });
 
