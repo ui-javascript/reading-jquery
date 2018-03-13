@@ -73,12 +73,12 @@ gulp.task('less', function () {
 });
 
 // HTML压缩
-gulp.task('html', function () {
-    return gulp.src('app/views/**/*.html')
-        .pipe(plumber())
-        .pipe(minifyHtml())
-        .pipe(gulp.dest('app/html'))
-});
+// gulp.task('html', function () {
+//     return gulp.src('app/views/**/*.html')
+//         .pipe(plumber())
+//         .pipe(minifyHtml())
+//         .pipe(gulp.dest('app/html'))
+// });
 
 
 // 图片压缩
@@ -137,13 +137,13 @@ gulp.task('watch', function () {
     gulp.watch('app/static/scripts/**/*.js', ['js']);
     gulp.watch('app/static/css/**/*.less', ['less']);
     gulp.watch('app/static/css/**/*.scss', ['sass']);
-    gulp.watch('app/views/**/*.html', ['html']);
+    // gulp.watch('app/views/**/*.html', ['html']);
 });
 
 
 // gulp是并行的，需要指定一下顺序
 gulp.task('redist', function () {
-    runSequence('clean', ['html', 'sass', 'less', 'js', 'images', 'watch'])
+    runSequence('clean', ['sass', 'less', 'js', 'images', 'watch'])
 });
 
 // gulp命令 默认执行
