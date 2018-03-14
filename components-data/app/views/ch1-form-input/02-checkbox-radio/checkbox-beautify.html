@@ -6,14 +6,93 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>jQuery美化版复选框checkbox DEMO演示</title>
 
-    <link rel="stylesheet" href="css/zzsc-demo.css">
-    <link rel="stylesheet" href="css/highlight-9.5.0.min.css">
-    <link rel="stylesheet" href="dist/css/checkbix.min.css">
-    <link rel="stylesheet" href="demo/demo.css">
+    <link rel="stylesheet" href="../../../static/css/theme/natural/_output.css">
+    <link href="https://cdn.bootcss.com/highlight.js/9.12.0/styles/tomorrow-night.min.css" rel="stylesheet">
+    <style>
+        body{
+            color: #191919;
+            line-height: 1.5;
+            font-weight: 300;
+            margin: 0 auto;
+
+        }
+        .content{
+            padding: 4rem;
+            max-width: 60em;
+            margin: 0 auto;
+        }
+        h2 {
+            margin-bottom: 0;
+        }
+        .stats {
+            color: #666;
+            margin-bottom: 2rem;
+            margin-top: .5rem;
+            font-size: .85rem;
+        }
+        .label {
+            font-size: .875rem;
+            font-weight: bold;
+            display: block;
+            margin-bottom: .5rem;
+        }
+
+        .input {
+            font-family: inherit;
+            font-size: inherit;
+            display: block;
+            width: 100%;
+            height: 2.5rem;
+            padding: .5rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            box-sizing: border-box;
+        }
+
+        .select {
+            font-family: inherit;
+            font-size: inherit;
+            display: block;
+            width: 100%;
+            height: 2.5rem;
+            padding: .5rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            box-sizing: border-box;
+        }
+
+        .textarea {
+            font-family: inherit;
+            font-size: inherit;
+            display: block;
+            width: 100%;
+            padding: .5rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            box-sizing: border-box;
+        }
+        pre {
+            font-size: 1rem;
+            overflow-x: scroll;
+            background-color: rgb(243, 243, 243);
+            padding: 0rem 1rem 0 1rem;
+        }
+        a {
+            color: #FF4B3E;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+
+    </style>
 
 </head>
 <body>
-<div class="content">
+<div class="content nt-checkbox">
     <h3>Default</h3>
     <input id="mycheckbox" type="checkbox" class="checkbix" data-text="Checkbix">
 
@@ -73,17 +152,14 @@
 	</code></pre>
 </div>
 
-<script src="demo/highlight-9.5.0.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
-<script src="dist/js/checkbix.min.js"></script>
+<script src="../../../static/scripts/form/checkbix.js"></script>
 <script>
     Checkbix.init();
 </script>
 
-<div style="text-align:center;clear:both">
-    <script src="/gg_bd_ad_720x90.js"></script>
-    <script src="/follow.js"></script>
-</div>
+
 
 </body>
 </html>
