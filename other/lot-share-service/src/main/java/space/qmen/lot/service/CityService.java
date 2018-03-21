@@ -1,6 +1,6 @@
 package space.qmen.lot.service;
 
-import space.qmen.lot.domain.City;
+import space.qmen.lot.entity.City;
 
 import java.util.List;
 

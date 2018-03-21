@@ -1,7 +1,7 @@
 package space.qmen.lot.service.impl;
 
 import space.qmen.lot.dao.CityDao;
-import space.qmen.lot.domain.City;
+import space.qmen.lot.entity.City;
 import space.qmen.lot.service.CityService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,10 +19,12 @@ public class CityServiceImpl implements CityService {
     @Autowired
     private CityDao cityDao;
 
+    @Override
     public List<City> findAllCity(){
         return cityDao.findAllCity();
     }
 
+    @Override
     public City findCityById(Long id) {
         return cityDao.findById(id);
     }

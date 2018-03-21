@@ -1,9 +1,10 @@
 package space.qmen.lot.controller;
 
-import space.qmen.lot.domain.City;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import space.qmen.lot.entity.City;
 import space.qmen.lot.service.CityService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -13,33 +14,42 @@ import java.util.List;
  *
  * Created by bysocket on 07/02/2017.
  */
+
+
+@Api("城市")
+@RequestMapping("/api/city")
 @RestController
 public class CityRestController {
 
     @Autowired
     private CityService cityService;
 
-    @RequestMapping(value = "/api/city/{id}", method = RequestMethod.GET)
+    @ApiOperation("根据id获取城市")
+    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public City findOneCity(@PathVariable("id") Long id) {
         return cityService.findCityById(id);
     }
 
-    @RequestMapping(value = "/api/city", method = RequestMethod.GET)
+    @ApiOperation("获取所有城市")
+    @RequestMapping(value = "", method = RequestMethod.GET)
     public List<City> findAllCity() {
         return cityService.findAllCity();
     }
 
-    @RequestMapping(value = "/api/city", method = RequestMethod.POST)
+    @ApiOperation("新增城市")
+    @RequestMapping(value = "", method = RequestMethod.POST)
     public void createCity(@RequestBody City city) {
         cityService.saveCity(city);
     }
 
-    @RequestMapping(value = "/api/city", method = RequestMethod.PUT)
+    @ApiOperation("修改城市")
+    @RequestMapping(value = "", method = RequestMethod.PUT)
     public void modifyCity(@RequestBody City city) {
         cityService.updateCity(city);
     }
 
-    @RequestMapping(value = "/api/city/{id}", method = RequestMethod.DELETE)
+    @ApiOperation("根据id删除城市")
+    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
     public void modifyCity(@PathVariable("id") Long id) {
         cityService.deleteCity(id);
     }
