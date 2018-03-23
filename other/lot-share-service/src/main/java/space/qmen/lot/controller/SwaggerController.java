@@ -11,8 +11,14 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class SwaggerController {
 
     @ApiOperation("SwaggerUI文档")
-    @GetMapping("/api")
+    @GetMapping("/")
     public String index() {
+        return "redirect:swagger-ui.html";
+    }
+
+    @ApiOperation("SwaggerUI文档")
+    @GetMapping("/api")
+    public String swagger() {
         return "redirect:swagger-ui.html";
     }
 }

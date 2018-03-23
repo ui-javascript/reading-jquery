@@ -9,25 +9,11 @@ import lombok.Data;
  * Created by bysocket on 07/02/2017.
  */
 @Data
-public class City {
+public class City extends BaseEntity {
 
-    /**
-     * 城市编号
-     */
+
     private Long id;
-
-    /**
-     * 省份编号
-     */
     private Long provinceId;
-
-    /**
-     * 城市名称
-     */
     private String cityName;
-
-    /**
-     * 描述
-     */
     private String description;
 }

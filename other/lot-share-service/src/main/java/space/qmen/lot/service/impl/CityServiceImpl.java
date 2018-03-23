@@ -1,6 +1,7 @@
 package space.qmen.lot.service.impl;
 
 import space.qmen.lot.dao.CityDao;
+import space.qmen.lot.dto.city.CityPureDTO;
 import space.qmen.lot.entity.City;
 import space.qmen.lot.service.CityService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,25 +9,21 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-/**
- * 城市业务逻辑实现类
- *
- * Created by bysocket on 07/02/2017.
- */
 @Service
 public class CityServiceImpl implements CityService {
+
 
     @Autowired
     private CityDao cityDao;
 
     @Override
-    public List<City> findAllCity(){
-        return cityDao.findAllCity();
+    public List<CityPureDTO> listCity(){
+        return cityDao.listCity();
     }
 
     @Override
-    public City findCityById(Long id) {
-        return cityDao.findById(id);
+    public CityPureDTO getCityById(Long id) {
+        return cityDao.getCityById(id);
     }
 
     @Override

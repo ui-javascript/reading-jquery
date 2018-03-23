@@ -8,20 +8,31 @@
         <result column="description" property="description" />
     </resultMap>
 
+    <resultMap id="CityDTO" type="space.qmen.lot.dto.city.CityPureDTO">
+        <result column="id" property="id" />
+        <!--<result column="province_id" property="provinceId" />-->
+        <result column="city_name" property="cityName" />
+        <result column="description" property="description" />
+    </resultMap>
+
     <parameterMap id="City" type="space.qmen.lot.entity.City"/>
 
     <sql id="Base_Column_List">
         id, province_id, city_name, description
     </sql>
 
-    <select id="findById" resultMap="BaseResultMap" parameterType="java.lang.Long">
+    <sql id="Without_Province_Column_List">
+        id, city_name, description
+    </sql>
+
+    <select id="getCityById" resultMap="CityDTO" parameterType="java.lang.Long">
         select
-        <include refid="Base_Column_List" />
+        <include refid="Without_Province_Column_List" />
         from city
         where id = #{id}
     </select>
 
-    <select id="findAllCity" resultMap="BaseResultMap" >
+    <select id="listCity" resultMap="CityDTO">
         select
         <include refid="Base_Column_List" />
         from city
