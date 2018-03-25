@@ -8,6 +8,6 @@ import java.io.Serializable;
 //@SuppressWarnings("serial")
 //// 驼峰转下划线
 //@JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy.class)
-public abstract class BaseEntity implements Serializable {
+public abstract class Base implements Serializable {
 
 }

@@ -5,20 +5,18 @@ import lombok.Data;
 import java.sql.Date;
 
 @Data
-public class Area {
-
+public class Community {
     private Long id;
-    private Long pid;
-    private String areaCode;
-
     private String name;
-
-    private Integer level;
+    private Long fAreaId;
+    private String fAreaCode;
+    private Double longitude;
+    private Double latitude;
+    private String address;
     private Integer seq;
-
+    private String icon;
+    private String description;
     private Date gmtCreate;
     private Date gmtModified;
-
-    private Integer isTown;
     private Integer isDeleted;
 }

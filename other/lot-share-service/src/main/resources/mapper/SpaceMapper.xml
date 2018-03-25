@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="space.qmen.lot.dao.SpaceDao">
+
+    <resultMap id="BaseResultMap" type="space.qmen.lot.entity.Space">
+        <result column="id" property="id" />
+        <result column="name" property="name" />
+        <result column="space_area" property="spaceArea" />
+        <result column="level" property="level" />
+        <result column="score" property="score" />
+        <result column="email" property="email" />
+        <result column="description" property="description" />
+        <result column="gmt_create" jdbcType="TIMESTAMP" property="gmtCreate" />
+        <result column="gmt_modified" jdbcType="TIMESTAMP" property="gmtModified" />
+        <result column="is_deleted" property="isDeleted" />
+    </resultMap>
+
+    <parameterMap id="Space" type="space.qmen.lot.entity.Space"/>
+    <sql id="Base_Column_List">
+        id, name, space_area, level,score,
+        description,
+        gmt_create, gmt_modified,
+        is_deleted
+    </sql>
+
+
+    <!-- 根据id获取车位 -->
+    <select id="getSpaceById" resultMap="BaseResultMap" parameterType="java.lang.Long">
+        select
+        <include refid="Base_Column_List" />
+        from space
+        where id = #{id}
+    </select>
+
+    <!-- 显示所有车位 -->
+    <select id="listSpace" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List" />
+        from space
+    </select>
+
+    <!-- 新增车位 -->
+    <insert id="saveSpace" parameterMap="Space" useGeneratedKeys="true" keyProperty="id">
+        insert into
+        space(id, name, space_area)
+        values
+        (null,#{name},#{spaceArea})
+    </insert>
+
+    <!--更新车位-->
+    <update id="updateSpace" parameterMap="Space">
+        update
+        space
+        set
+        <if test="name!=null">
+            name = #{name},
+        </if>
+        <if test="spaceArea!=null">
+            space_area = #{spaceArea},
+        </if>
+        gmt_modified = CURRENT_TIMESTAMP
+        where
+        id = #{id}
+    </update>
+
+    <!-- 删除车位 -->
+    <delete id="deleteSpace" parameterType="java.lang.Long">
+        delete from
+        space
+        where
+        id = #{id}
+    </delete>
+</mapper>

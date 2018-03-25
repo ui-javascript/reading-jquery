@@ -1,13 +1,14 @@
 package space.qmen.lot.service;
 
+import space.qmen.lot.dto.AreaSimpleDTO;
 import space.qmen.lot.entity.Area;
 import java.util.List;
 
-public interface AreaService {
+public interface IAreaService {
     List<Area> listArea();
-
     Area getAreaById(Long id);
-    Long saveArea(Area area);
-    Long updateArea(Area area);
     Long deleteArea(Long id);
+
+    Long saveArea(AreaSimpleDTO area);
+    Long updateArea(AreaSimpleDTO area);
 }

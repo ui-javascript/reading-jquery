@@ -3,13 +3,14 @@ package space.qmen.lot.service.impl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import space.qmen.lot.dao.AreaDao;
+import space.qmen.lot.dto.AreaSimpleDTO;
 import space.qmen.lot.entity.Area;
-import space.qmen.lot.service.AreaService;
+import space.qmen.lot.service.IAreaService;
 
 import java.util.List;
 
 @Service
-public class AreaServiceImpl implements AreaService {
+public class AreaServiceImpl implements IAreaService {
     @Autowired
     private AreaDao areaDao;
 
@@ -24,17 +25,17 @@ public class AreaServiceImpl implements AreaService {
     }
 
     @Override
-    public Long saveArea(Area area) {
+    public Long deleteArea(Long id) {
+        return areaDao.deleteArea(id);
+    }
+
+    @Override
+    public Long saveArea(AreaSimpleDTO area) {
         return areaDao.saveArea(area);
     }
 
     @Override
-    public Long updateArea(Area area) {
+    public Long updateArea(AreaSimpleDTO area) {
         return areaDao.updateArea(area);
-    }
-
-    @Override
-    public Long deleteArea(Long id) {
-        return areaDao.deleteArea(id);
     }
 }
