@@ -60,7 +60,6 @@
         (null,#{pid},#{areaCode},#{name},#{level},#{seq},#{isTown})
     </insert>
 
-
     <!--<insert id="saveArea" parameterMap="AreaSimple" useGeneratedKeys="true" keyProperty="id">-->
         <!--insert into area-->
         <!--<trim prefix="(" suffix=")" suffixOverrides=",">-->

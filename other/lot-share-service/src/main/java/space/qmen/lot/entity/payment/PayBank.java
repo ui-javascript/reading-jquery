@@ -16,6 +16,6 @@ public class PayBank {
     private String authPassword;
     private String passwordSalt;
     private Date gmtCreate;
-    private Date getModified;
+    private Date gmtModified;
     private Integer status;
 }
