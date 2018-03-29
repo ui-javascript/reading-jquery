@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="space.qmen.lot.dao.BillDao">
+
+    <resultMap id="BaseResultMap" type="space.qmen.lot.entity.Bill">
+        <result column="id" property="id" />
+        <result column="transaction_type" property="transactionType" />
+        <result column="bill_amount" property="billAmount" />
+        <result column="from_account_id" property="fromAccountId" />
+        <result column="from_account_name" property="fromAccountName" />
+        <result column="to_account_id" property="toAccountId" />
+        <result column="to_account_name" property="toAccountName" />
+        <result column="description" property="description" />
+        <result column="gmt_create" jdbcType="TIMESTAMP" property="gmtCreate" />
+        <result column="gmt_modified" jdbcType="TIMESTAMP" property="gmtModified" />
+        <result column="is_deleted" property="isDeleted" />
+    </resultMap>
+
+    <parameterMap id="Bill" type="space.qmen.lot.entity.Bill"/>
+    <sql id="Base_Column_List">
+        id, transaction_type,
+        bill_amount,
+        from_account_id, from_account_name,
+        to_account_id, to_account_name,
+        description,
+        gmt_create, gmt_modified,
+        is_deleted
+    </sql>
+
+
+    <!-- 根据id获取账单 -->
+    <select id="getBillById" resultMap="BaseResultMap" parameterType="java.lang.Long">
+        select
+        <include refid="Base_Column_List" />
+        from bill
+        where id = #{id}
+    </select>
+
+    <!-- 显示所有账单 -->
+    <select id="listBill" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List" />
+        from bill
+    </select>
+
+    <!-- 新增账单 -->
+    <insert id="saveBill" parameterMap="Bill" useGeneratedKeys="true" keyProperty="id">
+        insert into
+        bill
+        (id, transaction_type, bill_amount,
+          from_account_id, to_account_id)
+        values
+        (null,#{transactionType}, #{billAmount},
+          #{fromAccountId},#{toAccountId})
+    </insert>
+
+    <!--更新账单-->
+    <update id="updateBill" parameterMap="Bill">
+        update bill
+        set
+        <if test="billAmount!=null">
+            bill_amount = #{billAmount},
+        </if>
+        <if test="description!=null">
+            description = #{description},
+        </if>
+        gmt_modified = CURRENT_TIMESTAMP
+        where
+        id = #{id}
+    </update>
+
+    <!-- 删除账单 -->
+    <delete id="deleteBill" parameterType="java.lang.Long">
+        delete from
+        bill
+        where
+        id = #{id}
+    </delete>
+</mapper>

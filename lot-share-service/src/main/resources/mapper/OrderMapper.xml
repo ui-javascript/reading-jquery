@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="space.qmen.lot.dao.OrderDao">
+
+    <resultMap id="BaseResultMap" type="space.qmen.lot.entity.Order">
+        <result column="id" property="id" />
+        <result column="order_type" property="orderType" />
+        <result column="order_description" property="orderDescription" />
+        <result column="f_renter_id" property="fRenterId" />
+        <result column="f_renter_name" property="fRenterName" />
+        <result column="f_owner_id" property="fOwnerId" />
+        <result column="f_owner_name" property="fOwnerName" />
+        <result column="f_space_id" property="fSpaceId" />
+        <result column="f_space_info" property="fSpaceInfo" />
+        <result column="f_community_id" property="fCommunityId" />
+        <result column="unit_price" property="unitPirce" />
+        <result column="duration" property="duration" />
+        <result column="expected_payment" property="expectedPayment" />
+        <result column="reduction" property="reduction" />
+        <result column="reduction_description" property="reductionDescription" />
+        <result column="pre_payment" property="prePayment" />
+        <result column="f_pre_payment_bill_id" property="fPrePaymentBillId" />
+        <result column="actual_payment" property="actualPayment" />
+        <result column="f_actual_payment_bill_id" property="fActualPaymentId" />
+        <result column="gmt_create" jdbcType="TIMESTAMP" property="gmtCreate" />
+        <result column="gmt_modified" jdbcType="TIMESTAMP" property="gmtModified" />
+        <result column="status" property="status" />
+    </resultMap>
+
+    <parameterMap id="Order" type="space.qmen.lot.entity.Order"/>
+    <sql id="Base_Column_List">
+        id, order_type,order_description,
+        f_renter_id, f_renter_name,
+        f_owner_id, f_owner_name,
+        f_space_id, f_space_info,
+        f_community_id,
+        unit_price, duration, expected_payment,
+        reduction, reduction_description,
+        pre_payment, f_pre_payment_bill_id,
+        actual_payment, f_actual_payment_bill_id,
+        gmt_create, gmt_modified,
+        status
+    </sql>
+
+
+    <!-- 根据id获取账单 -->
+    <select id="getOrderById" resultMap="BaseResultMap" parameterType="java.lang.Long">
+        select
+        <include refid="Base_Column_List" />
+        from `order`
+        where id = #{id}
+    </select>
+
+    <!-- 显示所有账单 -->
+    <select id="listOrder" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List" />
+        from `order`
+    </select>
+
+    <!-- 新增账单 -->
+    <insert id="saveOrder" parameterMap="Order" useGeneratedKeys="true" keyProperty="id">
+        insert into
+        `order`
+        (id, order_type,
+          f_renter_id, f_owner_id, f_space_id)
+        values
+        (null,#{orderType},
+          #{fRenterId}, #{fOwnerId}, #{fSpaceId})
+    </insert>
+
+    <!--更新账单-->
+    <update id="updateOrder" parameterMap="Order">
+        update `order`
+        set
+        <if test="orderDescription!=null">
+            order_description = #{orderDescription},
+        </if>
+        gmt_modified = CURRENT_TIMESTAMP
+        where
+        id = #{id}
+    </update>
+
+    <!-- 删除账单 -->
+    <delete id="deleteOrder" parameterType="java.lang.Long">
+        delete from
+        `order`
+        where
+        id = #{id}
+    </delete>
+</mapper>
