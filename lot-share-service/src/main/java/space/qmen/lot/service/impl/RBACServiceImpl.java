@@ -2,7 +2,7 @@ package space.qmen.lot.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import space.qmen.lot.dao.rbac.RBACDao;
+import space.qmen.lot.dao.RBACDao;
 import space.qmen.lot.entity.rbac.Resource;
 import space.qmen.lot.entity.rbac.Role;
 import space.qmen.lot.service.IRBACService;

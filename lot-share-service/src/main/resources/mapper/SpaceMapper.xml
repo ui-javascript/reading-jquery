@@ -4,11 +4,11 @@
 
     <resultMap id="BaseResultMap" type="space.qmen.lot.entity.Space">
         <result column="id" property="id" />
+        <result column="code" property="code" />
         <result column="name" property="name" />
         <result column="space_area" property="spaceArea" />
         <result column="level" property="level" />
         <result column="score" property="score" />
-        <result column="email" property="email" />
         <result column="description" property="description" />
         <result column="gmt_create" jdbcType="TIMESTAMP" property="gmtCreate" />
         <result column="gmt_modified" jdbcType="TIMESTAMP" property="gmtModified" />
@@ -17,7 +17,7 @@
 
     <parameterMap id="Space" type="space.qmen.lot.entity.Space"/>
     <sql id="Base_Column_List">
-        id, name, space_area, level,score,
+        id, code, `name`, space_area, `level`,score,
         description,
         gmt_create, gmt_modified,
         is_deleted
@@ -28,7 +28,7 @@
     <select id="getSpaceById" resultMap="BaseResultMap" parameterType="java.lang.Long">
         select
         <include refid="Base_Column_List" />
-        from space
+        from `space`
         where id = #{id}
     </select>
 
@@ -36,38 +36,178 @@
     <select id="listSpace" resultMap="BaseResultMap">
         select
         <include refid="Base_Column_List" />
-        from space
+        from `space`
     </select>
 
     <!-- 新增车位 -->
     <insert id="saveSpace" parameterMap="Space" useGeneratedKeys="true" keyProperty="id">
-        insert into
-        space(id, name, space_area)
+        insert into `space`
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="code != null">
+                code,
+            </if>
+            <if test="name != null">
+                `name`,
+            </if>
+            <if test="spaceArea != null">
+                space_area,
+            </if>
+            <if test="level != null">
+                `level`,
+            </if>
+            <if test="score != null">
+                score,
+            </if>
+            <if test="description != null">
+                description,
+            </if>
+        </trim>
         values
-        (null,#{name},#{spaceArea})
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="code != null">
+                #{code},
+            </if>
+            <if test="name != null">
+                #{name},
+            </if>
+            <if test="spaceArea != null">
+                #{spaceArea},
+            </if>
+            <if test="level != null">
+                #{level},
+            </if>
+            <if test="score != null">
+                #{score},
+            </if>
+            <if test="description != null">
+                #{description},
+            </if>
+        </trim>
+
     </insert>
 
     <!--更新车位-->
     <update id="updateSpace" parameterMap="Space">
         update
-        space
+        `space`
         set
-        <if test="name!=null">
-            name = #{name},
-        </if>
-        <if test="spaceArea!=null">
-            space_area = #{spaceArea},
-        </if>
-        gmt_modified = CURRENT_TIMESTAMP
+        <trim suffixOverrides=",">
+            <if test="code!=null">
+                code = #{code},
+            </if>
+            <if test="name!=null">
+                `name` = #{name},
+            </if>
+            <if test="spaceArea!=null">
+                space_area = #{spaceArea},
+            </if>
+            <if test="level!=null">
+                `level` = #{level},
+            </if>
+            <if test="score!=null">
+                score = #{score},
+            </if>
+            <if test="description!=null">
+                description = #{description},
+            </if>
+        </trim>
         where
         id = #{id}
     </update>
 
     <!-- 删除车位 -->
     <delete id="deleteSpace" parameterType="java.lang.Long">
-        delete from
-        space
+        delete from `space`
         where
         id = #{id}
     </delete>
+
+
+    <resultMap id="SpaceDetailsDTOMap" type="space.qmen.lot.dto.SpaceDetailsDTO">
+        <result column="f_owner_id" property="ownerId" />
+        <result column="f_community_id" property="communityId" />
+        <result column="f_space_id" property="spaceId" />
+        <result column="f_zone_id" property="zoneId" />
+        <result column="community_name" property="communityName" />
+        <result column="code" property="code" />
+        <result column="morning_begin_time" property="morningBeginTime" />
+        <result column="morning_end_time" property="morningEndTime" />
+        <result column="afternoon_begin_time" property="afternoonBeginTime" />
+        <result column="afternoon_end_time" property="afternoonEndTime" />
+        <result column="owner_benifit_percent" property="ownerBenifitPercent" />
+        <result column="status" property="status" />
+    </resultMap>
+    <!-- 根据业主id获取车位详细信息 -->
+    <select id="listSpaceDetailsByOwnerId" resultMap="SpaceDetailsDTOMap" parameterType="java.lang.Long">
+        select
+            rule.f_owner_id,
+            rule.f_community_id,
+            community.`name` AS community_name,
+            rule.f_space_id,
+            rule.f_zone_id,
+            rule.`status`,
+            `space`.`code`,
+
+            policy.morning_begin_time,
+            policy.morning_end_time,
+            policy.afternoon_begin_time,
+            policy.afternoon_end_time,
+            policy.owner_benifit_percent
+
+        from
+            lk_space_week_renting_rule AS rule,
+            lk_community_policy AS policy,
+            community,
+            `space`
+        where
+            community.id = rule.f_community_id
+            AND rule.f_community_id = policy.f_community_id
+            AND rule.f_space_id = `space`.id
+            AND rule.f_owner_id = #{id};
+    </select>
+
+
+
+
+
+    <!--更新车位-->
+    <parameterMap id="WeekRule" type="space.qmen.lot.entity.param.WeekRule"/>
+    <update id="updateSpaceRule" parameterMap="WeekRule">
+        update `lk_space_week_renting_rule`
+        set
+        <trim suffixOverrides=",">
+            <if test="isMonOk!=null">
+                is_mon_ok = #{isMonOk},
+            </if>
+            <if test="isTueOk!=null">
+                is_tue_ok = #{isTueOk},
+            </if>
+            <if test="isWedOk!=null">
+                is_wed_ok = #{isWedOk},
+            </if>
+            <if test="isThurOk!=null">
+                is_thur_ok = #{isThurOk},
+            </if>
+            <if test="isFriOk!=null">
+                is_fri_ok = #{isFriOk},
+            </if>
+            <if test="isSatOk!=null">
+                is_sat_ok = #{isSatOk},
+            </if>
+            <if test="isSunOk!=null">
+                is_sun_ok = #{isSunOk},
+            </if>
+            <if test="isFestivalOk!=null">
+                is_festival_ok = #{isFestivalOk},
+            </if>
+            <if test="status!=null">
+                status = #{status},
+            </if>
+        </trim>
+        where
+        f_space_id = #{spaceId}
+    </update>
+
+
+
 </mapper>

@@ -1,6 +1,7 @@
 package space.qmen.lot.dao;
 
 import org.apache.ibatis.annotations.Param;
+import space.qmen.lot.dto.CommunityDTO;
 import space.qmen.lot.entity.Community;
 
 import java.util.List;
@@ -12,4 +13,7 @@ public interface CommunityDao {
 
     Long saveCommunity(Community community);
     Long updateCommunity(Community community);
+
+    // 自定义
+    List<CommunityDTO> listCommunityByOwnerId();
 }

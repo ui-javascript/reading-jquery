@@ -1,4 +1,4 @@
-package space.qmen.lot.dao.rbac;
+package space.qmen.lot.dao;
 
 import org.apache.ibatis.annotations.Param;
 import space.qmen.lot.entity.rbac.Resource;

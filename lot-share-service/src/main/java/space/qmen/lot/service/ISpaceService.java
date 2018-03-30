@@ -1,7 +1,9 @@
 package space.qmen.lot.service;
 
 
+import space.qmen.lot.dto.SpaceDetailsDTO;
 import space.qmen.lot.entity.Space;
+import space.qmen.lot.entity.param.WeekRule;
 
 import java.util.List;
 
@@ -12,4 +14,9 @@ public interface ISpaceService {
 
     Long saveSpace(Space space);
     Long updateSpace(Space space);
+
+    // 自定义
+    List<SpaceDetailsDTO> listSpaceDetailsByOwnerId(Long id);
+    Long updateSpaceRule(WeekRule weekRule);
+
 }

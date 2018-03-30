@@ -3,7 +3,9 @@ package space.qmen.lot.service.impl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import space.qmen.lot.dao.SpaceDao;
+import space.qmen.lot.dto.SpaceDetailsDTO;
 import space.qmen.lot.entity.Space;
+import space.qmen.lot.entity.param.WeekRule;
 import space.qmen.lot.service.ISpaceService;
 
 import java.util.List;
@@ -31,4 +33,12 @@ public class SpaceServiceImpl implements ISpaceService {
 
     @Override
     public Long updateSpace(Space space) { return spaceDao.updateSpace(space); }
+
+    @Override
+    public List<SpaceDetailsDTO> listSpaceDetailsByOwnerId(Long id){
+        return spaceDao.listSpaceDetailsByOwnerId(id);
+    }
+
+    @Override
+    public Long updateSpaceRule(WeekRule weekRule) { return spaceDao.updateSpaceRule(weekRule); }
 }

@@ -7,8 +7,11 @@ import java.sql.Date;
 @Data
 public class Space {
     private Long id;
+    // 车位编码
+    private String code;
     private String name;
-    private Double spaceArea; // 车位面积
+    // 车位面积
+    private Double spaceArea;
     private Integer level;
     private Double score;
     private String description;
