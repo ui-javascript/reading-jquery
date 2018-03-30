@@ -89,12 +89,57 @@
         id = #{id}
     </delete>
 
-    <!--<parameterMap id="ListOrderByOwnerId" type="space.qmen.lot.model.param.ListOrderParam"/>-->
-    <!--<select id="listOrder" resultMap="BaseResultMap" parameterMap="ListOrderParam">-->
-        <!--select-->
-        <!--<include refid="Base_Column_List" />-->
-        <!--from `order`-->
-        <!--where id = #{id}-->
-    <!--</select>-->
+    <parameterMap id="ListOrderParam" type="space.qmen.lot.model.param.ListOrderParam"/>
+    <resultMap id="OwnerOrderMap" type="space.qmen.lot.model.dto.OwnerOrderDTO">
+        <result column="date" property="date" />
+        <result column="period_type" property="periodType" />
+        <result column="real_name" property="realName" />
+        <result column="icon" property="icon" />
+        <result column="community_name" property="communityName" />
+        <result column="morning_begin_time" property="morningBeginTime" />
+        <result column="morning_end_time" property="morningEndTime" />
+        <result column="afternoon_begin_time" property="afternoonBeginTime" />
+        <result column="afternoon_end_time" property="afternoonEndTime" />
+        <result column="plate_num" property="plateNum" />
+        <result column="actual_payment" property="actualPayment" />
+        <result column="timeout_payment" property="timeoutPayment" />
+        <result column="duration" property="duration" />
+        <result column="order_status" property="orderStatus" />
+    </resultMap>
+    <select id="listOrderByOwnerId" resultMap="OwnerOrderMap" parameterMap="ListOrderParam">
+        select
+          day_status.date,
+          day_status.period_type,
+            `user`.`real_name` AS renter_name,
+          `user`.icon,
+          community.`name` AS community_name,
+          `space`.`code` AS space_code,
+          policy.morning_begin_time,
+          policy.morning_end_time,
+          policy.afternoon_begin_time,
+          policy.afternoon_end_time,
+          vehicle.plate_num,
+          `order`.actual_payment,
+          `order`.timeout_payment,
+          `order`.duration,
+          `order`.`status` AS order_status
+        from
+            lk_community_policy AS policy,
+          community,
+          `space`,
+          `user`,
+          lk_space_day_renting_status AS day_status,
+          vehicle,
+          `order`
+        where
+          `order`.f_renter_id = `user`.id
+          AND `order`.f_community_id = policy.f_community_id
+          AND `order`.f_community_id = community.id
+          AND `order`.f_space_id = `space`.id
+          AND `order`.f_renting_status_id = day_status.id
+          AND `order`.f_vehicle_id = vehicle.id
+          AND day_status.f_owner_id = #{userId}
+          AND `order`.`status` = #{orderStatus};
+    </select>
 
 </mapper>

@@ -76,4 +76,36 @@
         where
         id = #{id}
     </delete>
+
+    <!-- 获取X用户A年B月的总收入 -->
+    <parameterMap id="GetWalletParam" type="space.qmen.lot.model.param.GetWalletParam"/>
+    <!-- 根据id获取账单 -->
+    <select id="getWalletTotal" resultType="Double" parameterMap="GetWalletParam">
+		select
+		  month_income
+        from lk_user_wallet_month
+        where
+          wallet_year = #{walletYear}
+          AND wallet_month = #{walletMonth}
+          AND f_user_id = #{userId};
+    </select>
+
+    <!-- 根据id获取账单 -->
+    <!--<select id="listBillDetails" resultType="Double" parameterMap="GetWalletParam">-->
+        <!--select-->
+            <!--bill_amount-->
+        <!--from-->
+            <!--bill-->
+        <!--where-->
+            <!--bill.to_account_id =-->
+            <!--(-->
+                <!--select pay_ali.account_alipay_id-->
+            <!--from pay_ali-->
+            <!--where pay_ali.f_user_id = #{userId}-->
+            <!--)-->
+          <!--AND year(bill.gmt_create) = #{walletYear}-->
+          <!--AND month(bill.gmt_create) = #{walletMonth};-->
+    <!--</select>-->
+
+
 </mapper>

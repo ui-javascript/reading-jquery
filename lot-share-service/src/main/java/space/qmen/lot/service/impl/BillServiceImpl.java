@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import space.qmen.lot.dao.BillDao;
 import space.qmen.lot.model.entity.Bill;
+import space.qmen.lot.model.param.GetWalletParam;
 import space.qmen.lot.service.IBillService;
 
 import java.util.List;
@@ -31,4 +32,7 @@ public class BillServiceImpl implements IBillService {
 
     @Override
     public Long updateBill(Bill bill) { return billDao.updateBill(bill); }
+
+    @Override
+    public Double getWalletTotal(GetWalletParam getWalletParam) { return billDao.getWalletTotal(getWalletParam); }
 }
