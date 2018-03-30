@@ -3,7 +3,7 @@ package space.qmen.lot.service.impl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import space.qmen.lot.dao.UserDao;
-import space.qmen.lot.entity.rbac.User;
+import space.qmen.lot.model.entity.User;
 import space.qmen.lot.service.IUserService;
 
 import java.util.List;

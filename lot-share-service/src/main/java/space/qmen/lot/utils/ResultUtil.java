@@ -2,7 +2,7 @@ package space.qmen.lot.utils;
 
 import space.qmen.lot.common.enums.EnumMsg;
 import space.qmen.lot.common.exception.ServiceException;
-import space.qmen.lot.entity.Result;
+import space.qmen.lot.model.entity.Result;
 
 public class ResultUtil {
 

@@ -1,7 +1,6 @@
 package space.qmen.lot.service;
 
-import space.qmen.lot.entity.Space;
-import space.qmen.lot.entity.Vehicle;
+import space.qmen.lot.model.entity.Vehicle;
 
 import java.util.List;
 

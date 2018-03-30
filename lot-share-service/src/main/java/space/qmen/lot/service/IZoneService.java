@@ -1,6 +1,6 @@
 package space.qmen.lot.service;
 
-import space.qmen.lot.entity.Zone;
+import space.qmen.lot.model.entity.Zone;
 
 import java.util.List;
 

@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="space.qmen.lot.dao.SpaceDao">
 
-    <resultMap id="BaseResultMap" type="space.qmen.lot.entity.Space">
+    <resultMap id="BaseResultMap" type="space.qmen.lot.model.entity.Space">
         <result column="id" property="id" />
         <result column="code" property="code" />
         <result column="name" property="name" />
@@ -15,7 +15,7 @@
         <result column="is_deleted" property="isDeleted" />
     </resultMap>
 
-    <parameterMap id="Space" type="space.qmen.lot.entity.Space"/>
+    <parameterMap id="Space" type="space.qmen.lot.model.entity.Space"/>
     <sql id="Base_Column_List">
         id, code, `name`, space_area, `level`,score,
         description,
@@ -123,7 +123,7 @@
     </delete>
 
 
-    <resultMap id="SpaceDetailsDTOMap" type="space.qmen.lot.dto.SpaceDetailsDTO">
+    <resultMap id="SpaceDetailsDTOMap" type="space.qmen.lot.model.dto.SpaceDetailsDTO">
         <result column="f_owner_id" property="ownerId" />
         <result column="f_community_id" property="communityId" />
         <result column="f_space_id" property="spaceId" />
@@ -171,7 +171,7 @@
 
 
     <!--更新车位-->
-    <parameterMap id="WeekRule" type="space.qmen.lot.entity.param.WeekRule"/>
+    <parameterMap id="WeekRule" type="space.qmen.lot.model.param.WeekRule"/>
     <update id="updateSpaceRule" parameterMap="WeekRule">
         update `lk_space_week_renting_rule`
         set

@@ -1,4 +1,4 @@
-package space.qmen.lot.entity.param;
+package space.qmen.lot.model.param;
 
 import lombok.Data;
 

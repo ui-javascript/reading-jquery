@@ -1,17 +1,14 @@
-package space.qmen.lot.entity.payment;
+package space.qmen.lot.model.entity;
 
 import lombok.Data;
 
 import java.sql.Date;
 
 @Data
-public class PayBank {
+public class PayAli {
     private Long id;
     private Long accountAlipayId;
     private Long fUserId;
-    private Long bankCode;
-    private String bankName;
-    private String idCard;
     private String tel;
     private String authPassword;
     private String passwordSalt;

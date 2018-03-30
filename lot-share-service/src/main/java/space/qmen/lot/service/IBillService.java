@@ -1,6 +1,6 @@
 package space.qmen.lot.service;
 
-import space.qmen.lot.entity.Bill;
+import space.qmen.lot.model.entity.Bill;
 
 import java.util.List;
 

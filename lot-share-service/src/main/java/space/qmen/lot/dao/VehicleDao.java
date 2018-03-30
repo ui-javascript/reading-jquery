@@ -1,7 +1,7 @@
 package space.qmen.lot.dao;
 
 import org.apache.ibatis.annotations.Param;
-import space.qmen.lot.entity.Vehicle;
+import space.qmen.lot.model.entity.Vehicle;
 
 import java.util.List;
 

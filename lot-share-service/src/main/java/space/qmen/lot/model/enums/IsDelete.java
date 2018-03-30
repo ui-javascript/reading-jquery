@@ -1,4 +1,4 @@
-package space.qmen.lot.entity.enums;
+package space.qmen.lot.model.enums;
 
 public enum IsDelete {
     YES, NO

@@ -4,13 +4,13 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import space.qmen.lot.entity.rbac.Resource;
-import space.qmen.lot.entity.rbac.Role;
+import space.qmen.lot.model.entity.Resource;
+import space.qmen.lot.model.entity.Role;
 import space.qmen.lot.service.IRBACService;
 
 import java.util.List;
 
-@Api(value="RBAC", tags={"RBAC用户权限管理"})
+@Api(value="RBAC", tags={"用户权限管理"})
 @RequestMapping("/api/v1/rbac")
 @RestController
 public class RBACController {

@@ -1,4 +1,4 @@
-package space.qmen.lot.entity.payment;
+package space.qmen.lot.model.entity;
 
 import java.sql.Date;
 

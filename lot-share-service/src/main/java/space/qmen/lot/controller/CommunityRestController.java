@@ -1,12 +1,10 @@
 package space.qmen.lot.controller;
 
-import com.github.pagehelper.PageHelper;
-import com.github.pagehelper.PageInfo;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import space.qmen.lot.entity.Community;
+import space.qmen.lot.model.entity.Community;
 import space.qmen.lot.service.ICommunityService;
 import space.qmen.lot.utils.ResultUtil;
 

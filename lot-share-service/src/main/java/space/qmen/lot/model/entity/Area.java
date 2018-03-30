@@ -1,10 +1,11 @@
-package space.qmen.lot.dto;
+package space.qmen.lot.model.entity;
 
 import lombok.Data;
 
+import java.sql.Date;
 
 @Data
-public class AreaSimpleDTO {
+public class Area {
 
     private Long id;
     private Long pid;
@@ -15,9 +16,9 @@ public class AreaSimpleDTO {
     private Integer level;
     private Integer seq;
 
-//    private Date gmtCreate;
-//    private Date gmtModified;
+    private Date gmtCreate;
+    private Date gmtModified;
 
     private Integer isTown;
-//    private Byte isDeleted;
+    private Integer isDeleted;
 }

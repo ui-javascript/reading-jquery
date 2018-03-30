@@ -1,7 +1,7 @@
 package space.qmen.lot.service;
 
-import space.qmen.lot.dto.CommunityDTO;
-import space.qmen.lot.entity.Community;
+import space.qmen.lot.model.dto.CommunityDTO;
+import space.qmen.lot.model.entity.Community;
 
 import java.util.List;
 

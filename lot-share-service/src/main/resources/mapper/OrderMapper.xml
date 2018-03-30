@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="space.qmen.lot.dao.OrderDao">
 
-    <resultMap id="BaseResultMap" type="space.qmen.lot.entity.Order">
+    <resultMap id="BaseResultMap" type="space.qmen.lot.model.entity.Order">
         <result column="id" property="id" />
         <result column="order_type" property="orderType" />
         <result column="order_description" property="orderDescription" />
@@ -27,7 +27,7 @@
         <result column="status" property="status" />
     </resultMap>
 
-    <parameterMap id="Order" type="space.qmen.lot.entity.Order"/>
+    <parameterMap id="Order" type="space.qmen.lot.model.entity.Order"/>
     <sql id="Base_Column_List">
         id, order_type,order_description,
         f_renter_id, f_renter_name,

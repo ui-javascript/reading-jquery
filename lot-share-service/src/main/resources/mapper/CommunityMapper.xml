@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="space.qmen.lot.dao.CommunityDao">
 
-    <resultMap id="BaseResultMap" type="space.qmen.lot.entity.Community">
+    <resultMap id="BaseResultMap" type="space.qmen.lot.model.entity.Community">
         <result column="id" property="id" />
         <result column="name" property="name" />
         <result column="f_area_id" property="fAreaId" />
@@ -18,7 +18,7 @@
         <result column="is_deleted" property="isDeleted" />
     </resultMap>
 
-    <parameterMap id="Community" type="space.qmen.lot.entity.Community"/>
+    <parameterMap id="Community" type="space.qmen.lot.model.entity.Community"/>
     <sql id="Base_Column_List">
         id, name,
         longitude,latitude,address,
@@ -82,7 +82,7 @@
 
 
 
-    <resultMap id="CommunityDTO" type="space.qmen.lot.dto.CommunityDTO">
+    <resultMap id="CommunityDTO" type="space.qmen.lot.model.dto.CommunityDTO">
         <result column="f_community_id" property="fCommunityId" />
         <result column="name" property="name" />
         <result column="owner_benifit_percent" property="ownerBenifitPercent" />

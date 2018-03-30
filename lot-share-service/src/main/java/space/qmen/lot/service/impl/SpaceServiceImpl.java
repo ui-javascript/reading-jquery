@@ -3,9 +3,9 @@ package space.qmen.lot.service.impl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import space.qmen.lot.dao.SpaceDao;
-import space.qmen.lot.dto.SpaceDetailsDTO;
-import space.qmen.lot.entity.Space;
-import space.qmen.lot.entity.param.WeekRule;
+import space.qmen.lot.model.dto.SpaceDetailsDTO;
+import space.qmen.lot.model.entity.Space;
+import space.qmen.lot.model.param.WeekRule;
 import space.qmen.lot.service.ISpaceService;
 
 import java.util.List;

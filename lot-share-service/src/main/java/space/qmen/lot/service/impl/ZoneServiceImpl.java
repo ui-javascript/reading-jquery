@@ -3,7 +3,7 @@ package space.qmen.lot.service.impl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import space.qmen.lot.dao.ZoneDao;
-import space.qmen.lot.entity.Zone;
+import space.qmen.lot.model.entity.Zone;
 import space.qmen.lot.service.IZoneService;
 
 import java.util.List;

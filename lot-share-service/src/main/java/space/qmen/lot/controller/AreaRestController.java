@@ -4,8 +4,8 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import space.qmen.lot.dto.AreaSimpleDTO;
-import space.qmen.lot.entity.Area;
+import space.qmen.lot.model.dto.AreaSimpleDTO;
+import space.qmen.lot.model.entity.Area;
 import space.qmen.lot.service.IAreaService;
 import space.qmen.lot.utils.ResultUtil;
 

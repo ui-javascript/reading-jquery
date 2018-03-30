@@ -1,8 +1,8 @@
 package space.qmen.lot.dao;
 
 import org.apache.ibatis.annotations.Param;
-import space.qmen.lot.entity.rbac.Resource;
-import space.qmen.lot.entity.rbac.Role;
+import space.qmen.lot.model.entity.Resource;
+import space.qmen.lot.model.entity.Role;
 
 import java.util.List;
 

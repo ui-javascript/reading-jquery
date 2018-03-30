@@ -1,6 +1,6 @@
-package space.qmen.lot.entity;
+package space.qmen.lot.model.entity;
 
-import space.qmen.lot.dto.BaseDTO;
+import space.qmen.lot.model.dto.BaseDTO;
 
 public class Result<T> extends BaseDTO {
 

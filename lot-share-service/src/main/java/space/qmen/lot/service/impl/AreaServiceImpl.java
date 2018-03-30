@@ -3,8 +3,8 @@ package space.qmen.lot.service.impl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import space.qmen.lot.dao.AreaDao;
-import space.qmen.lot.dto.AreaSimpleDTO;
-import space.qmen.lot.entity.Area;
+import space.qmen.lot.model.dto.AreaSimpleDTO;
+import space.qmen.lot.model.entity.Area;
 import space.qmen.lot.service.IAreaService;
 
 import java.util.List;

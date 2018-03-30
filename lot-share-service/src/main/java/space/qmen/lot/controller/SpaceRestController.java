@@ -4,12 +4,10 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import space.qmen.lot.entity.Space;
-import space.qmen.lot.entity.param.WeekRule;
+import space.qmen.lot.model.entity.Space;
+import space.qmen.lot.model.param.WeekRule;
 import space.qmen.lot.service.ISpaceService;
 import space.qmen.lot.utils.ResultUtil;
-
-import java.util.List;
 
 @Api(value="车位", tags={"车位"})
 @RequestMapping("/api/v1")

@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="space.qmen.lot.dao.UserDao">
 
-    <resultMap id="BaseResultMap" type="space.qmen.lot.entity.rbac.User">
+    <resultMap id="BaseResultMap" type="space.qmen.lot.model.entity.User">
         <result column="id" property="id" />
         <result column="real_name" property="realName" />
         <result column="tel" property="tel" />
@@ -22,7 +22,7 @@
         <result column="is_deleted" property="isDeleted" />
     </resultMap>
 
-    <parameterMap id="User" type="space.qmen.lot.entity.rbac.User"/>
+    <parameterMap id="User" type="space.qmen.lot.model.entity.User"/>
     <sql id="Base_Column_List">
         id, real_name, tel, id_card,
         /*password, password_salt,*/

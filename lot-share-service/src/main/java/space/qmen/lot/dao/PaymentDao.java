@@ -1,9 +1,9 @@
 package space.qmen.lot.dao;
 
 import org.apache.ibatis.annotations.Param;
-import space.qmen.lot.entity.payment.PayAli;
-import space.qmen.lot.entity.payment.PayBank;
-import space.qmen.lot.entity.payment.PayWechat;
+import space.qmen.lot.model.entity.PayAli;
+import space.qmen.lot.model.entity.PayBank;
+import space.qmen.lot.model.entity.PayWechat;
 
 import java.util.List;
 

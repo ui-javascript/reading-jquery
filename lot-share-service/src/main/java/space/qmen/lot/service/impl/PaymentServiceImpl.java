@@ -3,9 +3,9 @@ package space.qmen.lot.service.impl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import space.qmen.lot.dao.PaymentDao;
-import space.qmen.lot.entity.payment.PayAli;
-import space.qmen.lot.entity.payment.PayBank;
-import space.qmen.lot.entity.payment.PayWechat;
+import space.qmen.lot.model.entity.PayAli;
+import space.qmen.lot.model.entity.PayBank;
+import space.qmen.lot.model.entity.PayWechat;
 import space.qmen.lot.service.IPaymentService;
 
 import java.util.List;

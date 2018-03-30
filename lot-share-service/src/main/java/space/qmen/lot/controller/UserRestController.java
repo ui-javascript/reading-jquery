@@ -4,12 +4,9 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import space.qmen.lot.entity.Result;
-import space.qmen.lot.entity.rbac.User;
+import space.qmen.lot.model.entity.User;
 import space.qmen.lot.service.IUserService;
 import space.qmen.lot.utils.ResultUtil;
-
-import java.util.List;
 
 
 @Api(value="用户", tags={"用户"})

@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="space.qmen.lot.dao.RBACDao">
 
-    <resultMap id="RoleBaseResultMap" type="space.qmen.lot.entity.rbac.Role">
+    <resultMap id="RoleBaseResultMap" type="space.qmen.lot.model.entity.Role">
         <result column="id" property="id" />
         <result column="role_name" property="roleName" />
         <result column="description" property="description" />
@@ -13,7 +13,7 @@
         <result column="is_deleted" property="isDeleted" />
     </resultMap>
 
-    <parameterMap id="Role" type="space.qmen.lot.entity.rbac.Role"/>
+    <parameterMap id="Role" type="space.qmen.lot.model.entity.Role"/>
     <sql id="Role_Base_Column_List">
         id, role_name,
         description,
@@ -23,7 +23,7 @@
     </sql>
 
 
-    <resultMap id="ResourceBaseResultMap" type="space.qmen.lot.entity.rbac.Resource">
+    <resultMap id="ResourceBaseResultMap" type="space.qmen.lot.model.entity.Resource">
         <result column="id" property="id" />
         <result column="resource_name" property="resourceName" />
         <result column="description" property="description" />
@@ -32,7 +32,7 @@
         <result column="is_deleted" property="isDeleted" />
     </resultMap>
 
-    <parameterMap id="Resource" type="space.qmen.lot.entity.rbac.Resource"/>
+    <parameterMap id="Resource" type="space.qmen.lot.model.entity.Resource"/>
     <sql id="Resource_Base_Column_List">
         id, resource_name,
         description,

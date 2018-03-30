@@ -1,7 +1,7 @@
 package space.qmen.lot.dao;
 
 import org.apache.ibatis.annotations.Param;
-import space.qmen.lot.entity.Bill;
+import space.qmen.lot.model.entity.Bill;
 
 import java.util.List;
 

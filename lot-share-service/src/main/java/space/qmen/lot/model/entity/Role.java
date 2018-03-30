@@ -1,15 +1,17 @@
-package space.qmen.lot.entity.rbac;
+package space.qmen.lot.model.entity;
 
 import lombok.Data;
 
 import java.sql.Date;
 
 @Data
-public class Resource {
+public class Role {
     private Long id;
-    private String resourceName;
+    private String roleName;
     private String description;
     private Date gmtCreate;
+    private Long fCreateBy;
     private Date gmtModified;
+    private Long fModifiedBy;
     private Integer isDeleted;
 }

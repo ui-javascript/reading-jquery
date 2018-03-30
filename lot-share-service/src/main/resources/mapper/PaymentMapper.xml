@@ -9,7 +9,7 @@ Invalid bound statement (not found)错误的可能原因
     <!--
         支付宝
     -->
-    <resultMap id="AliBaseResultMap" type="space.qmen.lot.entity.payment.PayAli">
+    <resultMap id="AliBaseResultMap" type="space.qmen.lot.model.entity.PayAli">
         <result column="id" property="id" />
         <result column="account_alipay_id" property="accountAlipayId" />
         <result column="f_user_id" property="fUserId" />
@@ -21,7 +21,7 @@ Invalid bound statement (not found)错误的可能原因
         <result column="status" property="status" />
     </resultMap>
 
-    <parameterMap id="PayAli" type="space.qmen.lot.entity.payment.PayAli"/>
+    <parameterMap id="PayAli" type="space.qmen.lot.model.entity.PayAli"/>
     <sql id="Ali_Base_Column_List">
         id,
         account_alipay_id, f_user_id,
@@ -80,7 +80,7 @@ Invalid bound statement (not found)错误的可能原因
     <!--
         微信支付
     -->
-    <resultMap id="WechatBaseResultMap" type="space.qmen.lot.entity.payment.PayWechat">
+    <resultMap id="WechatBaseResultMap" type="space.qmen.lot.model.entity.PayWechat">
         <result column="id" property="id" />
         <result column="account_wechat_id" property="accountWechatId" />
         <result column="f_user_id" property="fUserId" />
@@ -92,7 +92,7 @@ Invalid bound statement (not found)错误的可能原因
         <result column="status" property="status" />
     </resultMap>
 
-    <parameterMap id="PayWechat" type="space.qmen.lot.entity.payment.PayWechat"/>
+    <parameterMap id="PayWechat" type="space.qmen.lot.model.entity.PayWechat"/>
     <sql id="Wechat_Base_Column_List">
         id,
         account_wechat_id, f_user_id,
@@ -151,7 +151,7 @@ Invalid bound statement (not found)错误的可能原因
     <!--
         银行卡
     -->
-    <resultMap id="BankBaseResultMap" type="space.qmen.lot.entity.payment.PayBank">
+    <resultMap id="BankBaseResultMap" type="space.qmen.lot.model.entity.PayBank">
         <result column="id" property="id" />
         <result column="account_bank_id" property="accountBankId" />
         <result column="f_user_id" property="fUserId" />
@@ -166,7 +166,7 @@ Invalid bound statement (not found)错误的可能原因
         <result column="status" property="status" />
     </resultMap>
 
-    <parameterMap id="PayBank" type="space.qmen.lot.entity.payment.PayBank"/>
+    <parameterMap id="PayBank" type="space.qmen.lot.model.entity.PayBank"/>
     <sql id="Bank_Base_Column_List">
         id,
         account_bank_id, f_user_id,

@@ -4,11 +4,9 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import space.qmen.lot.entity.Order;
+import space.qmen.lot.model.entity.Order;
 import space.qmen.lot.service.IOrderService;
 import space.qmen.lot.utils.ResultUtil;
-
-import java.util.List;
 
 @Api(value="订单", tags={"订单"})
 @RequestMapping("/api/v1/order")

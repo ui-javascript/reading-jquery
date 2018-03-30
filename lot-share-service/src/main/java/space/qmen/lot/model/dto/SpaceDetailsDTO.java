@@ -1,4 +1,4 @@
-package space.qmen.lot.dto;
+package space.qmen.lot.model.dto;
 
 import lombok.Data;
 

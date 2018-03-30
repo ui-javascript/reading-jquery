@@ -1,8 +1,8 @@
 package space.qmen.lot.dao;
 
 import org.apache.ibatis.annotations.Param;
-import space.qmen.lot.dto.CommunityDTO;
-import space.qmen.lot.entity.Community;
+import space.qmen.lot.model.dto.CommunityDTO;
+import space.qmen.lot.model.entity.Community;
 
 import java.util.List;
 

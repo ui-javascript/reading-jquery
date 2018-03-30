@@ -1,7 +1,7 @@
 package space.qmen.lot.service;
 
-import space.qmen.lot.dto.AreaSimpleDTO;
-import space.qmen.lot.entity.Area;
+import space.qmen.lot.model.dto.AreaSimpleDTO;
+import space.qmen.lot.model.entity.Area;
 import java.util.List;
 
 public interface IAreaService {

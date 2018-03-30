@@ -1,8 +1,8 @@
-package space.qmen.lot.entity;
+package space.qmen.lot.model.entity;
 
 
 import lombok.Data;
-import space.qmen.lot.dto.BaseDTO;
+import space.qmen.lot.model.dto.BaseDTO;
 
 import java.sql.Date;
 

@@ -1,7 +1,7 @@
 package space.qmen.lot.service;
 
 
-import space.qmen.lot.entity.Order;
+import space.qmen.lot.model.entity.Order;
 
 import java.util.List;
 

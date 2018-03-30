@@ -1,10 +1,9 @@
 package space.qmen.lot.dao;
 
 import org.apache.ibatis.annotations.Param;
-import space.qmen.lot.dto.SpaceDetailsDTO;
-import space.qmen.lot.entity.Space;
-import space.qmen.lot.entity.param.WeekRule;
-import space.qmen.lot.entity.rbac.User;
+import space.qmen.lot.model.dto.SpaceDetailsDTO;
+import space.qmen.lot.model.entity.Space;
+import space.qmen.lot.model.param.WeekRule;
 
 import java.util.List;
 

@@ -3,7 +3,7 @@ package space.qmen.lot.service.impl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import space.qmen.lot.dao.OrderDao;
-import space.qmen.lot.entity.Order;
+import space.qmen.lot.model.entity.Order;
 import space.qmen.lot.service.IOrderService;
 
 import java.util.List;

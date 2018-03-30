@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="space.qmen.lot.dao.BillDao">
 
-    <resultMap id="BaseResultMap" type="space.qmen.lot.entity.Bill">
+    <resultMap id="BaseResultMap" type="space.qmen.lot.model.entity.Bill">
         <result column="id" property="id" />
         <result column="transaction_type" property="transactionType" />
         <result column="bill_amount" property="billAmount" />
@@ -16,7 +16,7 @@
         <result column="is_deleted" property="isDeleted" />
     </resultMap>
 
-    <parameterMap id="Bill" type="space.qmen.lot.entity.Bill"/>
+    <parameterMap id="Bill" type="space.qmen.lot.model.entity.Bill"/>
     <sql id="Base_Column_List">
         id, transaction_type,
         bill_amount,
