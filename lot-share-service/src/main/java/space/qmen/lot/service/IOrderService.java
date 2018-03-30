@@ -2,6 +2,7 @@ package space.qmen.lot.service;
 
 
 import space.qmen.lot.model.entity.Order;
+import space.qmen.lot.model.param.ListOrderParam;
 
 import java.util.List;
 
@@ -12,4 +13,8 @@ public interface IOrderService {
 
     Long saveOrder(Order order);
     Long updateOrder(Order order);
+
+    // 自定义
+    // 业主订单
+    List<Order> listOrderByOwnerId(ListOrderParam listOrderParam);
 }

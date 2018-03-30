@@ -29,6 +29,9 @@ public class SpaceDetailsDTO {
     private Time afternoonBeginTime;
     private Time afternoonEndTime;
 
+    private Integer isMorningOk;
+    private Integer isAfternoonOk;
+
     // 收益比
     private Double ownerBenifitPercent;
 

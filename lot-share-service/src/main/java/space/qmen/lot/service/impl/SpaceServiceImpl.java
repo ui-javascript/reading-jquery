@@ -5,7 +5,8 @@ import org.springframework.stereotype.Service;
 import space.qmen.lot.dao.SpaceDao;
 import space.qmen.lot.model.dto.SpaceDetailsDTO;
 import space.qmen.lot.model.entity.Space;
-import space.qmen.lot.model.param.WeekRule;
+import space.qmen.lot.model.param.SaveSpaceParam;
+import space.qmen.lot.model.param.WeekRuleParam;
 import space.qmen.lot.service.ISpaceService;
 
 import java.util.List;
@@ -29,7 +30,7 @@ public class SpaceServiceImpl implements ISpaceService {
     }
 
     @Override
-    public Long saveSpace(Space space) { return spaceDao.saveSpace(space); }
+    public Long saveSpace(SaveSpaceParam space) { return spaceDao.saveSpace(space); }
 
     @Override
     public Long updateSpace(Space space) { return spaceDao.updateSpace(space); }
@@ -40,5 +41,5 @@ public class SpaceServiceImpl implements ISpaceService {
     }
 
     @Override
-    public Long updateSpaceRule(WeekRule weekRule) { return spaceDao.updateSpaceRule(weekRule); }
+    public Long updateSpaceRule(WeekRuleParam weekRuleParam) { return spaceDao.updateSpaceRule(weekRuleParam); }
 }

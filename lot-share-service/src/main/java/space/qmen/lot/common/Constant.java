@@ -5,7 +5,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 @Component
-public class Const {
+public class Constant {
 
     public static String BASE_PATH;
 
@@ -25,10 +25,14 @@ public class Const {
 
     public static int COOKIE_TIMEOUT= 30*24*60*60;
 
+    public static final String XLSX_SUFFIX = ".xlsx";
+
+    public static final String XLSX_CONTENT_TYPE = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
+
 
     @Autowired(required = true)
     public void setBasePath(@Value("${favorites.base.path}")String basePath) {
-        Const.BASE_PATH = basePath;
+        Constant.BASE_PATH = basePath;
     }
 
 

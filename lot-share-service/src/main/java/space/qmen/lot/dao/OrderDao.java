@@ -2,6 +2,7 @@ package space.qmen.lot.dao;
 
 import org.apache.ibatis.annotations.Param;
 import space.qmen.lot.model.entity.Order;
+import space.qmen.lot.model.param.ListOrderParam;
 
 import java.util.List;
 
@@ -12,4 +13,7 @@ public interface OrderDao {
 
     Long saveOrder(Order order);
     Long updateOrder(Order order);
+
+    // 自定义
+    List<Order> listOrderByOwnerId(ListOrderParam listOrderParam);
 }

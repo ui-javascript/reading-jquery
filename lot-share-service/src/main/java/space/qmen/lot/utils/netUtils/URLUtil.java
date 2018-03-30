@@ -1,4 +1,4 @@
-package space.qmen.lot.utils;
+package space.qmen.lot.utils.netUtils;
 
 import org.apache.log4j.Logger;
 

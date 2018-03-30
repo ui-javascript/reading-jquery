@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import space.qmen.lot.model.entity.Community;
 import space.qmen.lot.service.ICommunityService;
 import space.qmen.lot.utils.ResultUtil;
+import springfox.documentation.annotations.ApiIgnore;
 
 import java.util.List;
 
@@ -17,6 +18,7 @@ public class CommunityRestController {
     @Autowired
     private ICommunityService communityService;
 
+    @ApiIgnore()
     @ApiOperation("根据id获取小区")
     @RequestMapping(value = "/community/{id}", method = RequestMethod.GET)
     public Object getCommunityById(@PathVariable("id") Long id) {
@@ -24,13 +26,7 @@ public class CommunityRestController {
         return ResultUtil.getResultWithSuccess(communityService.getCommunityById(id));
     }
 
-    @ApiOperation("获取小区及其收费标准")
-    @RequestMapping(value = "/community-policy", method = RequestMethod.GET)
-    public Object listCommunityByOwnerId() {
-        return ResultUtil.getResultWithSuccess(communityService.listCommunityByOwnerId());
-    }
-
-
+    @ApiIgnore()
     @ApiOperation("获取所有小区")
     @RequestMapping(value = "/community", method = RequestMethod.GET)
     public Object listCommunity() {
@@ -47,17 +43,34 @@ public class CommunityRestController {
         return ResultUtil.getResultWithSuccess();
     }
 
+    @ApiIgnore()
     @ApiOperation("修改小区信息")
     @RequestMapping(value = "/community", method = RequestMethod.PUT)
-    public Object updateZone(@RequestBody Community community) {
+    public Object updateCommunity(@RequestBody Community community) {
         communityService.updateCommunity(community);
         return ResultUtil.getResultWithSuccess();
     }
 
+    @ApiIgnore()
     @ApiOperation("根据id删除小区")
     @RequestMapping(value = "/community/{id}", method = RequestMethod.DELETE)
-    public Object deleteZone(@PathVariable("id") Long id) {
+    public Object deleteCommunity(@PathVariable("id") Long id) {
         communityService.deleteCommunity(id);
         return ResultUtil.getResultWithSuccess();
     }
+
+    @ApiOperation("根据(省市)区的AreaID获取小区及其经纬度")
+    @RequestMapping(value = "/community/area/{id}", method = RequestMethod.GET)
+    public Object listCommunityByAreaId(@PathVariable("id") Long id) {
+        return ResultUtil.getResultWithSuccess(communityService.listCommunityByAreaId(id));
+    }
+
+
+    @ApiOperation("获取小区及其收费标准")
+    @RequestMapping(value = "/community-policy", method = RequestMethod.GET)
+    public Object listCommunityByOwnerId() {
+        return ResultUtil.getResultWithSuccess(communityService.listCommunityByOwnerId());
+    }
+
+
 }

@@ -1,4 +1,6 @@
-package space.qmen.lot.utils;
+package space.qmen.lot.utils.strUtils;
+
+import space.qmen.lot.utils.strUtils.Base64Util;
 
 import javax.crypto.Cipher;
 import javax.crypto.SecretKey;

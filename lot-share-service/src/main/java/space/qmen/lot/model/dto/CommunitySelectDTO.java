@@ -5,7 +5,7 @@ import lombok.Data;
 //import java.sql.Date;
 
 @Data
-public class CommunityDTO {
+public class CommunitySelectDTO {
     private Long fCommunityId;
     private String name;
 //    private Long fAreaId;

@@ -3,7 +3,7 @@ package space.qmen.lot.service.impl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import space.qmen.lot.dao.CommunityDao;
-import space.qmen.lot.model.dto.CommunityDTO;
+import space.qmen.lot.model.dto.CommunitySelectDTO;
 import space.qmen.lot.model.entity.Community;
 import space.qmen.lot.service.ICommunityService;
 
@@ -37,7 +37,12 @@ public class CommunityServiceImpl implements ICommunityService {
 
     // 自定义
     @Override
-    public List<CommunityDTO> listCommunityByOwnerId() {
+    public List<CommunitySelectDTO> listCommunityByOwnerId() {
         return communityDao.listCommunityByOwnerId();
+    }
+
+    @Override
+    public List<Community> listCommunityByAreaId(Long id) {
+        return communityDao.listCommunityByAreaId(id);
     }
 }

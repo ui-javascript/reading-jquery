@@ -3,7 +3,7 @@ package space.qmen.lot.model.param;
 import lombok.Data;
 
 @Data
-public class WeekRule {
+public class WeekRuleParam {
     private Long spaceId;
 
     private Integer isMonOk;
@@ -13,6 +13,9 @@ public class WeekRule {
     private Integer isFriOk;
     private Integer isSatOk;
     private Integer isSunOk;
+
+    private Integer isMorningOk;
+    private Integer isAfternoonOk;
 
     private Integer isFestivalOk;
 

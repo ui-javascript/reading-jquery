@@ -1,7 +1,7 @@
 package space.qmen.lot.dao;
 
 import org.apache.ibatis.annotations.Param;
-import space.qmen.lot.model.dto.CommunityDTO;
+import space.qmen.lot.model.dto.CommunitySelectDTO;
 import space.qmen.lot.model.entity.Community;
 
 import java.util.List;
@@ -15,5 +15,6 @@ public interface CommunityDao {
     Long updateCommunity(Community community);
 
     // 自定义
-    List<CommunityDTO> listCommunityByOwnerId();
+    List<CommunitySelectDTO> listCommunityByOwnerId();
+    List<Community> listCommunityByAreaId(Long id);
 }

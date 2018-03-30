@@ -88,4 +88,13 @@
         where
         id = #{id}
     </delete>
+
+    <!--<parameterMap id="ListOrderByOwnerId" type="space.qmen.lot.model.param.ListOrderParam"/>-->
+    <!--<select id="listOrder" resultMap="BaseResultMap" parameterMap="ListOrderParam">-->
+        <!--select-->
+        <!--<include refid="Base_Column_List" />-->
+        <!--from `order`-->
+        <!--where id = #{id}-->
+    <!--</select>-->
+
 </mapper>

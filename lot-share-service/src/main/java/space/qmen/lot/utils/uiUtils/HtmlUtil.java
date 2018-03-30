@@ -1,4 +1,4 @@
-package space.qmen.lot.utils;
+package space.qmen.lot.utils.uiUtils;
 
 import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.Logger;
@@ -6,7 +6,8 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
-import space.qmen.lot.common.Const;
+import space.qmen.lot.common.Constant;
+import space.qmen.lot.utils.netUtils.URLUtil;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
@@ -31,7 +32,7 @@ public class HtmlUtil {
         String logo="";
         logo=getPageImg(url);
         if(StringUtils.isBlank(logo)){
-            logo= Const.BASE_PATH + Const.default_logo;
+            logo= Constant.BASE_PATH + Constant.default_logo;
         }
         return logo;
     }
@@ -44,7 +45,7 @@ public class HtmlUtil {
         String imgUrl="";
         Document doc;
         try {
-            doc = Jsoup.connect(url).userAgent(Const.userAgent).get();
+            doc = Jsoup.connect(url).userAgent(Constant.userAgent).get();
             Elements images = doc.select("img[src~=(?i)\\.(png|jpe?g|gif)]");
             for(Element image : images){
                 imgUrl=image.attr("src");
@@ -52,7 +53,7 @@ public class HtmlUtil {
                     if(imgUrl.startsWith("//")){
                         imgUrl = "http:" + imgUrl;
                     }else if(!imgUrl.startsWith("http") && !imgUrl.startsWith("/")){
-                        imgUrl=URLUtil.getDomainUrl(url) + "/" + imgUrl;
+                        imgUrl= URLUtil.getDomainUrl(url) + "/" + imgUrl;
                     }else if(!imgUrl.startsWith("http")){
                         imgUrl=URLUtil.getDomainUrl(url)+imgUrl;
                     }
@@ -88,7 +89,7 @@ public class HtmlUtil {
         Map<String, String> result = new HashMap<String, String>();
         try {
             result.put("url", url);
-            Document doc = Jsoup.connect(url).userAgent(Const.userAgent).get();
+            Document doc = Jsoup.connect(url).userAgent(Constant.userAgent).get();
             String title = doc.title();
             if(StringUtils.isNotBlank(title)){
                 result.put("title", title);

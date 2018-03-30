@@ -25,6 +25,7 @@
         seq,icon,
         description,
         gmt_create, gmt_modified,
+        f_area_id, f_area_code
         is_deleted
     </sql>
 
@@ -35,6 +36,14 @@
         <include refid="Base_Column_List" />
         from community
         where id = #{id}
+    </select>
+
+    <!-- 根据AreaId获取小区 -->
+    <select id="listCommunityByAreaId" resultMap="BaseResultMap" parameterType="java.lang.Long">
+        select
+        <include refid="Base_Column_List" />
+        from community
+        where f_area_id = #{id}
     </select>
 
     <!-- 显示所有小区 -->
@@ -82,14 +91,14 @@
 
 
 
-    <resultMap id="CommunityDTO" type="space.qmen.lot.model.dto.CommunityDTO">
+    <resultMap id="CommunitySelectDTO" type="space.qmen.lot.model.dto.CommunitySelectDTO">
         <result column="f_community_id" property="fCommunityId" />
         <result column="name" property="name" />
         <result column="owner_benifit_percent" property="ownerBenifitPercent" />
     </resultMap>
 
     <!-- 获取小区及其收费标准 -->
-    <select id="listCommunityByOwnerId" resultMap="CommunityDTO">
+    <select id="listCommunityByOwnerId" resultMap="CommunitySelectDTO">
         select
             policy.f_community_id,
             community.`name`,

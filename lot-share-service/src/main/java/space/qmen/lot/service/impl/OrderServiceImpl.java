@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import space.qmen.lot.dao.OrderDao;
 import space.qmen.lot.model.entity.Order;
+import space.qmen.lot.model.param.ListOrderParam;
 import space.qmen.lot.service.IOrderService;
 
 import java.util.List;
@@ -31,4 +32,9 @@ public class OrderServiceImpl implements IOrderService {
 
     @Override
     public Long updateOrder(Order order) { return orderDao.updateOrder(order); }
+
+    @Override
+    public List<Order> listOrderByOwnerId(ListOrderParam listOrderParam){
+        return orderDao.listOrderByOwnerId(listOrderParam);
+    }
 }

@@ -40,7 +40,8 @@
     </select>
 
     <!-- 新增车位 -->
-    <insert id="saveSpace" parameterMap="Space" useGeneratedKeys="true" keyProperty="id">
+    <parameterMap id="SaveSpaceParam" type="space.qmen.lot.model.param.SaveSpaceParam"/>
+    <insert id="saveSpace" parameterMap="SaveSpaceParam" useGeneratedKeys="true" keyProperty="id">
         insert into `space`
         <trim prefix="(" suffix=")" suffixOverrides=",">
             <if test="code != null">
@@ -51,12 +52,6 @@
             </if>
             <if test="spaceArea != null">
                 space_area,
-            </if>
-            <if test="level != null">
-                `level`,
-            </if>
-            <if test="score != null">
-                score,
             </if>
             <if test="description != null">
                 description,
@@ -73,18 +68,33 @@
             <if test="spaceArea != null">
                 #{spaceArea},
             </if>
-            <if test="level != null">
-                #{level},
-            </if>
-            <if test="score != null">
-                #{score},
-            </if>
             <if test="description != null">
                 #{description},
             </if>
         </trim>
-
     </insert>
+
+    <!--<insert id="saveSpaceRule" parameterMap="SaveSpaceParam" useGeneratedKeys="true" keyProperty="id">-->
+        <!--insert into `space`-->
+        <!--<trim prefix="(" suffix=")" suffixOverrides=",">-->
+          <!---->
+        <!--</trim>-->
+        <!--values-->
+        <!--<trim prefix="(" suffix=")" suffixOverrides=",">-->
+            <!--<if test="code != null">-->
+                <!--#{code},-->
+            <!--</if>-->
+            <!--<if test="name != null">-->
+                <!--#{name},-->
+            <!--</if>-->
+            <!--<if test="spaceArea != null">-->
+                <!--#{spaceArea},-->
+            <!--</if>-->
+            <!--<if test="description != null">-->
+                <!--#{description},-->
+            <!--</if>-->
+        <!--</trim>-->
+    <!--</insert>-->
 
     <!--更新车位-->
     <update id="updateSpace" parameterMap="Space">
@@ -135,6 +145,8 @@
         <result column="afternoon_begin_time" property="afternoonBeginTime" />
         <result column="afternoon_end_time" property="afternoonEndTime" />
         <result column="owner_benifit_percent" property="ownerBenifitPercent" />
+        <result column="is_morning_ok" property="isMorningOk" />
+        <result column="is_afternoon_ok" property="isAfternoonOk" />
         <result column="status" property="status" />
     </resultMap>
     <!-- 根据业主id获取车位详细信息 -->
@@ -146,6 +158,8 @@
             rule.f_space_id,
             rule.f_zone_id,
             rule.`status`,
+            rule.is_morning_ok,
+            rule.is_afternoon_ok,
             `space`.`code`,
 
             policy.morning_begin_time,
@@ -171,7 +185,7 @@
 
 
     <!--更新车位-->
-    <parameterMap id="WeekRule" type="space.qmen.lot.model.param.WeekRule"/>
+    <parameterMap id="WeekRule" type="space.qmen.lot.model.param.WeekRuleParam"/>
     <update id="updateSpaceRule" parameterMap="WeekRule">
         update `lk_space_week_renting_rule`
         set
@@ -196,6 +210,12 @@
             </if>
             <if test="isSunOk!=null">
                 is_sun_ok = #{isSunOk},
+            </if>
+            <if test="isMorningOk!=null">
+                is_morning_ok = #{isMorningOk},
+            </if>
+            <if test="isAfternoonOk!=null">
+                is_afternoon_ok = #{isAfternoonOk},
             </if>
             <if test="isFestivalOk!=null">
                 is_festival_ok = #{isFestivalOk},

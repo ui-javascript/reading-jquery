@@ -1,4 +1,4 @@
-package space.qmen.lot.utils;
+package space.qmen.lot.utils.strUtils;
 
 import java.io.UnsupportedEncodingException;
 
