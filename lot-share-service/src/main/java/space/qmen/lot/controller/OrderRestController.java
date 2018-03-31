@@ -58,8 +58,8 @@ public class OrderRestController {
 
     // 自定义
     @ApiOperation("获取所有订单")
-    @RequestMapping(value = "/owner-order", method = RequestMethod.PUT)
-    public Object listOrderRentingStatus(@RequestBody OrderParam orderParam) {
+    @RequestMapping(value = "/owner-order", method = RequestMethod.GET)
+    public Object listOrderRentingStatus(OrderParam orderParam) {
         return ResultUtil.getResultWithSuccess(orderService.listOrderByOwnerId(orderParam));
     }
 

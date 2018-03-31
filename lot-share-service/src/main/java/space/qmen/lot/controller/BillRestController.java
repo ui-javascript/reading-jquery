@@ -10,6 +10,8 @@ import space.qmen.lot.service.IBillService;
 import space.qmen.lot.utils.ResultUtil;
 import springfox.documentation.annotations.ApiIgnore;
 
+import javax.websocket.server.PathParam;
+
 @Api(value="账单", tags={"账单|钱包|收入"})
 @RequestMapping("/api/v1")
 @RestController
@@ -56,20 +58,20 @@ public class BillRestController {
     }
 
     @ApiOperation("获取X用户A年B月的总收入")
-    @RequestMapping(value = "/wallet-total", method = RequestMethod.PUT)
-    public Object getWalletTotal(@RequestBody WalletParam walletParam) {
+    @RequestMapping(value = "/wallet-total", method = RequestMethod.GET)
+    public Object getWalletTotal(WalletParam walletParam) {
         return ResultUtil.getResultWithSuccess(billService.getWalletTotal(walletParam));
     }
 
     @ApiOperation("获取X用户A年B月的账单收入")
-    @RequestMapping(value = "/bill-owner-details", method = RequestMethod.PUT)
-    public Object listWalletDetail(@RequestBody WalletParam walletParam) {
+    @RequestMapping(value = "/bill-owner-details", method = RequestMethod.GET)
+    public Object listWalletDetail(WalletParam walletParam) {
         return ResultUtil.getResultWithSuccess(billService.listBillDetails(walletParam));
     }
 
     @ApiOperation("图表显示X用户A年B月的每天的账单")
-    @RequestMapping(value = "/income-owner-charts", method = RequestMethod.PUT)
-    public Object listIncomeOwnerCharts(@RequestBody WalletParam walletParam) {
+    @RequestMapping(value = "/income-owner-charts", method = RequestMethod.GET)
+    public Object listIncomeOwnerCharts(WalletParam walletParam) {
         return ResultUtil.getResultWithSuccess(billService.listOwnerIncomeCharts(walletParam));
     }
 }
