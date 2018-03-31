@@ -8,9 +8,11 @@ import space.qmen.lot.model.entity.PayAli;
 import space.qmen.lot.model.entity.PayBank;
 import space.qmen.lot.model.entity.PayWechat;
 import space.qmen.lot.service.IPaymentService;
+import springfox.documentation.annotations.ApiIgnore;
 
 import java.util.List;
 
+@ApiIgnore
 @Api(value="支付", tags={"支付"})
 @RequestMapping("/api/v1/pay")
 @RestController

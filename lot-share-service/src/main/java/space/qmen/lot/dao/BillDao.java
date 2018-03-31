@@ -1,8 +1,9 @@
 package space.qmen.lot.dao;
 
 import org.apache.ibatis.annotations.Param;
+import space.qmen.lot.model.dto.BillDetailsDTO;
 import space.qmen.lot.model.entity.Bill;
-import space.qmen.lot.model.param.GetWalletParam;
+import space.qmen.lot.model.param.WalletParam;
 
 import java.util.List;
 
@@ -14,5 +15,7 @@ public interface BillDao {
     Long saveBill(Bill bill);
     Long updateBill(Bill bill);
 
-    Double getWalletTotal(GetWalletParam getWalletParam);
+    // 自定义
+    Double getWalletTotal(WalletParam walletParam);
+    List<BillDetailsDTO> listBillDetails(WalletParam walletParam);
 }

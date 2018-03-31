@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import space.qmen.lot.model.entity.Zone;
 import space.qmen.lot.service.IZoneService;
 import space.qmen.lot.utils.ResultUtil;
+import springfox.documentation.annotations.ApiIgnore;
 
 @Api(value="停车区", tags={"停车区"})
 @RequestMapping("/api/v1/zone")
@@ -41,6 +42,7 @@ public class ZoneRestController {
         return ResultUtil.getResultWithSuccess();
     }
 
+    @ApiIgnore
     @ApiOperation("根据id删除停车区")
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
     public Object deleteZone(@PathVariable("id") Long id) {

@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import space.qmen.lot.model.entity.User;
 import space.qmen.lot.service.IUserService;
 import space.qmen.lot.utils.ResultUtil;
+import springfox.documentation.annotations.ApiIgnore;
 
 
 @Api(value="用户", tags={"用户"})
@@ -42,6 +43,7 @@ public class UserRestController {
         return ResultUtil.getResultWithSuccess();
     }
 
+    @ApiIgnore
     @ApiOperation("根据id删除用户")
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
     public Object deleteUser(@PathVariable("id") Long id) {

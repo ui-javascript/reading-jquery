@@ -5,7 +5,7 @@ import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import space.qmen.lot.model.entity.Order;
-import space.qmen.lot.model.param.ListOrderParam;
+import space.qmen.lot.model.param.OrderParam;
 import space.qmen.lot.service.IOrderService;
 import space.qmen.lot.utils.ResultUtil;
 import springfox.documentation.annotations.ApiIgnore;
@@ -58,9 +58,9 @@ public class OrderRestController {
 
     // 自定义
     @ApiOperation("获取所有订单")
-    @RequestMapping(value = "/order-renting-status", method = RequestMethod.PUT)
-    public Object listOrderRentingStatus(@RequestBody ListOrderParam listOrderParam) {
-        return ResultUtil.getResultWithSuccess(orderService.listOrderByOwnerId(listOrderParam));
+    @RequestMapping(value = "/owner-order", method = RequestMethod.PUT)
+    public Object listOrderRentingStatus(@RequestBody OrderParam orderParam) {
+        return ResultUtil.getResultWithSuccess(orderService.listOrderByOwnerId(orderParam));
     }
 
 }

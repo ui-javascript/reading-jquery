@@ -63,7 +63,7 @@ public class SpaceRestController {
     }
 
     @ApiOperation("根据车位id更新车位开放规则")
-    @RequestMapping(value = "/space-rule/space/{id}", method = RequestMethod.PUT)
+    @RequestMapping(value = "/space-rule", method = RequestMethod.PUT)
     public Object updateSpaceRule(@RequestBody WeekRuleParam weekRuleParam) {
         spaceService.updateSpaceRule(weekRuleParam);
         return ResultUtil.getResultWithSuccess();

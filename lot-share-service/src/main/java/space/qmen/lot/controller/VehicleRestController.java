@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import space.qmen.lot.model.entity.Vehicle;
 import space.qmen.lot.service.IVehicleService;
 import space.qmen.lot.utils.ResultUtil;
+import springfox.documentation.annotations.ApiIgnore;
 
 @Api(value="车辆", tags={"车辆"})
 @RequestMapping("/api/v1/vehicle")
@@ -41,6 +42,7 @@ public class VehicleRestController {
         return ResultUtil.getResultWithSuccess();
     }
 
+    @ApiIgnore
     @ApiOperation("根据id删除车辆")
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
     public Object deleteVehicle(@PathVariable("id") Long id) {

@@ -7,9 +7,11 @@ import org.springframework.web.bind.annotation.*;
 import space.qmen.lot.model.entity.Resource;
 import space.qmen.lot.model.entity.Role;
 import space.qmen.lot.service.IRBACService;
+import springfox.documentation.annotations.ApiIgnore;
 
 import java.util.List;
 
+@ApiIgnore
 @Api(value="RBAC", tags={"用户权限管理"})
 @RequestMapping("/api/v1/rbac")
 @RestController

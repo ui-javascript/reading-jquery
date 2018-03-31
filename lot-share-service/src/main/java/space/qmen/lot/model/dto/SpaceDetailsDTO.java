@@ -34,6 +34,7 @@ public class SpaceDetailsDTO {
 
     // 收益比
     private Double ownerBenifitPercent;
+    private Double unitPrice;
 
     // 车位状态
     private Integer status;

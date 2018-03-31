@@ -362,6 +362,18 @@ public class DateUtil {
     }
 
     /**
+     * 获取某年某月有多少天
+     * @param year
+     * @param month
+     * @return
+     */
+    public static int getDayOfMonth(int year,int month){
+        Calendar c = Calendar.getInstance();
+        c.set(year, month, 0); //输入类型为int类型
+        return c.get(Calendar.DAY_OF_MONTH);
+    }
+
+    /**
      * 获取当前月第一天的字符串日期
      *
      * @return String 当前月第一天的字符串日期。例如：当前日期是2012-08-2，则返回值为2012-08-1

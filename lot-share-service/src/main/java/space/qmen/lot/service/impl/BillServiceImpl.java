@@ -3,8 +3,10 @@ package space.qmen.lot.service.impl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import space.qmen.lot.dao.BillDao;
+import space.qmen.lot.model.dto.BillDetailsDTO;
 import space.qmen.lot.model.entity.Bill;
-import space.qmen.lot.model.param.GetWalletParam;
+import space.qmen.lot.model.param.WalletParam;
+import space.qmen.lot.model.vo.IncomeCharts;
 import space.qmen.lot.service.IBillService;
 
 import java.util.List;
@@ -34,5 +36,29 @@ public class BillServiceImpl implements IBillService {
     public Long updateBill(Bill bill) { return billDao.updateBill(bill); }
 
     @Override
-    public Double getWalletTotal(GetWalletParam getWalletParam) { return billDao.getWalletTotal(getWalletParam); }
+    public Double getWalletTotal(WalletParam walletParam) { return billDao.getWalletTotal(walletParam); }
+
+    @Override
+    public List<BillDetailsDTO> listBillDetails(WalletParam walletParam) { return billDao.listBillDetails(walletParam); }
+
+    @Override
+    public IncomeCharts listOwnerIncomeCharts(WalletParam walletParam) {
+        IncomeCharts charts = new IncomeCharts(walletParam);
+        int dayOfWeek;
+
+        try {
+            List<BillDetailsDTO> billList = billDao.listBillDetails(walletParam);
+            for (int i = 0; i < billList.size(); i++) {
+                dayOfWeek = billList.get(i).getDayOfWeek();
+//                if () {
+                    charts.getIncomeList()[dayOfWeek] += billList.get(i).getBillAmount();
+//                }
+            }
+
+        } catch (Exception e) {
+
+        }
+
+        return charts;
+    }
 }

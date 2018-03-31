@@ -145,6 +145,7 @@
         <result column="afternoon_begin_time" property="afternoonBeginTime" />
         <result column="afternoon_end_time" property="afternoonEndTime" />
         <result column="owner_benifit_percent" property="ownerBenifitPercent" />
+        <result column="unit_price" property="unitPrice" />
         <result column="is_morning_ok" property="isMorningOk" />
         <result column="is_afternoon_ok" property="isAfternoonOk" />
         <result column="status" property="status" />
@@ -166,8 +167,8 @@
             policy.morning_end_time,
             policy.afternoon_begin_time,
             policy.afternoon_end_time,
-            policy.owner_benifit_percent
-
+            policy.owner_benifit_percent,
+            policy.unit_price
         from
             lk_space_week_renting_rule AS rule,
             lk_community_policy AS policy,

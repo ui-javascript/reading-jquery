@@ -8,9 +8,11 @@ import space.qmen.lot.model.dto.AreaSimpleDTO;
 import space.qmen.lot.model.entity.Area;
 import space.qmen.lot.service.IAreaService;
 import space.qmen.lot.utils.ResultUtil;
+import springfox.documentation.annotations.ApiIgnore;
 
 import java.util.List;
 
+@ApiIgnore
 @Api(value="省市区", tags={"省市区"})
 @RequestMapping("/api/v1/area")
 @RestController

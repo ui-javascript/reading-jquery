@@ -78,7 +78,7 @@
     </delete>
 
     <!-- 获取X用户A年B月的总收入 -->
-    <parameterMap id="GetWalletParam" type="space.qmen.lot.model.param.GetWalletParam"/>
+    <parameterMap id="GetWalletParam" type="space.qmen.lot.model.param.WalletParam"/>
     <!-- 根据id获取账单 -->
     <select id="getWalletTotal" resultType="Double" parameterMap="GetWalletParam">
 		select
@@ -91,21 +91,120 @@
     </select>
 
     <!-- 根据id获取账单 -->
-    <!--<select id="listBillDetails" resultType="Double" parameterMap="GetWalletParam">-->
-        <!--select-->
-            <!--bill_amount-->
-        <!--from-->
-            <!--bill-->
-        <!--where-->
-            <!--bill.to_account_id =-->
-            <!--(-->
-                <!--select pay_ali.account_alipay_id-->
-            <!--from pay_ali-->
-            <!--where pay_ali.f_user_id = #{userId}-->
-            <!--)-->
-          <!--AND year(bill.gmt_create) = #{walletYear}-->
-          <!--AND month(bill.gmt_create) = #{walletMonth};-->
-    <!--</select>-->
+    <resultMap id="BillDetailsDTOMap" type="space.qmen.lot.model.dto.BillDetailsDTO">
+        <result column="bill_amount" property="billAmount" />
+        <result column="bill_day" property="billDay" />
+        <result column="day_of_week" property="dayOfWeek" />
+        <result column="bill_date" property="billDate" />
+        <result column="renter_name" property="renterName" />
+        <result column="transaction_type" property="transactionType" />
+        <result column="pay_method" property="payMethod" />
+        <result column="plate_num" property="plateNum" />
+    </resultMap>
+    <select id="listBillDetails" resultMap="BillDetailsDTOMap" parameterMap="GetWalletParam">
+        (
+        select
+            bill.bill_amount,
+            day(bill.gmt_create) as bill_day,
+            DAYOFWEEK(bill.gmt_create) as day_of_week,
+            bill.gmt_create AS bill_date,
+            bill.transaction_type,
+						'支付宝' AS pay_method,
+            vehicle.plate_num,
+            `user`.real_name AS renter_name
+        from
+						bill,
+            `order`,
+            vehicle,
+            `user`
+        where
+
+            bill.transaction_type = 1
+            AND year(bill.gmt_create) = #{walletYear}
+            AND month(bill.gmt_create) = #{walletMonth}
+
+						AND `order`.f_actual_payment_bill_id = bill.id
+            AND bill.to_account_id =
+                (
+                select pay_ali.account_alipay_id
+                from pay_ali
+                where pay_ali.f_user_id = #{userId}
+                )
+            AND `order`.f_vehicle_id = vehicle.id
+            AND bill.from_user_id = `user`.id
+        )
+
+        union all
+        (
+        select
+            bill.bill_amount,
+            day(bill.gmt_create) as bill_day,
+            DAYOFWEEK(bill.gmt_create) as day_of_week,
+            bill.gmt_create AS bill_date,
+            bill.transaction_type,
+						'微信支付' AS pay_method,
+            vehicle.plate_num,
+            `user`.real_name AS renter_name
+        from
+						bill,
+            `order`,
+            vehicle,
+            `user`
+        where
+
+            bill.transaction_type = 2
+            AND year(bill.gmt_create) = #{walletYear}
+            AND month(bill.gmt_create) = #{walletMonth}
+
+						AND `order`.f_actual_payment_bill_id = bill.id
+            AND bill.to_account_id =
+                (
+                select pay_ali.account_alipay_id
+                from pay_ali
+                where pay_ali.f_user_id = #{userId}
+                )
+            AND `order`.f_vehicle_id = vehicle.id
+            AND bill.from_user_id = `user`.id
+
+        )
+
+        union all
+				(
+        select
+            bill.bill_amount,
+            day(bill.gmt_create) as bill_day,
+            DAYOFWEEK(bill.gmt_create) as day_of_week,
+            bill.gmt_create AS bill_date,
+            bill.transaction_type,
+						pay_bank.bank_name AS pay_method,
+            vehicle.plate_num,
+            `user`.real_name AS renter_name
+        from
+						bill,
+            `order`,
+            vehicle,
+            `user`,
+            pay_bank
+        where
+
+            bill.transaction_type = 0
+            AND year(bill.gmt_create) = #{walletYear}
+            AND month(bill.gmt_create) = #{walletMonth}
+
+						AND `order`.f_actual_payment_bill_id = bill.id
+            AND bill.to_account_id =
+                (
+                select pay_ali.account_alipay_id
+                from pay_ali
+                where pay_ali.f_user_id = #{userId}
+                )
+            AND `order`.f_vehicle_id = vehicle.id
+            AND bill.from_user_id = `user`.id
+            AND pay_bank.f_user_id = bill.to_user_id
+        )
+
+        order by bill_date
+    </select>
 
 
 </mapper>
