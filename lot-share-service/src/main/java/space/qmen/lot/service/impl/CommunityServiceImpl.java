@@ -45,4 +45,9 @@ public class CommunityServiceImpl implements ICommunityService {
     public List<Community> listCommunityByAreaId(Long id) {
         return communityDao.listCommunityByAreaId(id);
     }
+
+    @Override
+    public Long[] listCommunityIdsByAreaId(Long id) {
+        return communityDao.listCommunityIdsByAreaId(id);
+    }
 }

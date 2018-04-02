@@ -1,5 +1,5 @@
 package space.qmen.lot.model.vo;
 
-public class CommunityVo {
+public class CommunityVO {
 
 }

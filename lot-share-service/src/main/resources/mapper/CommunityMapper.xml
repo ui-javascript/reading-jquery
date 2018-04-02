@@ -110,5 +110,13 @@
             policy.f_community_id = community.id;
     </select>
 
+    <select id="listCommunityIdsByAreaId" resultType="java.lang.Long" parameterType="java.lang.Long">
+        SELECT
+        community.id
+        from
+        community
+        where
+        community.f_area_id = #{areaId};
+    </select>
 
 </mapper>

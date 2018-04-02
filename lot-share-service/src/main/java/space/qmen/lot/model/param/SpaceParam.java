@@ -3,7 +3,7 @@ package space.qmen.lot.model.param;
 import lombok.Data;
 
 @Data
-public class SaveSpaceParam {
+public class SpaceParam {
 
     // 车位编码
     private String code;

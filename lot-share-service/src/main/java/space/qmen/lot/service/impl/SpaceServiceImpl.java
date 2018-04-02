@@ -1,20 +1,40 @@
 package space.qmen.lot.service.impl;
 
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import space.qmen.lot.dao.CommunityDao;
 import space.qmen.lot.dao.SpaceDao;
 import space.qmen.lot.model.dto.SpaceDetailsDTO;
+import space.qmen.lot.model.entity.Community;
 import space.qmen.lot.model.entity.Space;
-import space.qmen.lot.model.param.SaveSpaceParam;
+import space.qmen.lot.model.param.AreaSpaceAvailableParam;
+import space.qmen.lot.model.param.CommunitySpaceAvailableParam;
+import space.qmen.lot.model.param.SpaceParam;
 import space.qmen.lot.model.param.WeekRuleParam;
+import space.qmen.lot.model.vo.SpaceAvailableVO;
 import space.qmen.lot.service.ISpaceService;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Service
 public class SpaceServiceImpl implements ISpaceService {
+
+    private final static Integer LEVEL_LOW_NUM = 20;
+    private final static Integer LEVEL_MIDDLE_NUM = 50;
+    private final static Integer LEVEL_LOW = 0;
+    private final static Integer LEVEL_MIDDLE = 1;
+    private final static Integer LEVEL_HIGH = 2;
+
+
     @Autowired
     private SpaceDao spaceDao;
+
+    @Autowired
+    private CommunityDao communityDao;
 
     @Override
     public List<Space> listSpace(){
@@ -30,7 +50,7 @@ public class SpaceServiceImpl implements ISpaceService {
     }
 
     @Override
-    public Long saveSpace(SaveSpaceParam space) { return spaceDao.saveSpace(space); }
+    public Long saveSpace(SpaceParam space) { return spaceDao.saveSpace(space); }
 
     @Override
     public Long updateSpace(Space space) { return spaceDao.updateSpace(space); }
@@ -42,4 +62,61 @@ public class SpaceServiceImpl implements ISpaceService {
 
     @Override
     public Long updateSpaceRule(WeekRuleParam weekRuleParam) { return spaceDao.updateSpaceRule(weekRuleParam); }
+
+    @Override
+    public SpaceAvailableVO listSpaceAvailable(CommunitySpaceAvailableParam communitySpaceAvailableParam){
+        SpaceAvailableVO spaceAvailable =  new SpaceAvailableVO();
+        Long[] list = spaceDao.listSpaceAvailable(communitySpaceAvailableParam);
+        spaceAvailable.setSpaceIdList(list);
+        spaceAvailable.setSpaceCount(list.length);
+        return spaceAvailable;
+    }
+
+    @Override
+    public Map listAreaSpaceAvailable(AreaSpaceAvailableParam areaSpaceAvailableParam){
+        List<SpaceAvailableVO> resultList = new ArrayList<>();
+        Map result = new HashMap();
+        Integer levelLow = 0, levelMiddle = 0, levelHigh = 0;
+
+        try {
+            Long[] communityIdsArr = communityDao.listCommunityIdsByAreaId(areaSpaceAvailableParam.getAreaId());
+            for(Long ids : communityIdsArr) {
+                CommunitySpaceAvailableParam param = new CommunitySpaceAvailableParam();
+                param.setDate(areaSpaceAvailableParam.getDate());
+                param.setPeriodType(areaSpaceAvailableParam.getPeriodType());
+                param.setCommunityId(ids);
+
+                Long[] list = spaceDao.listSpaceAvailable(param);
+
+                Community community = communityDao.getCommunityById(ids);
+                SpaceAvailableVO vo = new SpaceAvailableVO();
+                BeanUtils.copyProperties(community, vo);
+                vo.setSpaceIdList(list)
+                  .setSpaceCount(list.length);
+
+                if (list.length < LEVEL_LOW_NUM) {
+                    levelLow++;
+                    vo.setLevel(LEVEL_LOW);
+                } else if (list.length >= LEVEL_LOW_NUM && list.length <= LEVEL_MIDDLE_NUM ) {
+                    levelMiddle++;
+                    vo.setLevel(LEVEL_MIDDLE);
+                } else {
+                    levelHigh++;
+                    vo.setLevel(LEVEL_HIGH);
+                }
+
+                resultList.add(vo);
+            }
+        } catch(Exception e) {
+
+        }
+
+        result.put("spaceList", resultList);
+        result.put("levelLow", levelLow);
+        result.put("levelMiddle", levelMiddle);
+        result.put("levelHigh", levelHigh);
+
+        return result;
+    }
+
 }

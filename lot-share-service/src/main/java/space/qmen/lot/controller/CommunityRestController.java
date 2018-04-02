@@ -36,6 +36,12 @@ public class CommunityRestController {
         return ResultUtil.getResultWithSuccess(list);
     }
 
+    @ApiOperation("根据AreaID获取所有小区ID")
+    @RequestMapping(value = "/community-ids/area/{id}", method = RequestMethod.GET)
+    public Object listCommunity(@PathVariable("id") Long id) {
+        return ResultUtil.getResultWithSuccess(communityService.listCommunityIdsByAreaId(id));
+    }
+
     @ApiOperation("新增小区")
     @RequestMapping(value = "/community", method = RequestMethod.POST)
     public Object saveCommunity(@RequestBody Community community) {

@@ -40,7 +40,7 @@
     </select>
 
     <!-- 新增车位 -->
-    <parameterMap id="SaveSpaceParam" type="space.qmen.lot.model.param.SaveSpaceParam"/>
+    <parameterMap id="SaveSpaceParam" type="space.qmen.lot.model.param.SpaceParam"/>
     <insert id="saveSpace" parameterMap="SaveSpaceParam" useGeneratedKeys="true" keyProperty="id">
         insert into `space`
         <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -74,7 +74,7 @@
         </trim>
     </insert>
 
-    <!--<insert id="saveSpaceRule" parameterMap="SaveSpaceParam" useGeneratedKeys="true" keyProperty="id">-->
+    <!--<insert id="saveSpaceRule" parameterMap="SpaceParam" useGeneratedKeys="true" keyProperty="id">-->
         <!--insert into `space`-->
         <!--<trim prefix="(" suffix=")" suffixOverrides=",">-->
           <!---->
@@ -182,9 +182,6 @@
     </select>
 
 
-
-
-
     <!--更新车位-->
     <parameterMap id="WeekRule" type="space.qmen.lot.model.param.WeekRuleParam"/>
     <update id="updateSpaceRule" parameterMap="WeekRule">
@@ -230,5 +227,31 @@
     </update>
 
 
+    <!-- 获取小区可用车位 -->
+    <parameterMap id="SpaceAvailableParam" type="space.qmen.lot.model.param.CommunitySpaceAvailableParam"/>
+    <select id="listSpaceAvailable" resultType="java.lang.Long" parameterMap="SpaceAvailableParam">
+        SELECT
+          rule.f_space_id
+        from
+          lk_space_week_renting_rule AS rule
+        where not exists (
+            select
+              day_rentings.f_space_id
+            from
+              lk_space_day_renting_status as day_rentings
+            where
+                rule.f_community_id = #{communityId}
+                AND rule.`status` = 0
+
+                OR rule.is_afternoon_ok = 0
+                OR rule.is_morning_ok = 0
+
+                OR day_rentings.`status` != 2
+                AND day_rentings.date = #{date}
+                AND rule.f_space_id = day_rentings.f_space_id
+        )
+        AND rule.f_community_id = #{communityId}
+        AND rule.status = 1;
+    </select>
 
 </mapper>

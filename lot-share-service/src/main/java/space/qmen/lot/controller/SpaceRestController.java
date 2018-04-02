@@ -5,7 +5,9 @@ import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import space.qmen.lot.model.entity.Space;
-import space.qmen.lot.model.param.SaveSpaceParam;
+import space.qmen.lot.model.param.AreaSpaceAvailableParam;
+import space.qmen.lot.model.param.CommunitySpaceAvailableParam;
+import space.qmen.lot.model.param.SpaceParam;
 import space.qmen.lot.model.param.WeekRuleParam;
 import space.qmen.lot.service.ISpaceService;
 import space.qmen.lot.utils.ResultUtil;
@@ -34,7 +36,7 @@ public class SpaceRestController {
 
     @ApiOperation("新增车位")
     @RequestMapping(value = "/space", method = RequestMethod.POST)
-    public Object saveSpace(@RequestBody SaveSpaceParam space) {
+    public Object saveSpace(@RequestBody SpaceParam space) {
         spaceService.saveSpace(space);
         return ResultUtil.getResultWithSuccess();
     }
@@ -68,4 +70,19 @@ public class SpaceRestController {
         spaceService.updateSpaceRule(weekRuleParam);
         return ResultUtil.getResultWithSuccess();
     }
+
+    @ApiOperation("获取某Community的可租用车位数")
+    @RequestMapping(value = "/community-space-available", method = RequestMethod.GET)
+    public Object listCommunitySpaceAvailable(CommunitySpaceAvailableParam communitySpaceAvailableParam) {
+        return ResultUtil.getResultWithSuccess(spaceService.listSpaceAvailable(communitySpaceAvailableParam));
+    }
+
+    @ApiOperation("获取某Area的可租用车位数")
+    @RequestMapping(value = "/area-space-available", method = RequestMethod.GET)
+    public Object listAreaSpaceAvailable(AreaSpaceAvailableParam areaSpaceAvailableParam) {
+        return ResultUtil.getResultWithSuccess(spaceService.listAreaSpaceAvailable(areaSpaceAvailableParam));
+    }
+
+
+
 }

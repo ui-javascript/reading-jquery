@@ -1,9 +1,11 @@
 package space.qmen.lot.model.entity;
 
 import lombok.Data;
+import lombok.experimental.Accessors;
 
 import java.sql.Date;
 
+@Accessors(chain = true)
 @Data
 public class Community {
     private Long id;

@@ -2,10 +2,12 @@ package space.qmen.lot.model.entity;
 
 
 import lombok.Data;
+import lombok.experimental.Accessors;
 import space.qmen.lot.model.dto.BaseDTO;
 
 import java.sql.Date;
 
+@Accessors(chain = true)
 @Data
 public class Vehicle extends BaseDTO {
     private Long id;

@@ -17,4 +17,5 @@ public interface CommunityDao {
     // 自定义
     List<CommunitySelectDTO> listCommunityByOwnerId();
     List<Community> listCommunityByAreaId(Long id);
+    Long[] listCommunityIdsByAreaId(Long id);
 }

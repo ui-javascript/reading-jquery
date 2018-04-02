@@ -8,6 +8,7 @@ import java.util.List;
 public interface ICommunityService {
     List<Community> listCommunity();
     Community getCommunityById(Long id);
+
     Long deleteCommunity(Long id);
 
     Long saveCommunity(Community zone);
@@ -15,5 +16,6 @@ public interface ICommunityService {
 
     // 自定义接口
     List<CommunitySelectDTO> listCommunityByOwnerId();
+    Long[] listCommunityIdsByAreaId(Long id);
     List<Community> listCommunityByAreaId(Long id);
 }

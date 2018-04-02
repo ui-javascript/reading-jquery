@@ -1,7 +1,12 @@
 package space.qmen.lot.model.entity;
 
+import lombok.Data;
+import lombok.experimental.Accessors;
+
 import java.sql.Date;
 
+@Accessors(chain = true)
+@Data
 public class PayWechat {
     private Long id;
     private Long accountWechatId;
