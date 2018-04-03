@@ -119,4 +119,17 @@
         community.f_area_id = #{areaId};
     </select>
 
+    <select id="listCommunityIds" resultType="java.lang.Long" parameterType="space.qmen.lot.model.param.CommunityIdsParam">
+        SELECT
+          community.id
+        from
+          community
+        where
+          community.f_area_id = #{areaId}
+            <if test="keyword!=null and keyword != ''">
+                AND community.`name` like concat(concat('%',#{keyword}),'%')
+            </if>
+    </select>
+
+
 </mapper>

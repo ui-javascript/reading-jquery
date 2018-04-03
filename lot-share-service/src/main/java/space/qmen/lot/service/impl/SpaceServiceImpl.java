@@ -4,14 +4,12 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import space.qmen.lot.dao.CommunityDao;
+import space.qmen.lot.dao.OrderDao;
 import space.qmen.lot.dao.SpaceDao;
 import space.qmen.lot.model.dto.SpaceDetailsDTO;
 import space.qmen.lot.model.entity.Community;
 import space.qmen.lot.model.entity.Space;
-import space.qmen.lot.model.param.AreaSpaceAvailableParam;
-import space.qmen.lot.model.param.CommunitySpaceAvailableParam;
-import space.qmen.lot.model.param.SpaceParam;
-import space.qmen.lot.model.param.WeekRuleParam;
+import space.qmen.lot.model.param.*;
 import space.qmen.lot.model.vo.SpaceAvailableVO;
 import space.qmen.lot.service.ISpaceService;
 
@@ -35,6 +33,9 @@ public class SpaceServiceImpl implements ISpaceService {
 
     @Autowired
     private CommunityDao communityDao;
+
+    @Autowired
+    private OrderDao orderDao;
 
     @Override
     public List<Space> listSpace(){
@@ -79,21 +80,30 @@ public class SpaceServiceImpl implements ISpaceService {
         Integer levelLow = 0, levelMiddle = 0, levelHigh = 0;
 
         try {
-            Long[] communityIdsArr = communityDao.listCommunityIdsByAreaId(areaSpaceAvailableParam.getAreaId());
+            // 当前区域的所有小区
+            CommunityIdsParam communityIdsParam = new CommunityIdsParam();
+            communityIdsParam.setAreaId(areaSpaceAvailableParam.getAreaId());
+            communityIdsParam.setKeyword(areaSpaceAvailableParam.getKeyword());
+            Long[] communityIdsArr = communityDao.listCommunityIds(communityIdsParam);
+
+            // 遍历查询各个小区的详情
             for(Long ids : communityIdsArr) {
                 CommunitySpaceAvailableParam param = new CommunitySpaceAvailableParam();
-                param.setDate(areaSpaceAvailableParam.getDate());
+                param.setDateBegin(areaSpaceAvailableParam.getDateBegin());
                 param.setPeriodType(areaSpaceAvailableParam.getPeriodType());
                 param.setCommunityId(ids);
 
                 Long[] list = spaceDao.listSpaceAvailable(param);
 
+                // 查询该小区空车位
                 Community community = communityDao.getCommunityById(ids);
+                Integer historyNum = orderDao.getOrderHistoryNum(ids);
                 SpaceAvailableVO vo = new SpaceAvailableVO();
                 BeanUtils.copyProperties(community, vo);
                 vo.setSpaceIdList(list)
-                  .setSpaceCount(list.length);
-
+                  .setSpaceCount(list.length)
+                    .setHistoryOrderNum(historyNum);
+//
                 if (list.length < LEVEL_LOW_NUM) {
                     levelLow++;
                     vo.setLevel(LEVEL_LOW);
@@ -107,6 +117,7 @@ public class SpaceServiceImpl implements ISpaceService {
 
                 resultList.add(vo);
             }
+
         } catch(Exception e) {
 
         }

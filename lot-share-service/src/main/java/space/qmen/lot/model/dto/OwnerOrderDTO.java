@@ -7,7 +7,9 @@ import java.sql.Time;
 
 @Data
 public class OwnerOrderDTO {
-    private Date date;
+    private Date dateBegin;
+    private Date dateEnd;
+
     private Integer periodType;
     private String  renterName;
     private String icon;

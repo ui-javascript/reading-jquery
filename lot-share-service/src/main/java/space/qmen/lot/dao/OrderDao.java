@@ -17,4 +17,5 @@ public interface OrderDao {
 
     // 自定义
     List<OwnerOrderDTO> listOrderByOwnerId(OrderParam orderParam);
+    Integer getOrderHistoryNum(Long communityId);
 }

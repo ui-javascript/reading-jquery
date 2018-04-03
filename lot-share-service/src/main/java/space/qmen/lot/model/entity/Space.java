@@ -12,6 +12,7 @@ public class Space {
     // 车位编码
     private String code;
     private String name;
+    private String icon;
     // 车位面积
     private Double spaceArea;
     private Integer level;

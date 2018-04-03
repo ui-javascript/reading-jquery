@@ -6,6 +6,7 @@
         <result column="id" property="id" />
         <result column="code" property="code" />
         <result column="name" property="name" />
+        <result column="icon" property="icon" />
         <result column="space_area" property="spaceArea" />
         <result column="level" property="level" />
         <result column="score" property="score" />
@@ -233,7 +234,8 @@
         SELECT
           rule.f_space_id
         from
-          lk_space_week_renting_rule AS rule
+          lk_space_week_renting_rule AS rule,
+          community
         where not exists (
             select
               day_rentings.f_space_id
@@ -247,10 +249,12 @@
                 OR rule.is_morning_ok = 0
 
                 OR day_rentings.`status` != 2
-                AND day_rentings.date = #{date}
+                AND day_rentings.date_begin = #{dateBegin}
                 AND rule.f_space_id = day_rentings.f_space_id
         )
         AND rule.f_community_id = #{communityId}
+        AND rule.f_community_id = community.id
+
         AND rule.status = 1;
     </select>
 

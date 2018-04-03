@@ -5,9 +5,14 @@ package space.qmen.lot.model.param;
  */
 
 import lombok.Data;
+import lombok.experimental.Accessors;
 
 
+@Accessors(chain = true)
 @Data
 public class CommunitySpaceAvailableParam extends SpaceAvailableParam {
     private long communityId;
+
+    // 搜索关键词
+//    private String keyword;
 }

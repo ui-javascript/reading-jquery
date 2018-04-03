@@ -9,9 +9,16 @@ import space.qmen.lot.model.entity.Community;
 public class SpaceAvailableVO extends Community {
     private Integer spaceCount;
     private Long[] spaceIdList;
+
+    // 空车位数LEVEL
     private Integer level;
+
+    // 历史交易次数
+    private Integer historyOrderNum;
 
     public SpaceAvailableVO() {
         this.spaceCount = 0;
+        this.historyOrderNum = 0;
     }
+
 }

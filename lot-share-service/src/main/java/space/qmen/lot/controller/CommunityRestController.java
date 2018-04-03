@@ -65,6 +65,8 @@ public class CommunityRestController {
         return ResultUtil.getResultWithSuccess();
     }
 
+    @Deprecated
+    @ApiIgnore
     @ApiOperation("根据(省市)区的AreaID获取小区及其经纬度")
     @RequestMapping(value = "/community/area/{id}", method = RequestMethod.GET)
     public Object listCommunityByAreaId(@PathVariable("id") Long id) {

@@ -89,7 +89,8 @@
 
     <parameterMap id="ListOrderParam" type="space.qmen.lot.model.param.OrderParam"/>
     <resultMap id="OwnerOrderMap" type="space.qmen.lot.model.dto.OwnerOrderDTO">
-        <result column="date" property="date" />
+        <result column="date_begin" property="dateBegin" />
+        <result column="date_end" property="dateEnd" />
         <result column="period_type" property="periodType" />
         <result column="renter_name" property="renterName" />
         <result column="icon" property="icon" />
@@ -106,7 +107,8 @@
     </resultMap>
     <select id="listOrderByOwnerId" resultMap="OwnerOrderMap" parameterMap="ListOrderParam">
         select
-          day_status.date,
+          day_status.date_begin,
+          day_status.date_end,
           day_status.period_type,
             `user`.`real_name` AS renter_name,
           `user`.icon,
@@ -138,6 +140,17 @@
           AND `order`.f_vehicle_id = vehicle.id
           AND day_status.f_owner_id = #{userId}
           AND `order`.`status` = #{orderStatus};
+    </select>
+
+    <!-- 某小区的历史交易订单次数 -->
+    <select id="getOrderHistoryNum" resultType="java.lang.Integer" parameterType="java.lang.Long">
+        select
+          count(*)
+        from
+          `order`
+        where
+          `order`.f_community_id = #{communityId}
+          AND `order`.status != 2
     </select>
 
 </mapper>
