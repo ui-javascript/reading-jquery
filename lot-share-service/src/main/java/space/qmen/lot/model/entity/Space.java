@@ -1,5 +1,6 @@
 package space.qmen.lot.model.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import lombok.experimental.Accessors;
 
@@ -20,5 +21,7 @@ public class Space {
     private String description;
     private Date gmtCreate;
     private Date gmtModified;
+
+    @JsonIgnore
     private Integer isDeleted;
 }

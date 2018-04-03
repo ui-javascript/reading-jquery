@@ -38,6 +38,26 @@
         where id = #{id}
     </select>
 
+    <select id="getCommunityPolicyById" resultType="space.qmen.lot.model.entity.CommunityPolicy" parameterType="java.lang.Long">
+        select
+          id,
+          f_community_id,
+          owner_benifit_percent,
+          community_benifit_percent,
+          timeout_unit_price,
+          unit_price,
+          morning_begin_time,
+          morning_end_time,
+          afternoon_begin_time,
+          afternoon_end_time,
+          gmt_create,
+          gmt_modified
+        FROM
+            lk_community_policy
+        WHERE
+            f_community_id = #{id}
+    </select>
+
     <!-- 根据AreaId获取小区 -->
     <select id="listCommunityByAreaId" resultMap="BaseResultMap" parameterType="java.lang.Long">
         select

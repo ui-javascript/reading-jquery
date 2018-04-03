@@ -80,5 +80,10 @@ public class CommunityRestController {
         return ResultUtil.getResultWithSuccess(communityService.listCommunityByOwnerId());
     }
 
+    @ApiOperation("根据id获取小区车位共享开放")
+    @RequestMapping(value = "/community-policy/{id}", method = RequestMethod.GET)
+    public Object getCommunityPolicyById(@PathVariable("id") Long id) {
+        return ResultUtil.getResultWithSuccess(communityService.getCommunityPolicyById(id));
+    }
 
 }

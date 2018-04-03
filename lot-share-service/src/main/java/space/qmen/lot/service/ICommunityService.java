@@ -2,12 +2,14 @@ package space.qmen.lot.service;
 
 import space.qmen.lot.model.dto.CommunitySelectDTO;
 import space.qmen.lot.model.entity.Community;
+import space.qmen.lot.model.entity.CommunityPolicy;
 
 import java.util.List;
 
 public interface ICommunityService {
     List<Community> listCommunity();
     Community getCommunityById(Long id);
+    CommunityPolicy getCommunityPolicyById(Long id);
 
     Long deleteCommunity(Long id);
 

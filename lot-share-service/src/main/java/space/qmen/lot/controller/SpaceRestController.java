@@ -27,6 +27,12 @@ public class SpaceRestController {
         return ResultUtil.getResultWithSuccess(spaceService.getSpaceById(id));
     }
 
+    @ApiOperation("根据id获取车位详细信息")
+    @RequestMapping(value = "/space-info/{id}", method = RequestMethod.GET)
+    public Object getSpaceInfoById(@PathVariable("id") Long id) {
+        return ResultUtil.getResultWithSuccess(spaceService.getSpaceInfoById(id));
+    }
+
     @ApiIgnore()
     @ApiOperation("获取所有车位")
     @RequestMapping(value = "/space", method = RequestMethod.GET)
@@ -74,7 +80,7 @@ public class SpaceRestController {
     @ApiOperation("获取某Community的可租用车位数")
     @RequestMapping(value = "/community-space-available", method = RequestMethod.GET)
     public Object listCommunitySpaceAvailable(CommunitySpaceAvailableParam communitySpaceAvailableParam) {
-        return ResultUtil.getResultWithSuccess(spaceService.listSpaceAvailable(communitySpaceAvailableParam));
+        return ResultUtil.getResultWithSuccess(spaceService.listCommunitySpaceAvailable(communitySpaceAvailableParam));
     }
 
     @ApiOperation("获取某Area的可租用车位数")

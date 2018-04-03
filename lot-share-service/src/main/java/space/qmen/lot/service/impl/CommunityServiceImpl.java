@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import space.qmen.lot.dao.CommunityDao;
 import space.qmen.lot.model.dto.CommunitySelectDTO;
 import space.qmen.lot.model.entity.Community;
+import space.qmen.lot.model.entity.CommunityPolicy;
 import space.qmen.lot.service.ICommunityService;
 
 import java.util.List;
@@ -22,6 +23,9 @@ public class CommunityServiceImpl implements ICommunityService {
 
     @Override
     public Community getCommunityById(Long id) { return communityDao.getCommunityById(id); }
+
+    @Override
+    public CommunityPolicy getCommunityPolicyById(Long id) { return communityDao.getCommunityPolicyById(id); }
 
     @Override
     public Long deleteCommunity(Long id) {

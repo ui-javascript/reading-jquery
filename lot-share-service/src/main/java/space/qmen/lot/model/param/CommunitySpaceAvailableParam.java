@@ -1,7 +1,7 @@
 package space.qmen.lot.model.param;
 
 /**
- * 获取当前可用车位数
+ * 获取mou当前可用车位数
  */
 
 import lombok.Data;

@@ -33,6 +33,34 @@
         where id = #{id}
     </select>
 
+    <select id="getSpaceInfoById" resultType="space.qmen.lot.model.dto.SpaceInfoDTO" parameterType="java.lang.Long">
+        select
+          `space`.id,
+          `space`.`code`,
+          `space`.`name`,
+          `space`.space_area,
+          `space`.`level`,
+          `space`.score,
+          `space`.description,
+          `space`.gmt_create,
+          `space`.gmt_modified,
+          `space`.is_deleted,
+          `zone`.`name` AS zone_name,
+          `user`.`real_name` AS owner_name,
+          `user`.tel AS owner_tel
+        from
+            space,
+            lk_space_week_renting_rule  AS rule,
+            `zone`,
+            `user`
+        where
+            `space`.id = #{id}
+            AND `space`.id = rule.f_space_id
+            AND  rule.f_zone_id = zone.id
+            AND rule.f_owner_id = `user`.id
+    </select>
+
+
     <!-- 显示所有车位 -->
     <select id="listSpace" resultMap="BaseResultMap">
         select
