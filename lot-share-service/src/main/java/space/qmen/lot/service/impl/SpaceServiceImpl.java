@@ -9,14 +9,12 @@ import space.qmen.lot.dao.SpaceDao;
 import space.qmen.lot.model.dto.SpaceDayRentingStatusDTO;
 import space.qmen.lot.model.dto.SpaceDetailsDTO;
 import space.qmen.lot.model.dto.SpaceInfoDTO;
+import space.qmen.lot.model.dto.SpaceWeekRuleDTO;
 import space.qmen.lot.model.entity.Community;
 import space.qmen.lot.model.entity.CommunityPolicy;
 import space.qmen.lot.model.entity.Space;
 import space.qmen.lot.model.param.*;
-import space.qmen.lot.model.vo.CommunitySpaceVO;
-import space.qmen.lot.model.vo.SpaceAvailableVO;
-import space.qmen.lot.model.vo.SpaceDayRentingStatusVO;
-import space.qmen.lot.model.vo.SpaceWeekRentingStatusVO;
+import space.qmen.lot.model.vo.*;
 import space.qmen.lot.service.ISpaceService;
 import space.qmen.lot.utils.timeUtils.DateUtil;
 
@@ -122,6 +120,55 @@ public class SpaceServiceImpl implements ISpaceService {
         return weekStatusVO;
     }
 
+    @Override
+    public LongSpaceRentingStatusVO getSpaceLongRentingStatus(SpaceWeekRentingStatusParam spaceWeekRentingStatusParam) {
+        LongSpaceRentingStatusVO vo = new LongSpaceRentingStatusVO();
+
+        List<WeekSpaceRentingStatusVO> statusList = new ArrayList<>();
+        HashMap<String, int[]> ruleList = new HashMap<>();
+
+        int[] nextArr = {0,1,2,3};
+        for (int i : nextArr) {
+            String start = DateUtil.getWeekDays(i)[0];
+            int year = DateUtil.getWeekOfYear(start)[0];
+            int weekOfYear = DateUtil.getWeekOfYear(start)[1];
+            String fromDate = DateUtil.getDateInRangeWeekDate(start)[0].toString();
+            String toDate = DateUtil.getDateInRangeWeekDate(start)[6].toString();
+            WeekSpaceRentingStatusVO weekVo = new WeekSpaceRentingStatusVO();
+            weekVo.setFromDate(fromDate)
+                    .setToDate(toDate)
+                    .setWeekOfYear(weekOfYear)
+                    .setYear(year);
+            statusList.add(weekVo);
+        }
+
+
+        SpaceWeekRuleDTO rule = spaceDao.getSpaceRuleBySpaceId(spaceWeekRentingStatusParam.getSpaceId());
+        int spaceStatus = rule.getStatus();
+        int[] weekRuleList = new int[7];
+        if (spaceStatus == 1) {
+            // 允许开放
+            weekRuleList[0] = rule.getIsMonOk();
+            weekRuleList[1] = rule.getIsTueOk();
+            weekRuleList[2] = rule.getIsWedOk();
+            weekRuleList[3] = rule.getIsThurOk();
+            weekRuleList[4] = rule.getIsFriOk();
+            weekRuleList[5] = rule.getIsSatOk();
+            weekRuleList[6] = rule.getIsSunOk();
+
+            vo.setIsMorningOk(rule.getIsMorningOk());
+            vo.setIsAfternoonOk(rule.getIsAfternoonOk());
+            vo.setIsFestivalOk(rule.getIsFestivalOk());
+
+        } else {
+            // 禁用或不开放
+
+        }
+
+        vo.setWeekStatusList(statusList);
+        vo.setWeekRuleList(weekRuleList);
+        return vo;
+    }
 
     @Override
     public Integer getSpaceCollectionStatus(SpaceCollectionParam spaceCollectionParam) {

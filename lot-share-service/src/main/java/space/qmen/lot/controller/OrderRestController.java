@@ -32,7 +32,7 @@ public class OrderRestController {
         return ResultUtil.getResultWithSuccess(orderService.listOrder());
     }
 
-    @ApiOperation("新增订单")
+    @ApiOperation("新增订单(包括短租与长租)")
     @RequestMapping(value = "/order", method = RequestMethod.POST)
     public Object saveOrder(@RequestBody OrderRentingParam orderRentingParam) {
         orderService.saveOrder(orderRentingParam);

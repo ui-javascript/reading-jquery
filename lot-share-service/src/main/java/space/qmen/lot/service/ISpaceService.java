@@ -6,10 +6,7 @@ import space.qmen.lot.model.dto.SpaceDetailsDTO;
 import space.qmen.lot.model.dto.SpaceInfoDTO;
 import space.qmen.lot.model.entity.Space;
 import space.qmen.lot.model.param.*;
-import space.qmen.lot.model.vo.CommunitySpaceVO;
-import space.qmen.lot.model.vo.SpaceAvailableVO;
-import space.qmen.lot.model.vo.SpaceDayRentingStatusVO;
-import space.qmen.lot.model.vo.SpaceWeekRentingStatusVO;
+import space.qmen.lot.model.vo.*;
 
 import java.util.List;
 import java.util.Map;
@@ -32,7 +29,8 @@ public interface ISpaceService {
     SpaceDayRentingStatusDTO getSpaceDayRentingStatus(SpaceDayRentingStatusParam spaceDayRentingStatusParam);
     SpaceWeekRentingStatusVO getSpaceWeekRentingStatus(SpaceWeekRentingStatusParam spaceWeekRentingStatusParam);
 
-
+    // 获取长租情况
+    LongSpaceRentingStatusVO getSpaceLongRentingStatus(SpaceWeekRentingStatusParam spaceWeekRentingStatusParam);
 
     Long saveSpace(SpaceParam space);
     Long saveSpaceCollection(SpaceCollectionParam spaceCollectionParam);

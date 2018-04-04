@@ -3,7 +3,9 @@ package space.qmen.lot.service.impl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import space.qmen.lot.dao.OrderDao;
+import space.qmen.lot.dao.SpaceDao;
 import space.qmen.lot.model.dto.OwnerOrderDTO;
+import space.qmen.lot.model.dto.SpaceWeekRuleDTO;
 import space.qmen.lot.model.entity.Order;
 import space.qmen.lot.model.param.OrderParam;
 import space.qmen.lot.model.param.OrderRentingParam;
@@ -16,6 +18,9 @@ import java.util.List;
 public class OrderServiceImpl implements IOrderService {
     @Autowired
     private OrderDao orderDao;
+
+    @Autowired
+    private SpaceDao spaceDao;
 
     @Override
     public List<Order> listOrder(){
@@ -32,7 +37,13 @@ public class OrderServiceImpl implements IOrderService {
 
     @Override
     public Long saveOrder(OrderRentingParam orderRentingParam) {
+        int periodType = orderRentingParam.getPeriodType();
 
+        // 长租,则添加规则号
+        if (periodType == 3) {
+            SpaceWeekRuleDTO spaceRule = spaceDao.getSpaceRuleBySpaceId(orderRentingParam.getSpaceId());
+            orderRentingParam.setRuleId(spaceRule.getRuleId());
+        }
         orderDao.saveOrderRentingStatus(orderRentingParam);
         return orderDao.saveOrderFirstly();
     }

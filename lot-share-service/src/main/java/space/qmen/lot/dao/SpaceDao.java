@@ -4,6 +4,7 @@ import org.apache.ibatis.annotations.Param;
 import space.qmen.lot.model.dto.SpaceDayRentingStatusDTO;
 import space.qmen.lot.model.dto.SpaceDetailsDTO;
 import space.qmen.lot.model.dto.SpaceInfoDTO;
+import space.qmen.lot.model.dto.SpaceWeekRuleDTO;
 import space.qmen.lot.model.entity.Space;
 import space.qmen.lot.model.param.*;
 
@@ -15,7 +16,7 @@ public interface SpaceDao {
     Long[] getSpaceCollectionStatus(SpaceCollectionParam spaceCollectionParam);
     SpaceInfoDTO getSpaceInfoById(@Param("id") Long id);
     SpaceDayRentingStatusDTO getSpaceDayRentingStatus(SpaceDayRentingStatusParam spaceDayRentingStatusParam);
-
+    SpaceWeekRuleDTO getSpaceRuleBySpaceId(Long spaceId);
 
     Long saveSpace(SpaceParam space);
     Long saveSpaceCollection(SpaceCollectionParam spaceCollectionParam);

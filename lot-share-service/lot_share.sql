@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50720
 File Encoding         : 65001
 
-Date: 2018-04-05 01:42:41
+Date: 2018-04-05 03:52:12
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -207,13 +207,14 @@ CREATE TABLE `lk_space_day_renting_status` (
   CONSTRAINT `fk_space_id_status` FOREIGN KEY (`f_space_id`) REFERENCES `space` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `lk_space_day_renting_status_ibfk_1` FOREIGN KEY (`f_rule_id`) REFERENCES `lk_space_week_renting_rule` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `lk_space_day_renting_status_ibfk_2` FOREIGN KEY (`f_vehicle_id`) REFERENCES `vehicle` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of lk_space_day_renting_status
 -- ----------------------------
-INSERT INTO `lk_space_day_renting_status` VALUES ('3', '2018-04-01', '2018-04-04', '0', '10', '3', '1', '1', '2018-03-30 20:40:24', '2018-04-04 20:27:38', '0');
+INSERT INTO `lk_space_day_renting_status` VALUES ('3', '2018-04-01', '2018-04-05', '0', '10', '3', '1', '1', '2018-03-30 20:40:24', '2018-04-05 02:02:23', '0');
 INSERT INTO `lk_space_day_renting_status` VALUES ('4', '2018-03-01', '2018-03-02', '3', '3', '3', '1', '1', '2018-04-03 16:49:33', '2018-04-04 20:27:41', '0');
+INSERT INTO `lk_space_day_renting_status` VALUES ('9', '2018-04-04', '2018-04-04', '0', null, '3', '1', '1', '2018-04-05 02:28:13', '2018-04-05 02:28:13', '0');
 
 -- ----------------------------
 -- Table structure for lk_space_week_renting_rule
@@ -439,8 +440,8 @@ CREATE TABLE `order` (
   `actual_payment` decimal(10,2) DEFAULT NULL COMMENT '实际支付',
   `f_actual_payment_bill_id` bigint(20) DEFAULT NULL COMMENT '实际支付账单号',
   `order_score` decimal(2,1) DEFAULT NULL COMMENT '车位打分',
-  `gmt_create` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `order_level` tinyint(1) DEFAULT NULL COMMENT '车位等级',
+  `gmt_create` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `gmt_modified` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `status` tinyint(1) NOT NULL DEFAULT '0' COMMENT '订单状态(0:预订->1:支付完成进行中->2:已完成;3:已取消)',
   PRIMARY KEY (`id`),
@@ -450,13 +451,14 @@ CREATE TABLE `order` (
   CONSTRAINT `fk_actual_payment_bill_id` FOREIGN KEY (`f_actual_payment_bill_id`) REFERENCES `bill` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `fk_pre_payment_bill_id` FOREIGN KEY (`f_pre_payment_bill_id`) REFERENCES `bill` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `fk_renting_status_id` FOREIGN KEY (`f_renting_status_id`) REFERENCES `lk_space_day_renting_status` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of order
 -- ----------------------------
-INSERT INTO `order` VALUES ('2', '1', '3', '哇哈哈哈哈哈', null, null, null, null, null, null, '0.00', '0', null, null, '100.00', '2', null, '2018-03-26 23:56:32', null, '2018-04-04 16:56:31', '0');
-INSERT INTO `order` VALUES ('7', '1', '4', null, null, null, null, null, null, null, '0.00', '0', null, null, '200.00', '3', null, '2018-04-01 16:45:55', null, '2018-04-04 16:56:36', '0');
+INSERT INTO `order` VALUES ('2', '1', '3', '哇哈哈哈哈哈', null, null, null, null, null, null, '0.00', '0', null, null, '100.00', '2', null, null, '2018-03-26 23:56:32', '2018-04-04 16:56:31', '0');
+INSERT INTO `order` VALUES ('7', '1', '4', null, null, null, null, null, null, null, '0.00', '0', null, null, '200.00', '3', null, null, '2018-04-01 16:45:55', '2018-04-04 16:56:36', '0');
+INSERT INTO `order` VALUES ('10', '0', '9', null, null, null, null, null, null, null, '0.00', '0', null, null, null, null, null, null, '2018-04-05 02:28:13', '2018-04-05 02:28:13', '0');
 
 -- ----------------------------
 -- Table structure for pay_ali

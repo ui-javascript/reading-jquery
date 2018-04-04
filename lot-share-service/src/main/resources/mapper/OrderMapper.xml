@@ -60,22 +60,29 @@
     <!-- 新增车位租用状态 -->
     <insert id="saveOrderRentingStatus" parameterType="space.qmen.lot.model.param.OrderRentingParam" useGeneratedKeys="true" keyProperty="id">
         insert into
-          lk_space_day_renting_status(
+          lk_space_day_renting_status
+        <trim prefix="(" suffix=")" suffixOverrides=",">
             date_begin,
             date_end,
             period_type,
             f_renter_id,
             f_space_id,
-            f_vehicle_id
-            )
-        values(
-          #{dateBegin},
-          #{dateEnd},
-          #{periodType},
-          #{renterId},
-          #{spaceId},
-          #{vehicleId}
-        );
+            f_vehicle_id,
+            <if test="ruleId != null">f_rule_id,</if>
+        </trim>
+
+        values
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            #{dateBegin},
+            #{dateEnd},
+            #{periodType},
+            #{renterId},
+            #{spaceId},
+            #{vehicleId},
+            <if test="ruleId != null">
+                #{ruleId},
+            </if>
+        </trim>
     </insert>
 
     <!-- 进紧接上一步新增订单 -->

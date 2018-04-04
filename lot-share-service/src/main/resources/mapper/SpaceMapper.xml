@@ -33,6 +33,29 @@
         where id = #{id}
     </select>
 
+    <!-- 根据id获取车位 -->
+    <select id="getSpaceRuleBySpaceId" resultType="space.qmen.lot.model.dto.SpaceWeekRuleDTO" parameterType="java.lang.Long">
+        select
+            id AS rule_id,
+            is_mon_ok,
+            is_tue_ok,
+            is_wed_ok,
+            is_thur_ok,
+            is_fri_ok,
+            is_sat_ok,
+            is_sun_ok,
+            is_morning_ok,
+            is_afternoon_ok,
+            is_festival_ok,
+            `status`
+        from
+            lk_space_week_renting_rule
+        where
+            f_space_id = #{spaceId}
+          AND is_deleted = 0
+    </select>
+
+
     <select id="getSpaceDayRentingStatus" resultType="space.qmen.lot.model.dto.SpaceDayRentingStatusDTO" parameterType="space.qmen.lot.model.param.SpaceDayRentingStatusParam">
         select
             day_rentings.f_renter_id AS renter_id,

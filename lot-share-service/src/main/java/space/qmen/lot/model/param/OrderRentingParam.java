@@ -1,5 +1,6 @@
 package space.qmen.lot.model.param;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import lombok.experimental.Accessors;
 
@@ -12,7 +13,10 @@ public class OrderRentingParam {
     private Date dateEnd;
     private Integer periodType;
     private Long renterId;
+
+    @JsonIgnore
+    private Long ruleId;
+
     private Long spaceId;
     private Long vehicleId;
-
 }

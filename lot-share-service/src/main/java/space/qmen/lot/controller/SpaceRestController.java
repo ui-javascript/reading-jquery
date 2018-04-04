@@ -45,6 +45,12 @@ public class SpaceRestController {
         return ResultUtil.getResultWithSuccess(spaceService.getSpaceWeekRentingStatus(spaceWeekRentingStatusParam));
     }
 
+    @ApiOperation("获取某车位长租(往后的四星期)的开放情况")
+    @RequestMapping(value = "/space-long-rentings-status", method = RequestMethod.POST)
+    public Object getSpaceLongRentingStatus(SpaceWeekRentingStatusParam spaceWeekRentingStatusParam) {
+        return ResultUtil.getResultWithSuccess(spaceService.getSpaceLongRentingStatus(spaceWeekRentingStatusParam));
+    }
+
     @ApiIgnore()
     @ApiOperation("获取所有车位")
     @RequestMapping(value = "/space", method = RequestMethod.GET)
