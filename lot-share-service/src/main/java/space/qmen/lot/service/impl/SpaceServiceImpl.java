@@ -16,6 +16,7 @@ import space.qmen.lot.model.vo.CommunitySpaceVO;
 import space.qmen.lot.model.vo.SpaceAvailableVO;
 import space.qmen.lot.service.ISpaceService;
 
+import javax.validation.Valid;
 import java.util.*;
 import java.util.List;
 
@@ -66,7 +67,10 @@ public class SpaceServiceImpl implements ISpaceService {
     }
 
     @Override
-    public Long updateSpaceRule(WeekRuleParam weekRuleParam) { return spaceDao.updateSpaceRule(weekRuleParam); }
+    public Long updateSpaceRule(@Valid WeekRuleParam weekRuleParam) {
+        spaceDao.deleteSpaceRuleSoftly(weekRuleParam.getSpaceId());
+        return spaceDao.updateSpaceRule(weekRuleParam);
+    }
 
 
     @Override

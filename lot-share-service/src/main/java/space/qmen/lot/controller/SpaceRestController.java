@@ -13,6 +13,8 @@ import space.qmen.lot.service.ISpaceService;
 import space.qmen.lot.utils.ResultUtil;
 import springfox.documentation.annotations.ApiIgnore;
 
+import javax.validation.Valid;
+
 @Api(value="车位", tags={"车位"})
 @RequestMapping("/api/v1")
 @RestController
@@ -71,8 +73,8 @@ public class SpaceRestController {
     }
 
     @ApiOperation("根据车位id更新车位开放规则")
-    @RequestMapping(value = "/space-rule", method = RequestMethod.PUT)
-    public Object updateSpaceRule(@RequestBody WeekRuleParam weekRuleParam) {
+    @RequestMapping(value = "/space-rule", method = RequestMethod.POST)
+    public Object updateSpaceRule(@Valid @RequestBody WeekRuleParam weekRuleParam) {
         spaceService.updateSpaceRule(weekRuleParam);
         return ResultUtil.getResultWithSuccess();
     }
@@ -88,7 +90,6 @@ public class SpaceRestController {
     public Object listAreaSpaceAvailable(AreaSpaceAvailableParam areaSpaceAvailableParam) {
         return ResultUtil.getResultWithSuccess(spaceService.listAreaSpaceAvailable(areaSpaceAvailableParam));
     }
-
 
 
 }
