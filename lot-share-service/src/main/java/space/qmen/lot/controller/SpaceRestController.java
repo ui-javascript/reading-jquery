@@ -39,7 +39,7 @@ public class SpaceRestController {
         return ResultUtil.getResultWithSuccess(spaceService.getSpaceInfoById(id));
     }
 
-    @ApiOperation("获取当前某车位的开放情况")
+    @ApiOperation("获取某车位当前周的开放情况")
     @RequestMapping(value = "/space-week-rentings-status", method = RequestMethod.POST)
     public Object getSpaceWeekRentingStatus(SpaceWeekRentingStatusParam spaceWeekRentingStatusParam) {
         return ResultUtil.getResultWithSuccess(spaceService.getSpaceWeekRentingStatus(spaceWeekRentingStatusParam));

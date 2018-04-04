@@ -240,12 +240,14 @@ public class SpaceServiceImpl implements ISpaceService {
 
                 // 查询该小区空车位
                 Community community = communityDao.getCommunityById(ids);
+                CommunityPolicy policy = communityDao.getCommunityPolicyById(ids);
                 Integer historyNum = orderDao.getOrderHistoryNum(ids);
                 SpaceAvailableVO vo = new SpaceAvailableVO();
                 BeanUtils.copyProperties(community, vo);
                 vo.setSpaceIdList(list)
                   .setSpaceCount(list.length)
-                    .setHistoryOrderNum(historyNum);
+                    .setHistoryOrderNum(historyNum)
+                  .setUnitPrice(policy.getUnitPrice());
 //
                 if (list.length < LEVEL_LOW_NUM) {
                     levelLow++;
@@ -265,10 +267,13 @@ public class SpaceServiceImpl implements ISpaceService {
 
         }
 
-        result.put("spaceList", resultList);
-        result.put("levelLow", levelLow);
-        result.put("levelMiddle", levelMiddle);
-        result.put("levelHigh", levelHigh);
+        HashMap<String, Integer> levelMap = new HashMap<>();
+        levelMap.put("low", levelLow);
+        levelMap.put("middle", levelMiddle);
+        levelMap.put("high", levelHigh);
+
+        result.put("communityList", resultList);
+        result.put("level", levelMap);
 
         return result;
     }
