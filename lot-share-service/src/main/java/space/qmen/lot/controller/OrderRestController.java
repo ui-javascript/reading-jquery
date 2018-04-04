@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import space.qmen.lot.model.entity.Order;
 import space.qmen.lot.model.param.OrderParam;
+import space.qmen.lot.model.param.OrderRentingParam;
 import space.qmen.lot.service.IOrderService;
 import space.qmen.lot.utils.ResultUtil;
 import springfox.documentation.annotations.ApiIgnore;
@@ -31,11 +32,10 @@ public class OrderRestController {
         return ResultUtil.getResultWithSuccess(orderService.listOrder());
     }
 
-    @ApiIgnore
     @ApiOperation("新增订单")
     @RequestMapping(value = "/order", method = RequestMethod.POST)
-    public Object saveOrder(@RequestBody Order order) {
-        orderService.saveOrder(order);
+    public Object saveOrder(@RequestBody OrderRentingParam orderRentingParam) {
+        orderService.saveOrder(orderRentingParam);
         return ResultUtil.getResultWithSuccess();
     }
 

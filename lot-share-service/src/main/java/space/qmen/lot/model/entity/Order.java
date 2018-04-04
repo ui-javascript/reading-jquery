@@ -31,5 +31,5 @@ public class Order {
 
     // 用户打分反馈
     private Double orderScore;
-    private Integer orderevel;
+    private Integer orderLevel;
 }

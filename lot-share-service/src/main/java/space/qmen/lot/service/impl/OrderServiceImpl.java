@@ -6,6 +6,7 @@ import space.qmen.lot.dao.OrderDao;
 import space.qmen.lot.model.dto.OwnerOrderDTO;
 import space.qmen.lot.model.entity.Order;
 import space.qmen.lot.model.param.OrderParam;
+import space.qmen.lot.model.param.OrderRentingParam;
 import space.qmen.lot.model.vo.OrderHistoryOrderVO;
 import space.qmen.lot.service.IOrderService;
 
@@ -30,7 +31,11 @@ public class OrderServiceImpl implements IOrderService {
     }
 
     @Override
-    public Long saveOrder(Order order) { return orderDao.saveOrder(order); }
+    public Long saveOrder(OrderRentingParam orderRentingParam) {
+
+        orderDao.saveOrderRentingStatus(orderRentingParam);
+        return orderDao.saveOrderFirstly();
+    }
 
     @Override
     public Long updateOrder(Order order) { return orderDao.updateOrder(order); }

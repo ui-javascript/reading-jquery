@@ -57,6 +57,34 @@
         (null,#{orderType})
     </insert>
 
+    <!-- 新增车位租用状态 -->
+    <insert id="saveOrderRentingStatus" parameterType="space.qmen.lot.model.param.OrderRentingParam" useGeneratedKeys="true" keyProperty="id">
+        insert into
+          lk_space_day_renting_status(
+            date_begin,
+            date_end,
+            period_type,
+            f_renter_id,
+            f_space_id,
+            f_vehicle_id
+            )
+        values(
+          #{dateBegin},
+          #{dateEnd},
+          #{periodType},
+          #{renterId},
+          #{spaceId},
+          #{vehicleId}
+        );
+    </insert>
+
+    <!-- 进紧接上一步新增订单 -->
+    <insert id="saveOrderFirstly" useGeneratedKeys="true" keyProperty="id">
+        insert into `order`(order_type, f_renting_status_id)
+        values(0, (SELECT LAST_INSERT_ID()))
+    </insert>
+
+
     <!--更新账单-->
     <update id="updateOrder" parameterMap="Order">
         update `order`
