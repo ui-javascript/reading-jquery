@@ -6,11 +6,6 @@
         <result column="id" property="id" />
         <result column="order_type" property="orderType" />
         <result column="order_description" property="orderDescription" />
-        <result column="f_renter_id" property="fRenterId" />
-        <result column="f_owner_id" property="fOwnerId" />
-        <result column="f_space_id" property="fSpaceId" />
-        <result column="f_space_info" property="fSpaceInfo" />
-        <result column="f_community_id" property="fCommunityId" />
         <result column="unit_price" property="unitPirce" />
         <result column="duration" property="duration" />
         <result column="expected_payment" property="expectedPayment" />
@@ -27,11 +22,8 @@
 
     <parameterMap id="Order" type="space.qmen.lot.model.entity.Order"/>
     <sql id="Base_Column_List">
-        id, order_type,order_description,
-        f_renter_id,
-        f_owner_id,
-        f_space_id, f_space_info,
-        f_community_id,
+        id,
+        order_type,order_description,
         unit_price, duration, expected_payment,
         reduction, reduction_description,
         pre_payment, f_pre_payment_bill_id,
@@ -56,15 +48,13 @@
         from `order`
     </select>
 
-    <!-- 新增账单 -->
+    <!-- 新增订单 -->
     <insert id="saveOrder" parameterMap="Order" useGeneratedKeys="true" keyProperty="id">
         insert into
         `order`
-        (id, order_type,
-          f_renter_id, f_owner_id, f_space_id)
+        (id, order_type)
         values
-        (null,#{orderType},
-          #{fRenterId}, #{fOwnerId}, #{fSpaceId})
+        (null,#{orderType})
     </insert>
 
     <!--更新账单-->
@@ -132,12 +122,12 @@
           vehicle,
           `order`
         where
-          `order`.f_renter_id = `user`.id
-          AND `order`.f_community_id = policy.f_community_id
-          AND `order`.f_community_id = community.id
-          AND `order`.f_space_id = `space`.id
-          AND `order`.f_renting_status_id = day_status.id
-          AND `order`.f_vehicle_id = vehicle.id
+          `order`.f_renting_status_id = day_status.id
+          AND day_status.f_renter_id = `user`.id
+          AND day_status.f_community_id = policy.f_community_id
+          AND day_status.f_community_id = community.id
+          AND day_status.f_space_id = `space`.id
+          AND day_status.f_vehicle_id = vehicle.id
           AND day_status.f_owner_id = #{userId}
           AND `order`.`status` = #{orderStatus};
     </select>
@@ -147,9 +137,12 @@
         select
           count(*)
         from
-          `order`
+          `order`,
+          lk_space_day_renting_status AS day_rentings
         where
-          `order`.f_community_id = #{communityId}
+
+          `order`.f_renting_status_id = day_rentings.id
+          AND day_rentings.f_community_id = #{communityId}
           AND `order`.status != 2
     </select>
 

@@ -1,6 +1,10 @@
 package space.qmen.lot.utils.timeUtils;
 
 import java.text.SimpleDateFormat;
+import java.time.DayOfWeek;
+import java.time.LocalDate;
+import java.time.temporal.TemporalAdjuster;
+import java.time.temporal.TemporalAdjusters;
 import java.util.Date;
 
 import java.text.DateFormat;
@@ -729,5 +733,32 @@ public class DateUtil {
                 break;
         }
         return week;
+    }
+
+
+    /**
+     * 获取某一天所在周的日期的数组
+     */
+    public static LocalDate[] getDateInRangeWeekDate(String date) {
+        LocalDate inputDate = LocalDate.parse(date);
+        TemporalAdjuster MON_OF_WEEK = TemporalAdjusters.ofDateAdjuster(localDate -> localDate.minusDays(localDate.getDayOfWeek().getValue()- DayOfWeek.MONDAY.getValue()));
+        TemporalAdjuster TUE_OF_WEEK = TemporalAdjusters.ofDateAdjuster(localDate -> localDate.minusDays(localDate.getDayOfWeek().getValue()- DayOfWeek.TUESDAY.getValue()));
+        TemporalAdjuster WED_OF_WEEK = TemporalAdjusters.ofDateAdjuster(localDate -> localDate.minusDays(localDate.getDayOfWeek().getValue()- DayOfWeek.WEDNESDAY.getValue()));
+        TemporalAdjuster THUR_OF_WEEK = TemporalAdjusters.ofDateAdjuster(localDate -> localDate.minusDays(localDate.getDayOfWeek().getValue()- DayOfWeek.THURSDAY.getValue()));
+        TemporalAdjuster FRI_OF_WEEK = TemporalAdjusters.ofDateAdjuster(localDate -> localDate.minusDays(localDate.getDayOfWeek().getValue()- DayOfWeek.FRIDAY.getValue()));
+        TemporalAdjuster SAT_OF_WEEK = TemporalAdjusters.ofDateAdjuster(localDate -> localDate.minusDays(localDate.getDayOfWeek().getValue()- DayOfWeek.SATURDAY.getValue()));
+        TemporalAdjuster SUN_OF_WEEK = TemporalAdjusters.ofDateAdjuster(localDate -> localDate.plusDays(DayOfWeek.SUNDAY.getValue() - localDate.getDayOfWeek().getValue()));
+
+        LocalDate[] result = {
+            inputDate.with(MON_OF_WEEK),
+            inputDate.with(TUE_OF_WEEK),
+            inputDate.with(WED_OF_WEEK),
+            inputDate.with(THUR_OF_WEEK),
+            inputDate.with(FRI_OF_WEEK),
+            inputDate.with(SAT_OF_WEEK),
+            inputDate.with(SUN_OF_WEEK),
+        };
+
+        return result;
     }
 }

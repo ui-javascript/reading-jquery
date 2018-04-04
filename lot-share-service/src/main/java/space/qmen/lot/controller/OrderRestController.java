@@ -31,7 +31,7 @@ public class OrderRestController {
         return ResultUtil.getResultWithSuccess(orderService.listOrder());
     }
 
-
+    @ApiIgnore
     @ApiOperation("新增订单")
     @RequestMapping(value = "/order", method = RequestMethod.POST)
     public Object saveOrder(@RequestBody Order order) {

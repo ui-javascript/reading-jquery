@@ -11,14 +11,7 @@ public class Order {
     private Long id;
     private Integer orderType;
     private Long fRentingStatusId;
-
     private String orderDescription;
-    private Long fRenterId;
-    private Long fOwnerId;
-    private Long fSpaceId;
-    private String fSpaceInfo;
-    private Long fVehicleId;
-    private Long fCommunityId;
     private Double unitPrice;
     private Double duration;
     private Double timeoutUnitPrice;
@@ -34,4 +27,9 @@ public class Order {
     private Date gmtCreate;
     private Date gmtModified;
     private Integer status;
+
+
+    // 用户打分反馈
+    private Double orderScore;
+    private Integer orderevel;
 }

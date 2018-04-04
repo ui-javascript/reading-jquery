@@ -115,6 +115,7 @@
         from
 						bill,
             `order`,
+            				lk_space_day_renting_status AS day_rentings,
             vehicle,
             `user`
         where
@@ -124,13 +125,14 @@
             AND month(bill.gmt_create) = #{walletMonth}
 
 						AND `order`.f_actual_payment_bill_id = bill.id
+                        AND `order`.f_renting_status_id = day_rentings.id
             AND bill.to_account_id =
                 (
                 select pay_ali.account_alipay_id
                 from pay_ali
                 where pay_ali.f_user_id = #{userId}
                 )
-            AND `order`.f_vehicle_id = vehicle.id
+            AND day_rentings.f_vehicle_id = vehicle.id
             AND bill.from_user_id = `user`.id
         )
 
@@ -148,6 +150,7 @@
         from
 						bill,
             `order`,
+            lk_space_day_renting_status AS day_rentings,
             vehicle,
             `user`
         where
@@ -157,13 +160,14 @@
             AND month(bill.gmt_create) = #{walletMonth}
 
 						AND `order`.f_actual_payment_bill_id = bill.id
+						AND `order`.f_renting_status_id = day_rentings.id
             AND bill.to_account_id =
                 (
                 select pay_ali.account_alipay_id
                 from pay_ali
                 where pay_ali.f_user_id = #{userId}
                 )
-            AND `order`.f_vehicle_id = vehicle.id
+            AND day_rentings.f_vehicle_id = vehicle.id
             AND bill.from_user_id = `user`.id
 
         )
@@ -182,6 +186,7 @@
         from
 						bill,
             `order`,
+            lk_space_day_renting_status AS day_rentings,
             vehicle,
             `user`,
             pay_bank
@@ -192,13 +197,14 @@
             AND month(bill.gmt_create) = #{walletMonth}
 
 						AND `order`.f_actual_payment_bill_id = bill.id
+						AND `order`.f_renting_status_id = day_rentings.id
             AND bill.to_account_id =
                 (
                 select pay_ali.account_alipay_id
                 from pay_ali
                 where pay_ali.f_user_id = #{userId}
                 )
-            AND `order`.f_vehicle_id = vehicle.id
+            AND day_rentings.f_vehicle_id = vehicle.id
             AND bill.from_user_id = `user`.id
             AND pay_bank.f_user_id = bill.to_user_id
         )
