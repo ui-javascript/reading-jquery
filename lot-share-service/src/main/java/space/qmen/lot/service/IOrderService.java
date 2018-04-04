@@ -4,6 +4,7 @@ package space.qmen.lot.service;
 import space.qmen.lot.model.dto.OwnerOrderDTO;
 import space.qmen.lot.model.entity.Order;
 import space.qmen.lot.model.param.OrderParam;
+import space.qmen.lot.model.vo.OrderHistoryOrderVO;
 
 import java.util.List;
 
@@ -18,4 +19,5 @@ public interface IOrderService {
     // 自定义
     // 业主订单
     List<OwnerOrderDTO> listOrderByOwnerId(OrderParam orderParam);
+    List<OrderHistoryOrderVO> listSpaceHistoryOrder(Long spaceId);
 }

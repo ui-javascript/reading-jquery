@@ -6,6 +6,7 @@ import space.qmen.lot.dao.OrderDao;
 import space.qmen.lot.model.dto.OwnerOrderDTO;
 import space.qmen.lot.model.entity.Order;
 import space.qmen.lot.model.param.OrderParam;
+import space.qmen.lot.model.vo.OrderHistoryOrderVO;
 import space.qmen.lot.service.IOrderService;
 
 import java.util.List;
@@ -38,4 +39,9 @@ public class OrderServiceImpl implements IOrderService {
     public List<OwnerOrderDTO> listOrderByOwnerId(OrderParam orderParam){
         return orderDao.listOrderByOwnerId(orderParam);
     }
+
+    @Override
+    public List<OrderHistoryOrderVO> listSpaceHistoryOrder(Long spaceId) {
+        return orderDao.listSpaceHistoryOrder(spaceId);
+    };
 }

@@ -6,7 +6,7 @@ import space.qmen.lot.dao.BillDao;
 import space.qmen.lot.model.dto.BillDetailsDTO;
 import space.qmen.lot.model.entity.Bill;
 import space.qmen.lot.model.param.WalletParam;
-import space.qmen.lot.model.vo.IncomeCharts;
+import space.qmen.lot.model.vo.IncomeChartsVO;
 import space.qmen.lot.service.IBillService;
 
 import java.util.List;
@@ -42,8 +42,8 @@ public class BillServiceImpl implements IBillService {
     public List<BillDetailsDTO> listBillDetails(WalletParam walletParam) { return billDao.listBillDetails(walletParam); }
 
     @Override
-    public IncomeCharts listOwnerIncomeCharts(WalletParam walletParam) {
-        IncomeCharts charts = new IncomeCharts(walletParam);
+    public IncomeChartsVO listOwnerIncomeCharts(WalletParam walletParam) {
+        IncomeChartsVO charts = new IncomeChartsVO(walletParam);
         int dayOfWeek;
 
         try {

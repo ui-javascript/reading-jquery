@@ -146,4 +146,32 @@
           AND `order`.status != 2
     </select>
 
+    <!-- 车位的历史订单 -->
+    <select id="listSpaceHistoryOrder" resultType="space.qmen.lot.model.vo.OrderHistoryOrderVO" parameterType="java.lang.Long">
+        SELECT
+            `order`.order_type,
+          `order`.`status` AS order_status,
+          bill.bill_amount,
+          day_rentings.period_type,
+            day_rentings.date_begin,
+            day_rentings.date_end,
+          policy.morning_begin_time,
+          policy.morning_end_time,
+          policy.afternoon_begin_time,
+          policy.afternoon_end_time,
+            `order`.order_level,
+          `order`.order_score
+        FROM
+            `order`,
+            lk_space_day_renting_status AS day_rentings,
+            bill,
+          lk_community_policy AS policy
+        WHERE
+            `order`.f_renting_status_id = day_rentings.id
+          AND day_rentings.f_community_id = policy.f_community_id
+          AND `order`.f_actual_payment_bill_id = bill.id
+          AND day_rentings.f_space_id = #{spaceId};
+    </select>
+
+
 </mapper>

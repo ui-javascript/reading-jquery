@@ -5,11 +5,11 @@ import space.qmen.lot.model.param.WalletParam;
 import space.qmen.lot.utils.timeUtils.DateUtil;
 
 @Data
-public class IncomeCharts {
+public class IncomeChartsVO {
     private int[] dayList;
     private double[] incomeList;
 
-    public IncomeCharts (WalletParam walletParam) {
+    public IncomeChartsVO(WalletParam walletParam) {
         int year = walletParam.getWalletYear();
         int month = walletParam.getWalletMonth();
 

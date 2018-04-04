@@ -63,4 +63,10 @@ public class OrderRestController {
         return ResultUtil.getResultWithSuccess(orderService.listOrderByOwnerId(orderParam));
     }
 
+    @ApiOperation("获取车位历史订单")
+    @RequestMapping(value = "/space-history-order/{id}", method = RequestMethod.GET)
+    public Object listSpaceHistoryOrder(@PathVariable("id") Long id) {
+        return ResultUtil.getResultWithSuccess(orderService.listSpaceHistoryOrder(id));
+    }
+
 }

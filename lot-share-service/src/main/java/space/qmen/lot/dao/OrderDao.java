@@ -4,6 +4,7 @@ import org.apache.ibatis.annotations.Param;
 import space.qmen.lot.model.dto.OwnerOrderDTO;
 import space.qmen.lot.model.entity.Order;
 import space.qmen.lot.model.param.OrderParam;
+import space.qmen.lot.model.vo.OrderHistoryOrderVO;
 
 import java.util.List;
 
@@ -18,4 +19,6 @@ public interface OrderDao {
     // 自定义
     List<OwnerOrderDTO> listOrderByOwnerId(OrderParam orderParam);
     Integer getOrderHistoryNum(Long communityId);
+
+    List<OrderHistoryOrderVO> listSpaceHistoryOrder(Long spaceId);
 }
