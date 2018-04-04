@@ -5,10 +5,7 @@ import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import space.qmen.lot.model.entity.Space;
-import space.qmen.lot.model.param.AreaSpaceAvailableParam;
-import space.qmen.lot.model.param.CommunitySpaceAvailableParam;
-import space.qmen.lot.model.param.SpaceParam;
-import space.qmen.lot.model.param.WeekRuleParam;
+import space.qmen.lot.model.param.*;
 import space.qmen.lot.service.ISpaceService;
 import space.qmen.lot.utils.ResultUtil;
 import springfox.documentation.annotations.ApiIgnore;
@@ -29,6 +26,12 @@ public class SpaceRestController {
         return ResultUtil.getResultWithSuccess(spaceService.getSpaceById(id));
     }
 
+    @ApiOperation("查询车位收藏状态")
+    @RequestMapping(value = "/is-space-collected", method = RequestMethod.GET)
+    public Object getSpaceById(SpaceCollectionParam spaceCollectionParam) {
+        return ResultUtil.getResultWithSuccess(spaceService.getSpaceCollectionStatus(spaceCollectionParam));
+    }
+
     @ApiOperation("根据id获取车位详细信息")
     @RequestMapping(value = "/space-info/{id}", method = RequestMethod.GET)
     public Object getSpaceInfoById(@PathVariable("id") Long id) {
@@ -46,6 +49,13 @@ public class SpaceRestController {
     @RequestMapping(value = "/space", method = RequestMethod.POST)
     public Object saveSpace(@RequestBody SpaceParam space) {
         spaceService.saveSpace(space);
+        return ResultUtil.getResultWithSuccess();
+    }
+
+    @ApiOperation("收藏/取消收藏 车位")
+    @RequestMapping(value = "/collect-space", method = RequestMethod.POST)
+    public Object saveSpaceCollection(@RequestBody SpaceCollectionParam spaceCollectionParam) {
+        spaceService.saveSpaceCollection(spaceCollectionParam);
         return ResultUtil.getResultWithSuccess();
     }
 
@@ -90,6 +100,5 @@ public class SpaceRestController {
     public Object listAreaSpaceAvailable(AreaSpaceAvailableParam areaSpaceAvailableParam) {
         return ResultUtil.getResultWithSuccess(spaceService.listAreaSpaceAvailable(areaSpaceAvailableParam));
     }
-
 
 }

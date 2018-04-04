@@ -33,6 +33,18 @@
         where id = #{id}
     </select>
 
+    <select id="getSpaceCollectionStatus" resultType="java.lang.Long" parameterType="space.qmen.lot.model.param.SpaceCollectionParam">
+        select
+            f_space_id
+        from
+            lk_collection_user_space
+        where
+            f_space_id = #{spaceId}
+          AND f_user_id = #{userId}
+          AND `status` = 1
+    </select>
+
+
     <select id="getSpaceInfoById" resultType="space.qmen.lot.model.dto.SpaceInfoDTO" parameterType="java.lang.Long">
         select
           `space`.id,
@@ -106,6 +118,12 @@
         </trim>
     </insert>
 
+    <!-- 新增收藏车位 -->
+    <insert id="saveSpaceCollection" parameterType="space.qmen.lot.model.param.SpaceCollectionParam" useGeneratedKeys="true" keyProperty="id">
+        insert into lk_collection_user_space(f_user_id, f_space_id, `status`)
+        values(#{userId},#{spaceId},#{status})
+        ON DUPLICATE KEY UPDATE f_user_id =#{userId}, `status` = #{status}
+    </insert>
 
     <!--更新车位-->
     <update id="updateSpace" parameterMap="Space">

@@ -4,10 +4,7 @@ package space.qmen.lot.service;
 import space.qmen.lot.model.dto.SpaceDetailsDTO;
 import space.qmen.lot.model.dto.SpaceInfoDTO;
 import space.qmen.lot.model.entity.Space;
-import space.qmen.lot.model.param.AreaSpaceAvailableParam;
-import space.qmen.lot.model.param.CommunitySpaceAvailableParam;
-import space.qmen.lot.model.param.SpaceParam;
-import space.qmen.lot.model.param.WeekRuleParam;
+import space.qmen.lot.model.param.*;
 import space.qmen.lot.model.vo.CommunitySpaceVO;
 import space.qmen.lot.model.vo.SpaceAvailableVO;
 
@@ -17,10 +14,14 @@ import java.util.Map;
 public interface ISpaceService {
     List<Space> listSpace();
     Space getSpaceById(Long id);
+    Integer getSpaceCollectionStatus(SpaceCollectionParam spaceCollectionParam);
     SpaceInfoDTO getSpaceInfoById(Long id);
     Long deleteSpace(Long id);
 
     Long saveSpace(SpaceParam space);
+    Long saveSpaceCollection(SpaceCollectionParam spaceCollectionParam);
+
+
     Long updateSpace(Space space);
 
     // 自定义

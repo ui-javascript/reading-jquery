@@ -48,6 +48,15 @@ public class SpaceServiceImpl implements ISpaceService {
     public Space getSpaceById(Long id) { return spaceDao.getSpaceById(id); }
 
     @Override
+    public Integer getSpaceCollectionStatus(SpaceCollectionParam spaceCollectionParam) {
+        Long[] ids = spaceDao.getSpaceCollectionStatus(spaceCollectionParam);
+        if (ids.length == 0) {
+            return 0;
+        }
+        return 1;
+    }
+
+    @Override
     public SpaceInfoDTO getSpaceInfoById(Long id) { return spaceDao.getSpaceInfoById(id); }
 
     @Override
@@ -57,6 +66,11 @@ public class SpaceServiceImpl implements ISpaceService {
 
     @Override
     public Long saveSpace(SpaceParam space) { return spaceDao.saveSpace(space); }
+
+    @Override
+    public Long saveSpaceCollection(SpaceCollectionParam spaceCollectionParam) {
+        return spaceDao.saveSpaceCollection(spaceCollectionParam);
+    }
 
     @Override
     public Long updateSpace(Space space) { return spaceDao.updateSpace(space); }
