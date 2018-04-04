@@ -119,16 +119,18 @@
           `space`,
           `user`,
           lk_space_day_renting_status AS day_rentings,
+          lk_user_community_zone_space AS uczs,
           vehicle,
           `order`
         where
           `order`.f_renting_status_id = day_rentings.id
           AND day_rentings.f_renter_id = `user`.id
-          AND day_rentings.f_community_id = policy.f_community_id
-          AND day_rentings.f_community_id = community.id
+          AND uczs.f_community_id = policy.f_community_id
+          AND day_rentings.f_space_id = uczs.f_space_id
+          AND uczs.f_community_id = community.id
           AND day_rentings.f_space_id = `space`.id
           AND day_rentings.f_vehicle_id = vehicle.id
-          AND day_rentings.f_owner_id = #{userId}
+          AND uczs.f_owner_id = #{userId}
           AND `order`.`status` = #{orderStatus};
     </select>
 
@@ -138,11 +140,13 @@
           count(*)
         from
           `order`,
-          lk_space_day_renting_status AS day_rentings
+          lk_space_day_renting_status AS day_rentings,
+          lk_user_community_zone_space As uczs
         where
 
           `order`.f_renting_status_id = day_rentings.id
-          AND day_rentings.f_community_id = #{communityId}
+          AND day_rentings.f_space_id = uczs.f_space_id
+          AND uczs.f_community_id = #{communityId}
           AND `order`.status != 2
     </select>
 
@@ -165,10 +169,12 @@
             `order`,
             lk_space_day_renting_status AS day_rentings,
             bill,
-          lk_community_policy AS policy
+          lk_community_policy AS policy,
+          lk_user_community_zone_space AS uczs
         WHERE
             `order`.f_renting_status_id = day_rentings.id
-          AND day_rentings.f_community_id = policy.f_community_id
+            AND uczs.f_space_id = day_rentings.f_space_id
+          AND uczs.f_community_id = policy.f_community_id
           AND `order`.f_actual_payment_bill_id = bill.id
           AND day_rentings.f_space_id = #{spaceId};
     </select>
