@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import space.qmen.lot.model.entity.Space;
 import space.qmen.lot.model.param.*;
+import space.qmen.lot.model.vo.SpaceWeekRentingStatusVO;
 import space.qmen.lot.service.ISpaceService;
 import space.qmen.lot.utils.ResultUtil;
 import springfox.documentation.annotations.ApiIgnore;
@@ -36,6 +37,12 @@ public class SpaceRestController {
     @RequestMapping(value = "/space-info/{id}", method = RequestMethod.GET)
     public Object getSpaceInfoById(@PathVariable("id") Long id) {
         return ResultUtil.getResultWithSuccess(spaceService.getSpaceInfoById(id));
+    }
+
+    @ApiOperation("获取当前某车位的开放情况")
+    @RequestMapping(value = "/space-week-rentings-status", method = RequestMethod.POST)
+    public Object getSpaceWeekRentingStatus(SpaceWeekRentingStatusParam spaceWeekRentingStatusParam) {
+        return ResultUtil.getResultWithSuccess(spaceService.getSpaceWeekRentingStatus(spaceWeekRentingStatusParam));
     }
 
     @ApiIgnore()

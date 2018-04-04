@@ -3,17 +3,17 @@
 <mapper namespace="space.qmen.lot.dao.SpaceDao">
 
     <resultMap id="BaseResultMap" type="space.qmen.lot.model.entity.Space">
-        <result column="id" property="id" />
-        <result column="code" property="code" />
-        <result column="name" property="name" />
-        <result column="icon" property="icon" />
-        <result column="space_area" property="spaceArea" />
-        <result column="level" property="level" />
-        <result column="score" property="score" />
-        <result column="description" property="description" />
-        <result column="gmt_create" jdbcType="TIMESTAMP" property="gmtCreate" />
-        <result column="gmt_modified" jdbcType="TIMESTAMP" property="gmtModified" />
-        <result column="is_deleted" property="isDeleted" />
+        <result column="id" property="id"/>
+        <result column="code" property="code"/>
+        <result column="name" property="name"/>
+        <result column="icon" property="icon"/>
+        <result column="space_area" property="spaceArea"/>
+        <result column="level" property="level"/>
+        <result column="score" property="score"/>
+        <result column="description" property="description"/>
+        <result column="gmt_create" jdbcType="TIMESTAMP" property="gmtCreate"/>
+        <result column="gmt_modified" jdbcType="TIMESTAMP" property="gmtModified"/>
+        <result column="is_deleted" property="isDeleted"/>
     </resultMap>
 
     <parameterMap id="Space" type="space.qmen.lot.model.entity.Space"/>
@@ -28,12 +28,25 @@
     <!-- 根据id获取车位 -->
     <select id="getSpaceById" resultMap="BaseResultMap" parameterType="java.lang.Long">
         select
-        <include refid="Base_Column_List" />
+        <include refid="Base_Column_List"/>
         from `space`
         where id = #{id}
     </select>
 
-    <select id="getSpaceCollectionStatus" resultType="java.lang.Long" parameterType="space.qmen.lot.model.param.SpaceCollectionParam">
+    <select id="getSpaceDayRentingStatus" resultType="space.qmen.lot.model.dto.SpaceDayRentingStatusDTO" parameterType="space.qmen.lot.model.param.SpaceDayRentingStatusParam">
+        select
+            day_rentings.f_renter_id AS renter_id,
+            day_rentings.period_type
+        from
+            lk_space_day_renting_status AS day_rentings
+        where
+            day_rentings.date_begin = #{date}
+            AND day_rentings.f_space_id = #{spaceId}
+            AND day_rentings.is_deleted = 0;
+    </select>
+
+    <select id="getSpaceCollectionStatus" resultType="java.lang.Long"
+            parameterType="space.qmen.lot.model.param.SpaceCollectionParam">
         select
             f_space_id
         from
@@ -79,7 +92,7 @@
     <!-- 显示所有车位 -->
     <select id="listSpace" resultMap="BaseResultMap">
         select
-        <include refid="Base_Column_List" />
+        <include refid="Base_Column_List"/>
         from `space`
     </select>
 
@@ -88,18 +101,10 @@
     <insert id="saveSpace" parameterMap="SaveSpaceParam" useGeneratedKeys="true" keyProperty="id">
         insert into `space`
         <trim prefix="(" suffix=")" suffixOverrides=",">
-            <if test="code != null">
-                code,
-            </if>
-            <if test="name != null">
-                `name`,
-            </if>
-            <if test="spaceArea != null">
-                space_area,
-            </if>
-            <if test="description != null">
-                description,
-            </if>
+            <if test="code != null">code,</if>
+            <if test="name != null">`name`,</if>
+            <if test="spaceArea != null">space_area,</if>
+            <if test="description != null">description,</if>
         </trim>
         values
         <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -119,7 +124,8 @@
     </insert>
 
     <!-- 新增收藏车位 -->
-    <insert id="saveSpaceCollection" parameterType="space.qmen.lot.model.param.SpaceCollectionParam" useGeneratedKeys="true" keyProperty="id">
+    <insert id="saveSpaceCollection" parameterType="space.qmen.lot.model.param.SpaceCollectionParam"
+            useGeneratedKeys="true" keyProperty="id">
         insert into lk_collection_user_space(f_user_id, f_space_id, `status`)
         values(#{userId},#{spaceId},#{status})
         ON DUPLICATE KEY UPDATE f_user_id =#{userId}, `status` = #{status}
@@ -163,21 +169,21 @@
 
 
     <resultMap id="SpaceDetailsDTOMap" type="space.qmen.lot.model.dto.SpaceDetailsDTO">
-        <result column="f_owner_id" property="ownerId" />
-        <result column="f_community_id" property="communityId" />
-        <result column="f_space_id" property="spaceId" />
-        <result column="f_zone_id" property="zoneId" />
-        <result column="community_name" property="communityName" />
-        <result column="code" property="code" />
-        <result column="morning_begin_time" property="morningBeginTime" />
-        <result column="morning_end_time" property="morningEndTime" />
-        <result column="afternoon_begin_time" property="afternoonBeginTime" />
-        <result column="afternoon_end_time" property="afternoonEndTime" />
-        <result column="owner_benifit_percent" property="ownerBenifitPercent" />
-        <result column="unit_price" property="unitPrice" />
-        <result column="is_morning_ok" property="isMorningOk" />
-        <result column="is_afternoon_ok" property="isAfternoonOk" />
-        <result column="status" property="status" />
+        <result column="f_owner_id" property="ownerId"/>
+        <result column="f_community_id" property="communityId"/>
+        <result column="f_space_id" property="spaceId"/>
+        <result column="f_zone_id" property="zoneId"/>
+        <result column="community_name" property="communityName"/>
+        <result column="code" property="code"/>
+        <result column="morning_begin_time" property="morningBeginTime"/>
+        <result column="morning_end_time" property="morningEndTime"/>
+        <result column="afternoon_begin_time" property="afternoonBeginTime"/>
+        <result column="afternoon_end_time" property="afternoonEndTime"/>
+        <result column="owner_benifit_percent" property="ownerBenifitPercent"/>
+        <result column="unit_price" property="unitPrice"/>
+        <result column="is_morning_ok" property="isMorningOk"/>
+        <result column="is_afternoon_ok" property="isAfternoonOk"/>
+        <result column="status" property="status"/>
     </resultMap>
     <!-- 根据业主id获取车位详细信息 -->
     <select id="listSpaceDetailsByOwnerId" resultMap="SpaceDetailsDTOMap" parameterType="java.lang.Long">
@@ -285,7 +291,7 @@
                 OR rule.is_afternoon_ok = 0
                 OR rule.is_morning_ok = 0
 
-                OR day_rentings.`status` != 2
+                OR day_rentings.is_deleted = 0
                 AND day_rentings.date_begin = #{dateBegin}
                 AND rule.f_space_id = day_rentings.f_space_id
         )

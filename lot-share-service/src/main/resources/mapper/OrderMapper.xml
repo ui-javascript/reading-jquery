@@ -97,9 +97,9 @@
     </resultMap>
     <select id="listOrderByOwnerId" resultMap="OwnerOrderMap" parameterMap="ListOrderParam">
         select
-          day_status.date_begin,
-          day_status.date_end,
-          day_status.period_type,
+          day_rentings.date_begin,
+          day_rentings.date_end,
+          day_rentings.period_type,
             `user`.`real_name` AS renter_name,
           `user`.icon,
           community.`name` AS community_name,
@@ -118,17 +118,17 @@
           community,
           `space`,
           `user`,
-          lk_space_day_renting_status AS day_status,
+          lk_space_day_renting_status AS day_rentings,
           vehicle,
           `order`
         where
-          `order`.f_renting_status_id = day_status.id
-          AND day_status.f_renter_id = `user`.id
-          AND day_status.f_community_id = policy.f_community_id
-          AND day_status.f_community_id = community.id
-          AND day_status.f_space_id = `space`.id
-          AND day_status.f_vehicle_id = vehicle.id
-          AND day_status.f_owner_id = #{userId}
+          `order`.f_renting_status_id = day_rentings.id
+          AND day_rentings.f_renter_id = `user`.id
+          AND day_rentings.f_community_id = policy.f_community_id
+          AND day_rentings.f_community_id = community.id
+          AND day_rentings.f_space_id = `space`.id
+          AND day_rentings.f_vehicle_id = vehicle.id
+          AND day_rentings.f_owner_id = #{userId}
           AND `order`.`status` = #{orderStatus};
     </select>
 

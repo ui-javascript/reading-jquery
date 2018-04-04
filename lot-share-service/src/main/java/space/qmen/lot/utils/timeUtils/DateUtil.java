@@ -521,6 +521,22 @@ public class DateUtil {
     }
 
     /**
+     * 字符串转java.sql.date
+     **/
+    public static java.sql.Date strToSQLDate(String strDate) {
+        String str = strDate;
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+        java.util.Date d = null;
+        try {
+            d = format.parse(str);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        java.sql.Date date = new java.sql.Date(d.getTime());
+        return date;
+    }
+
+    /**
      * 按照"yyyy-MM-dd"格式将字符串date转换为日期对象
      *
      * @param date
@@ -705,31 +721,31 @@ public class DateUtil {
         return format.format(c.getTime());
     }
 
-    public static String getDateToWeek(Date date) {
+    public static Integer getDateToWeek(Date date) {
         Calendar calendar = Calendar.getInstance();
         calendar.setTime(date);
-        String week = "";
+        Integer week = 0;
         switch (calendar.get(Calendar.DAY_OF_WEEK)) {
             case 1:
-                week = "星期日";
+                week = 7;
                 break;
             case 2:
-                week = "星期一";
+                week = 1;
                 break;
             case 3:
-                week = "星期二";
+                week = 2;
                 break;
             case 4:
-                week = "星期三";
+                week = 3;
                 break;
             case 5:
-                week = "星期四";
+                week = 4;
                 break;
             case 6:
-                week = "星期五";
+                week = 4;
                 break;
             case 7:
-                week = "星期六";
+                week = 6;
                 break;
         }
         return week;

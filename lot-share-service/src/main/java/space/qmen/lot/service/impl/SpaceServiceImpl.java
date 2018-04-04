@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 import space.qmen.lot.dao.CommunityDao;
 import space.qmen.lot.dao.OrderDao;
 import space.qmen.lot.dao.SpaceDao;
+import space.qmen.lot.model.dto.SpaceDayRentingStatusDTO;
 import space.qmen.lot.model.dto.SpaceDetailsDTO;
 import space.qmen.lot.model.dto.SpaceInfoDTO;
 import space.qmen.lot.model.entity.Community;
@@ -14,9 +15,13 @@ import space.qmen.lot.model.entity.Space;
 import space.qmen.lot.model.param.*;
 import space.qmen.lot.model.vo.CommunitySpaceVO;
 import space.qmen.lot.model.vo.SpaceAvailableVO;
+import space.qmen.lot.model.vo.SpaceDayRentingStatusVO;
+import space.qmen.lot.model.vo.SpaceWeekRentingStatusVO;
 import space.qmen.lot.service.ISpaceService;
+import space.qmen.lot.utils.timeUtils.DateUtil;
 
 import javax.validation.Valid;
+import java.time.LocalDate;
 import java.util.*;
 import java.util.List;
 
@@ -48,6 +53,77 @@ public class SpaceServiceImpl implements ISpaceService {
     public Space getSpaceById(Long id) { return spaceDao.getSpaceById(id); }
 
     @Override
+    public SpaceDayRentingStatusDTO getSpaceDayRentingStatus(SpaceDayRentingStatusParam spaceDayRentingStatusParam) {
+        return spaceDao.getSpaceDayRentingStatus(spaceDayRentingStatusParam);
+    }
+
+    @Override
+    public SpaceWeekRentingStatusVO getSpaceWeekRentingStatus(SpaceWeekRentingStatusParam spaceWeekRentingStatusParam) {
+        Long spaceId = spaceWeekRentingStatusParam.getSpaceId();
+        Long userId = spaceWeekRentingStatusParam.getRenterId();
+        java.sql.Date currDate = spaceWeekRentingStatusParam.getDate();
+        SpaceWeekRentingStatusVO weekStatusVO = new SpaceWeekRentingStatusVO();
+        List<SpaceDayRentingStatusVO> weekList = new ArrayList<>();
+
+        // 遍历循环当前周
+        LocalDate[] dateRangeArr = DateUtil.getDateInRangeWeekDate(currDate.toString());
+        Integer w = 0;
+        for (LocalDate d : dateRangeArr) {
+            w++;
+
+            // 获取该车位某天的车位租用情况
+            SpaceDayRentingStatusVO dayStatusVO = new SpaceDayRentingStatusVO();
+            SpaceDayRentingStatusParam dayStatusParam = new SpaceDayRentingStatusParam();
+            dayStatusParam.setDate(DateUtil.strToSQLDate(d.toString()))
+                    .setSpaceId(spaceId);
+            SpaceDayRentingStatusDTO dayStatus = spaceDao.getSpaceDayRentingStatus(dayStatusParam);
+
+            dayStatusVO.setDayOfWeek(w);
+            dayStatusVO.setDate(DateUtil.strToSQLDate(d.toString()));
+
+            if (dayStatus != null) {
+                Integer periodType = dayStatus.getPeriodType();
+                Long renterId = dayStatus.getRenterId();
+
+                if (periodType == 0) {
+                    // 租上午
+                    dayStatusVO.setMorningStatus(0);
+                    if (renterId == userId) {
+                        dayStatusVO.setIsMorningMyself(1);
+                    }
+                } else if (periodType == 1) {
+                    // 租下午
+                    dayStatusVO.setAfternoonStatus(0);
+                    if (renterId == userId) {
+                        dayStatusVO.setIsAfternoonMyself(1);
+                    }
+                } else if (periodType == 2) {
+                    // 租全天
+                    dayStatusVO.setMorningStatus(0).setAfternoonStatus(0);
+                    if (renterId == userId) {
+                        dayStatusVO.setIsMorningMyself(1).setAfternoonStatus(1);
+                    }
+                } else {
+                    // 长期租用
+                }
+            }
+
+            weekList.add(dayStatusVO);
+        }
+
+
+        weekStatusVO.setCurrDate(currDate)
+                .setCurrDayOfWeek(DateUtil.getDateToWeek(currDate))
+                .setFromDate( DateUtil.strToSQLDate(dateRangeArr[0].toString()) )
+                .setToDate( DateUtil.strToSQLDate(dateRangeArr[6].toString()) )
+                .setWeekList(weekList);
+
+        // 返回结果
+        return weekStatusVO;
+    }
+
+
+    @Override
     public Integer getSpaceCollectionStatus(SpaceCollectionParam spaceCollectionParam) {
         Long[] ids = spaceDao.getSpaceCollectionStatus(spaceCollectionParam);
         if (ids.length == 0) {
@@ -55,6 +131,8 @@ public class SpaceServiceImpl implements ISpaceService {
         }
         return 1;
     }
+
+
 
     @Override
     public SpaceInfoDTO getSpaceInfoById(Long id) { return spaceDao.getSpaceInfoById(id); }
@@ -105,7 +183,7 @@ public class SpaceServiceImpl implements ISpaceService {
             idList = spaceDao.listSpaceAvailable(communitySpaceAvailableParam);
 
             for(Long id : idList) {
-                SpaceInfoDTO info = getSpaceInfoById (id);
+                SpaceInfoDTO info = getSpaceInfoById(id);
                 spaceInfoList.add(info);
             }
 
