@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50720
 File Encoding         : 65001
 
-Date: 2018-04-05 03:52:12
+Date: 2018-04-05 05:15:00
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -207,7 +207,7 @@ CREATE TABLE `lk_space_day_renting_status` (
   CONSTRAINT `fk_space_id_status` FOREIGN KEY (`f_space_id`) REFERENCES `space` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `lk_space_day_renting_status_ibfk_1` FOREIGN KEY (`f_rule_id`) REFERENCES `lk_space_week_renting_rule` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `lk_space_day_renting_status_ibfk_2` FOREIGN KEY (`f_vehicle_id`) REFERENCES `vehicle` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of lk_space_day_renting_status
@@ -215,6 +215,8 @@ CREATE TABLE `lk_space_day_renting_status` (
 INSERT INTO `lk_space_day_renting_status` VALUES ('3', '2018-04-01', '2018-04-05', '0', '10', '3', '1', '1', '2018-03-30 20:40:24', '2018-04-05 02:02:23', '0');
 INSERT INTO `lk_space_day_renting_status` VALUES ('4', '2018-03-01', '2018-03-02', '3', '3', '3', '1', '1', '2018-04-03 16:49:33', '2018-04-04 20:27:41', '0');
 INSERT INTO `lk_space_day_renting_status` VALUES ('9', '2018-04-04', '2018-04-04', '0', null, '3', '1', '1', '2018-04-05 02:28:13', '2018-04-05 02:28:13', '0');
+INSERT INTO `lk_space_day_renting_status` VALUES ('10', '2018-04-09', '2018-04-15', '3', null, '3', '1', '1', '2018-04-05 05:00:42', '2018-04-05 05:00:42', '0');
+INSERT INTO `lk_space_day_renting_status` VALUES ('11', '2018-04-09', '2018-04-15', '3', '11', '3', '1', '1', '2018-04-05 05:08:27', '2018-04-05 05:08:27', '0');
 
 -- ----------------------------
 -- Table structure for lk_space_week_renting_rule
@@ -254,7 +256,7 @@ INSERT INTO `lk_space_week_renting_rule` VALUES ('6', '1', '1', '1', '1', '1', '
 INSERT INTO `lk_space_week_renting_rule` VALUES ('7', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '1', '0', '2018-04-04 15:16:23', '2018-04-04 15:29:04', '0', '1');
 INSERT INTO `lk_space_week_renting_rule` VALUES ('8', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '2018-04-04 15:29:04', '2018-04-04 15:29:30', '1', '1');
 INSERT INTO `lk_space_week_renting_rule` VALUES ('10', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '1', '0', '2018-04-04 15:29:30', '2018-04-04 16:58:57', '0', '1');
-INSERT INTO `lk_space_week_renting_rule` VALUES ('11', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '0', '1', '2018-04-04 16:58:57', '2018-04-04 16:58:57', '1', '0');
+INSERT INTO `lk_space_week_renting_rule` VALUES ('11', '1', '1', '0', '1', '1', '1', '1', '1', '1', '1', '0', '1', '2018-04-04 16:58:57', '2018-04-05 04:48:39', '1', '0');
 
 -- ----------------------------
 -- Table structure for lk_sys_role_resource
@@ -451,7 +453,7 @@ CREATE TABLE `order` (
   CONSTRAINT `fk_actual_payment_bill_id` FOREIGN KEY (`f_actual_payment_bill_id`) REFERENCES `bill` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `fk_pre_payment_bill_id` FOREIGN KEY (`f_pre_payment_bill_id`) REFERENCES `bill` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `fk_renting_status_id` FOREIGN KEY (`f_renting_status_id`) REFERENCES `lk_space_day_renting_status` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of order
@@ -459,6 +461,8 @@ CREATE TABLE `order` (
 INSERT INTO `order` VALUES ('2', '1', '3', '哇哈哈哈哈哈', null, null, null, null, null, null, '0.00', '0', null, null, '100.00', '2', null, null, '2018-03-26 23:56:32', '2018-04-04 16:56:31', '0');
 INSERT INTO `order` VALUES ('7', '1', '4', null, null, null, null, null, null, null, '0.00', '0', null, null, '200.00', '3', null, null, '2018-04-01 16:45:55', '2018-04-04 16:56:36', '0');
 INSERT INTO `order` VALUES ('10', '0', '9', null, null, null, null, null, null, null, '0.00', '0', null, null, null, null, null, null, '2018-04-05 02:28:13', '2018-04-05 02:28:13', '0');
+INSERT INTO `order` VALUES ('11', '0', '10', null, null, null, null, null, null, null, '0.00', '0', null, null, null, null, null, null, '2018-04-05 05:00:42', '2018-04-05 05:00:42', '0');
+INSERT INTO `order` VALUES ('12', '0', '11', null, null, null, null, null, null, null, '0.00', '0', null, null, null, null, null, null, '2018-04-05 05:08:27', '2018-04-05 05:08:27', '0');
 
 -- ----------------------------
 -- Table structure for pay_ali

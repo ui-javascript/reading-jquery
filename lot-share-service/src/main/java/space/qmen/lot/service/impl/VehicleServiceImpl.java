@@ -19,6 +19,12 @@ public class VehicleServiceImpl implements IVehicleService {
     }
 
     @Override
+    public List<Vehicle> listVehicleByRenterId(Long renterId) {
+        return vehicleDao.listVehicleByRenterId(renterId);
+    }
+
+
+    @Override
     public Vehicle getVehicleById(Long id) { return vehicleDao.getVehicleById(id); }
 
     @Override

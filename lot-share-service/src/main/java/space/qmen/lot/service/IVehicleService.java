@@ -6,6 +6,8 @@ import java.util.List;
 
 public interface IVehicleService {
     List<Vehicle> listVehicle();
+    List<Vehicle> listVehicleByRenterId(Long ownerId);
+
     Vehicle getVehicleById(Long id);
     Long deleteVehicle(Long id);
 

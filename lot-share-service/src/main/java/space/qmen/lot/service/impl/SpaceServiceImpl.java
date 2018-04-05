@@ -47,6 +47,7 @@ public class SpaceServiceImpl implements ISpaceService {
         return spaceDao.listSpace();
     }
 
+
     @Override
     public Space getSpaceById(Long id) { return spaceDao.getSpaceById(id); }
 
@@ -127,7 +128,7 @@ public class SpaceServiceImpl implements ISpaceService {
         List<WeekSpaceRentingStatusVO> statusList = new ArrayList<>();
         HashMap<String, int[]> ruleList = new HashMap<>();
 
-        int[] nextArr = {0,1,2,3};
+        int[] nextArr = {1,2,3,4};
         for (int i : nextArr) {
             String start = DateUtil.getWeekDays(i)[0];
             int year = DateUtil.getWeekOfYear(start)[0];

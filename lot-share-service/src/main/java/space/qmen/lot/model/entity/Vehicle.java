@@ -1,6 +1,7 @@
 package space.qmen.lot.model.entity;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import lombok.experimental.Accessors;
 import space.qmen.lot.model.dto.BaseDTO;
@@ -15,7 +16,13 @@ public class Vehicle extends BaseDTO {
     private String plateNum;
     private Integer color;
     private String description;
+
+    @JsonIgnore
     private Date gmtCreate;
+
+    @JsonIgnore
     private Date gmtModified;
+
+    @JsonIgnore
     private Integer isDeleted;
 }

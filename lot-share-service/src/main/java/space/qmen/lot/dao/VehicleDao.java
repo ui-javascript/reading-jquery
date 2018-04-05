@@ -7,6 +7,8 @@ import java.util.List;
 
 public interface VehicleDao {
     List<Vehicle> listVehicle();
+    List<Vehicle> listVehicleByRenterId(Long renterId);
+
     Vehicle getVehicleById(@Param("id") Long id);
     Long deleteVehicle(Long id);
 
