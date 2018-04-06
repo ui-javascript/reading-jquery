@@ -40,6 +40,7 @@ public interface ISpaceService {
 
     Long updateSpace(Space space);
     Long updateSpaceRule(WeekRuleParam weekRuleParam);
+    Long updateUCZSUser(UCZSMatchUserParam uczsMatchUserParam);
 
 
 

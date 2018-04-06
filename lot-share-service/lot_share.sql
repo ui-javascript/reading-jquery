@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50720
 File Encoding         : 65001
 
-Date: 2018-04-05 05:15:00
+Date: 2018-04-06 16:36:30
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -102,9 +102,9 @@ CREATE TABLE `community` (
 -- ----------------------------
 -- Records of community
 -- ----------------------------
-INSERT INTO `community` VALUES ('4', '仓溢绿苑', '3', '001001001', '119.998059', '30.289628', '详细地址', null, 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1523330476&di=750f7996fcf6a61560b2374e497cd54f&imgtype=jpg&er=1&src=http%3A%2F%2Fimg1.youzy.cn%2Fcontent%2Fmedia%2Fthumbs%2Fp00129871_800.jpeg', null, '2018-03-25 19:25:19', '2018-04-03 11:21:22', '0');
-INSERT INTO `community` VALUES ('5', '西溪北苑', '3', null, '120.042085', '30.293071', '详细地址哇哈哈哈哈哈', null, null, null, '2018-03-25 19:25:39', '2018-04-02 19:53:50', '0');
-INSERT INTO `community` VALUES ('6', '西溪风情', '3', null, '120.043075', '30.284602', '余杭区文二西路', null, null, null, '2018-03-25 18:23:47', '2018-04-03 18:24:33', '0');
+INSERT INTO `community` VALUES ('4', '仓溢绿苑', '3', '001001001', '119.998059', '30.289628', '余杭区文一西路', '0', 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1523330476&di=750f7996fcf6a61560b2374e497cd54f&imgtype=jpg&er=1&src=http%3A%2F%2Fimg1.youzy.cn%2Fcontent%2Fmedia%2Fthumbs%2Fp00129871_800.jpeg', null, '2018-03-25 19:25:19', '2018-04-06 16:21:38', '0');
+INSERT INTO `community` VALUES ('5', '西溪北苑', '3', '001001001', '120.042085', '30.293071', '余杭区文一西路', '1', null, null, '2018-03-25 19:25:39', '2018-04-06 16:21:38', '0');
+INSERT INTO `community` VALUES ('6', '西溪风情', '3', '001001002', '120.043075', '30.284602', '余杭区文二西路', '2', null, null, '2018-03-25 18:23:47', '2018-04-06 16:21:40', '0');
 
 -- ----------------------------
 -- Table structure for lk_collection_user_community
@@ -152,7 +152,7 @@ CREATE TABLE `lk_collection_user_space` (
 -- ----------------------------
 -- Records of lk_collection_user_space
 -- ----------------------------
-INSERT INTO `lk_collection_user_space` VALUES ('26', '3', '1', '2018-04-04 19:00:43', '2018-04-04 19:26:24', '1', '0');
+INSERT INTO `lk_collection_user_space` VALUES ('26', '3', '1', '2018-04-04 19:00:43', '2018-04-05 19:36:31', '0', '0');
 
 -- ----------------------------
 -- Table structure for lk_community_policy
@@ -174,13 +174,14 @@ CREATE TABLE `lk_community_policy` (
   PRIMARY KEY (`id`),
   KEY `fk_community_id_lk_policy` (`f_community_id`),
   CONSTRAINT `fk_community_id_lk_policy` FOREIGN KEY (`f_community_id`) REFERENCES `community` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of lk_community_policy
 -- ----------------------------
 INSERT INTO `lk_community_policy` VALUES ('2', '4', '80.22', '100.22', '10.00', '10.20', '08:13:21', '11:35:28', '12:35:35', '18:13:43', '2018-03-29 21:34:10', '2018-03-31 11:46:33');
 INSERT INTO `lk_community_policy` VALUES ('3', '5', '90.12', '80.00', '10.00', '15.20', '08:00:00', '11:00:00', '12:00:00', '17:00:00', '2018-03-30 16:38:23', '2018-03-31 11:46:38');
+INSERT INTO `lk_community_policy` VALUES ('4', '6', '80.00', '80.00', '15.00', '10.00', '08:30:00', '11:00:00', '13:00:00', '18:00:00', '2018-04-06 16:33:29', '2018-04-06 16:33:29');
 
 -- ----------------------------
 -- Table structure for lk_space_day_renting_status
@@ -249,14 +250,14 @@ CREATE TABLE `lk_space_week_renting_rule` (
 -- Records of lk_space_week_renting_rule
 -- ----------------------------
 INSERT INTO `lk_space_week_renting_rule` VALUES ('2', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '2018-03-30 13:57:26', '2018-04-03 20:33:14', '1', '1');
-INSERT INTO `lk_space_week_renting_rule` VALUES ('3', '3', '1', '1', '1', '1', '1', '1', '0', '1', '1', '1', '0', '2018-03-30 21:19:56', '2018-04-03 13:35:07', '1', '0');
+INSERT INTO `lk_space_week_renting_rule` VALUES ('3', '3', '1', '1', '1', '1', '1', '1', '0', '1', '1', '1', '0', '2018-03-30 21:19:56', '2018-04-06 14:59:28', '1', '0');
 INSERT INTO `lk_space_week_renting_rule` VALUES ('4', '24', '1', '1', '1', '1', '1', '1', '0', '1', '1', '1', '0', '2018-03-31 16:22:09', '2018-04-03 13:35:09', '1', '0');
 INSERT INTO `lk_space_week_renting_rule` VALUES ('5', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '2018-04-03 21:39:55', '2018-04-03 21:40:12', '1', '1');
 INSERT INTO `lk_space_week_renting_rule` VALUES ('6', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '2018-04-03 21:40:12', '2018-04-04 15:16:23', '1', '1');
 INSERT INTO `lk_space_week_renting_rule` VALUES ('7', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '1', '0', '2018-04-04 15:16:23', '2018-04-04 15:29:04', '0', '1');
 INSERT INTO `lk_space_week_renting_rule` VALUES ('8', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '2018-04-04 15:29:04', '2018-04-04 15:29:30', '1', '1');
 INSERT INTO `lk_space_week_renting_rule` VALUES ('10', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '1', '0', '2018-04-04 15:29:30', '2018-04-04 16:58:57', '0', '1');
-INSERT INTO `lk_space_week_renting_rule` VALUES ('11', '1', '1', '0', '1', '1', '1', '1', '1', '1', '1', '0', '1', '2018-04-04 16:58:57', '2018-04-05 04:48:39', '1', '0');
+INSERT INTO `lk_space_week_renting_rule` VALUES ('11', '1', '1', '0', '1', '1', '1', '1', '1', '1', '1', '0', '1', '2018-04-04 16:58:57', '2018-04-06 15:00:45', '1', '0');
 
 -- ----------------------------
 -- Table structure for lk_sys_role_resource
@@ -329,7 +330,7 @@ INSERT INTO `lk_sys_user_role` VALUES ('5', '4', '3', '2018-03-23 22:05:09', nul
 DROP TABLE IF EXISTS `lk_user_community_zone_space`;
 CREATE TABLE `lk_user_community_zone_space` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `f_owner_id` bigint(20) DEFAULT NULL,
+  `f_owner_id` bigint(20) DEFAULT NULL COMMENT '尚未确定户主信息前',
   `f_community_id` bigint(20) NOT NULL,
   `f_zone_id` bigint(20) NOT NULL,
   `f_space_id` bigint(20) NOT NULL,
@@ -346,14 +347,24 @@ CREATE TABLE `lk_user_community_zone_space` (
   CONSTRAINT `lk_user_community_zone_space_ibfk_2` FOREIGN KEY (`f_community_id`) REFERENCES `community` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `lk_user_community_zone_space_ibfk_3` FOREIGN KEY (`f_zone_id`) REFERENCES `zone` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `lk_user_community_zone_space_ibfk_4` FOREIGN KEY (`f_space_id`) REFERENCES `space` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of lk_user_community_zone_space
 -- ----------------------------
-INSERT INTO `lk_user_community_zone_space` VALUES ('1', '3', '4', '1', '1', '2018-04-03 20:44:22', '2018-04-03 20:44:27', '1', '0');
-INSERT INTO `lk_user_community_zone_space` VALUES ('2', '3', '4', '1', '3', '2018-04-03 20:44:38', '2018-04-03 20:44:59', '1', '0');
+INSERT INTO `lk_user_community_zone_space` VALUES ('1', '3', '4', '1', '1', '2018-04-03 20:44:22', '2018-04-05 19:33:56', '1', '0');
+INSERT INTO `lk_user_community_zone_space` VALUES ('2', '3', '4', '1', '3', '2018-04-03 20:44:38', '2018-04-06 14:57:41', '1', '0');
 INSERT INTO `lk_user_community_zone_space` VALUES ('3', '4', '4', '1', '24', '2018-04-03 20:44:57', '2018-04-03 20:45:02', '1', '0');
+INSERT INTO `lk_user_community_zone_space` VALUES ('4', '3', '4', '1', '32', '2018-04-06 15:49:44', '2018-04-06 16:17:48', '1', '0');
+INSERT INTO `lk_user_community_zone_space` VALUES ('5', null, '4', '3', '33', '2018-04-06 16:29:22', '2018-04-06 16:29:22', '0', '0');
+INSERT INTO `lk_user_community_zone_space` VALUES ('6', null, '4', '3', '34', '2018-04-06 16:29:49', '2018-04-06 16:29:49', '0', '0');
+INSERT INTO `lk_user_community_zone_space` VALUES ('7', null, '4', '3', '35', '2018-04-06 16:30:02', '2018-04-06 16:30:02', '0', '0');
+INSERT INTO `lk_user_community_zone_space` VALUES ('8', null, '4', '3', '36', '2018-04-06 16:30:14', '2018-04-06 16:30:14', '0', '0');
+INSERT INTO `lk_user_community_zone_space` VALUES ('9', null, '5', '5', '37', '2018-04-06 16:31:05', '2018-04-06 16:31:05', '0', '0');
+INSERT INTO `lk_user_community_zone_space` VALUES ('10', null, '5', '5', '38', '2018-04-06 16:31:20', '2018-04-06 16:31:20', '0', '0');
+INSERT INTO `lk_user_community_zone_space` VALUES ('11', null, '5', '5', '39', '2018-04-06 16:31:38', '2018-04-06 16:31:38', '0', '0');
+INSERT INTO `lk_user_community_zone_space` VALUES ('12', null, '6', '7', '40', '2018-04-06 16:31:56', '2018-04-06 16:31:56', '0', '0');
+INSERT INTO `lk_user_community_zone_space` VALUES ('13', '3', '6', '7', '41', '2018-04-06 16:32:09', '2018-04-06 16:35:19', '1', '0');
 
 -- ----------------------------
 -- Table structure for lk_user_vehicle
@@ -607,18 +618,30 @@ CREATE TABLE `space` (
   `gmt_modified` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `is_deleted` tinyint(1) NOT NULL DEFAULT '0' COMMENT '软删除',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=42 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of space
 -- ----------------------------
 INSERT INTO `space` VALUES ('1', '12', '豪华车位1', null, '10.20', '1', '4.80', 'NICE，推荐', '2018-03-23 21:45:35', '2018-03-30 14:04:18', '0');
-INSERT INTO `space` VALUES ('3', '16', '新的车位', null, '10.00', '1', '5.30', 'hello', '2018-03-25 20:40:08', '2018-03-30 21:22:28', '0');
-INSERT INTO `space` VALUES ('24', '12', '测试', null, '10.22', null, null, '仅供测试', '2018-03-29 22:40:18', '2018-04-03 14:04:39', '0');
+INSERT INTO `space` VALUES ('3', '16', '新的车位', null, '10.00', '1', '4.90', 'hello', '2018-03-25 20:40:08', '2018-04-05 16:17:29', '0');
+INSERT INTO `space` VALUES ('24', '12', '测试', null, '10.22', null, '3.50', '仅供测试', '2018-03-29 22:40:18', '2018-04-05 19:59:17', '0');
 INSERT INTO `space` VALUES ('25', '12', '优异', null, '199.20', '5', '5.00', '新增测试', '2018-03-29 22:42:01', '2018-04-03 14:04:43', '0');
 INSERT INTO `space` VALUES ('27', '17', '章赛凤', null, null, null, null, '西溪花苑', '2018-03-30 16:44:59', '2018-03-30 16:44:59', '0');
 INSERT INTO `space` VALUES ('28', '10086', null, null, '10.22', null, null, '中国移动', '2018-03-30 19:51:38', '2018-03-30 19:51:38', '0');
 INSERT INTO `space` VALUES ('29', '556', '同', null, null, null, null, '颐和花园', '2018-03-31 21:18:29', '2018-03-31 21:18:29', '0');
+INSERT INTO `space` VALUES ('30', '545', 'j名', null, null, null, null, '西溪北苑', '2018-04-05 19:48:17', '2018-04-05 19:48:17', '0');
+INSERT INTO `space` VALUES ('31', '54664', '你好', null, null, null, null, '西溪北苑', '2018-04-05 19:48:44', '2018-04-05 19:48:44', '0');
+INSERT INTO `space` VALUES ('32', null, '传说中的车位', null, null, null, null, null, '2018-04-06 15:49:02', '2018-04-06 15:49:02', '0');
+INSERT INTO `space` VALUES ('33', null, '绿苑A-1车位', null, null, null, null, null, '2018-04-06 16:26:29', '2018-04-06 16:26:29', '0');
+INSERT INTO `space` VALUES ('34', null, '绿苑A-2车位', null, null, null, null, null, '2018-04-06 16:26:39', '2018-04-06 16:26:39', '0');
+INSERT INTO `space` VALUES ('35', null, '绿苑A-3车位', null, null, null, null, null, '2018-04-06 16:26:51', '2018-04-06 16:26:51', '0');
+INSERT INTO `space` VALUES ('36', null, '绿苑A-4车位', null, null, null, null, null, '2018-04-06 16:27:05', '2018-04-06 16:27:05', '0');
+INSERT INTO `space` VALUES ('37', null, '北苑车位A-1-1', null, null, null, null, null, '2018-04-06 16:27:31', '2018-04-06 16:27:31', '0');
+INSERT INTO `space` VALUES ('38', null, '北苑车位A-1-2', null, null, null, null, null, '2018-04-06 16:27:31', '2018-04-06 16:27:42', '0');
+INSERT INTO `space` VALUES ('39', null, '北苑车位A-1-3', null, null, null, null, null, '2018-04-06 16:27:56', '2018-04-06 16:27:56', '0');
+INSERT INTO `space` VALUES ('40', null, '西溪风情车位001', null, null, null, null, null, '2018-04-06 16:28:17', '2018-04-06 16:28:17', '0');
+INSERT INTO `space` VALUES ('41', null, '西溪风情车位002', null, null, null, null, null, '2018-04-06 16:28:38', '2018-04-06 16:28:38', '0');
 
 -- ----------------------------
 -- Table structure for user
@@ -684,9 +707,15 @@ CREATE TABLE `zone` (
   `gmt_modified` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `is_deleted` tinyint(1) NOT NULL DEFAULT '0' COMMENT '软删除',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of zone
 -- ----------------------------
 INSERT INTO `zone` VALUES ('1', '菜鸟驿站地下车库', '与快递同行', '2018-03-23 21:44:31', '2018-03-23 21:44:31', '0');
+INSERT INTO `zone` VALUES ('3', '绿苑A区', '仓溢绿苑A区', '2018-04-06 16:23:19', '2018-04-06 16:23:41', '0');
+INSERT INTO `zone` VALUES ('4', '绿苑B区', '仓溢绿苑B区', '2018-04-06 16:23:37', '2018-04-06 16:23:37', '0');
+INSERT INTO `zone` VALUES ('5', '北苑A-1区', '西溪北苑A-1区', '2018-04-06 16:24:13', '2018-04-06 16:24:13', '0');
+INSERT INTO `zone` VALUES ('6', '北苑A-2区', '西溪北苑A-2区', '2018-04-06 16:24:39', '2018-04-06 16:24:39', '0');
+INSERT INTO `zone` VALUES ('7', '风情01区', '西溪风情地下车库01区', '2018-04-06 16:25:11', '2018-04-06 16:25:11', '0');
+INSERT INTO `zone` VALUES ('8', '风情02区', '西溪风情低下车库02区', '2018-04-06 16:25:28', '2018-04-06 16:25:28', '0');

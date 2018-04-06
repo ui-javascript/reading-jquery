@@ -214,6 +214,10 @@ public class SpaceServiceImpl implements ISpaceService {
         return spaceDao.updateSpaceRule(weekRuleParam);
     }
 
+    @Override
+    public Long updateUCZSUser(UCZSMatchUserParam uczsMatchUserParam) {
+        return spaceDao.updateUCZSUser(uczsMatchUserParam);
+    }
 
     @Override
     public SpaceAvailableVO listSpaceAvailable(CommunitySpaceAvailableParam communitySpaceAvailableParam){

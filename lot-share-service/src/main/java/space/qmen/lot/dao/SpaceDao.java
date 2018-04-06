@@ -23,6 +23,7 @@ public interface SpaceDao {
 
     Long updateSpace(Space space);
     Long updateSpaceRule(WeekRuleParam weekRuleParam);
+    Long updateUCZSUser(UCZSMatchUserParam uczsMatchUserParam);
 
     // 自定义
     List<Space> listSpace();

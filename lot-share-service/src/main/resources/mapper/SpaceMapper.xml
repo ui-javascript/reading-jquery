@@ -183,6 +183,24 @@
         id = #{id}
     </update>
 
+    <!-- 匹配用户 -->
+    <update id="updateUCZSUser" parameterType="space.qmen.lot.model.param.UCZSMatchUserParam">
+        update
+          lk_user_community_zone_space AS uczs
+        set
+        <trim suffixOverrides=",">
+            <if test="ownerId!=null">
+                uczs.f_owner_id = #{ownerId},
+            </if>
+            <if test="status!=null">
+                uczs.status = #{status},
+            </if>
+        </trim>
+        where
+          uczs.id = #{uczsId}
+    </update>
+
+
     <!-- 删除车位 -->
     <delete id="deleteSpace" parameterType="java.lang.Long">
         delete from `space`

@@ -102,6 +102,13 @@ public class SpaceRestController {
         return ResultUtil.getResultWithSuccess();
     }
 
+    @ApiOperation("确认车位归属")
+    @RequestMapping(value = "/uczs-match-user", method = RequestMethod.POST)
+    public Object updateUCZSUser(@RequestBody UCZSMatchUserParam uczsMatchUserParam) {
+        spaceService.updateUCZSUser(uczsMatchUserParam);
+        return ResultUtil.getResultWithSuccess();
+    }
+
     @ApiOperation("获取某Community的可租用车位数")
     @RequestMapping(value = "/community-space-available", method = RequestMethod.GET)
     public Object listCommunitySpaceAvailable(CommunitySpaceAvailableParam communitySpaceAvailableParam) {
