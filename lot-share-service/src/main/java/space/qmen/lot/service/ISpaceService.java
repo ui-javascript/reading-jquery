@@ -4,6 +4,7 @@ package space.qmen.lot.service;
 import space.qmen.lot.model.dto.SpaceDayRentingStatusDTO;
 import space.qmen.lot.model.dto.SpaceDetailsDTO;
 import space.qmen.lot.model.dto.SpaceInfoDTO;
+import space.qmen.lot.model.dto.UCZSInfoDTO;
 import space.qmen.lot.model.entity.Space;
 import space.qmen.lot.model.param.*;
 import space.qmen.lot.model.vo.*;
@@ -21,6 +22,7 @@ public interface ISpaceService {
     Map listAreaSpaceAvailable(AreaSpaceAvailableParam areaSpaceAvailableParam);
 
     List<SpaceDetailsDTO> listSpaceDetailsByOwnerId(Long id);
+    List<UCZSInfoDTO> listSpaceByCommunityId(Long id);
 
     Space getSpaceById(Long id);
     Integer getSpaceCollectionStatus(SpaceCollectionParam spaceCollectionParam);

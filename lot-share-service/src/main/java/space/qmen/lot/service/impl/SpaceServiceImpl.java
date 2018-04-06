@@ -6,10 +6,7 @@ import org.springframework.stereotype.Service;
 import space.qmen.lot.dao.CommunityDao;
 import space.qmen.lot.dao.OrderDao;
 import space.qmen.lot.dao.SpaceDao;
-import space.qmen.lot.model.dto.SpaceDayRentingStatusDTO;
-import space.qmen.lot.model.dto.SpaceDetailsDTO;
-import space.qmen.lot.model.dto.SpaceInfoDTO;
-import space.qmen.lot.model.dto.SpaceWeekRuleDTO;
+import space.qmen.lot.model.dto.*;
 import space.qmen.lot.model.entity.Community;
 import space.qmen.lot.model.entity.CommunityPolicy;
 import space.qmen.lot.model.entity.Space;
@@ -204,6 +201,11 @@ public class SpaceServiceImpl implements ISpaceService {
     @Override
     public List<SpaceDetailsDTO> listSpaceDetailsByOwnerId(Long id){
         return spaceDao.listSpaceDetailsByOwnerId(id);
+    }
+
+    @Override
+    public List<UCZSInfoDTO> listSpaceByCommunityId(Long id) {
+        return spaceDao.listSpaceByCommunityId(id);
     }
 
     @Override

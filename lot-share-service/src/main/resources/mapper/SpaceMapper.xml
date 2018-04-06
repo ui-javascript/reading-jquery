@@ -210,7 +210,7 @@
     </resultMap>
     <!-- 根据业主id获取车位详细信息 -->
     <select id="listSpaceDetailsByOwnerId" resultMap="SpaceDetailsDTOMap" parameterType="java.lang.Long">
-        select
+       select
             uczs.f_owner_id,
             uczs.f_community_id,
             community.`name` AS community_name,
@@ -240,7 +240,29 @@
             AND rule.is_deleted = 0
             AND community.id = uczs.f_community_id
             AND uczs.f_community_id = policy.f_community_id
+            AND uczs.is_deleted = 0
+            AND rule.`status` = 1
             AND uczs.f_owner_id = #{id};
+    </select>
+
+    <select id="listSpaceByCommunityId" resultType="space.qmen.lot.model.dto.UCZSInfoDTO" parameterType="java.lang.Long">
+        select
+          uczs.id AS uczs_id,
+					uczs.f_community_id AS community_id,
+          uczs.f_space_id AS space_id,
+          space.`name` AS space_name,
+					uczs.f_zone_id AS zone_id,
+          zone.`name`	AS zone_name
+        FROM
+            lk_user_community_zone_space AS uczs,
+            zone,
+            space
+        WHERE
+            uczs.f_zone_id = zone.id
+							AND uczs.f_space_id = space.id
+            AND uczs.f_community_id = #{id}
+            AND uczs.is_deleted = 0
+            AND uczs.`status` = 0
     </select>
 
 

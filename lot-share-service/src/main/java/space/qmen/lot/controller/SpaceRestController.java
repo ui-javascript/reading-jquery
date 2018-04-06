@@ -40,13 +40,13 @@ public class SpaceRestController {
     }
 
     @ApiOperation("获取某车位当前周的开放情况")
-    @RequestMapping(value = "/space-week-rentings-status", method = RequestMethod.POST)
+    @RequestMapping(value = "/space-week-rentings-status", method = RequestMethod.GET)
     public Object getSpaceWeekRentingStatus(SpaceWeekRentingStatusParam spaceWeekRentingStatusParam) {
         return ResultUtil.getResultWithSuccess(spaceService.getSpaceWeekRentingStatus(spaceWeekRentingStatusParam));
     }
 
     @ApiOperation("获取某车位长租(往后的四星期)的开放情况")
-    @RequestMapping(value = "/space-long-rentings-status", method = RequestMethod.POST)
+    @RequestMapping(value = "/space-long-rentings-status", method = RequestMethod.GET)
     public Object getSpaceLongRentingStatus(SpaceWeekRentingStatusParam spaceWeekRentingStatusParam) {
         return ResultUtil.getResultWithSuccess(spaceService.getSpaceLongRentingStatus(spaceWeekRentingStatusParam));
     }
@@ -112,6 +112,12 @@ public class SpaceRestController {
     @RequestMapping(value = "/area-space-available", method = RequestMethod.GET)
     public Object listAreaSpaceAvailable(AreaSpaceAvailableParam areaSpaceAvailableParam) {
         return ResultUtil.getResultWithSuccess(spaceService.listAreaSpaceAvailable(areaSpaceAvailableParam));
+    }
+
+    @ApiOperation("获取某小区未被注册的车位")
+    @RequestMapping(value = "/space-unreg/community/{id}", method = RequestMethod.GET)
+    public Object listSpaceUnregByCommunityId(Long id) {
+        return ResultUtil.getResultWithSuccess(spaceService.listSpaceByCommunityId(id));
     }
 
 }

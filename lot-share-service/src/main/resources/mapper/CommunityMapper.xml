@@ -111,14 +111,8 @@
 
 
 
-    <resultMap id="CommunitySelectDTO" type="space.qmen.lot.model.dto.CommunitySelectDTO">
-        <result column="f_community_id" property="fCommunityId" />
-        <result column="name" property="name" />
-        <result column="owner_benifit_percent" property="ownerBenifitPercent" />
-    </resultMap>
-
     <!-- 获取小区及其收费标准 -->
-    <select id="listCommunityByOwnerId" resultMap="CommunitySelectDTO">
+    <select id="listCommunityByOwnerId" resultType="space.qmen.lot.model.dto.CommunitySelectDTO">
         select
             policy.f_community_id,
             community.`name`,

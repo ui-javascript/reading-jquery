@@ -10,6 +10,11 @@ import java.util.List;
 
 public interface CommunityDao {
     List<Community> listCommunity();
+    List<CommunitySelectDTO> listCommunityByOwnerId();
+    List<Community> listCommunityByAreaId(Long id);
+    Long[] listCommunityIdsByAreaId(Long id);
+    Long[] listCommunityIds(CommunityIdsParam communityIdsParam);
+
     Community getCommunityById(@Param("id") Long id);
     CommunityPolicy getCommunityPolicyById(@Param("id") Long id);
 
@@ -18,9 +23,5 @@ public interface CommunityDao {
     Long saveCommunity(Community community);
     Long updateCommunity(Community community);
 
-    // 自定义
-    List<CommunitySelectDTO> listCommunityByOwnerId();
-    List<Community> listCommunityByAreaId(Long id);
-    Long[] listCommunityIdsByAreaId(Long id);
-    Long[] listCommunityIds(CommunityIdsParam communityIdsParam);
+
 }
