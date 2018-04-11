@@ -1,10 +1,7 @@
 package space.qmen.lot.service;
 
 
-import space.qmen.lot.model.dto.SpaceDayRentingStatusDTO;
-import space.qmen.lot.model.dto.SpaceDetailsDTO;
-import space.qmen.lot.model.dto.SpaceInfoDTO;
-import space.qmen.lot.model.dto.UCZSInfoDTO;
+import space.qmen.lot.model.dto.*;
 import space.qmen.lot.model.entity.Space;
 import space.qmen.lot.model.param.*;
 import space.qmen.lot.model.vo.*;
@@ -33,6 +30,8 @@ public interface ISpaceService {
 
     // 获取长租情况
     LongSpaceRentingStatusVO getSpaceLongRentingStatus(SpaceWeekRentingStatusParam spaceWeekRentingStatusParam);
+    SpaceWeekRuleDTO getSpaceRuleBySpaceId(Long id);
+
 
     Long saveSpace(SpaceParam space);
     Long saveSpaceCollection(SpaceCollectionParam spaceCollectionParam);

@@ -4,6 +4,7 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import space.qmen.lot.model.dto.SpaceDetailsDTO;
 import space.qmen.lot.model.entity.Space;
 import space.qmen.lot.model.param.*;
 import space.qmen.lot.model.vo.SpaceWeekRentingStatusVO;
@@ -12,6 +13,7 @@ import space.qmen.lot.utils.ResultUtil;
 import springfox.documentation.annotations.ApiIgnore;
 
 import javax.validation.Valid;
+import java.util.List;
 
 @Api(value="车位", tags={"车位"})
 @RequestMapping("/api/v1")
@@ -37,6 +39,12 @@ public class SpaceRestController {
     @RequestMapping(value = "/space-info/{id}", method = RequestMethod.GET)
     public Object getSpaceInfoById(@PathVariable("id") Long id) {
         return ResultUtil.getResultWithSuccess(spaceService.getSpaceInfoById(id));
+    }
+
+    @ApiOperation("获取车位的开放规则")
+    @RequestMapping(value = "/space-rule/{id}", method = RequestMethod.GET)
+    public Object getSpaceRuleById(@PathVariable("id") Long id) {
+        return ResultUtil.getResultWithSuccess(spaceService.getSpaceRuleBySpaceId(id));
     }
 
     @ApiOperation("获取某车位当前周的开放情况")

@@ -259,7 +259,7 @@
             AND community.id = uczs.f_community_id
             AND uczs.f_community_id = policy.f_community_id
             AND uczs.is_deleted = 0
-            AND rule.`status` = 1
+            AND uczs.`status` = 1
             AND uczs.f_owner_id = #{id};
     </select>
 

@@ -183,6 +183,11 @@ public class SpaceServiceImpl implements ISpaceService {
     public SpaceInfoDTO getSpaceInfoById(Long id) { return spaceDao.getSpaceInfoById(id); }
 
     @Override
+    public SpaceWeekRuleDTO getSpaceRuleBySpaceId(Long spaceId) {
+        return spaceDao.getSpaceRuleBySpaceId(spaceId);
+    }
+
+    @Override
     public Long deleteSpace(Long id) {
         return spaceDao.deleteSpace(id);
     }
