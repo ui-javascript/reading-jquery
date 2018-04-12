@@ -7,8 +7,17 @@
     <groupId>space.qmen.lotshareservice</groupId>
     <artifactId>lot</artifactId>
     <version>1.0</version>
-    <name>车位共享API</name>
-    <packaging>jar</packaging>
+    <modules>
+        <module>common-utils</module>
+        <module>lot-common</module>
+        <module>lot-web</module>
+        <module>lot-article</module>
+        <module>lot-schedule</module>
+        <module>lot-jpa</module>
+        <module>lot-core</module>
+    </modules>
+    <name>parent</name>
+    <packaging>pom</packaging>
 
     <!-- Spring Boot 启动父依赖 -->
     <parent>
@@ -60,10 +69,9 @@
             <scope>test</scope>
         </dependency>
 
-        <!-- JPA -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-jpa</artifactId>
+            <artifactId>spring-boot-devtools</artifactId>
         </dependency>
 
         <!-- Redis -->
@@ -95,10 +103,6 @@
             <!--</exclusions>-->
         </dependency>
 
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-devtools</artifactId>
-        </dependency>
 
         <!--<dependency>-->
             <!--<groupId>org.springframework.boot</groupId>-->
@@ -106,20 +110,7 @@
         <!--</dependency>-->
 
 
-
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-mail</artifactId>
-        </dependency>
-
-        <!-- MySQL 连接驱动依赖 -->
-        <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-            <version>${mysql-connector}</version>
-        </dependency>
-
+     
         <!-- Lombok -->
         <dependency>
             <groupId>org.projectlombok</groupId>
