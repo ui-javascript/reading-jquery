@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>vue2 demo</title>
+</head>
+
+<body>
+
+  <div id="todo-list-example">
+    <my-component></my-component>
+    <input v-model="newTodoText" v-on:keyup.enter="addNewTodo" placeholder="Add a todo">
+    <ul>
+      <!-- 理想的 key 值是每项都有唯一 id -->
+      <li is="todo-item" v-for="(todo, index) in todos" v-bind:key="todo" v-bind:title="todo" v-on:remove="todos.splice(index, 1)"></li>
+    </ul>
+  </div>
+
+  <script src="https://unpkg.com/vue"></script>
+  <script>
+    // 注册全局组件
+    Vue.component('todo-item', {
+      template: `
+      <li>
+        {{ title }}
+        <button v-on:click="$emit('remove')">X</button>
+      </li>
+    `,
+      props: ['title']
+    })
+
+    // 注册一个局部组件(作用域)
+    var Child = {
+      template: '<div><mark>todo-list title!</mark></div>'
+    }
+
+    new Vue({
+      el: '#todo-list-example',
+      components: {
+        // <my-component> 将只在父模板可用
+        'my-component': Child
+      },
+      data: {
+        newTodoText: '',
+        todos: [
+          'Do the dishes',
+          'Take out the trash',
+          'Mow the lawn'
+        ]
+      },
+      methods: {
+        addNewTodo: function() {
+          this.todos.push(this.newTodoText)
+          this.newTodoText = ''
+        },
+        even: function(numbers) {
+          return numbers.filter(function(number) {
+            return number % 2 === 0
+          })
+        }
+      },
+      created() {
+        Vue.set(this.todos, 0, 'first item') // https://www.vuefe.cn/v2/guide/list.html
+      }
+    })
+  </script>
+</body>
+
+</html>
