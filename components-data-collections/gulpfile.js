@@ -124,14 +124,14 @@ gulp.task('sprite', function () {
 });
 
 // 浏览器同步刷新
-// gulp.task('serve', function() {
-//     browserSync.init({
-//         proxy: "deva.dev",
-//         port: 3001,
-//         open: "ui",
-//         ui: {port: 3005}
-//     });
-// });
+gulp.task('serve', function() {
+    browserSync.init({
+        proxy: "deva.dev",
+        port: 3001,
+        open: "ui",
+        ui: {port: 3005}
+    });
+});
 
 
 // 删除dist/*下的所有文件
