@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="space.qmen.lot.mapper.OrderMapper" >
+  <resultMap id="BaseResultMap" type="space.qmen.lot.entity.Order" >
+    <!--
+      WARNING - @mbggenerated
+    -->
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="order_type" property="orderType" jdbcType="BIGINT" />
+    <result column="f_renting_status_id" property="fRentingStatusId" jdbcType="BIGINT" />
+    <result column="order_description" property="orderDescription" jdbcType="VARCHAR" />
+    <result column="unit_price" property="unitPrice" jdbcType="DECIMAL" />
+    <result column="timeout_unit_price" property="timeoutUnitPrice" jdbcType="DECIMAL" />
+    <result column="duration" property="duration" jdbcType="DECIMAL" />
+    <result column="timeout_duration" property="timeoutDuration" jdbcType="DECIMAL" />
+    <result column="timeout_payment" property="timeoutPayment" jdbcType="DECIMAL" />
+    <result column="expected_payment" property="expectedPayment" jdbcType="DECIMAL" />
+    <result column="reduction" property="reduction" jdbcType="DECIMAL" />
+    <result column="reduction_description" property="reductionDescription" jdbcType="VARCHAR" />
+    <result column="pre_payment" property="prePayment" jdbcType="DECIMAL" />
+    <result column="f_pre_payment_bill_id" property="fPrePaymentBillId" jdbcType="BIGINT" />
+    <result column="actual_payment" property="actualPayment" jdbcType="DECIMAL" />
+    <result column="f_actual_payment_bill_id" property="fActualPaymentBillId" jdbcType="BIGINT" />
+    <result column="order_score" property="orderScore" jdbcType="DECIMAL" />
+    <result column="order_level" property="orderLevel" jdbcType="BIT" />
+    <result column="gmt_create" property="gmtCreate" jdbcType="TIMESTAMP" />
+    <result column="gmt_modified" property="gmtModified" jdbcType="TIMESTAMP" />
+    <result column="status" property="status" jdbcType="BIT" />
+  </resultMap>
+</mapper>

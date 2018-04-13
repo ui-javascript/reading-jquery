@@ -13,8 +13,9 @@
         <module>lot-web</module>
         <module>lot-article</module>
         <module>lot-schedule</module>
-        <module>lot-jpa</module>
         <module>lot-core</module>
+        <module>db-generator</module>
+        <module>lot-app-api</module>
     </modules>
     <name>parent</name>
     <packaging>pom</packaging>
@@ -51,7 +52,18 @@
         <thymeleaf.version>3.0.2.RELEASE</thymeleaf.version>
         <thymeleaf-layout-dialect.version>2.0.1</thymeleaf-layout-dialect.version>
         <poi.version>3.13</poi.version>
+
+
+        <!-- MyBatis Generator -->
+        <mybatis.generator.version>1.3.2</mybatis.generator.version>
+        <targetJavaProject>${basedir}/src/main/java</targetJavaProject>
+        <targetMapperPackage>com.wdcloud.fayu.mapper</targetMapperPackage>
+        <targetEntityPackage>com.wdcloud.fayu.entity</targetEntityPackage>
+        <!-- tk.mybatis -->
+        <tk.mybatis.version>3.3.6</tk.mybatis.version>
+        <persistence.version>1.0</persistence.version>
     </properties>
+
 
     <dependencies>
 
