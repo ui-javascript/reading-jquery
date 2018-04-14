@@ -20,13 +20,16 @@
         template: '<button v-on:click="increment">{{ counter }}</button>',
         data: function () {
             return {
-                counter: 0 // 独立
+                // 独立
+                counter: 0
             }
         },
         methods: {
             increment: function () {
                 this.counter += 1
-                this.$emit('increment') // 发射至父组件 increment
+
+                // 发射至父组件 increment
+                this.$emit('increment')
             }
         },
     })
@@ -34,7 +37,7 @@
     new Vue({
         el: '#counter-event-example',
         data: {
-            total: 0 //
+            total: 0
         },
         methods: {
             incrementTotal: function () {
