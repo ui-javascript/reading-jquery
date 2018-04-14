@@ -2,37 +2,37 @@
 <html>
 
 <head>
-  <meta charset="utf-8">
-  <script src="https://cdn.bootcss.com/vue/2.2.2/vue.min.js"></script>
+    <meta charset="utf-8">
+    <script src="https://cdn.bootcss.com/vue/2.2.2/vue.min.js"></script>
 </head>
 
 <body>
-  <div id="app" v-runoob:hello.a.b="message">
-  </div>
+<div id="app" v-runoob:hello.a.b="message">
+</div>
 
-  <script>
+<script>
     Vue.directive('runoob', {
-      // 注意参数
-      bind: function (el, binding, vnode) {
-        var s = JSON.stringify
-        el.innerHTML =
-          'name: ' + s(binding.name) + '<br>' +
-          'value: ' + s(binding.value) + '<br>' +
-          'expression: ' + s(binding.expression) + '<br>' +
-          'argument: ' + s(binding.arg) + '<br>' + // hello
-          'modifiers: ' + s(binding.modifiers) + '<br>' +
-          'vnode keys: ' + Object.keys(vnode).join(', ')
-      }
+        // 注意参数
+        bind: function (el, binding, vnode) {
+            var s = JSON.stringify
+            el.innerHTML =
+                'name: ' + s(binding.name) + '<br>' +
+                'value: ' + s(binding.value) + '<br>' +
+                'expression: ' + s(binding.expression) + '<br>' +
+                'argument: ' + s(binding.arg) + '<br>' + // hello
+                'modifiers: ' + s(binding.modifiers) + '<br>' +
+                'vnode keys: ' + Object.keys(vnode).join(', ')
+        }
     })
 
     // 示例vue
     new Vue({
-      el: '#app',
-      data: {
-        message: 'msg!'
-      }
+        el: '#app',
+        data: {
+            message: 'msg!'
+        }
     })
-  </script>
+</script>
 </body>
 
 </html>

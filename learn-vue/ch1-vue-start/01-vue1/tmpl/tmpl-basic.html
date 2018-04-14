@@ -2,28 +2,28 @@
 <html>
 
 <head>
-  <meta charset="utf-8">
-  <script src="https://cdn.bootcss.com/vue/2.2.2/vue.min.js"></script>
-  <style>
-    .class1 {
-      background: #444;
-      color: #eee;
-    }
+    <meta charset="utf-8">
+    <script src="https://cdn.bootcss.com/vue/2.2.2/vue.min.js"></script>
+    <style>
+        .class1 {
+            background: #444;
+            color: #eee;
+        }
 
-    .active {
-      width: 100px;
-      height: 100px;
-      background: green;
-    }
+        .active {
+            width: 100px;
+            height: 100px;
+            background: green;
+        }
 
-    .text-danger {
-      background: red;
-    }
-  </style>
+        .text-danger {
+            background: red;
+        }
+    </style>
 </head>
 
 <body>
-  <div id="app">
+<div id="app">
     <p>{{ message }}</p>
     <div v-html="html"></div>
 
@@ -33,7 +33,7 @@
     <br><br>
     <!-- 绑定 -->
     <div v-bind:class="{'class1': class1}">
-      directiva v-bind:class
+        directiva v-bind:class
     </div>
 
     <!-- 注意后面样式的引号 -->
@@ -44,33 +44,33 @@
 
     <!-- 数组绑定 -->
     <div v-bind:class="[activeClass, errorClass]"></div>
-  </div>
+</div>
 
-  <script>
+<script>
     new Vue({
-      el: '#app',
-      data: {
-        message: 'Hello Vue.js!',
-        html: '<h2>hello vue</h2>',
+        el: '#app',
+        data: {
+            message: 'Hello Vue.js!',
+            html: '<h2>hello vue</h2>',
 
-        class1: false,
-        isActive: true,
-        hasError: true,
-        error: null,
+            class1: false,
+            isActive: true,
+            hasError: true,
+            error: null,
 
-        activeClass: 'active',
-        errorClass: 'text-danger'
-      },
-      computed: {
-        classObject: function () {
-          return {
-            active: this.isActive && !this.error,
-            'text-danger': this.error && this.error.type === 'fatal',
-          }
+            activeClass: 'active',
+            errorClass: 'text-danger'
+        },
+        computed: {
+            classObject: function () {
+                return {
+                    active: this.isActive && !this.error,
+                    'text-danger': this.error && this.error.type === 'fatal',
+                }
+            }
         }
-      }
     })
-  </script>
+</script>
 </body>
 
 </html>

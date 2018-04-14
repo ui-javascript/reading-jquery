@@ -12,59 +12,59 @@
 <html>
 
 <head>
-  <meta charset="utf-8">
-  <script src="https://cdn.bootcss.com/vue/2.2.2/vue.min.js"></script>
-  <style>
-    .text-danger {
-      width: 100px;
-      height: 100px;
-      background: red;
-    }
+    <meta charset="utf-8">
+    <script src="https://cdn.bootcss.com/vue/2.2.2/vue.min.js"></script>
+    <style>
+        .text-danger {
+            width: 100px;
+            height: 100px;
+            background: red;
+        }
 
-    .active {
-      width: 100px;
-      height: 100px;
-      background: green;
-    }
-  </style>
+        .active {
+            width: 100px;
+            height: 100px;
+            background: green;
+        }
+    </style>
 </head>
 
 <body>
-  <div id="app">
+<div id="app">
     <div v-bind:class="[errorClass ,isActive ? activeClass : '']"></div>
 
     <!-- 绑定内联样式 -->
     <div v-bind:style="{ color: activeColor, fontSize: fontSize + 'px' }">菜鸟教程</div>
     <div v-bind:style="styleObject">菜鸟教程</div>
     <div v-bind:style="[baseStyles, overridingStyles]">菜鸟教程</div>
-  </div>
+</div>
 
-  <script>
+<script>
     new Vue({
-      el: '#app',
-      data: {
-        isActive: true, // green
-        activeClass: 'active',
-        errorClass: 'text-danger',
+        el: '#app',
+        data: {
+            isActive: true, // green
+            activeClass: 'active',
+            errorClass: 'text-danger',
 
-        activeColor: 'green',
-        fontSize: 20,
+            activeColor: 'green',
+            fontSize: 20,
 
-        styleObject: {
-          color: 'green',
-          fontSize: '30px'
-        },
+            styleObject: {
+                color: 'green',
+                fontSize: '30px'
+            },
 
-        baseStyles: {
-          color: 'green',
-          fontSize: '30px'
-        },
-        overridingStyles: {
-          'font-weight': 'bold'
+            baseStyles: {
+                color: 'green',
+                fontSize: '30px'
+            },
+            overridingStyles: {
+                'font-weight': 'bold'
+            }
         }
-      }
     })
-  </script>
+</script>
 </body>
 
 </html>

@@ -2,49 +2,49 @@
 <html>
 
 <head>
-  <meta charset="utf-8">
-  <title>Vue</title>
-  <script src="https://cdn.bootcss.com/vue/2.2.2/vue.min.js"></script>
+    <meta charset="utf-8">
+    <title>Vue</title>
+    <script src="https://cdn.bootcss.com/vue/2.2.2/vue.min.js"></script>
 </head>
 
 <body>
-  <div id="app">
+<div id="app">
     <div id="counter-event-example">
-      <p>{{ total }}</p>
+        <p>{{ total }}</p>
 
-      <button-counter v-on:increment="incrementTotal"></button-counter>
-      <button-counter v-on:increment="incrementTotal"></button-counter>
+        <button-counter v-on:increment="incrementTotal"></button-counter>
+        <button-counter v-on:increment="incrementTotal"></button-counter>
     </div>
-  </div>
+</div>
 
-  <script>
+<script>
     Vue.component('button-counter', {
-      template: '<button v-on:click="increment">{{ counter }}</button>',
-      data: function () {
-        return {
-          counter: 0
-        }
-      },
-      methods: {
-        // 定义increment事件
-        increment: function () {
-          this.counter += 1 // 更新按钮数字
-          this.$emit('increment') // 更新全局的total
-        }
-      },
+        template: '<button v-on:click="increment">{{ counter }}</button>',
+        data: function () {
+            return {
+                counter: 0
+            }
+        },
+        methods: {
+            // 定义increment事件
+            increment: function () {
+                this.counter += 1 // 更新按钮数字
+                this.$emit('increment') // 更新全局的total
+            }
+        },
     })
     new Vue({
-      el: '#counter-event-example',
-      data: {
-        total: 0
-      },
-      methods: {
-        incrementTotal: function () {
-          this.total += 1
+        el: '#counter-event-example',
+        data: {
+            total: 0
+        },
+        methods: {
+            incrementTotal: function () {
+                this.total += 1
+            }
         }
-      }
     })
-  </script>
+</script>
 </body>
 
 </html>

@@ -2,56 +2,56 @@
 <html>
 
 <head>
-	<meta charset="utf-8">
-	<script src="https://unpkg.com/vue/dist/vue.js"></script>
-	<script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+    <meta charset="utf-8">
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
 </head>
 
 <body>
-	<div id="app">
-		<p>
-			<router-link to="/foo">Go to Foo</router-link>
-			<router-link to="/bar">Go to Bar</router-link>
-		</p>
+<div id="app">
+    <p>
+        <router-link to="/foo">Go to Foo</router-link>
+        <router-link to="/bar">Go to Bar</router-link>
+    </p>
 
-		<!-- 路由出口 将渲染在这里 -->
-		<router-view></router-view>
-	</div>
+    <!-- 路由出口 将渲染在这里 -->
+    <router-view></router-view>
+</div>
 
-	<script>
-		const Welcome = {
-			template: '<div>welcome router</div>'
-		}
-		const Foo = {
-			template: '<div>foo</div>'
-		}
-		const Bar = {
-			template: '<div>bar</div>'
-		}
+<script>
+    const Welcome = {
+        template: '<div>welcome router</div>'
+    }
+    const Foo = {
+        template: '<div>foo</div>'
+    }
+    const Bar = {
+        template: '<div>bar</div>'
+    }
 
-		const routes = [{
-				path: '/foo',
-				component: Foo
-			},
-			{
-				path: '/bar',
-				component: Bar
-			},
-			{
-				path: "/*",
-				component: Welcome
-			}
-		]
+    const routes = [{
+        path: '/foo',
+        component: Foo
+    },
+        {
+            path: '/bar',
+            component: Bar
+        },
+        {
+            path: "/*",
+            component: Welcome
+        }
+    ]
 
-		const router = new VueRouter({
-			routes // 相当于 routes: routes
-		})
+    const router = new VueRouter({
+        routes // 相当于 routes: routes
+    })
 
-		// 创建和挂载根实例。
-		const app = new Vue({
-			router
-		}).$mount('#app')
-	</script>
+    // 创建和挂载根实例。
+    const app = new Vue({
+        router
+    }).$mount('#app')
+</script>
 </body>
 
 </html>
