@@ -6,6 +6,7 @@ import space.qmen.lot.dao.AreaDao;
 import space.qmen.lot.dto.AreaSimpleDTO;
 import space.qmen.lot.entity.Area;
 import space.qmen.lot.service.IAreaService;
+import space.qmen.lot.utils.strUtils.AreaUtil;
 
 import java.util.List;
 
@@ -15,13 +16,20 @@ public class AreaServiceImpl implements IAreaService {
     private AreaDao areaDao;
 
     @Override
-    public List<Area> listArea(){
+    public List<Area> listArea() {
         return areaDao.listArea();
     }
 
     @Override
     public Area getAreaById(Long id) {
         return areaDao.getAreaById(id);
+    }
+
+    @Override
+    public Long getAreaIdByName(String areaName) {
+        // 由地址获取区的名字
+        areaName = AreaUtil.getAreaNameFromAddress(areaName);
+        return areaDao.getAreaIdByName(areaName);
     }
 
     @Override

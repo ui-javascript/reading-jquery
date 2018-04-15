@@ -16,6 +16,7 @@
         <module>lot-core</module>
         <module>db-generator</module>
         <module>lot-app-api</module>
+        <module>lot-jpa</module>
     </modules>
     <name>parent</name>
     <packaging>pom</packaging>

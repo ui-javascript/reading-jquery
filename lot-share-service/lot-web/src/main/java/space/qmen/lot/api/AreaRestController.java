@@ -12,45 +12,56 @@ import springfox.documentation.annotations.ApiIgnore;
 
 import java.util.List;
 
-@ApiIgnore
 @Api(value="省市区", tags={"省市区"})
-@RequestMapping("/api/v1/area")
+@RequestMapping("/api/v1")
 @RestController
 public class AreaRestController {
 
     @Autowired
     private IAreaService areaService;
 
+    @ApiIgnore
     @ApiOperation("根据id获取地区")
-    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/area/{id}", method = RequestMethod.GET)
     public Object getAreaById(@PathVariable("id") Long id) {
         Area area = areaService.getAreaById(id);
         return ResultUtil.getResultWithSuccess(area);
     }
 
+    @ApiOperation("根据地址获取区的id")
+    @RequestMapping(value = "/areaId/by/{areaName}", method = RequestMethod.GET)
+    public Object getAreaIdByName(@PathVariable("areaName") String areaName) {
+        Long areaId = areaService.getAreaIdByName(areaName);
+        return ResultUtil.getResultWithSuccess(areaId);
+    }
+
+    @ApiIgnore
     @ApiOperation("获取所有地区")
-    @RequestMapping(value = "", method = RequestMethod.GET)
+    @RequestMapping(value = "/area", method = RequestMethod.GET)
     public Object listCity() {
         List<Area> list = areaService.listArea();
         return ResultUtil.getResultWithSuccess(list);
     }
 
+    @ApiIgnore
     @ApiOperation("新增地区")
-    @RequestMapping(value = "", method = RequestMethod.POST)
+    @RequestMapping(value = "/area", method = RequestMethod.POST)
     public Object saveArea(@RequestBody AreaSimpleDTO area) {
         areaService.saveArea(area);
         return ResultUtil.getResultWithSuccess();
     }
 
+    @ApiIgnore
     @ApiOperation("修改地区信息")
-    @RequestMapping(value = "", method = RequestMethod.PUT)
+    @RequestMapping(value = "/area", method = RequestMethod.PUT)
     public Object updateArea(@RequestBody AreaSimpleDTO area) {
         areaService.updateArea(area);
         return ResultUtil.getResultWithSuccess();
     }
 
+    @ApiIgnore
     @ApiOperation("根据id删除地区")
-    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
+    @RequestMapping(value = "/area/{id}", method = RequestMethod.DELETE)
     public Object deleteArea(@PathVariable("id") Long id) {
         areaService.deleteArea(id);
         return ResultUtil.getResultWithSuccess();

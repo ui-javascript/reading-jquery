@@ -7,6 +7,7 @@ import javax.persistence.*;
 @Table(name = "community")
 public class Community {
     @Id
+    @SequenceGenerator(name="",sequenceName="SELECT LAST_INSERT_ID()")
     private Long id;
 
     private String name;

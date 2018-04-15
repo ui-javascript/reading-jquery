@@ -45,6 +45,12 @@
         where id = #{id}
     </select>
 
+    <select id="getAreaIdByName" resultType="java.lang.Long" parameterType="java.lang.String">
+        select id
+        from area
+        where `name` like concat(concat('%',#{areaName}),'%')
+    </select>
+
     <!-- 显示所有地区 -->
     <select id="listArea" resultMap="BaseResultMap">
         select
@@ -109,4 +115,6 @@
         where
         id = #{id}
     </delete>
+
+
 </mapper>

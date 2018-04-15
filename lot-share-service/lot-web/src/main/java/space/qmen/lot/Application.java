@@ -4,12 +4,8 @@ package space.qmen.lot;
  * Created by Luo_0412 on 2017/5/1.
  */
 import org.mybatis.spring.annotation.MapperScan;
-//import space.qmen.lot.dao.CityDao;
-//import space.qmen.lot.domain.City;
-//import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.ComponentScan;
 
 /**
  * Spring Boot 应用启动类
@@ -18,6 +14,9 @@ import org.springframework.context.annotation.ComponentScan;
  */
 // Spring Boot 应用的标识
 @SpringBootApplication
+
+// 此注解解决 Unable to infer base url
+//@EnableSwagger2
 
 // mapper 接口类扫描包配置
 @MapperScan("space.qmen.lot.dao")

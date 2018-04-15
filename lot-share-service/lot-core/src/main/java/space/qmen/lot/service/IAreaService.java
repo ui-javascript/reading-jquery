@@ -6,7 +6,10 @@ import java.util.List;
 
 public interface IAreaService {
     List<Area> listArea();
+
     Area getAreaById(Long id);
+    Long getAreaIdByName(String areaName);
+
     Long deleteArea(Long id);
 
     Long saveArea(AreaSimpleDTO area);

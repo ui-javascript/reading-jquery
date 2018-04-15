@@ -1,12 +1,13 @@
 package space.qmen.lot.config;
 
-import net.cjgl.datasource.mapper.MyMapper;
+
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.autoconfigure.AutoConfigureAfter;
 import org.springframework.context.EnvironmentAware;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.env.Environment;
+import space.qmen.lot.mapper.MyMapper;
 import tk.mybatis.spring.mapper.MapperScannerConfigurer;
 
 import java.util.Properties;

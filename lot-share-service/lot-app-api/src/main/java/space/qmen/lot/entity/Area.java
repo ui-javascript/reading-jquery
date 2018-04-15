@@ -6,6 +6,7 @@ import javax.persistence.*;
 @Table(name = "area")
 public class Area {
     @Id
+    @SequenceGenerator(name="",sequenceName="SELECT LAST_INSERT_ID()")
     private Long id;
 
     private Long pid;

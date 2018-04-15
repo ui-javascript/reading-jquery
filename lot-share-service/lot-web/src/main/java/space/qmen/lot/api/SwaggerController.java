@@ -1,4 +1,4 @@
-package space.qmen.lot.web;
+package space.qmen.lot.api;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
