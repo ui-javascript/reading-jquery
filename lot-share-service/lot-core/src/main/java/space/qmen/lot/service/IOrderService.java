@@ -20,7 +20,9 @@ public interface IOrderService {
 
     Long deleteOrder(Long id);
 
+
     Long updateOrder(Order order);
+    Long updateOrderStatus(Long orderId);
 
     // 生成订单
     Long saveOrder(OrderRentingParam orderRentingParam);

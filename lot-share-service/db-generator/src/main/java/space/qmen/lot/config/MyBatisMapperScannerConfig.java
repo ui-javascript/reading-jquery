@@ -15,7 +15,7 @@ import java.util.Properties;
 /**
  * MyBatis扫描接口，使用的tk.mybatis.spring.mapper.MapperScannerConfigurer
  *
- * @author  
+ * @author
  * @version 1.0 16/7/8
  * @since 1.0
  */

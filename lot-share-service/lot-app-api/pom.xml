@@ -11,34 +11,24 @@
 
     <artifactId>app</artifactId>
 
-    <properties>
-        <!-- MyBatis Generator -->
-        <!-- Java接口和实体类 -->
-        <targetJavaProject>${basedir}/src/main/java</targetJavaProject>
-        <targetMapperPackage>space.qmen.lot.mapper</targetMapperPackage>
-        <targetModelPackage>space.qmen.lot.entity</targetModelPackage>
-        <targetModelJavaProject>src/main/java</targetModelJavaProject>
-        <!-- XML生成路径 -->
-        <targetResourcesProject>${basedir}/src/main/resources</targetResourcesProject>
-        <targetXMLPackage>space.qmen.lot.mapper</targetXMLPackage>
-    </properties>
-
-
     <dependencies>
 
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-            <!--<exclusions>-->
-                <!--<exclusion>-->
-                    <!--<groupId>org.springframework.boot</groupId>-->
-                    <!--<artifactId>spring-boot-starter-logging</artifactId>-->
-                <!--</exclusion>-->
-            <!--</exclusions>-->
-        </dependency>
-
-
         <!-- 依赖模块 -->
+        <dependency>
+            <groupId>space.qmen.lotshareservice</groupId>
+            <artifactId>common</artifactId>
+            <version>1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>space.qmen.lotshareservice</groupId>
+            <artifactId>utils</artifactId>
+            <version>1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>space.qmen.lotshareservice</groupId>
+            <artifactId>jpa</artifactId>
+            <version>1.0</version>
+        </dependency>
         <dependency>
             <groupId>space.qmen.lotshareservice</groupId>
             <artifactId>generator</artifactId>
@@ -48,29 +38,12 @@
 
     </dependencies>
 
+    <!-- 构建 -->
     <build>
         <plugins>
             <plugin>
-                <groupId>org.mybatis.generator</groupId>
-                <artifactId>mybatis-generator-maven-plugin</artifactId>
-                <version>1.3.2</version>
-                <configuration>
-                    <configurationFile>../lot-jpa/src/main/resources/generator/generatorConfig.xml</configurationFile>
-                    <overwrite>true</overwrite>
-                    <verbose>true</verbose>
-                </configuration>
-                <dependencies>
-                    <dependency>
-                        <groupId>mysql</groupId>
-                        <artifactId>mysql-connector-java</artifactId>
-                        <version>${mysql-connector}</version>
-                    </dependency>
-                    <dependency>
-                        <groupId>tk.mybatis</groupId>
-                        <artifactId>mapper</artifactId>
-                        <version>3.3.8</version>
-                    </dependency>
-                </dependencies>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
         </plugins>
     </build>

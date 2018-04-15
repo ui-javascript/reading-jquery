@@ -9,8 +9,8 @@ import space.qmen.lot.dto.SpaceWeekRuleDTO;
 import space.qmen.lot.entity.Order;
 import space.qmen.lot.param.OrderParam;
 import space.qmen.lot.param.OrderRentingParam;
-import space.qmen.lot.vo.OrderHistoryOrderVO;
 import space.qmen.lot.service.IOrderService;
+import space.qmen.lot.vo.OrderHistoryOrderVO;
 
 import java.util.List;
 
@@ -50,6 +50,14 @@ public class OrderServiceImpl implements IOrderService {
 
     @Override
     public Long updateOrder(Order order) { return orderDao.updateOrder(order); }
+
+
+    @Override
+    public Long updateOrderStatus(Long orderId) {
+        orderDao.updateOrderStatus(orderId);
+        return orderDao.updateRuleStatus(orderId);
+    }
+
 
     @Override
     public List<OwnerOrderDTO> listOrderByOwnerId(OrderParam orderParam){

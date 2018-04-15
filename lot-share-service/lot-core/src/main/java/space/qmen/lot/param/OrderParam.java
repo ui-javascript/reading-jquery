@@ -5,6 +5,7 @@ import lombok.Data;
 @Data
 public class OrderParam extends PageParam {
     private Long userId;
+    private Long renterId;
 
     // 0表示租客 1表示业主
 //    private Long userType;

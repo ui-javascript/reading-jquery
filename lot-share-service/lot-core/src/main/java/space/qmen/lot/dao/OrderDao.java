@@ -28,6 +28,7 @@ public interface OrderDao {
     Long saveOrderFirstly();
 
     Long updateOrder(Order order);
-
+    Long updateOrderStatus(Long orderId);
+    Long updateRuleStatus(Long orderId);
 
 }

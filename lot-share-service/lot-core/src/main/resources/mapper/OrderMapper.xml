@@ -104,6 +104,24 @@
         id = #{id}
     </update>
 
+    <!-- 取消订单 -->
+    <update id="updateOrderStatus" parameterType="java.lang.Long">
+        update `order`
+        set `status` = 2
+        where id = #{orderId}
+    </update>
+    <!-- 取消租用状态 -->
+    <update id="updateRuleStatus" parameterType="java.lang.Long">
+        update lk_space_day_renting_status AS day_rentings
+        set day_rentings.is_deleted = 1
+        where id = (
+          select f_renting_status_id
+          from `order`
+          where `order`.id = #{orderId}
+        )
+    </update>
+
+
     <!-- 删除账单 -->
     <delete id="deleteOrder" parameterType="java.lang.Long">
         delete from
@@ -165,7 +183,12 @@
           AND uczs.f_community_id = community.id
           AND day_rentings.f_space_id = `space`.id
           AND day_rentings.f_vehicle_id = vehicle.id
-          AND uczs.f_owner_id = #{userId}
+            <if test="userId!=null">
+            AND uczs.f_owner_id = #{userId}
+            </if>
+          <if test="renterId!=null">
+          AND day_rentings.f_renter_id = #{renterId}
+          </if>
           AND `order`.`status` = #{orderStatus};
     </select>
 
