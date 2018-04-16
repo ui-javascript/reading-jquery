@@ -350,7 +350,7 @@ export default {
         userImg: randomNum + 1
       };
 
-      this.httpServer = io.connect('http://php.qmen.space:3000');
+      this.httpServer = io.connect('http://47.100.99.127:3000');
 
       this.httpServer.emit('login', this.userInfo);
       this.onlineUserList.push(this.userInfo);
