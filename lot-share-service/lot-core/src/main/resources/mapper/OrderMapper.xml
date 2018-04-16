@@ -183,15 +183,19 @@
           AND uczs.f_community_id = policy.f_community_id
           AND day_rentings.f_space_id = uczs.f_space_id
           AND uczs.f_community_id = community.id
-          AND day_rentings.f_space_id = `space`.id
-          AND day_rentings.f_vehicle_id = vehicle.id
+
             <if test="userId!=null">
             AND uczs.f_owner_id = #{userId}
             </if>
           <if test="renterId!=null">
           AND day_rentings.f_renter_id = #{renterId}
           </if>
-          AND `order`.`status` = #{orderStatus};
+          <if test="orderStatus!=null">
+          AND `order`.`status` = #{orderStatus}
+          </if>
+        AND day_rentings.f_space_id = `space`.id
+        AND day_rentings.f_vehicle_id = vehicle.id
+        order by `order`.gmt_create
     </select>
 
     <!-- 某小区的历史交易订单次数 -->

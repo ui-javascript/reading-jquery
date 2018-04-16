@@ -5,16 +5,17 @@ package space.qmen.lot.service;
 import space.qmen.lot.dto.*;
 import space.qmen.lot.entity.Space;
 import space.qmen.lot.param.*;
-import space.qmen.lot.vo.CommunitySpaceVO;
-import space.qmen.lot.vo.LongSpaceRentingStatusVO;
-import space.qmen.lot.vo.SpaceAvailableVO;
-import space.qmen.lot.vo.SpaceWeekRentingStatusVO;
+import space.qmen.lot.vo.*;
 
 import java.util.List;
 import java.util.Map;
 
 public interface ISpaceService {
     List<Space> listSpace();
+    // 加强版
+    List<SpaceExVO> listSpaceEx();
+    //  车位审核状态
+    List<SpaceCheckDTO> listSpaceCheck();
 
     // 某小区的可用车位
     SpaceAvailableVO listSpaceAvailable(CommunitySpaceAvailableParam communitySpaceAvailableParam);
@@ -42,9 +43,10 @@ public interface ISpaceService {
 
 
     Long updateSpace(Space space);
+    Long updateSpaceEx(SpaceExVO spaceExVO);
     Long updateSpaceRule(WeekRuleParam weekRuleParam);
     Long updateUCZSUser(UCZSMatchUserParam uczsMatchUserParam);
-
+    Long updateSpaceCheckPass(SpaceCheckDTO spaceCheckDTO);
 
 
     Long deleteSpace(Long id);

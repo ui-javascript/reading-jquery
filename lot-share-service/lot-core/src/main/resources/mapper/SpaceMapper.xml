@@ -18,10 +18,10 @@
 
     <parameterMap id="Space" type="space.qmen.lot.entity.Space"/>
     <sql id="Base_Column_List">
-        id, code, `name`, space_area, `level`,score,
+        space.id, code, `name`, space_area, `level`,score,
         description,
-        gmt_create, gmt_modified,
-        is_deleted
+        space.gmt_create, space.gmt_modified,
+        space.is_deleted
     </sql>
 
 
@@ -92,6 +92,21 @@
     </select>
 
 
+    <select id="getSpaceInfoByUCZSId" resultType="space.qmen.lot.dto.UCZSSpaceInfoDTO" parameterType="java.lang.Long">
+        select
+                space.`name` as space_name,
+          space.`code` as space_code,
+            community.`name` as community_name
+        from
+            lk_user_community_zone_space as uzcs,
+          space,
+          community
+        where
+            uzcs.id = #{uczsId}
+            and uzcs.f_community_id = community.id
+            and uzcs.f_space_id = space.id
+    </select>
+
     <select id="getSpaceInfoById" resultType="space.qmen.lot.dto.SpaceInfoDTO" parameterType="java.lang.Long">
         select
           `space`.id,
@@ -128,6 +143,31 @@
         select
         <include refid="Base_Column_List"/>
         from `space`
+    </select>
+
+    <select id="listSpaceEx" resultType="space.qmen.lot.vo.SpaceExVO">
+        select
+        <include refid="Base_Column_List"/>, status
+        from
+        `space`
+        LEFT JOIN  lk_user_community_zone_space as uczs
+        on `space`.id = uczs.f_space_id
+    </select>
+
+    <select id="listSpaceCheck" resultType="space.qmen.lot.dto.SpaceCheckDTO">
+        select
+            `user`.real_name AS owner_name,
+            `user`.tel,
+            uczs.`status` AS space_status,
+          `space`.`name` AS space_name,
+          `space`.id
+        from
+            `space`,
+            lk_user_community_zone_space AS uczs,
+          `user`
+        WHERE
+            space.id = uczs.f_space_id
+            and uczs.f_owner_id = `user`.id
     </select>
 
     <!-- 新增车位 -->
@@ -211,6 +251,20 @@
           uczs.id = #{uczsId}
     </update>
 
+    <update id="updateUCZSStatusBySpaceId" parameterType="space.qmen.lot.param.SpaceCheckParam">
+        update
+        lk_user_community_zone_space AS uczs
+        set
+        <trim suffixOverrides=",">
+            <if test="status!=null">
+                uczs.status = #{status},
+            </if>
+        </trim>
+        where
+        uczs.f_space_id = #{spaceId}
+        and uczs.is_deleted = 0
+    </update>
+
 
     <!-- 删除车位 -->
     <delete id="deleteSpace" parameterType="java.lang.Long">
@@ -245,7 +299,7 @@
             community.`name` AS community_name,
             uczs.f_space_id,
             uczs.f_zone_id,
-            rule.`status`,
+            uczs.`status`,
             rule.is_morning_ok,
             rule.is_afternoon_ok,
             `space`.`code`,
@@ -270,7 +324,6 @@
             AND community.id = uczs.f_community_id
             AND uczs.f_community_id = policy.f_community_id
             AND uczs.is_deleted = 0
-            AND uczs.`status` = 1
             AND uczs.f_owner_id = #{id};
     </select>
 

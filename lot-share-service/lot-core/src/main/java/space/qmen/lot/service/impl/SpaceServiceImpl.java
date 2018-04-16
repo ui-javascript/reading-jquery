@@ -3,12 +3,12 @@ package space.qmen.lot.service.impl;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import space.qmen.lot.dao.CommunityDao;
-import space.qmen.lot.dao.OrderDao;
-import space.qmen.lot.dao.SpaceDao;
+import space.qmen.lot.Constant;
+import space.qmen.lot.dao.*;
 import space.qmen.lot.dto.*;
 import space.qmen.lot.entity.Community;
 import space.qmen.lot.entity.CommunityPolicy;
+import space.qmen.lot.entity.Notice;
 import space.qmen.lot.entity.Space;
 import space.qmen.lot.param.*;
 import space.qmen.lot.service.ISpaceService;
@@ -37,6 +37,9 @@ public class SpaceServiceImpl implements ISpaceService {
     private SpaceDao spaceDao;
 
     @Autowired
+    private NoticeDao noticeDao;
+
+    @Autowired
     private CommunityDao communityDao;
 
     @Autowired
@@ -47,6 +50,15 @@ public class SpaceServiceImpl implements ISpaceService {
         return spaceDao.listSpace();
     }
 
+    @Override
+    public List<SpaceExVO> listSpaceEx(){
+        return spaceDao.listSpaceEx();
+    }
+
+    @Override
+    public List<SpaceCheckDTO> listSpaceCheck(){
+        return spaceDao.listSpaceCheck();
+    }
 
     @Override
     public Space getSpaceById(Long id) { return spaceDao.getSpaceById(id); }
@@ -207,6 +219,33 @@ public class SpaceServiceImpl implements ISpaceService {
     public Long updateSpace(Space space) { return spaceDao.updateSpace(space); }
 
     @Override
+    public Long updateSpaceEx(SpaceExVO spaceExVO) {
+        Space space = new Space();
+        space.setName(spaceExVO.getName())
+                .setDescription(spaceExVO.getDescription())
+                .setId(spaceExVO.getId());
+
+
+        SpaceCheckParam spaceCheckParam = new SpaceCheckParam();
+        spaceCheckParam.setSpaceId(spaceExVO.getId())
+            .setStatus(spaceExVO.getStatus());
+        spaceDao.updateUCZSStatusBySpaceId(spaceCheckParam);
+
+        return spaceDao.updateSpace(space);
+    }
+
+    @Override
+    public Long updateSpaceCheckPass(SpaceCheckDTO spaceCheckDTO) {
+        SpaceCheckParam spaceCheckParam = new SpaceCheckParam();
+        spaceCheckParam.setSpaceId(spaceCheckDTO.getId())
+                .setStatus(spaceCheckDTO.getSpaceStatus());
+        return spaceDao.updateUCZSStatusBySpaceId(spaceCheckParam);
+
+    }
+
+
+
+    @Override
     public List<SpaceDetailsDTO> listSpaceDetailsByOwnerId(Long id){
         return spaceDao.listSpaceDetailsByOwnerId(id);
     }
@@ -224,6 +263,17 @@ public class SpaceServiceImpl implements ISpaceService {
 
     @Override
     public Long updateUCZSUser(UCZSMatchUserParam uczsMatchUserParam) {
+        Long uczsId = uczsMatchUserParam.getUczsId();
+
+        UCZSSpaceInfoDTO spaceInfo = spaceDao.getSpaceInfoByUCZSId(uczsId);
+        Notice notice = new Notice();
+        notice.setAction(0)
+                .setContent(Constant.getSpaceCheckPassedContent(spaceInfo.getCommunityName() + "编号为" + spaceInfo.getSpaceCode()))
+                .setTitle("车位审核完成")
+                .setState(1);
+        noticeDao.saveNotice(notice);
+        noticeDao.saveUserNotice(uczsMatchUserParam.getOwnerId());
+
         return spaceDao.updateUCZSUser(uczsMatchUserParam);
     }
 

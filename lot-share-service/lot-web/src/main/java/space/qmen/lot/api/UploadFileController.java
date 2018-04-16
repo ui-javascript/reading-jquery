@@ -31,15 +31,15 @@ public class UploadFileController {
 
     // 文件存储路径
 //    private static String UPLOADED_FOLDER = "e:/temp/pic";
-    private static String UPLOADED_FOLDER = "/opt/uploads/"; // 部署到操作系统上
+    private static String UPLOADED_FOLDER = "/opt/uploads"; // 部署到操作系统上
 
 
 
     @ApiOperation("上传测试页")
-    @RequestMapping("/index")
+    @RequestMapping("/")
     public String index(HashMap<String, Object> map) {
         map.put("hello", "欢迎下载测试");
-        return "/uploads";
+        return "uploads";
     }
 
 

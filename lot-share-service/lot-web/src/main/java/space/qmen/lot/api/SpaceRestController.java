@@ -4,10 +4,12 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import space.qmen.lot.dto.SpaceCheckDTO;
 import space.qmen.lot.entity.Space;
 import space.qmen.lot.param.*;
 import space.qmen.lot.service.ISpaceService;
 import space.qmen.lot.utils.ResultUtil;
+import space.qmen.lot.vo.SpaceExVO;
 import springfox.documentation.annotations.ApiIgnore;
 
 import javax.validation.Valid;
@@ -63,6 +65,18 @@ public class SpaceRestController {
         return ResultUtil.getResultWithSuccess(spaceService.listSpace());
     }
 
+    @ApiOperation("获取所有车位(更多信息)")
+    @RequestMapping(value = "/spaceEx", method = RequestMethod.GET)
+    public Object listSpaceEx() {
+        return ResultUtil.getResultWithSuccess(spaceService.listSpaceEx());
+    }
+
+    @ApiOperation("获取所有车位审核信息")
+    @RequestMapping(value = "/spaceCheck", method = RequestMethod.GET)
+    public Object listSpaceCheck() {
+        return ResultUtil.getResultWithSuccess(spaceService.listSpaceCheck());
+    }
+
     @ApiOperation("新增车位")
     @RequestMapping(value = "/space", method = RequestMethod.POST)
     public Object saveSpace(@RequestBody SpaceParam space) {
@@ -82,6 +96,21 @@ public class SpaceRestController {
     @RequestMapping(value = "/space", method = RequestMethod.PUT)
     public Object updateSpace(@RequestBody Space space) {
         spaceService.updateSpace(space);
+        return ResultUtil.getResultWithSuccess();
+    }
+
+    @ApiIgnore()
+    @ApiOperation("修改车位信息(增强)")
+    @RequestMapping(value = "/spaceEx", method = RequestMethod.PUT)
+    public Object updateSpaceEx(@RequestBody SpaceExVO spaceExVO) {
+        spaceService.updateSpaceEx(spaceExVO);
+        return ResultUtil.getResultWithSuccess();
+    }
+
+    @ApiOperation("车位校验")
+    @RequestMapping(value = "/spacePassDisabled", method = RequestMethod.PUT)
+    public Object updateSpaceCheckPass(@RequestBody SpaceCheckDTO spaceCheckDTO) {
+        spaceService.updateSpaceCheckPass(spaceCheckDTO);
         return ResultUtil.getResultWithSuccess();
     }
 

@@ -25,12 +25,9 @@
 							@selection-change="selsChange"
 							style="width: 100%;">
 
-			<el-table-column type="selection" width="40">
-			</el-table-column>
-			<el-table-column type="index" width="120">
-			</el-table-column>
-			<el-table-column prop="name" label="车位名" width="220" sortable>
-			</el-table-column>
+			<el-table-column type="selection" width="40"></el-table-column>
+			<el-table-column type="index" width="120"></el-table-column>
+			<el-table-column prop="name" label="车位名" width="220" sortable></el-table-column>
 			<el-table-column prop="status" label="状态" width="180" :formatter="formatStatus" sortable>
 			</el-table-column>
 			<el-table-column prop="description" label="描述">
@@ -242,10 +239,10 @@
 
 			// 获取所有城市
 	    getSpaces () {
-	      let url = 'http://m.qmen.space:8080/api/space';
+	      let url = 'http://47.100.99.127:8080/api/v1/spaceEx';
 
 	      this.$http.get(url).then(response => {
-	        this.spaces = response.data
+	        this.spaces = response.data.data
 	      }).catch(e => {
 	        this.errors.push(e)
 	      })
@@ -253,11 +250,10 @@
 
 	    // 根据id获取
 	    getSpaceById (id) {
-	      let url = 'http://m.qmen.space:8080/api/space/' + id
+	      let url = 'http://47.100.99.127:8080/api/v1/space/' + id
 
 	      this.$http.get(url).then((response) => {
-	        this.spaces = response.data;
-	        // console.log(response.data)
+	        this.spaces = response.data.data;
 	      }).catch((error) => {
 	        console.log(error)
 	      })
@@ -265,7 +261,7 @@
 
 	    // 根据id删除
 	    removeSpaceById (id) {
-	      let url = 'http://m.qmen.space:8080/api/space/' + id
+	      let url = 'http://47.100.99.127:8080/api/v1/space/' + id
 
 				this.listLoading = true;
 	      this.$http.delete(url).then((response) => {
@@ -282,7 +278,7 @@
 
 	    // 新增
 	    addNewSpace (para) {
-	      let url = 'http://m.qmen.space:8080/api/space'
+	      let url = 'http://47.100.99.127:8080/api/v1/space'
 	      this.$http.post(url, para).then(response => {
 					this.addLoading = false;
 					// NProgress.done();
@@ -300,7 +296,7 @@
 
 	    // 更具id新增
 	    updateSpaceById (para) {
-	      let url = 'http://m.qmen.space:8080/api/space'
+	      let url = 'http://47.100.99.127:8080/api/v1/spaceEx'
 				// this.listLoading = false;
 	      this.$http.put(url, para)
 	      .then(response => {

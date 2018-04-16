@@ -21,4 +21,35 @@
         ORDER BY notice.gmt_create DESC;
     </select>
 
+    <insert id="saveNotice" parameterType="space.qmen.lot.entity.Notice" useGeneratedKeys="true" keyProperty="id">
+        insert into `notice`
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="action != null">action,</if>
+            <if test="state != null">`state`,</if>
+            <if test="title != null">title,</if>
+            <if test="content != null">content,</if>
+        </trim>
+        values
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="action != null">
+               #{action},
+            </if>
+            <if test="state != null">
+                #{state},
+            </if>
+            <if test="title != null">
+                #{title},
+            </if>
+            <if test="content != null">
+                #{content},
+            </if>
+        </trim>
+    </insert>
+
+    <!-- 进紧接上一步新增订单 -->
+    <insert id="saveUserNotice" useGeneratedKeys="true" keyProperty="id">
+        insert into lk_user_notice(f_notice_id, f_user_id)
+        values((SELECT LAST_INSERT_ID()), #{userId})
+    </insert>
+
 </mapper>

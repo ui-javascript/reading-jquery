@@ -44,12 +44,12 @@ public class Constant {
         Constant.BASE_PATH = basePath;
     }
 
-    public String getFinishedOrderContent(Long orderNo) {
-        return this.NOTICE_ORDER_CONTENT_FINISHED[0] + orderNo
-                + this.NOTICE_ORDER_CONTENT_FINISHED[1];
+    public static String getFinishedOrderContent(Long orderNo) {
+        return NOTICE_ORDER_CONTENT_FINISHED[0] + orderNo
+                + NOTICE_ORDER_CONTENT_FINISHED[1];
     }
 
-    public String getSpaceCheckPassedContent(String spaceInfo) {
+    public static  String getSpaceCheckPassedContent(String spaceInfo) {
         return NOTICE_SPACE_CHECK_PASSED_CONTENT[0] + spaceInfo + NOTICE_SPACE_CHECK_PASSED_CONTENT[1];
     }
 
