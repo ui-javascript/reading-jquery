@@ -10,4 +10,9 @@ public class SpaceInfoDTO extends Space {
     private String zoneName;
     private String ownerName;
     private String ownerTel;
+    private Integer historyOrderNum;
+
+    public SpaceInfoDTO() {
+        this.historyOrderNum = 0;
+    }
 }

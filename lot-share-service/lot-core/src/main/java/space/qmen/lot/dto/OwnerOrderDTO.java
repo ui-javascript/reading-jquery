@@ -23,5 +23,6 @@ public class OwnerOrderDTO {
     private Double actualPayment;
     private Double timeoutPayment;
     private Double duration;
+    private Long orderId;
     private Integer orderStatus;
 }

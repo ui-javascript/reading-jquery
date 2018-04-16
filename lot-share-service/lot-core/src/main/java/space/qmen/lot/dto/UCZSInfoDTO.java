@@ -12,4 +12,6 @@ public class UCZSInfoDTO {
     private String spaceName;
     private Long zoneId;
     private String zoneName;
+
+
 }

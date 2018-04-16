@@ -11,6 +11,7 @@ import java.util.List;
 public interface SpaceDao {
 
     Space getSpaceById(@Param("id") Long id);
+    Integer getSpaceHistoryOrderNumById(@Param("spaceId") Long spaceId);
     Long[] getSpaceCollectionStatus(SpaceCollectionParam spaceCollectionParam);
     SpaceInfoDTO getSpaceInfoById(@Param("id") Long id);
     SpaceDayRentingStatusDTO getSpaceDayRentingStatus(SpaceDayRentingStatusParam spaceDayRentingStatusParam);

@@ -146,6 +146,7 @@
         <result column="actual_payment" property="actualPayment" />
         <result column="timeout_payment" property="timeoutPayment" />
         <result column="duration" property="duration" />
+        <result column="order_id" property="orderId" />
         <result column="order_status" property="orderStatus" />
     </resultMap>
     <select id="listOrderByOwnerId" resultMap="OwnerOrderMap" parameterMap="ListOrderParam">
@@ -162,6 +163,7 @@
           policy.afternoon_begin_time,
           policy.afternoon_end_time,
           vehicle.plate_num,
+          `order`.id AS order_id,
           `order`.actual_payment,
           `order`.timeout_payment,
           `order`.duration,

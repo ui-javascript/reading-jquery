@@ -68,6 +68,17 @@
             AND day_rentings.is_deleted = 0;
     </select>
 
+    <select id="getSpaceHistoryOrderNumById" resultType="java.lang.Integer" parameterType="java.lang.Long">
+        select count(*)
+        from `order`,lk_space_day_renting_status AS day_rentings
+        where
+        `order`.f_renting_status_id = day_rentings.id
+        and day_rentings.is_deleted = 0
+        and `order`.`status` != 2
+        and day_rentings.is_deleted = 0
+        and day_rentings.f_space_id = #{spaceId}
+    </select>
+
     <select id="getSpaceCollectionStatus" resultType="java.lang.Long"
             parameterType="space.qmen.lot.param.SpaceCollectionParam">
         select

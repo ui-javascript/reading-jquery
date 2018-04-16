@@ -246,6 +246,10 @@ public class SpaceServiceImpl implements ISpaceService {
 
             for(Long id : idList) {
                 SpaceInfoDTO info = getSpaceInfoById(id);
+
+                // 获取历史订单数
+                Integer historyOrderNum = spaceDao.getSpaceHistoryOrderNumById(id);
+                info.setHistoryOrderNum(historyOrderNum);
                 spaceInfoList.add(info);
             }
 

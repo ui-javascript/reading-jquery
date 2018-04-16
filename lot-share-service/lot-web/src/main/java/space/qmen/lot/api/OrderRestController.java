@@ -49,8 +49,8 @@ public class OrderRestController {
 
 
     @ApiOperation("取消订单信息")
-    @RequestMapping(value = "/order/cancel/id/{orderId}", method = RequestMethod.POST)
-    public Object cancelOrder( @PathVariable("orderId") Long orderId) {
+    @RequestMapping(value = "/order/cancel", method = RequestMethod.POST)
+    public Object cancelOrder(Long orderId) {
         orderService.updateOrderStatus(orderId);
         return ResultUtil.getResultWithSuccess();
     }
