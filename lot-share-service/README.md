@@ -39,4 +39,4 @@ mvn spring-boot:run
 租用期前一段时间仍然不支付全款，则自动取消订单，不退款
 ```
 
-- 
+- 文件上传时注意创建 /opt/uploads chmod 777

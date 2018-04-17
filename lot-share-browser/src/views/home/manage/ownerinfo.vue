@@ -71,7 +71,7 @@
 					<el-input type="textarea" v-model="editForm.addr"></el-input>
 				</el-form-item>
 			</el-form>
-			<div slot="footer" class="dialog-footer">
+			<div  slot-scope="footer" class="dialog-footer">
 				<el-button @click.native="editFormVisible = false">取消</el-button>
 				<el-button type="primary" @click.native="editSubmit" :loading="editLoading">提交</el-button>
 			</div>
@@ -99,7 +99,7 @@
 					<el-input type="textarea" v-model="addForm.addr"></el-input>
 				</el-form-item>
 			</el-form>
-			<div slot="footer" class="dialog-footer">
+			<div  slot-scope="footer" class="dialog-footer">
 				<el-button @click.native="addFormVisible = false">取消</el-button>
 				<el-button type="primary" @click.native="addSubmit" :loading="addLoading">提交</el-button>
 			</div>

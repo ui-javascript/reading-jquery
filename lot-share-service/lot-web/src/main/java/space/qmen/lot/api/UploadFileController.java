@@ -73,9 +73,7 @@ public class UploadFileController {
     // 多文件上传
     @PostMapping("/file/multi")
     @ApiOperation("文件上传")
-    public Object uploadXslMulti(
-            @RequestParam("extraField") String extraField,
-            @RequestParam("files") MultipartFile[] uploadfiles) {
+    public Object uploadXslMulti(@RequestParam("files") MultipartFile[] uploadfiles) {
 
         logger.debug("Multiple file upload!");
 
