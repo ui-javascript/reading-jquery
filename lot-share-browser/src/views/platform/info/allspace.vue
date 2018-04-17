@@ -288,10 +288,10 @@
 
 			// 获取所有城市
 	    getSpaces () {
-	      let url = 'http://47.100.99.127:8080/api/v1/spaceEx';
+	      let url = 'http://m.qmen.space:8080/api/space';
 
 	      this.$http.get(url).then(response => {
-	        this.spaces = response.data.data
+	        this.spaces = response.data
 	      }).catch(e => {
 	        this.errors.push(e)
 	      })
@@ -346,7 +346,7 @@
 
 	    // 更具id新增
 	    updateSpaceById (para) {
-	      let url = 'http://47.100.99.127:8080/api/v1/spaceEx'
+	      let url = 'http://m.qmen.space:8080/api/space'
 				// this.listLoading = false;
 	      this.$http.put(url, para)
 	      .then(response => {

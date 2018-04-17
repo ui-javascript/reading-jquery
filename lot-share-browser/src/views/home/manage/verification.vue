@@ -70,7 +70,7 @@
                     <el-input v-model="editForm.description"></el-input>
                 </el-form-item>
             </el-form>
-            <div  slot-scope="footer" class="dialog-footer">
+            <div slot="footer" class="dialog-footer">
                 <el-button @click.native="editFormVisible = false">取消</el-button>
                 <el-button type="primary" @click.native="editSubmit" :loading="editLoading">提交</el-button>
             </div>
