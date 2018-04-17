@@ -128,7 +128,8 @@ export default {
     }
   },
   created() {
-    this.uploadUrl = window.HOST + '/Upload'
+    // this.uploadUrl = window.HOST + '/Upload'
+      this.uploadUrl= "http://47.100.99.127:8080/api/v1/upload/file/multi"
     // this.apiPost('admin/base/getConfigs').then((res) => {
     //   this.handelResponse(res, (data) => {
     //     this.form.SYSTEM_NAME = data.SYSTEM_NAME
