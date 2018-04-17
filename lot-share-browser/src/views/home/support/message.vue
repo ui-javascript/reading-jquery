@@ -170,7 +170,7 @@
             v-model="dialog.show"
             @close='onCloseView'>
             <div v-html="dialog.article_info.content"></div>
-            <!--  <span  slot-scope="footer" class="dialog-footer">
+            <!--  <span  slot="footer" class="dialog-footer">
                 <el-button @click="dialog.show = false">取 消</el-button>
                 <el-button type="primary" @click="dialog.show = false">确 定</el-button>
             </span> -->
