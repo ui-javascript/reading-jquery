@@ -29,6 +29,7 @@ public interface ISpaceService {
     Space getSpaceById(Long id);
     Integer getSpaceCollectionStatus(SpaceCollectionParam spaceCollectionParam);
     SpaceInfoDTO getSpaceInfoById(Long id);
+
     // 获取某车位当天的租用状态
     SpaceDayRentingStatusDTO getSpaceDayRentingStatus(SpaceDayRentingStatusParam spaceDayRentingStatusParam);
     SpaceWeekRentingStatusVO getSpaceWeekRentingStatus(SpaceWeekRentingStatusParam spaceWeekRentingStatusParam);

@@ -299,7 +299,7 @@
             community.`name` AS community_name,
             uczs.f_space_id,
             uczs.f_zone_id,
-            uczs.`status`,
+            rule.`status`,
             rule.is_morning_ok,
             rule.is_afternoon_ok,
             `space`.`code`,
@@ -425,6 +425,7 @@
 				AND rule.f_space_id = uczs.f_space_id
         AND uczs.f_community_id = #{communityId}
         AND uczs.f_community_id = community.id
+        AND uczs.status = 1
         AND rule.is_deleted = 0
         AND rule.status = 1;
     </select>
