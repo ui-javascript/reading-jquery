@@ -23,3 +23,33 @@ cnpm i --save
 # 一些需要全局安装
 cnpm i -g node-sass
 ```
+
+# 学习模仿List
+
+
+
+# 不烂大街的轮播
+
+- 3D立体轮播 https://www.html5tricks.com/jquery-css3-3d-image-player.html
+
+# 表单
+
+- 日夜间切换的动画 https://www.html5tricks.com/css3-creative-switch-button.html
+- 模仿复选框选中效果 https://www.html5tricks.com/jquery-svg-checkbox-checked.html
+- 自定义美化Select下拉框插件 https://www.html5tricks.com/jquery-custom-select-plugin.html
+
+# 按钮
+
+- 水波按钮 https://www.html5tricks.com/svg-css3-ripple-button.html
+
+# 拾色器
+
+- SVG/HTML5超富创意的环形颜色拾取器 https://www.html5tricks.com/svg-html5-circle-color-picker.html
+
+# 滑动杆
+
+- 可以用到资产借还的时限选择 https://www.html5tricks.com/css3-balloon-slider.html
+
+# 加载条
+
+- 液体效果 适当改下颜色 https://www.html5tricks.com/html5-canvas-gooey-loading.html
