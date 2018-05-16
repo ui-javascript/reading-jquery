@@ -53,3 +53,7 @@ cnpm i -g node-sass
 # 加载条
 
 - 液体效果 适当改下颜色 https://www.html5tricks.com/html5-canvas-gooey-loading.html
+
+# 钟表
+
+- 15个超强悍的CSS3圆盘时钟动画赏析 https://www.html5tricks.com/15-cool-css3-circle-clock.html
