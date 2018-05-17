@@ -1,9 +1,11 @@
 package space.qmen.lot.api;
 
+//https://my.oschina.net/qjedu/blog/1550704
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.core.io.ResourceLoader;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -30,10 +32,10 @@ public class UploadFileController {
     private final Logger logger = LoggerFactory.getLogger(UploadFileController.class);
 
     // 文件存储路径
-//    private static String UPLOADED_FOLDER = "e:/temp/pic";
-    private static String UPLOADED_FOLDER = "/opt/uploads"; // 部署到操作系统上
+    private static String UPLOADED_FOLDER = "e:/temp/pic";
+//    private static String UPLOADED_FOLDER = "/opt/uploads"; // 部署到操作系统上
 
-
+    private ResourceLoader resourceLoader;
 
     @ApiOperation("上传测试页")
     @RequestMapping("/")
@@ -215,7 +217,19 @@ public class UploadFileController {
                 }
             }
         }
-        System.out.println("success");
+//        System.out.println("success");
+    }
+
+    @RequestMapping(method = RequestMethod.GET, value = "/{filename:.+}")
+    @ResponseBody
+    public ResponseEntity<?> getFile(@PathVariable String filename) {
+
+        try {
+            System.out.println("file://" + UPLOADED_FOLDER + "/" + filename);
+            return ResponseEntity.ok(resourceLoader.getResource("file://" + UPLOADED_FOLDER + "/" + filename));
+        } catch (Exception e) {
+            return ResponseEntity.notFound().build();
+        }
     }
 
 }

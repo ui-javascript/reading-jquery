@@ -64,6 +64,11 @@ public class SpaceServiceImpl implements ISpaceService {
     public Space getSpaceById(Long id) { return spaceDao.getSpaceById(id); }
 
     @Override
+    public SpaceInfoDTO getSpaceInfoById(Long id) {
+        return spaceDao.getSpaceInfoById(id);
+    }
+
+    @Override
     public SpaceDayRentingStatusDTO getSpaceDayRentingStatus(SpaceDayRentingStatusParam spaceDayRentingStatusParam) {
         return spaceDao.getSpaceDayRentingStatus(spaceDayRentingStatusParam);
     }
@@ -194,8 +199,7 @@ public class SpaceServiceImpl implements ISpaceService {
 
 
 
-    @Override
-    public SpaceInfoDTO getSpaceInfoById(Long id) { return spaceDao.getSpaceInfoById(id); }
+
 
     @Override
     public SpaceWeekRuleDTO getSpaceRuleBySpaceId(Long spaceId) {
@@ -295,12 +299,14 @@ public class SpaceServiceImpl implements ISpaceService {
             idList = spaceDao.listSpaceAvailable(communitySpaceAvailableParam);
 
             for(Long id : idList) {
-                SpaceInfoDTO info = getSpaceInfoById(id);
+                SpaceInfoDTO info = spaceDao.getSpaceInfoById(id);
 
-                // 获取历史订单数
-                Integer historyOrderNum = spaceDao.getSpaceHistoryOrderNumById(id);
-                info.setHistoryOrderNum(historyOrderNum);
-                spaceInfoList.add(info);
+                if (info != null) {
+                    // 获取历史订单数
+                    Integer historyOrderNum = spaceDao.getSpaceHistoryOrderNumById(id);
+                    info.setHistoryOrderNum(historyOrderNum);
+                    spaceInfoList.add(info);
+                }
             }
 
             CommunitySpaceVO result = new CommunitySpaceVO();
@@ -310,7 +316,7 @@ public class SpaceServiceImpl implements ISpaceService {
 
             CommunityPolicy policy = communityDao.getCommunityPolicyById(communitySpaceAvailableParam.getCommunityId());
             result.setSpaceInfoList(spaceInfoList)
-                    .setSpaceCount(idList.length)
+                    .setSpaceCount(spaceInfoList.size())
                     .setMorningBeginTime(policy.getMorningBeginTime())
                     .setMorningEndTime(policy.getMorningEndTime())
                     .setAfternoonBeginTime(policy.getAfternoonBeginTime())
