@@ -137,7 +137,7 @@ gulp.task('compileLess', function (cb) {
         .pipe(less())
         .pipe(autoprefixer())
         // .pipe(concat({ext: '.css'})) //合并
-        .pipe(cleanCss())
+        .pipe(cleanCss({compatibility: 'ie7'}))
         // .pipe(sourcemaps.write())
         // .pipe(gulp.dest(PATHS.lessDevThemeFolder))
         .pipe(gulp.dest('./static/css/theme'))
@@ -341,7 +341,7 @@ gulp.task('distSass', function (cb) { // cb是传入的回调函数
         }).on('error', sass.logError))
         // .pipe(concat({ext: '.css'}))
         // .pipe(rename('all.min.css'))
-        .pipe(cleanCss())
+        .pipe(cleanCss({compatibility: 'ie7'}))
         .pipe(autoprefixer({
             // browsers: ['> 1%', 'not ie <= 8']
         }))
@@ -360,7 +360,7 @@ gulp.task('distLess', function () {
         .pipe(less())
         .pipe(autoprefixer())
         // .pipe(concat({ext: '.css'})) //合并
-        .pipe(cleanCss())
+        .pipe(cleanCss({compatibility: 'ie7'}))
         .pipe(gulp.dest('./static/css/theme'))
         .pipe(md5(10, './templates/**/*.html'));
 
