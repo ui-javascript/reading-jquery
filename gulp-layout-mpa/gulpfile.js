@@ -296,18 +296,19 @@ gulp.task('optimizeImages', function () {
         });
 
     return
-        gulp.src(PATHS.images)
+        // gulp.src(PATHS.images)
+        gulp.src('./static/images/*')
         .pipe(plumber())
-        // .pipe(imagemin({
-        //     optimizationLevel: 5, //默认：3  取值范围：0-7（优化等级）
-        //     progressive: true, // 无损压缩jpg图片
-        //     interlaced: true, // 隔行扫描gif进行渲染
-        //     multipass: true, //多次优化svg直到完全优化
-        //     use: [pngquant()] // 使用 pngquant 深度压缩 png 图片
-        // }))
         .pipe(imagemin({
-            use: [jpgmin, pngmin]
+            optimizationLevel: 5, //默认：3  取值范围：0-7（优化等级）
+            progressive: true, // 无损压缩jpg图片
+            interlaced: true, // 隔行扫描gif进行渲染
+            multipass: true, //多次优化svg直到完全优化
+            use: [pngquant()] // 使用 pngquant 深度压缩 png 图片
         }))
+        // .pipe(imagemin({
+        //     use: [jpgmin, pngmin]
+        // }))
         .pipe(gulp.dest(PATHS.imagesFolder))
     // .pipe(md5(10, './**/*.{css,js,html,json}'))
     // .pipe(browserSync.reload({stream:true}))
