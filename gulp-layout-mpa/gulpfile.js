@@ -65,8 +65,11 @@ var gulp = require('gulp'),
     minifyHtml = require('gulp-minify-html'),
 
     imagemin = require('gulp-imagemin'), // 压缩图片
+    imageminJpegRecompress = require('imagemin-jpeg-recompress'),
+    imageminOptipng = require('imagemin-optipng'),
     pngquant = require('imagemin-pngquant'),
     spritesmith = require('gulp.spritesmith'),
+
     cache = require('gulp-cache'),
     fileInclude = require('gulp-file-include'),
     clean = require('gulp-clean'), // 用来删除文件
@@ -99,7 +102,7 @@ var PATHS = {
 
     images: PATH_ASSETS + '/images/**/*.{png,jpg,jpeg,ico,gif,svg}',
     imagesFolder: PATH_ASSETS + "/images",
-    sprite: PATH_ASSETS + '/images/sprite/!(sprite.png|*.css)',
+    sprite: PATH_ASSETS + '/images/_sprite/!(sprite.png|*.css)',
     plusFolder: PATH_ASSETS + "/plus",
     fontsFolder: PATH_ASSETS + "/fonts",
     mockFolder: PATH_ASSETS + "/mock"
@@ -213,10 +216,6 @@ gulp.task('devSync', function () {
 
 });
 
-
-
-
-
 // 默认任务
 gulp.task('default', function () {
     runSequence('01-build-dev');
@@ -255,9 +254,9 @@ gulp.task('makeSprite', function () {
     return gulp.src(PATHS.sprite)
         .pipe(spritesmith({
             imgName: 'ico.png',
-            cssName: 'sprite.css'
+            cssName: 'sprite.less'
         }))
-        .pipe(gulp.dest(PATHS.imagesFolder));
+        .pipe(gulp.dest(PATHS.lessDevThemeFolder + '/natural'));
 });
 
 
@@ -283,14 +282,31 @@ gulp.task('cleanDist', function () {
 
 // 图片压缩
 gulp.task('optimizeImages', function () {
-    return gulp.src(PATHS.images)
+    var jpgmin = imageminJpegRecompress({
+            accurate: true,//高精度模式
+            quality: "high",//图像质量:low, medium, high and veryhigh;
+            method: "smallfry",//网格优化:mpe, ssim, ms-ssim and smallfry;
+            min: 70,//最低质量
+            loops: 0,//循环尝试次数, 默认为6;
+            progressive: false,//基线优化
+            subsample: "default"//子采样:default, disable;
+        }),
+        pngmin = imageminOptipng({
+            optimizationLevel: 7
+        });
+
+    return
+        gulp.src(PATHS.images)
         .pipe(plumber())
+        // .pipe(imagemin({
+        //     optimizationLevel: 5, //默认：3  取值范围：0-7（优化等级）
+        //     progressive: true, // 无损压缩jpg图片
+        //     interlaced: true, // 隔行扫描gif进行渲染
+        //     multipass: true, //多次优化svg直到完全优化
+        //     use: [pngquant()] // 使用 pngquant 深度压缩 png 图片
+        // }))
         .pipe(imagemin({
-            optimizationLevel: 5, //类型：Number  默认：3  取值范围：0-7（优化等级）
-            progressive: true, //类型：Boolean 默认：false 无损压缩jpg图片
-            interlaced: true, //类型：Boolean 默认：false 隔行扫描gif进行渲染
-            multipass: true, //类型：Boolean 默认：false 多次优化svg直到完全优化
-            use: [pngquant()] // 使用 pngquant 深度压缩 png 图片
+            use: [jpgmin, pngmin]
         }))
         .pipe(gulp.dest(PATHS.imagesFolder))
     // .pipe(md5(10, './**/*.{css,js,html,json}'))
