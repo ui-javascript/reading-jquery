@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>AJAX原理展示</title>
+</head>
+
+<body>
+  <script>
+    var city = "London",
+      divElem = document.createElement("div");
+    var str = "<p>City: " + city + "</p>";
+
+    // 注意这两句话的先后顺序
+    divElem.innerHTML = str;
+    document.body.appendChild(divElem); // 创建结点
+
+    // 2s后改变局部内容
+    function changeCity() {
+      city = "New York";
+      divElem.innerHTML = "<p>City: <mark>" + city + "</mark></p>";
+      document.body.appendChild(divElem);
+
+      clearTimeout(time1);
+    }
+
+    // 两秒后改变
+    var time1 = setTimeout(changeCity, 2000);
+  </script>
+</body>
+
+</html>

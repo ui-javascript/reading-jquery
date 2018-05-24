@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- defineProperty 赋予多个属性值存在bug -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>ECMA-5 Object method</title>
+  <!-- <link rel="stylesheet" href=""> -->
+</head>
+
+<body>
+
+  <main></main>
+  <script>
+    // preventExtensions freeze
+    var personalDetails = {
+      name: "Den Odell",
+      email: "den.odell@me.com"
+    };
+
+
+
+    // Create a duplicate of this object
+    var fathersDetails = Object.create(personalDetails);
+
+    // Customize the duplicated object
+    fathersDetails.name = "John Smith";
+
+    // The properties set via the original object are still intact
+    console.log(fathersDetails.name);
+    console.log(fathersDetails.email);
+
+
+
+    // getOwnPropertyDescriptor
+    // defineProperty
+    // keys
+    console.log(Object.getOwnPropertyDescriptor(personalDetails, "name"));
+
+    Object.defineProperty(personalDetails, "age", {
+      value: 35,
+      writable: false,
+      enumerable: true,
+      configurable: true
+    });
+
+    // Define multiple new properties at the same time
+    // Object.defineProperty(personalDetails, {
+    //     height: {
+    //         value: 175,
+    //         writable: false,
+    //         enumerable: true,
+    //         configurable: true
+    //     },
+    //     town: {
+    //         value: "London",
+    //         writable: true,
+    //         enumerable: true,
+    //         configurable: true
+    //     }
+    // });
+
+    "use strict"; // apply strict mode below this line
+    // 获取包含对象所有属性名的数组
+    keys = Object.keys(personalDetails);
+    console.log("keys: " + keys.join(", ")); // "name, email"
+
+
+
+    console.log(Object.isExtensible(personalDetails)); // true
+    // Prevent the ‘personalDetails’ object being added to
+    Object.preventExtensions(personalDetails);
+    console.log(Object.isExtensible(personalDetails)); // false, as the object is now locked down
+
+    // Attempt to add a new property to the ‘personalDetails’ object
+    // personalDetails.age = 35; // Throws an exception if using ‘strict’ mode
+
+    // Lock down the object so that not even its existing properties can be manipulated
+    Object.freeze(personalDetails);
+    console.log(Object.isFrozen(personalDetails)); // true
+
+    // personalDetails.name = "John Odell"; // Throws an error if using strict mode as the object
+  </script>
+</body>
+
+</html>

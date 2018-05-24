@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>console.log用法演示</title>
+	<!-- <link rel="stylesheet" href=""> -->
+</head>
+<body>
+
+<script>
+console.log("Code executed at this point");
+console.log("The <body> element:", document.body);
+console.log("<body> element class name:", document.body.className);
+console.log("The window object:", window);
+
+/**
+ * 在JavaScript开发者工具控制台输出不同类型的消息
+ * 以及应用消息样式
+ */
+console.info("info(): Code executed at this point");
+console.debug("debug(): The <body> element:", document.body);
+console.warn("warn(): <body> element class name:", document.body.className);
+console.error("error(): The window object:", window);
+console.log("%clog(): This is a custom-styled message", "font-weight: bold; background: black; color: white;");
+
+
+function counter(length) {
+    var output = 0,
+        index = 0;
+
+    console.time("Loop timer " + length);
+
+    for (; index < length; index++) {
+        output = output + index;
+    }
+
+    console.timeEnd("Loop timer " + length);
+}
+
+counter(10000);
+counter(100000);
+counter(1000000);
+</script>
+
+
+
+</body>
+</html>

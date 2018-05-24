@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>try-catch</title>
+    <!-- <link rel="stylesheet" href=""> -->
+</head>
+<body>
+
+<main>
+    
+</main>
+<script src="../src/js/Class.js"></script>
+<script>
+
+var PI = 3.141592653589793238462643383279502884197,
+    decimalPlaces = Math.floor((Math.random() * 40) + 1), // random number between 1 and 40
+    shortPi;
+
+// Throws a range error if decimalPlaces > 20
+// try {
+//     shortPi = PI.toFixed(decimalPlaces); 
+// } catch (error) {
+//     console.log("An error occurred!");
+// }    
+
+try {
+    shortPi = PI.toFixed(decimalPlaces);
+} catch (error) {
+    decimalPlaces = 20;
+    shortPi = PI.toFixed(decimalPlaces);
+} finally {
+    console.log("hello");
+    console.log("The value of PI to " + decimalPlaces);
+}
+
+
+
+// 自定义错误类型
+var ElementNotFoundError = Class.create({
+    id: "",
+    message: "The element could not be found by the given ID",
+    initialize: function(id) {
+        this.id = id;
+    }
+});
+
+function findElement(id) {
+    var elem = document.getElementById(id);
+    if (!elem) {
+        throw new ElementNotFoundError(id);
+    }
+    return elem;
+}
+
+try {
+    findElement("header");
+} catch (error) {
+    if (error instanceof ElementNotFoundError) {
+        console.log("Sorry, the 'header' element was not found");
+    }
+}
+</script>    
+</body>
+</html>

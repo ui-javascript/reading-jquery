@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+    <!--
+    [handlebars教程](http://www.cnblogs.com/iyangyuan/archive/2013/12/12/3471227.html)
+     -->
+    <meta charset="utf-8">
+    <title>Handlebars.js简单演示</title>
+</head>
+<body>
+
+<div id="result"></div>
+
+<!-- 定义模板 -->
+<script id="template" type="x-tmpl-handlebars">
+    <p>
+        Name: <a href="mailto:{{email}}">{{firstName}} {{lastName}}</a><br>
+        Company: {{company}}
+    </p>
+    <p>
+        City: {{city}}
+    </p>
+</script>
+
+<script src="https://cdn.bootcss.com/handlebars.js/4.0.4/handlebars.min.js"></script>
+<script>
+
+// Get a reference to the template element and result element on the page
+var templateElem = document.getElementById("template"),
+    resultElem = document.getElementById("result"),
+    template = templateElem.innerHTML, // 获取模板
+
+    data = {
+        firstName: "Den",
+        lastName: "Odell",
+        email: "denodell@me.com",
+        company: "AKQA",
+        city: "London"
+    },
+    compiledTemplate = Handlebars.compile(template); // 编译后的模板
+
+// Combine the data with the compiled template function and add the result to the page
+resultElem.innerHTML = compiledTemplate(data);
+                        // 模板里引入数据渲染出来,确实精简了大胡子
+
+</script>
+
+</body>
+</html>

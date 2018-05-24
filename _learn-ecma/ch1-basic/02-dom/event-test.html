@@ -1,0 +1,86 @@
+<!--
+@Author: 骆金参
+@Date:   2016-11-19T14:59:42+08:00
+@Email:  1095947440@qq.com
+@Filename: event-test.html
+@Last modified by:   骆金参
+@Last modified time: 2017-03-14T23:52:01+08:00
+-->
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>事件驱动处理</title>
+	<!-- <link rel="stylesheet" href=""> -->
+	<style>
+		#box {
+			position: absolute;
+			left: 100px;
+			top: 100px;
+			padding: 5px;
+			background: #f0f3f9;
+			font-size: 12px;
+			-moz-box-shadow: 2px 2px 4px #666666;
+			-webkit-box-shadow: 2px 2px 4px #666666;
+		}
+
+		#main {
+			border: 1px solid #a0b3d6;
+			background: white;
+		}
+
+		#bar {
+			line-height: 24px;
+			background: #beceeb;
+			border-bottom: 1px solid #a0b3d6;
+			padding-left: 5px;
+			cursor: move;
+		}
+
+		#content {
+			width: 420px;
+			height: 250px;
+			padding: 10px 5px;
+		}
+	</style>
+</head>
+
+<body oncopy="return prohibitCopy()">
+
+	<main>
+		<p>hello world</p>
+		<p>复制我看看啊</p>
+		<input type="text" onfocus="txtFocus()" onblur="txtBlur()" />
+		<input type="password" onpaste="return false;" placeholder="你粘贴看看" />
+
+		<textarea name="textarea" id="" cols="30" rows="10" oncut="return prohibitCut();"></textarea>
+
+
+		<marquee>This text will scroll from right to left</marquee>
+		<marquee direction="up">This text will scroll from bottom to top</marquee>
+		<!-- 限制在范围内 -->
+		<marquee direction="down" width="250" height="200" behavior="alternate" style="border:solid">
+			<marquee behavior="alternate">
+				This text will bounce
+			</marquee>
+		</marquee>
+
+		<div id="box">
+			<div id="main">
+				<div id="bar">拖拽</div>
+				<div id="content">
+					内容……
+				</div>
+			</div>
+		</div>
+
+	</main>
+	<script src="./lib/drag.lib.js"></script>
+	<script src="js-event-more.js"></script>
+</body>
+
+</html>

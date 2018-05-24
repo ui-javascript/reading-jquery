@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>多态 polymorphic</title>
+  <!-- <link rel="stylesheet" href=""> -->
+</head>
+
+<body>
+
+  <main>
+
+  </main>
+  <script>
+    // Define our parent Accommodation "class"
+    function Accommodation() {
+      this.isLocked = false;
+      this.isAlarmed = false;
+    }
+
+    // Add methods for common actions to all types of accommodation
+    Accommodation.prototype.lock = function() {
+      this.isLocked = true;
+    };
+
+    Accommodation.prototype.unlock = function() {
+      this.isLocked = false;
+    };
+
+    Accommodation.prototype.alarm = function() {
+      this.isAlarmed = true;
+      console.log("Alarm activated");
+    };
+
+    Accommodation.prototype.deactivateAlarm = function() {
+      this.isAlarmed = false;
+      console.log("Alarm deactivated");
+    };
+
+    // Define a subclass for House
+    function House() {};
+    House.prototype = new Accommodation();
+    House.prototype.lock = function() {
+      Accommodation.prototype.lock.call(this); // 执行父类的lock方法
+      // 将一个函数的上下文应用到另一个函数上
+      console.log(this.isLocked);
+      this.alarm();
+    };
+
+    // Redefine the ‘unlock’ method in the same way
+    House.prototype.unlock = function() {
+      Accommodation.prototype.unlock.call(this);
+      this.deactivateAlarm();
+    };
+  </script>
+</body>
+
+</html>
