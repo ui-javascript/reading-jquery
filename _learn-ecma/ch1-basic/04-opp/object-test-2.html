@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Object test 2</title>
+  <!-- <link rel="stylesheet" href=""> -->
+</head>
+
+<body>
+
+  <main>
+
+  </main>
+  <script>
+    // Define a constructor called Accommodation
+    function Accommodation() {};
+
+    Accommodation.prototype.floors = 0;
+    Accommodation.prototype.rooms = 0;
+    Accommodation.prototype.sharedEntrance = false;
+    Accommodation.prototype.lock = function() {};
+    Accommodation.prototype.unlock = function() {};
+
+    // Accommodation.prototype = {
+    //     floors: 0,
+    //     rooms: 0,
+    //     sharedEntrance: false,
+    //     lock: function() {},
+    //     unlock: function() {}
+    // };
+
+    // Create object instances from our Accommodation "class"
+    var house = new Accommodation();
+    var apartment = new Accommodation();
+    // var apartment = new house.constructor();
+
+    console.log(house.constructor === Accommodation);
+    console.log(apartment instanceof Accommodation);
+
+    console.log("house.floors: " + house.floors); // 0
+    console.log("house.sharedEntrance: " + house.sharedEntrance); // false
+
+    house.floors = 2;
+    Accommodation.sharedEntrance = true; // ??
+    console.log("house.sharedEntrance: " + house.sharedEntrance); // false??
+    house.unlock();
+    apartment.lock();
+  </script>
+</body>
+
+</html>

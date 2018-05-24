@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Mustache.js入门演示</title>
+</head>
+<body>
+<!-- Define the template we wish to apply our data to. The "type" attribute
+    needs to be any non-standard MIME type in order for the element's contents
+    to be interpreted as plain text rather than executed -->
+<script id="template" type="x-tmpl-mustache">
+    <p>
+        Name: <a href="mailto:{{email}}">{{firstName}} {{lastName}}</a><br>
+        Company: {{company}}
+    </p>
+    <p>
+        City: {{city}}
+    </p>
+</script>
+<script src="http://cdn.bootcss.com/mustache.js/2.1.1/mustache.js"></script>
+<script>
+
+var templateElement = document.getElementById("template"),
+    template = templateElement.innerHTML; // 获取模板,从脚本拿过来
+
+var meElement = document.createElement("div"),
+    billElement = document.createElement("div"),
+    meData = {
+        firstName: "Den",
+        lastName: "Odell",
+        email: "denodell@me.com",
+        company: "AKQA",
+        city: "London"
+    },
+    billData = {
+        firstName: "Bill",
+        lastName: "Gates",
+        email: "bill@microsoft.com",
+        company: "Microsoft",
+        city: "Seattle"
+    };
+
+// 用mustachejs渲染进去
+meElement.innerHTML = Mustache.render(template, meData);
+billElement.innerHTML = Mustache.render(template, billData);
+window.addEventListener("load", function() {
+    document.body.appendChild(meElement);
+    document.body.appendChild(billElement);
+}, false);
+
+</script>
+</body>
+</html>

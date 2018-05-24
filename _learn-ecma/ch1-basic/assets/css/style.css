@@ -1,0 +1,175 @@
+/*外观整体*/
+body {
+  	font-family: Cambria, Arial;
+  	background: #333;
+}
+.container {
+  	margin-top:40px;
+    /*min-width: 600px;*/
+}
+
+
+/*左侧消息栏*/
+.navs {
+  background-color: #fff;
+  border: 1px solid #d2d5d9;
+  border-radius: 4px;
+}
+
+/*左侧消息栏顶部*/
+.navs > .title {
+  position: relative;
+  display: block;
+  padding: 1em;
+  background-color: #4a4f56;
+  color: #fff;
+  font-weight: bolder;
+  border-radius: 4px 4px 0 0;
+}
+
+/*左侧消息栏的人名 变色时间*/
+.navs a > span {
+  opacity: 1;
+  -webkit-transition: 0.2s;
+}
+.navs > a {
+  position: relative;
+  display: block;
+  padding: 1em;                      /*消息项长宽*/
+  border-bottom: 1px solid #d2d5d9;  /*消息项边框*/
+}
+.navs > a:last-child {
+  border-bottom: 0;
+  border-radius: 0 0 4px 4px;
+}
+.navs > a:hover:before {
+  color: #fff;
+}
+.navs > a:hover {
+  background-color: #6d7580;
+  color: #fff;
+}
+.navs > a:hover::after {
+  width: 0;
+  height: 0;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-left: 8px solid #6d7580;
+  content: '';
+  display: block;
+  position: absolute;
+  right: -8px;
+  top: 1.1em;
+}
+
+
+.navs > a:hover .bubble {
+  border: 0;
+  background: #f00;
+  color: #fff;
+}
+
+.navs a.active {
+  background-color: #6d7580;
+  color: #fff;
+}
+.navs a.active:before {
+  color: #fff;
+}
+.navs a.active .bubble {
+  border: 0;
+  background: #f00;
+  color: #fff;
+}
+.navs a.active:after {
+  width: 0;
+  height: 0;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-left: 8px solid #6d7580;
+  content: '';
+  display: block;
+  position: absolute;
+  right: -8px;
+  top: 1.1em;
+}
+
+
+
+/*最新消息条数泡泡样式*/
+.bubble {
+  position: absolute;   /*相对位置上的绝对位置*/
+  top: 1.3em;
+  right: 1em;
+  font-size: 0.8em;
+  color: #6d7580;
+  border: 1px solid #6d7580;
+  border-radius: 10px;   /*设置成圆形泡泡*/
+  padding: 2px 5px;      /*椭圆形*/
+}
+
+
+
+
+
+
+
+.tabs {
+	/*min-width: 700px;*/
+}
+
+label {
+	cursor: pointer;
+	background: -webkit-linear-gradient(#666, #555);
+	color: #eee;
+	border-radius: 5px 5px 0 0;
+	padding: 1.5% 3%;    /*用于切换的tab的长宽*/
+	float: left;         /*用于切换的tab的左浮*/
+	margin-right: 2px;
+}
+
+input {
+	opacity: 0;  /*按钮透明*/
+}
+/*被选取的用于切换的tab*/
+input:checked + label {
+	background: #fff;
+	color: #333;
+}
+
+/*各内容区*/
+.tabs input:nth-of-type(1):checked ~ .panels .panel:first-child,
+.tabs input:nth-of-type(2):checked ~ .panels .panel:nth-child(2),
+.tabs input:nth-of-type(3):checked ~ .panels .panel:nth-child(3),
+.tabs input:nth-of-type(4):checked ~ .panels .panel:nth-child(4),
+.tabs input:nth-of-type(5):checked ~ .panels .panel:last-child {
+	opacity: 1;
+	-webkit-transition: 0.3s;
+}
+
+
+.panels {
+	float: left;
+	clear: both;
+	position: relative;
+	width: 100%;
+	background: #fff;
+	border-radius: 0 10px 10px 10px;
+	/*max-height: 200px;*/
+	min-height: 315px;
+}
+.panel {
+	width: 100%;
+	opacity: 0;
+	position: absolute;
+	background: #fff;
+	border-radius: 0 10px 10px 10px;
+	padding: 4%;
+	box-sizing: border-box;
+}
+.panel h2 {
+	margin: 0;
+	font-family: Arial;
+}
+
+

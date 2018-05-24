@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>this context test</title>
+  <!-- <link rel="stylesheet" href=""> -->
+</head>
+
+<body>
+
+  <main>
+    <p>this 上下文 测试...</p>
+  </main>
+  <script>
+    // this 指向windows
+    console.log("this in global: " + (this === window)); // true
+
+    // this in func，still window
+    (function doSomething() {
+      console.log("this in func: " + (this === window)); // true
+    })();
+
+    // this in func of class -> object
+    var house = {
+      floors: 2,
+      isLocked: false,
+      lock: function() {
+        // console.log(this === window); // false
+        // console.log(this === house); // true
+
+        // We can treat ‘this’ as equivalent to the ‘house’ object, including using dot notation(原点符号)
+        this.isLocked = true;
+      }
+    };
+    house.lock();
+    console.log("this in class func: " + house.isLocked); // true
+
+
+    // 在class的方法中调用函数
+    // 将this关键字的值保存在变量中
+    var apartment = {
+      isLocked: false,
+      lock: function() {
+        var that = this;
+
+        // Set the isLocked property
+        this.isLocked = true;
+
+        function doSomething() {
+          console.log("this === apartment: " + (this === apartment)); // false
+          console.log("this === window: " + (this === window)); // true
+          console.log("that === apartment: " + (that === apartment)); // true
+
+          // Overwrite the isLocked property of the object,
+          // accessing it through the stored variable
+          that.isLocked = false;
+        }
+
+        doSomething();
+      }
+    };
+
+    apartment.lock();
+    console.log(apartment.isLocked); // false
+
+
+
+    // 在构造函数中使用this关键字
+    function Accommodation() {
+      this.floors = 0;
+      this.rooms = 0;
+      this.sharedEntrance = false;
+      this.isLocked = false;
+      this.lock = function() {
+        this.isLocked = true;
+      };
+      this.unlock = function() {
+        this.isLocked = false;
+      };
+    }
+
+    // Create object
+    var house = new Accommodation();
+    var apartment = new Accommodation();
+
+    // Read and write properties and execute methods as normal with these object instances
+    console.log(house.floors); // 0
+    house.floors = 2;
+    apartment.lock();
+    console.log(apartment.isLocked); // true
+  </script>
+</body>
+
+</html>

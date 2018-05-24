@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Object test 2</title>
+  <!-- <link rel="stylesheet" href=""> -->
+</head>
+
+<body>
+
+  <main>
+    <p>这是一个Object的测试页面</p>
+  </main>
+  <script>
+    // create object
+    function person(firstname, lastname, age, eyecolor) {
+      this.firstname = firstname;
+      this.lastname = lastname;
+      this.age = age;
+      this.eyecolor = eyecolor;
+
+      this.changeName = changeName;
+
+      function changeName(name) {
+        this.lastname = name;
+      }
+    }
+    myFather = new person("John", "Doe", 50, "blue");
+    console.log("father's name: " + myFather.lastname);
+    // debugger; // Manually set breakpoints
+    myFather.changeName("Dick");
+    console.log("father's name: " + myFather.lastname);
+    myFather.lastname = "Doe"; // 类似于set方法
+    console.log("father's name: " + myFather.lastname);
+
+
+    // 浮点型运算
+    var x = 0.2 + 0.1; // return 0.30000000000000004
+    // var x = 1.0 + 2.0; // return 3;
+    console.log("x value: " + x);
+
+    var myNum = 2;
+    console.log("乘方接近Infinity:");
+    while (myNum != Infinity) {
+      myNum = myNum * myNum;
+      console.log(myNum);
+    }
+
+    var num1 = 2 / 0;
+    var num2 = -2 / 0;
+    console.log("num1 value:" + num1);
+    console.log("num2 value:" + num2);
+
+
+    // Array prototype
+    var fruits = ["Banana", "Orange", "Apple", "Mango"]; // fruits extends Array
+    Array.prototype.myUcase = function() {
+      for (i = 0; i < this.length; i++) {
+        this[i] = this[i].toUpperCase();
+      }
+    }
+
+    fruits.myUcase(); // Array fruits has been changed
+    console.log(fruits);
+
+
+
+    // object prototype
+    function employee(name, job, born) {
+      this.name = name;
+      this.job = job;
+      this.born = born;
+    }
+    // employee.prototype.salary = null; // set property??
+    employee.prototype.salary = function(salary) {
+      employee.salary = salary;
+      console.log(employee.name + "'s salary: " + employee.salary);
+    };
+
+    var bill = new employee("Bill Gates", "Engineer", 1985);
+    bill.salary(8000);
+    console.log(bill);
+  </script>
+</body>
+
+</html>

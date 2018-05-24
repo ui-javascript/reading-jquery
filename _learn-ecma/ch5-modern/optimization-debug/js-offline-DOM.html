@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>离线DOM</title>
+    <!-- <link rel="stylesheet" href=""> -->
+</head>
+<body>
+
+<script>
+
+// Create a DocumentFragment object as an offline DOM structure, disconnected from the live DOM
+var offlineDOM = document.createDocumentFragment(),
+
+// Create elements for adding to the page dynamically
+header = document.createElement("header"),
+nav = document.createElement("nav");
+
+// Add each element to the offline DOM
+offlineDOM.appendChild(header);
+offlineDOM.appendChild(nav);
+
+// Add a copy of the offline DOM to the live page
+document.body.appendChild(offlineDOM);    
+</script>    
+</body>
+</html>

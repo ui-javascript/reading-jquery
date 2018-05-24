@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>演示js操作html DOM</title>
+  <!-- <link rel="stylesheet" href=""> -->
+</head>
+
+<body>
+  <main>
+    <section id="DOM-operate-demo">
+      <p>这是一个段落。</p>
+    </section>
+
+    <section id="light-toggle-demo">
+      <img id="myimage" onclick="changeImage()" src="../src/images/pic_bulboff.gif" width="100" height="180">
+    </section>
+
+    <section id="css-operate-demo">
+      <p id="js-change-color" onclick="changeColorFunc()">JavaScript 能改变 HTML 元素的样式。</p>
+    </section>
+
+    <section>
+      <a href="https://www.baidu.com">百度</a>
+      <button id="win_open_btn">打开新页面</button>
+    </section>
+
+
+
+  </main>
+
+  <script src="DOM-test.js"></script>
+  <script src="event-screen-kb-mouse.js"></script>
+</body>
+
+</html>
