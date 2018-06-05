@@ -1,0 +1,44 @@
+{
+  "version": "6.9.0",
+  "name": "primer-core",
+  "description": "Primer's core modules",
+  "homepage": "http://primer.github.io/",
+  "author": "GitHub, Inc.",
+  "license": "MIT",
+  "style": "build/build.css",
+  "sass": "index.scss",
+  "main": "build/index.js",
+  "primer": {
+    "category": "core",
+    "module_type": "meta"
+  },
+  "files": [
+    "index.scss",
+    "build"
+  ],
+  "repository": "https://github.com/primer/primer/tree/master/modules/primer-core",
+  "bugs": {
+    "url": "https://github.com/primer/primer/issues"
+  },
+  "scripts": {
+    "build": "../../script/npm-run primer-module-build index.scss",
+    "prepare": "npm run build",
+    "test": "npm run build",
+    "lint": "../../script/lint-scss"
+  },
+  "dependencies": {
+    "primer-base": "1.7.1",
+    "primer-box": "2.5.6",
+    "primer-breadcrumb": "1.5.2",
+    "primer-buttons": "2.5.4",
+    "primer-forms": "2.1.1",
+    "primer-layout": "1.4.6",
+    "primer-navigation": "1.5.4",
+    "primer-pagination": "1.0.0",
+    "primer-support": "4.5.3",
+    "primer-table-object": "1.4.6",
+    "primer-tooltips": "1.5.4",
+    "primer-truncate": "1.4.6",
+    "primer-utilities": "4.10.0"
+  }
+}
