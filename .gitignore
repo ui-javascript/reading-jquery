@@ -53,5 +53,5 @@ npm-debug.log
 *.class
 
 
-/tmp
+_tmp
 
