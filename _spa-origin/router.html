@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width" />
+    <title>Router</title>
+</head>
+<body>
+    <a class="btn btn-default" href="#hash-1">#hash-1</a>
+    <a class="btn btn-default" href="#hash-2">#hash-2</a>
+    <a class="btn btn-default" href="#hash-3">#hash-3</a>
+    <a class="btn btn-default" href="#hash-4">#hash-4</a>
+    <a class="btn btn-default" href="#hash-5">#hash-5</a>
+    <br />
+    <div id="hash-box" style="color: red;">点击上面测试, 观察浏览器地址的变化</div>
+
+
+
+    <script>
+        if (typeof Array.prototype.forEach != 'function') {
+            Array.prototype.forEach = function (callback) {
+                for (var i = 0; i < this.length; i++) {
+                    callback.apply(this, [this[i], i, this]);
+                }
+            };
+        }
+
+        var Hash = (function () {
+            var hashroute = {};
+            function hashchange() {
+                var url = window.location.hash;
+                url = url.replace(/^#/i, ""); //清除开头的 # 字符
+                //判断 url 是否在路由中
+                if (url && url in hashroute) {
+                    //循环执行添加的路由
+                    hashroute[url].forEach(function (hook) {
+                        //将当前触发的路由地址传入回去
+                        hook(url);
+                    });
+                }
+            }
+            
+            if (window.addEventListener) {
+                //监听地址栏 hash 参数值的变化
+                window.addEventListener("hashchange", function () {
+                    //变化后调用地址栏 hash 值的解析
+                    hashchange();
+                });
+            } else {
+                //监听地址栏 hash 参数值的变化
+                window.attachEvent("onhashchange", function () {
+                    //变化后调用地址栏 hash 值的解析
+                    hashchange();
+                });
+            }
+            function main() {
+                //添加路由
+                this.addroute = function (url, hook) {
+                    //判断路由是否存在
+                    if (url in hashroute) {
+                        //存在的情况下将回调函数添加到路由对应的值中
+                        hashroute[url].push(hook);
+                    } else {
+                        //不存在直接将回调函数保存起来
+                        hashroute[url] = [hook];
+                    }
+                    //以数组的形势保存回调函数是因为避免出现一个路由触发两个函数
+                }
+
+                //更新当前路由
+                this.refresh = function () {
+                    hashchange();
+                };
+            }
+            return main;
+        })();
+
+
+        var hash = new Hash();
+        //监听 hash-1 地址变化
+        hash.addroute("hash-1", function (url) {
+            //输出当前触发的路由
+            console.log(url);
+            document.getElementById("hash-box").innerHTML = url;
+        });
+
+        //监听 hash-2 地址变化
+        hash.addroute("hash-2", function (url) {
+            //输出当前触发的路由
+            console.log(url);
+            document.getElementById("hash-box").innerHTML = url;
+        });
+
+        //监听 hash-3 地址变化
+        hash.addroute("hash-3", function (url) {
+            //输出当前触发的路由
+            console.log(url);
+            document.getElementById("hash-box").innerHTML = url;
+        });
+
+        //监听 hash-4 地址变化
+        hash.addroute("hash-4", function (url) {
+            //输出当前触发的路由
+            console.log(url);
+            document.getElementById("hash-box").innerHTML = url;
+        });
+
+        //监听 hash-5 地址变化
+        hash.addroute("hash-5", function (url) {
+            //输出当前触发的路由
+            console.log(url);
+            document.getElementById("hash-box").innerHTML = url;
+        });
+
+    </script>
+</body>
+</html>
