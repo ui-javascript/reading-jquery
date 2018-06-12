@@ -6,15 +6,15 @@ module.exports = {
     }],
     links: [{
         name: '首页',
-        href: '/#!/', 
+        href: '/#!/',
         newPage: false
-    },{
+    }, {
         name: '设置',
         href: '#!/console', // 待修正，加上username
         newPage: false
-    },{
+    }, {
         name: '博客',
         href: 'https://www.wty90.com/',
         newPage: true
-    } ]
+    }]
 }

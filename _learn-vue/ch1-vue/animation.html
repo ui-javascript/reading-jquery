@@ -20,7 +20,7 @@
     <button @click="show = !show">
         Toggle
     </button>
-    <transition v-on:before-enter="beforeEnter" v-on:enter="enter" v-on:leave="leave" v-bind:css="false">
+    <transition v-on:before-enter="beforeEnter" v-on:enter="enter" v-on:leave="leave" :css="false">
         <p v-if="show">
             Demo
         </p>

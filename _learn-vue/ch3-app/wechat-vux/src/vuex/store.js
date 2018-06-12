@@ -14,11 +14,11 @@ Vue.use(Vuex)
 
 
 export default new Vuex.Store({
-    modules: {
-        base,
-        chat,
-        contacts,
-        find
-    },
-    strict: true
+  modules: {
+    base,
+    chat,
+    contacts,
+    find
+  },
+  strict: true
 })

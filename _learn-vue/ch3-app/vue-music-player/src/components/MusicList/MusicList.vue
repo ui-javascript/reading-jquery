@@ -6,7 +6,7 @@
       <div v-for="(item, index) of musicData" class="music-item">
         <img v-bind:src="item.musicImgSrc || 'https://microzz.com/img/avatar.jpg'" class="music-img"></img>
         <span @click="toggleMusic(index)" class="music-name">{{ (index+1) + '.&nbsp; ' + item.name}}</span>
-        <span v-on:click="del(index)" class="del-icon"></span>
+        <span @click="del(index)" class="del-icon"></span>
       </div>
 
       <div class="tips">没有更多歌曲了～</div>

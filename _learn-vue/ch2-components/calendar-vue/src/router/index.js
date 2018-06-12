@@ -5,11 +5,11 @@ import Calendar from '@/components/calendar'
 Vue.use(Router)
 
 export default new Router({
-  routes: [
-    {
-      path: '/',
-      name: 'Calendar',
-      component: Calendar
-    }
-  ]
+    routes: [
+        {
+            path: '/',
+            name: 'Calendar',
+            component: Calendar
+        }
+    ]
 })

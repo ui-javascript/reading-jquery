@@ -17,7 +17,7 @@
 <script>
     // 注册子组件
     Vue.component('button-counter', {
-        template: '<button v-on:click="increment">{{ counter }}</button>',
+        template: '<button @click="increment">{{ counter }}</button>',
         data: function () {
             return {
                 // 独立

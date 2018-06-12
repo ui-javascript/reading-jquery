@@ -1,18 +1,18 @@
-
-function get(name){
+function get(name) {
     var cookieName = encodeURIComponent(name);
     var cookieArr = document.cookie.split(';');
     var cookieValue = null;
-    for(var i=0,len=cookieArr.length; i<len; i++){
+    for (var i = 0, len = cookieArr.length; i < len; i++) {
         var index = cookieArr[i].indexOf(cookieName);
-        if(index != -1){
+        if (index != -1) {
             cookieValue = decodeURIComponent(cookieArr[i].split('=')[1]);
             break
         }
     }
     return cookieValue
 }
-function set(name, value, expires, path, domain, secure){
+
+function set(name, value, expires, path, domain, secure) {
     let cookieText = encodeURIComponent(name) + "=" + encodeURIComponent(value)
     if (expires instanceof Date)
         cookieText += "; expires=" + expires.toGMTString()
@@ -27,5 +27,5 @@ function unset(name, path, domain, secure) {
 }
 
 export {
-    get,set,unset
+    get, set, unset
 }

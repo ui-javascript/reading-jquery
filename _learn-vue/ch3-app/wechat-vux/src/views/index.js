@@ -8,4 +8,4 @@ export {
   ExplorePage,
   SettingsPage,
   ContactsPage
- }
+}

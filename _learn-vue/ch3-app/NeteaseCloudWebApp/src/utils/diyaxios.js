@@ -1,4 +1,5 @@
 import axios from 'axios'
+
 axios.defaults.timeout = 8000
 // code状态码200判断
 axios.interceptors.response.use((res) => {

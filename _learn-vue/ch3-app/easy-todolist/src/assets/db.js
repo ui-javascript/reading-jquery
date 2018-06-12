@@ -8,7 +8,7 @@ var taskStructure = {
   type: ''
 }
 
-var taskType={
-  _id:'',
-  typeName:''
+var taskType = {
+  _id: '',
+  typeName: ''
 }

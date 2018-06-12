@@ -1,4 +1,5 @@
 import axios from 'axios'
+
 axios.defaults.timeout = 5000
 
 // code状态码200判断

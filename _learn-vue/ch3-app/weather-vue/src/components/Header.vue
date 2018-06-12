@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="cm-header">
-            <span class=" cm-header-icon fl" v-on:click="backAction">
+            <span class=" cm-header-icon fl" @click="backAction">
               <i class="icon-back"></i>
             </span>
       <span class=" cm-header-btn fr" v-show="option&&option.right" @click="rightAction"

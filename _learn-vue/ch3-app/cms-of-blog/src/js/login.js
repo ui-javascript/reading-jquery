@@ -1,8 +1,8 @@
 //  这是登录弹窗脚本，需要在页面注入pop的action, 并将此module作为vue的methods
 //  样式在common.scss里
 //  传入的cb参数是登录成功的回调
-import $         from '../js/jquery.min'
-import {set}     from '../js/cookieUtil'
+import $ from '../js/jquery.min'
+import {set} from '../js/cookieUtil'
 
 function popLogin(cb) {
     this.pop({
@@ -45,10 +45,10 @@ function popLogin(cb) {
             var ca = {}
             var Core = {
                 init() {
-                    if(screen.width < 700){
+                    if (screen.width < 700) {
                         location.href = '/#!/login' + '?backUrl=' + encodeURIComponent(document.URL);
                         me.pop();
-                    }else{
+                    } else {
                         ca.$dialog = $('.login-dialog')
                         ca.$inputs = $('.username-input, .password-input', ca.$dialog)
                         ca.$input1 = $('.username-input', ca.$dialog)
@@ -63,7 +63,7 @@ function popLogin(cb) {
                     }
                 },
                 initEvent() {
-                    ca.$inputs.on('focus keydown keyup', function(event) {
+                    ca.$inputs.on('focus keydown keyup', function (event) {
                         if ($(this).hasClass('blankInput')) {
                             $(this).removeClass('blankInput')
                             ca.$errorTip.addClass('f-hide2')
@@ -74,7 +74,7 @@ function popLogin(cb) {
                             $(this).next().removeClass('f-hide2')
                         }
                         var allFilled = true
-                        $.each(ca.$inputs, function(index, el) {
+                        $.each(ca.$inputs, function (index, el) {
                             if (!$(el).val()) {
                                 allFilled = false
                             }
@@ -89,26 +89,26 @@ function popLogin(cb) {
                         }
                     })
                     ca.$btn.on('click', (event) => {
-                            this.validate()
-                        })
-                        // 支持回车提交
+                        this.validate()
+                    })
+                    // 支持回车提交
                     ca.$inputs.on('keyup', (event) => {
                         if (event.keyCode === 13) {
                             $(event.target).blur()
                             this.validate()
                         }
                     })
-                    ca.$clears.on('click', function(event) {
+                    ca.$clears.on('click', function (event) {
                         $(this).prev().val('')
                         $(this).prev().focus()
                     })
-                    ca.$forget.on('click', function() {
+                    ca.$forget.on('click', function () {
                         me.pop();
-                        setTimeout(function(){
+                        setTimeout(function () {
                             me.pop('暂未开发')
                         }, 200);
                     })
-                    ca.$register.on('click', function() {
+                    ca.$register.on('click', function () {
                         me.pop()
                         location.href = '/#!/register'
                     })
@@ -138,9 +138,9 @@ function popLogin(cb) {
                             set('username', name, date, '/', hostName)
                             me.pop()
                             // 如果有传回调函数，则执行回调
-                            if(typeof cb === 'function'){
+                            if (typeof cb === 'function') {
                                 cb()
-                            }else{
+                            } else {
                                 location.reload()
                             }
                             break
@@ -181,4 +181,5 @@ function popLogin(cb) {
         }
     })
 }
+
 export default popLogin

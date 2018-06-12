@@ -1,11 +1,11 @@
-var mongoose =  require('mongoose'),
-    Schema =    mongoose.Schema
+var mongoose = require('mongoose'),
+    Schema = mongoose.Schema
 
-    articleSchema = new Schema({
-        title: String,
-        date: Date,
-        content: String,
-    }),
+articleSchema = new Schema({
+    title: String,
+    date: Date,
+    content: String,
+}),
 
     linkSchema = new Schema({
         name: String,

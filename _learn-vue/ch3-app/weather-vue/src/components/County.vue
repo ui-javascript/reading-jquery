@@ -1,7 +1,7 @@
 <template>
   <div class="city">
     <ul>
-      <li v-for="countyInfo in countyList" class="listCell" v-on:click="goWeather(countyInfo)">
+      <li v-for="countyInfo in countyList" class="listCell" @click="goWeather(countyInfo)">
         <span>{{countyInfo.cityZh}}</span>
       </li>
     </ul>

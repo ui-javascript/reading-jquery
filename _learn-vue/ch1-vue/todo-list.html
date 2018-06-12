@@ -9,12 +9,18 @@
 <body>
 
 <div id="todo-list-example">
+
     <my-component></my-component>
-    <input v-model="newTodoText" v-on:keyup.enter="addNewTodo" placeholder="Add a todo">
+
+    <input v-model="newTodoText"
+           @keyup.enter="addNewTodo"
+           placeholder="Add a todo">
     <ul>
         <!-- 理想的 key 值是每项都有唯一 id -->
-        <li is="todo-item" v-for="(todo, index) in todos" v-bind:key="todo" v-bind:title="todo"
-            v-on:remove="todos.splice(index, 1)"></li>
+        <li is="todo-item" v-for="(todo, index) in todos"
+            :key="todo"
+            :title="todo"
+            @remove="todos.splice(index, 1)"></li>
     </ul>
 </div>
 
@@ -25,7 +31,7 @@
         template: `
       <li>
         {{ title }}
-        <button v-on:click="$emit('remove')">X</button>
+        <button @click="$emit('remove')">X</button>
       </li>
     `,
         props: ['title']

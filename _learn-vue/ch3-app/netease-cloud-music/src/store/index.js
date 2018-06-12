@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import Axios from 'axios'
 import api from '../api'
+
 Vue.use(Vuex)
 
 const store = new Vuex.Store({
@@ -47,23 +48,23 @@ const store = new Vuex.Store({
   },
 
   mutations: {
-    play (state) {
+    play(state) {
       state.playing = true
     },
-    pause (state) {
+    pause(state) {
       state.playing = false
     },
-    toggleDetail (state) {
+    toggleDetail(state) {
       state.showDetail = !state.showDetail
     },
-    setAudio (state) {
+    setAudio(state) {
       state.audio = state.songList[state.currentIndex - 1]
     },
-    setAudioIndex (state, index) {
+    setAudioIndex(state, index) {
       state.audio = state.songList[index]
       state.currentIndex = index + 1
     },
-    removeAudio (state, index) {
+    removeAudio(state, index) {
       state.songList.splice(index, 1)
       if (index === state.songList.length) {
         index--
@@ -82,48 +83,48 @@ const store = new Vuex.Store({
         state.playing = false
       }
     },
-    setChange (state, flag) {
+    setChange(state, flag) {
       state.change = flag
     },
-    setLocation (state, location) {
+    setLocation(state, location) {
       state.audio.location = location
     },
-    updateCurrentTime (state, time) {
+    updateCurrentTime(state, time) {
       state.currentTime = time
     },
-    updateDurationTime (state, time) {
+    updateDurationTime(state, time) {
       state.durationTime = time
     },
-    updateBufferedTime (state, time) {
+    updateBufferedTime(state, time) {
       state.bufferedTime = time
     },
-    changeTime (state, time) {
+    changeTime(state, time) {
       state.tmpCurrentTime = time
     },
-    openLoading (state) {
+    openLoading(state) {
       state.loading = true
     },
-    closeLoading (state) {
+    closeLoading(state) {
       state.loading = false
     },
-    resetAudio (state) {
+    resetAudio(state) {
       state.currentTime = 0
     },
-    playNext (state) { // 播放下一曲
+    playNext(state) { // 播放下一曲
       state.currentIndex++
       if (state.currentIndex > state.songList.length) {
         state.currentIndex = 1
       }
       state.audio = state.songList[state.currentIndex - 1]
     },
-    playPrev (state) { // 播放上一曲
+    playPrev(state) { // 播放上一曲
       state.currentIndex--
       if (state.currentIndex < 1) {
         state.currentIndex = state.songList.length
       }
       state.audio = state.songList[state.currentIndex - 1]
     },
-    addToList (state, songs) {
+    addToList(state, songs) {
       var items = Array.prototype.concat.call(songs)
       items.forEach(item => {
         var flag = false
@@ -139,14 +140,14 @@ const store = new Vuex.Store({
         }
       })
     },
-    setLrc (state, lrc) {
+    setLrc(state, lrc) {
       state.lyric = lrc
     }
   },
 
   // 异步的数据操作
   actions: {
-    getSong ({commit, state}, id) {
+    getSong({commit, state}, id) {
       commit('openLoading')
       Axios.get(api.getSong(id)).then(res => {
         // 统一数据模型，方便后台接口的改变
@@ -154,10 +155,10 @@ const store = new Vuex.Store({
         commit('setAudio')
         commit('setLocation', url)
       })
-      .catch((error) => {     // 错误处理
-        console.log(error)
-        window.alert('获取歌曲信息出错！')
-      })
+        .catch((error) => {     // 错误处理
+          console.log(error)
+          window.alert('获取歌曲信息出错！')
+        })
     }
   }
 })

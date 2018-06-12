@@ -13,8 +13,8 @@
     <p> {{ message }} -> {{ message1 }} </p>
     <p>使用方法反转 {{ reverse() }}</p>
 
-    <button v-on:click="reverseMethod">反转</button>
-    <button v-on:click="say('what happened?')">say</button>
+    <button @click="reverseMethod">反转</button>
+    <button @click="say('what happened?')">say</button>
     <p> {{ site }} </p>
 
     <!-- 都要错误 -->

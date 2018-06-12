@@ -16,20 +16,21 @@
 
     <!-- 路由出口 将渲染在这里 -->
     <router-view></router-view>
+
 </div>
 
 <script>
-    const Welcome = {
+    var Welcome = {
         template: '<div>welcome router</div>'
     }
-    const Foo = {
+    var Foo = {
         template: '<div>foo</div>'
     }
-    const Bar = {
+    var Bar = {
         template: '<div>bar</div>'
     }
 
-    const routes = [{
+    var routes = [{
         path: '/foo',
         component: Foo
     },
@@ -43,12 +44,12 @@
         }
     ]
 
-    const router = new VueRouter({
+    var router = new VueRouter({
         routes // 相当于 routes: routes
     })
 
     // 创建和挂载根实例。
-    const app = new Vue({
+    var app = new Vue({
         router
     }).$mount('#app')
 </script>

@@ -31,14 +31,14 @@ var transporter = nodemailer.createTransport(poolConfig);
 //     retdesc: '',
 // }
 
-router.post('/genEmailCode', function(req, res, next) {
+router.post('/genEmailCode', function (req, res, next) {
     var email = req.body.email,
-    resBody = {
-        retcode: '',
-        retdesc: '',
-        data: {}
-    }
-    if(!email){
+        resBody = {
+            retcode: '',
+            retdesc: '',
+            data: {}
+        }
+    if (!email) {
         resBody = {
             retcode: 400,
             retdesc: '参数错误',
@@ -46,15 +46,17 @@ router.post('/genEmailCode', function(req, res, next) {
         res.send(resBody)
         return
     }
-    function genRandomCode(){
+
+    function genRandomCode() {
         var arrNum = [];
-        for(var i=0; i<6; i++){
+        for (var i = 0; i < 6; i++) {
             var tmpCode = Math.floor(Math.random() * 9);
             arrNum.push(tmpCode);
         }
         return arrNum.join('')
     }
-    db.User.findOne({ email: email }, function(err, doc) {
+
+    db.User.findOne({email: email}, function (err, doc) {
         if (err) {
             return console.log(err)
         } else if (doc && doc.name !== 'tmp') {
@@ -63,7 +65,7 @@ router.post('/genEmailCode', function(req, res, next) {
                 retdesc: '该邮箱已注册',
             }
             res.send(resBody)
-        } else if(!doc){  // 第一次点击获取验证码
+        } else if (!doc) {  // 第一次点击获取验证码
             var emailCode = genRandomCode();
             var createdTime = Date.now();
             // setup e-mail data with unicode symbols
@@ -79,12 +81,12 @@ router.post('/genEmailCode', function(req, res, next) {
                     '<p>上述验证码30分钟内有效。如果验证码失效，请您登录网站<a href="https://cms.wty90.com/#!/register">CMS-of-Blog博客注册</a>重新申请认证。</p>',
                     '<p>感谢您注册成为CMS-of-Blog博客用户！</p><br/>',
                     '<p>CMS-of-Blog开发团队</p>',
-                    '<p>'+ (new Date()).toLocaleString() + '</p>'
+                    '<p>' + (new Date()).toLocaleString() + '</p>'
                 ].join('') // html body
             };
             // send mail with defined transport object
-            transporter.sendMail(mailOptions, function(error, info){
-                if(error){
+            transporter.sendMail(mailOptions, function (error, info) {
+                if (error) {
                     return console.log(error);
                 }
                 // console.log('Message sent: ' + info.response);
@@ -96,22 +98,22 @@ router.post('/genEmailCode', function(req, res, next) {
                     createdTime: createdTime,
                     articles: [],
                     links: []
-                }).save(function(err) {
+                }).save(function (err) {
                     if (err) return console.log(err)
                     // 半小时内如果不注册成功，则在数据库中删除这条数据，也就是说验证码会失效
-                    setTimeout(function(){
-                        db.User.findOne({ email: email }, function(err, doc) {
+                    setTimeout(function () {
+                        db.User.findOne({email: email}, function (err, doc) {
                             if (err) {
                                 return console.log(err)
                             } else if (doc && doc.createdTime === createdTime) {
-                                db.User.remove({ email: email }, function(err) {
+                                db.User.remove({email: email}, function (err) {
                                     if (err) {
                                         return console.log(err)
                                     }
                                 })
                             }
                         })
-                    }, 30*60*1000);
+                    }, 30 * 60 * 1000);
                     resBody = {
                         retcode: 200,
                         retdesc: ''
@@ -119,7 +121,7 @@ router.post('/genEmailCode', function(req, res, next) {
                     res.send(resBody)
                 })
             });
-        }else if(doc && doc.name === 'tmp'){ // 在邮箱验证码有效的时间内，再次点击获取验证码
+        } else if (doc && doc.name === 'tmp') { // 在邮箱验证码有效的时间内，再次点击获取验证码
             var emailCode = genRandomCode();
             var createdTime = Date.now();
             // setup e-mail data with unicode symbols
@@ -135,32 +137,32 @@ router.post('/genEmailCode', function(req, res, next) {
                     '<p>上述验证码30分钟内有效。如果验证码失效，请您登录网站<a href="https://cms.wty90.com/#!/register">CMS-of-Blog博客注册</a>重新申请认证。</p>',
                     '<p>感谢您注册成为CMS-of-Blog博客用户！</p><br/>',
                     '<p>CMS-of-Blog开发团队</p>',
-                    '<p>'+ (new Date()).toLocaleString() + '</p>'
+                    '<p>' + (new Date()).toLocaleString() + '</p>'
                 ].join('') // html body
             };
             // send mail with defined transport object
-            transporter.sendMail(mailOptions, function(error, info){
-                if(error){
+            transporter.sendMail(mailOptions, function (error, info) {
+                if (error) {
                     return console.log(error);
                 }
-                db.User.update({ email: email }, { emailCode: emailCode, createdTime: Date.now()}, function(err) {
+                db.User.update({email: email}, {emailCode: emailCode, createdTime: Date.now()}, function (err) {
                     if (err) {
                         return console.log(err)
                     } else {
                         // 半小时内如果不注册成功，则在数据库中删除这条数据，也就是说验证码会失效
-                        setTimeout(function(){
-                            db.User.findOne({ email: email }, function(err, doc) {
+                        setTimeout(function () {
+                            db.User.findOne({email: email}, function (err, doc) {
                                 if (err) {
                                     return console.log(err)
                                 } else if (doc && doc.createdTime === createdTime) {
-                                    db.User.remove({ email: email }, function(err) {
+                                    db.User.remove({email: email}, function (err) {
                                         if (err) {
                                             return console.log(err)
                                         }
                                     })
                                 }
                             })
-                        }, 30*60*1000);
+                        }, 30 * 60 * 1000);
                         resBody = {
                             retcode: 200,
                             retdesc: '',
@@ -173,19 +175,19 @@ router.post('/genEmailCode', function(req, res, next) {
     })
 })
 
-router.get('/latestArticles', function(req, res, next) {
+router.get('/latestArticles', function (req, res, next) {
     var resBody = {
         retcode: '',
         retdesc: '',
         data: {}
     }
-    db.User.find({}, '-_id name articles', function(err, doc) {
+    db.User.find({}, '-_id name articles', function (err, doc) {
         if (err) {
             return console.log(err)
-        }else if(doc){
+        } else if (doc) {
             var outArr = [];
-            for(var i=0, len=doc.length; i<len; i++){
-                for(var j=0, len2=doc[i].articles.length; j<len2; j++){
+            for (var i = 0, len = doc.length; i < len; i++) {
+                for (var j = 0, len2 = doc[i].articles.length; j < len2; j++) {
                     outArr.push({
                         title: doc[i].articles[j].title,
                         date: doc[i].articles[j].date,
@@ -193,13 +195,15 @@ router.get('/latestArticles', function(req, res, next) {
                     })
                 }
             }
-            outArr.sort(function(a, b){
+            outArr.sort(function (a, b) {
                 return Date.parse(b.date) - Date.parse(a.date)
             })
             outArr = arrSort(outArr,
                 [{
                     attr: 'date',
-                    asc: function(a, b){return Date.parse(b.date) - Date.parse(a.date)}
+                    asc: function (a, b) {
+                        return Date.parse(b.date) - Date.parse(a.date)
+                    }
                 }]
             );
             resBody = {
@@ -214,17 +218,17 @@ router.get('/latestArticles', function(req, res, next) {
     })
 })
 
-router.get('/registedUsers', function(req, res, next) {
+router.get('/registedUsers', function (req, res, next) {
     var resBody = {
         retcode: '',
         retdesc: '',
         data: {}
     }
     // 过滤掉像tmp这样的临时用户
-    db.User.find({name: /^[a-z]{1}[a-z0-9_]{3,15}$/}, '-_id name', function(err, doc) {
+    db.User.find({name: /^[a-z]{1}[a-z0-9_]{3,15}$/}, '-_id name', function (err, doc) {
         if (err) {
             return console.log(err)
-        }else if(doc){
+        } else if (doc) {
             resBody = {
                 retcode: 200,
                 retdesc: '请求成功',
@@ -237,7 +241,7 @@ router.get('/registedUsers', function(req, res, next) {
     })
 })
 
-router.post('/validateUsername', function(req, res, next) {
+router.post('/validateUsername', function (req, res, next) {
     var userName = req.body.userName,
         resBody = {
             retcode: '',
@@ -252,7 +256,7 @@ router.post('/validateUsername', function(req, res, next) {
         res.send(resBody)
         return
     }
-    db.User.count({ name: userName }, function(err, num) {
+    db.User.count({name: userName}, function (err, num) {
         if (err) {
             return console.log(err)
         } else {
@@ -272,7 +276,7 @@ router.post('/validateUsername', function(req, res, next) {
     })
 })
 
-router.get('/console/article', function(req, res, next) {
+router.get('/console/article', function (req, res, next) {
     var id = req.query.id
     var name = req.cookies.username
     var resBody = {
@@ -288,12 +292,12 @@ router.get('/console/article', function(req, res, next) {
         res.send(resBody)
         return
     }
-    db.User.findOne({ name: name }, function(err, doc) {
+    db.User.findOne({name: name}, function (err, doc) {
         if (err) {
             return console.log(err)
         } else if (doc) {
             var article = doc.articles.id(id)
-            if(article){
+            if (article) {
                 resBody = {
                     retcode: 200,
                     retdesc: '请求成功',
@@ -301,7 +305,7 @@ router.get('/console/article', function(req, res, next) {
                         article: article
                     }
                 }
-            }else{
+            } else {
                 resBody = {
                     retcode: 430,
                     retdesc: 'id参数错误',
@@ -312,7 +316,7 @@ router.get('/console/article', function(req, res, next) {
     })
 })
 
-router.post('/common/article', function(req, res, next) {
+router.post('/common/article', function (req, res, next) {
     var id = req.query.id
     var name = req.body.name
     var resBody = {
@@ -328,12 +332,12 @@ router.post('/common/article', function(req, res, next) {
         res.send(resBody)
         return
     }
-    db.User.findOne({ name: name }, function(err, doc) {
+    db.User.findOne({name: name}, function (err, doc) {
         if (err) {
             return console.log(err)
         } else if (doc) {
             var article = doc.articles.id(id)
-            if(article){
+            if (article) {
                 resBody = {
                     retcode: 200,
                     retdesc: '请求成功',
@@ -341,14 +345,14 @@ router.post('/common/article', function(req, res, next) {
                         article: article
                     }
                 }
-            }else{
+            } else {
                 resBody = {
                     retcode: 430,
                     retdesc: 'id参数错误',
                 }
             }
             res.send(resBody)
-        }else{
+        } else {
             resBody = {
                 retcode: 420,
                 retdesc: '用户不存在',
@@ -358,7 +362,7 @@ router.post('/common/article', function(req, res, next) {
     })
 })
 
-router.post('/common/articleList', function(req, res, next) {
+router.post('/common/articleList', function (req, res, next) {
     var name = req.body.name
     var resBody = {
         retcode: '',
@@ -373,7 +377,7 @@ router.post('/common/articleList', function(req, res, next) {
         res.send(resBody)
         return
     }
-    db.User.findOne({ name: name }, function(err, doc) {
+    db.User.findOne({name: name}, function (err, doc) {
         if (err) {
             return console.log(err)
         } else if (doc) {
@@ -385,7 +389,7 @@ router.post('/common/articleList', function(req, res, next) {
                 }
             }
             res.send(resBody)
-        }else{
+        } else {
             resBody = {
                 retcode: 420,
                 retdesc: '用户不存在',
@@ -395,7 +399,7 @@ router.post('/common/articleList', function(req, res, next) {
     })
 })
 
-router.get('/console/articleList', function(req, res, next) {
+router.get('/console/articleList', function (req, res, next) {
     var name = req.cookies.username
     var resBody = {
         retcode: '',
@@ -410,7 +414,7 @@ router.get('/console/articleList', function(req, res, next) {
         res.send(resBody)
         return
     }
-    db.User.findOne({ name: name }, function(err, doc) {
+    db.User.findOne({name: name}, function (err, doc) {
         if (err) {
             return console.log(err)
         } else if (doc) {
@@ -426,7 +430,7 @@ router.get('/console/articleList', function(req, res, next) {
     })
 })
 
-router.post('/login', function(req, res, next) {
+router.post('/login', function (req, res, next) {
     var name = req.body.userName,
         password = req.body.password,
         resBody = {
@@ -434,7 +438,7 @@ router.post('/login', function(req, res, next) {
             retdesc: '',
             data: {}
         }
-    db.User.findOne({ name: name }, 'password', function(err, doc) {
+    db.User.findOne({name: name}, 'password', function (err, doc) {
         if (err) {
             return console.log(err)
         } else if (!doc) {
@@ -459,7 +463,7 @@ router.post('/login', function(req, res, next) {
     })
 })
 
-router.post('/register', function(req, res, next) {
+router.post('/register', function (req, res, next) {
     var name = req.body.userName,
         password = req.body.password,
         email = req.body.email,
@@ -470,7 +474,7 @@ router.post('/register', function(req, res, next) {
             data: {}
         }
     // 校验用户名，作为注册以后的用户博客对应的网址路径
-    if(!/^[a-z]{1}[a-z0-9_]{3,15}$/.test(name)){
+    if (!/^[a-z]{1}[a-z0-9_]{3,15}$/.test(name)) {
         resBody = {
             retcode: 420,
             retdesc: '用户名格式错误'
@@ -478,7 +482,7 @@ router.post('/register', function(req, res, next) {
         res.send(resBody)
         return
     }
-    db.User.findOne({ name: name }, function(err, doc) {
+    db.User.findOne({name: name}, function (err, doc) {
         if (err) {
             return console.log(err)
         } else if (doc) {
@@ -488,7 +492,7 @@ router.post('/register', function(req, res, next) {
             }
             res.send(resBody)
         } else {
-            db.User.findOne({ email: email }, function(err, doc) {
+            db.User.findOne({email: email}, function (err, doc) {
                 if (err) {
                     return console.log(err)
                 } else if (doc && doc.name !== 'tmp') {
@@ -497,17 +501,17 @@ router.post('/register', function(req, res, next) {
                         retdesc: '该邮箱已注册'
                     }
                     res.send(resBody)
-                } else if(doc && doc.name === 'tmp' && doc.emailCode === emailCode){
+                } else if (doc && doc.name === 'tmp' && doc.emailCode === emailCode) {
                     // '设置'的href跟用户名有关, 注意不能直接将init.links赋值给links！
                     var links = JSON.parse(JSON.stringify(init.links))
                     links[1].href = '/' + name + links[1].href
-                    db.User.update({ email: email }, { 
+                    db.User.update({email: email}, {
                         name: name,
                         password: password,
                         createdTime: Date.now(),
                         articles: init.articles,
                         links: links
-                    }, function(err) {
+                    }, function (err) {
                         if (err) {
                             return console.log(err)
                         } else {
@@ -521,7 +525,7 @@ router.post('/register', function(req, res, next) {
                             res.send(resBody)
                         }
                     })
-                }else{
+                } else {
                     resBody = {
                         retcode: 450,
                         retdesc: '验证码错误'
@@ -533,7 +537,7 @@ router.post('/register', function(req, res, next) {
     })
 })
 
-router.post('/saveArticle', function(req, res, next) {
+router.post('/saveArticle', function (req, res, next) {
     // 获取当前页面地址的path, 防止不同账号登录导致Bug
     var referer = req.headers.referer
     var visitUsername = referer.slice(referer.lastIndexOf('/') + 1)
@@ -555,12 +559,12 @@ router.post('/saveArticle', function(req, res, next) {
         resBody = {
             retcode: 430,
             retdesc: '非博主不能修改！',
-            data:{name}
+            data: {name}
         }
         res.send(resBody)
         return
     }
-    db.User.findOne({ name: name }, function(err, doc) {
+    db.User.findOne({name: name}, function (err, doc) {
         if (err) {
             return console.log(err)
         } else if (doc) {
@@ -589,7 +593,7 @@ router.post('/saveArticle', function(req, res, next) {
     })
 })
 
-router.post('/common/getLinks', function(req, res, next) {
+router.post('/common/getLinks', function (req, res, next) {
     // console.log(init.links)
     var name = req.body.name
     var resBody = {
@@ -605,7 +609,7 @@ router.post('/common/getLinks', function(req, res, next) {
         res.send(resBody)
         return
     }
-    db.User.findOne({ name: name }, function(err, doc) {
+    db.User.findOne({name: name}, function (err, doc) {
         if (err) {
             return console.log(err)
         } else if (doc) {
@@ -617,7 +621,7 @@ router.post('/common/getLinks', function(req, res, next) {
                 }
             }
             res.send(resBody)
-        }else{
+        } else {
             resBody = {
                 retcode: 420,
                 retdesc: '用户不存在',
@@ -627,7 +631,7 @@ router.post('/common/getLinks', function(req, res, next) {
     })
 })
 
-router.get('/console/getLinks', function(req, res, next) {
+router.get('/console/getLinks', function (req, res, next) {
     var name = req.cookies.username
     var resBody = {
         retcode: '',
@@ -642,7 +646,7 @@ router.get('/console/getLinks', function(req, res, next) {
         res.send(resBody)
         return
     }
-    db.User.findOne({ name: name }, function(err, doc) {
+    db.User.findOne({name: name}, function (err, doc) {
         if (err) {
             return console.log(err)
         } else if (doc) {
@@ -658,7 +662,7 @@ router.get('/console/getLinks', function(req, res, next) {
     })
 })
 
-router.post('/setLinks', function(req, res, next) {
+router.post('/setLinks', function (req, res, next) {
     var referer = req.headers.referer
     var visitUsername = referer.slice(referer.lastIndexOf('/') + 1)
     var name = req.cookies.username
@@ -679,17 +683,17 @@ router.post('/setLinks', function(req, res, next) {
         resBody = {
             retcode: 430,
             retdesc: '非博主不能修改！',
-            data:{name}
+            data: {name}
         }
         res.send(resBody)
         return
     }
-    db.User.findOne({ name: name }, function(err, doc) {
+    db.User.findOne({name: name}, function (err, doc) {
         if (err) {
             return console.log(err)
         } else if (doc) {
             doc.links = req.body.links
-            doc.save(function(err) {
+            doc.save(function (err) {
                 if (err) return console.log(err)
                 resBody = {
                     retcode: 200,
@@ -701,7 +705,7 @@ router.post('/setLinks', function(req, res, next) {
     })
 })
 
-router.post('/savePw', function(req, res, next) {
+router.post('/savePw', function (req, res, next) {
     var referer = req.headers.referer
     var visitUsername = referer.slice(referer.lastIndexOf('/') + 1)
     var name = req.cookies.username,
@@ -712,7 +716,7 @@ router.post('/savePw', function(req, res, next) {
             retdesc: '',
             data: {}
         }
-    if(!oldPassword || !newPassword){
+    if (!oldPassword || !newPassword) {
         resBody = {
             retcode: 400,
             retdesc: '参数错误',
@@ -732,12 +736,12 @@ router.post('/savePw', function(req, res, next) {
         resBody = {
             retcode: 430,
             retdesc: '非博主不能修改！',
-            data:{name}
+            data: {name}
         }
         res.send(resBody)
         return
     }
-    db.User.findOne({ name: name }, 'password', function(err, doc) {
+    db.User.findOne({name: name}, 'password', function (err, doc) {
         if (err) {
             return console.log(err);
         }
@@ -753,14 +757,14 @@ router.post('/savePw', function(req, res, next) {
                 retdesc: '密码格式错误',
             }
             res.send(resBody)
-        }else if(oldPassword === newPassword){
+        } else if (oldPassword === newPassword) {
             resBody = {
                 retcode: 460,
                 retdesc: '不能与原来密码一样',
             }
             res.send(resBody)
         } else {
-            db.User.update({ name: name }, { password: newPassword }, function(err) {
+            db.User.update({name: name}, {password: newPassword}, function (err) {
                 if (err) {
                     return console.log(err)
                 } else {
@@ -775,7 +779,7 @@ router.post('/savePw', function(req, res, next) {
     })
 })
 
-router.post('/deleteArticle', function(req, res, next) {
+router.post('/deleteArticle', function (req, res, next) {
     var referer = req.headers.referer
     var visitUsername = referer.slice(referer.lastIndexOf('/') + 1)
     var name = req.cookies.username
@@ -795,17 +799,17 @@ router.post('/deleteArticle', function(req, res, next) {
         resBody = {
             retcode: 430,
             retdesc: '非博主不能修改！',
-            data:{name}
+            data: {name}
         }
         res.send(resBody)
         return
     }
-    db.User.findOne({ name: name }, function(err, doc) {
+    db.User.findOne({name: name}, function (err, doc) {
         if (err) {
             return console.log(err)
         } else if (doc) {
             doc.articles.id(req.body.id).remove()
-            doc.save(function(err) {
+            doc.save(function (err) {
                 if (err) return console.log(err)
                 resBody = {
                     retcode: 200,
@@ -817,7 +821,7 @@ router.post('/deleteArticle', function(req, res, next) {
         }
     })
 })
-router.post('/deleteUser', function(req, res, next) {
+router.post('/deleteUser', function (req, res, next) {
     var referer = req.headers.referer
     var visitUsername = referer.slice(referer.lastIndexOf('/') + 1)
     var name = req.cookies.username
@@ -837,12 +841,12 @@ router.post('/deleteUser', function(req, res, next) {
         resBody = {
             retcode: 430,
             retdesc: '非博主不能修改！',
-            data:{name}
+            data: {name}
         }
         res.send(resBody)
         return
     }
-    db.User.remove({ name: name }, function(err) {
+    db.User.remove({name: name}, function (err) {
         if (err) {
             return console.log(err)
         } else {

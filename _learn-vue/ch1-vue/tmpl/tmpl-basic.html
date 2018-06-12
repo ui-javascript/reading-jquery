@@ -32,18 +32,18 @@
     <input type="checkbox" v-model="class1" id="r1">
     <br><br>
     <!-- 绑定 -->
-    <div v-bind:class="{'class1': class1}">
-        directiva v-bind:class
+    <div :class="{'class1': class1}">
+        directive :class
     </div>
 
     <!-- 注意后面样式的引号 -->
-    <div class="static" v-bind:class="{ active: isActive, 'text-danger': hasError }">
+    <div class="static" :class="{ active: isActive, 'text-danger': hasError }">
     </div>
 
-    <div v-bind:class="classObject"></div>
+    <div :class="classObject"></div>
 
     <!-- 数组绑定 -->
-    <div v-bind:class="[activeClass, errorClass]"></div>
+    <div :class="[activeClass, errorClass]"></div>
 </div>
 
 <script>

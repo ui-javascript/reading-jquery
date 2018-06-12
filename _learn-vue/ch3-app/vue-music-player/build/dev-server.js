@@ -49,9 +49,9 @@ apiRoutes.get('/one/:page?', function (req, res) {
       });
     })
   });
-  let getOne = function(id) {
+  let getOne = function (id) {
     let result = '';
-    let url = 'http://v3.wufazhuce.com:8000/api/onelist/' + id +'/0?channel=wdj&version=4.0.2&uuid=ffffffff-a90e-706a-63f7-ccf973aae5ee&platform=android';
+    let url = 'http://v3.wufazhuce.com:8000/api/onelist/' + id + '/0?channel=wdj&version=4.0.2&uuid=ffffffff-a90e-706a-63f7-ccf973aae5ee&platform=android';
     return new Promise((resolve, reject) => {
       http.get(url, response => {
         response.on('data', data => {
@@ -64,24 +64,25 @@ apiRoutes.get('/one/:page?', function (req, res) {
     });
   }
   getIdList.then(idList => JSON.parse(idList).data)
-           .then(data => {
-             return Promise.all( data.map((item) => {
-               return getOne(item).then(data => JSON.parse(data));
-             }))
-           })
-           .then(list => {
-             list = JSON.parse(JSON.stringify(list));
-             res.json(list[page]);
-           })
+    .then(data => {
+      return Promise.all(data.map((item) => {
+        return getOne(item).then(data => JSON.parse(data));
+      }))
+    })
+    .then(list => {
+      list = JSON.parse(JSON.stringify(list));
+      res.json(list[page]);
+    })
 })
 
 apiRoutes.get('/search/:num/:name', (req, res) => {
   let num = req.params.num;
   let name = req.params.name;
+
   function search(n, keywords) {
     return new Promise((resolve, reject) => {
       let searchResult = '';
-      let url = encodeURI('http://s.music.qq.com/fcgi-bin/music_search_new_platform?t=0&n='+ n +'&aggr=1&cr=1&loginUin=0&format=json&inCharset=GB2312&outCharset=utf-8&notice=0&platform=jqminiframe.json&needNewCode=0&p=1&catZhida=0&remoteplace=sizer.newclient.next_song&w='+ keywords);
+      let url = encodeURI('http://s.music.qq.com/fcgi-bin/music_search_new_platform?t=0&n=' + n + '&aggr=1&cr=1&loginUin=0&format=json&inCharset=GB2312&outCharset=utf-8&notice=0&platform=jqminiframe.json&needNewCode=0&p=1&catZhida=0&remoteplace=sizer.newclient.next_song&w=' + keywords);
       http.get(url, response => {
         response.on('data', data => {
           searchResult += data;
@@ -123,12 +124,13 @@ var devMiddleware = require('webpack-dev-middleware')(compiler, {
 })
 
 var hotMiddleware = require('webpack-hot-middleware')(compiler, {
-  log: () => {}
+  log: () => {
+  }
 })
 // force page reload when html-webpack-plugin template changes
 compiler.plugin('compilation', function (compilation) {
   compilation.plugin('html-webpack-plugin-after-emit', function (data, cb) {
-    hotMiddleware.publish({ action: 'reload' })
+    hotMiddleware.publish({action: 'reload'})
     cb()
   })
 })
@@ -137,7 +139,7 @@ compiler.plugin('compilation', function (compilation) {
 Object.keys(proxyTable).forEach(function (context) {
   var options = proxyTable[context]
   if (typeof options === 'string') {
-    options = { target: options }
+    options = {target: options}
   }
   app.use(proxyMiddleware(options.filter || context, options))
 })

@@ -91,15 +91,15 @@ function IDcardRule(id) {
 }
 
 var simplePassword = ['123456', '123456789', '12345678', '123123', '5201314', '1234567', '7758521', '654321', '1314520', '123321', '1234567890', '147258369', '123654', '5211314', 'woaini', '1230123', '987654321', '147258', '123123123', '7758258', '520520', '789456', '456789', '159357', '112233', '1314521', '456123', '110110', '521521', 'zxcvbnm', '789456123', '0123456789', '0123456', '123465', '159753', 'qwertyuiop', '987654', '115415', '1234560', '123000', '123789', '100200', '963852741', '121212', '111222', '123654789', '12301230', '456456', '741852963', 'asdasd', 'asdfghjkl', '369258', '863786', '258369', '8718693', '666888', '5845201314', '741852', '168168', 'iloveyou', '852963', '4655321', '102030', '147852369', '321321']
-    /**
-     * 密码强度检查函数
-     * level级别
-     * 0    不符合基本的长度要求
-     * 1    仅满足长度要求
-     * 2    包含两类字符
-     * 3    包含三类字符（数字、字母、特殊字符）
-     */
-var getPswLevel = function(psw) {
+/**
+ * 密码强度检查函数
+ * level级别
+ * 0    不符合基本的长度要求
+ * 1    仅满足长度要求
+ * 2    包含两类字符
+ * 3    包含三类字符（数字、字母、特殊字符）
+ */
+var getPswLevel = function (psw) {
     var level = 0;
     psw = (psw || "") + "";
     //长度判断
@@ -112,6 +112,7 @@ var getPswLevel = function(psw) {
     /[^a-zA-Z\d]+/.test(psw) && level++;
     return level;
 }
+
 function isSimplePassword(psw) {
     psw = psw + "";
     for (var i = 0, n = simplePassword.length; i < n; i++) {
@@ -120,12 +121,25 @@ function isSimplePassword(psw) {
         }
     }
 }
+
 function isOKPassword(psw, baseLevel) {
     var ref = baseLevel === undefined ? 3 : +baseLevel;
     return getPswLevel(psw) >= ref;
 }
+
 function getPasswordLevel(psw) {
     return getPswLevel(psw);
 }
 
-export {ChineseNameRule, userRule, phoneRule, mailRule, QQRule, leapYearRule, IDcardRule, isSimplePassword, isOKPassword, getPasswordLevel}
+export {
+    ChineseNameRule,
+    userRule,
+    phoneRule,
+    mailRule,
+    QQRule,
+    leapYearRule,
+    IDcardRule,
+    isSimplePassword,
+    isOKPassword,
+    getPasswordLevel
+}

@@ -5,10 +5,10 @@
       <sevenday-weather v-show='filterType==1' :filter-type="filterType"></sevenday-weather>
     </div>
     <ul class="botmFilter">
-      <li v-on:click="changeFilter(0)" :class="{current: filterType==0}">
+      <li @click="changeFilter(0)" :class="{current: filterType==0}">
         目前天气
       </li>
-      <li v-on:click="changeFilter(1)" :class="{current: filterType==1}">
+      <li @click="changeFilter(1)" :class="{current: filterType==1}">
         7天天气
       </li>
     </ul>

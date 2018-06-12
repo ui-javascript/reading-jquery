@@ -31,12 +31,12 @@
 
 <body>
 <div id="app">
-    <div v-bind:class="[errorClass ,isActive ? activeClass : '']"></div>
+    <div :class="[errorClass ,isActive ? activeClass : '']"></div>
 
     <!-- 绑定内联样式 -->
-    <div v-bind:style="{ color: activeColor, fontSize: fontSize + 'px' }">菜鸟教程</div>
-    <div v-bind:style="styleObject">菜鸟教程</div>
-    <div v-bind:style="[baseStyles, overridingStyles]">菜鸟教程</div>
+    <div :style="{ color: activeColor, fontSize: fontSize + 'px' }">菜鸟教程</div>
+    <div :style="styleObject">菜鸟教程</div>
+    <div :style="[baseStyles, overridingStyles]">菜鸟教程</div>
 </div>
 
 <script>

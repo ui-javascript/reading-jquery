@@ -3,10 +3,12 @@
  */
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+
 Vue.use(VueRouter)
 
 const router = new VueRouter({
-  routes: [{ path: '/index',
+  routes: [{
+    path: '/index',
     component: require('../views/index'),
 
     // index下的子导航
@@ -30,21 +32,21 @@ const router = new VueRouter({
     ]
   },
 
-  // 歌手详情
-  {
-    name: 'playerDetail',
-    path: '/playerDetail/:id',
-    component: require('../views/playerDetail')
-  },
+    // 歌手详情
+    {
+      name: 'playerDetail',
+      path: '/playerDetail/:id',
+      component: require('../views/playerDetail')
+    },
 
-  // 专辑详情
-  {
-    path: '/playListDetail/:id',
-    name: 'playListDetail',
-    component: require('../views/playListDetail')
-  }, {
-    path: '*', redirect: '/index/rage'
-  }]
+    // 专辑详情
+    {
+      path: '/playListDetail/:id',
+      name: 'playListDetail',
+      component: require('../views/playListDetail')
+    }, {
+      path: '*', redirect: '/index/rage'
+    }]
 })
 
 export default router

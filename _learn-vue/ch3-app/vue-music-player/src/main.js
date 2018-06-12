@@ -54,10 +54,10 @@ const store = new Vuex.Store({
       state.musicData.unshift(payload);
     },
     toggleMusic(state, index) {
-        state.audio.name = state.musicData[index].name;
-        state.audio.src = state.musicData[index].src;
-        state.audio.musicImgSrc = state.musicData[index].musicImgSrc;
-        state.audio.index = index;
+      state.audio.name = state.musicData[index].name;
+      state.audio.src = state.musicData[index].src;
+      state.audio.musicImgSrc = state.musicData[index].musicImgSrc;
+      state.audio.index = index;
     },
     playMusic(state, payload) {
       state.audio.name = payload.name;
@@ -88,22 +88,22 @@ const store = new Vuex.Store({
     }
   },
   actions: {
-    getData({ commit,state }) {
+    getData({commit, state}) {
       if (localStorage.musics !== '[]' && localStorage.musics) {
         state.musicData = JSON.parse(localStorage.musics);
         return;
       }
       return new Promise((resolve, reject) => {
         Vue.axios.get('/api/music-data')
-            .then (res => {
-              if (res.data.errno === 0) {
-                state.musicData = res.data.musicData;
-                localStorage.musics = JSON.stringify(state.musicData);
-              }
-            })
-            .then(() => {
-              commit('toggleMusic',0)
-            });
+          .then(res => {
+            if (res.data.errno === 0) {
+              state.musicData = res.data.musicData;
+              localStorage.musics = JSON.stringify(state.musicData);
+            }
+          })
+          .then(() => {
+            commit('toggleMusic', 0)
+          });
         resolve();
       });
     }
@@ -116,5 +116,5 @@ new Vue({
   router,
   store,
   template: '<App/>',
-  components: { App }
+  components: {App}
 })

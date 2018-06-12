@@ -16,7 +16,7 @@ html, body {
     margin: 0 auto;
   }
 
-  body{
+  body {
     // padding: 10px 0;
     box-shadow: 0 0 30px gray;
   }
@@ -40,10 +40,12 @@ a::after {
   transform: scaleX(0);
   transition: .3s ease-in-out;
 }
+
 a:hover::after {
   transform: scaleX(1);
   transition: .3s ease-in-out;
 }
+
 .hover {
   transform: scaleX(1);
   transition: .3s ease-in-out;
@@ -65,9 +67,11 @@ a:hover::after {
 .fade-enter-active {
   transition: all .3s ease;
 }
+
 .fade-leave-active {
   transition: all .3s cubic-bezier(1.0, 0.5, 0.8, 1.0);
 }
+
 .fade-enter, .fade-leave-active {
   transform: translateX(10px);
   opacity: 0;

@@ -14,9 +14,9 @@
     <p>{{ 5+5 }}</p>
     <p>{{ ok ? 'YES' : 'NO' }}</p>
     <p>{{ message.split('').reverse().join('(*^_^*)') }}</p>
-    <p v-bind:id="'list-' + id">{{ id }}</p>
+    <p :id="'list-' + id">{{ id }}</p>
     <ul>
-        <li v-for="n in 3" v-bind:id="'list-' + id">{{ n }}</li>
+        <li v-for="n in 3" :id="'list-' + id">{{ n }}</li>
     </ul>
 </div>
 

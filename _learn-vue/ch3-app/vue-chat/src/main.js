@@ -9,6 +9,6 @@ Vue.config.devtools = true;
 
 new Vue({
     el: 'body',
-    components: { App },
+    components: {App},
     store: store
 });

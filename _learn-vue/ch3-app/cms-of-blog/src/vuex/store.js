@@ -1,4 +1,4 @@
-import Vue  from 'vue'
+import Vue from 'vue'
 import Vuex from 'vuex'
 
 Vue.use(Vuex)
@@ -8,13 +8,13 @@ const state = {
     popPara: {
         pop: false
     },
-    bg:''
+    bg: ''
 }
 const mutations = {
 
-    TOGGLE: (state)=>state.waiting = !state.waiting,
-    POP: (state, para)=>state.popPara = para,
-    BGTOGGLE: (state,bg)=>state.bg=bg
+    TOGGLE: (state) => state.waiting = !state.waiting,
+    POP: (state, para) => state.popPara = para,
+    BGTOGGLE: (state, bg) => state.bg = bg
 
 }
 export default new Vuex.Store({
