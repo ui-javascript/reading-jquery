@@ -9,6 +9,8 @@
   "main": "layui.js",
   "license": "MIT",
   "scripts": {
+    "install": "cnpm install",
+    "remove": "rimraf node_modules",
     "test": "karma start karma.conf.unit.js",
     "test:cov": "npm test -- --reporters mocha,coverage",
     "test:sauce": "karma start karma.conf.sauce.js",
