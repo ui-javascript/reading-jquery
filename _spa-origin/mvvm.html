@@ -2,31 +2,30 @@
 <head>
     <title>myVue</title>
 </head>
-
 <style>
-    #app {
+    .app {
         text-align: center;
     }
 </style>
 
 <body>
 
-<div id="app">
-    <!-- 组件1 -->
+<div id="app" class="app">
     <form>
         <input type="text" v-model="number">
         <button type="button" v-click="increment">Add</button>
     </form>
     <h3 v-bind="number"></h3>
-
-    <!-- 组件2 -->
-    <form>
-        <input type="text" v-model="count">
-        <button type="button" v-click="incre">Add</button>
-    </form>
-    <h3 v-bind="count"></h3>
+    <mark v-bind="number"></mark>
 </div>
 
+<div id="app2" class="app">
+    <form>
+        <textarea type="text" v-model="number"></textarea>
+        <button type="button" v-click="increment">Del</button>
+    </form>
+    <h3 v-bind="number"></h3>
+</div>
 
 <script>
     function myVue(options) {
@@ -37,25 +36,25 @@
     myVue.prototype._init = function (options) {
         this.$options = options;
 
-        // dom  数据 方法
+        // 元素+ 数据+ 方法
         this.$el = document.querySelector(options.el);
         this.$data = options.data;
         this.$methods = options.methods;
 
-
         this._binding = {};
         this._obverse(this.$data);
         this._complie(this.$el);
-    }
+    };
 
     // 观察
     myVue.prototype._obverse = function (obj) {
         var _this = this;
 
-
         Object.keys(obj).forEach(function (key) {
+
             if (obj.hasOwnProperty(key)) {
                 _this._binding[key] = {
+                    // 指令集合数组
                     _directives: []
                 };
                 console.log(_this._binding[key])
@@ -86,12 +85,13 @@
                 })
             }
         })
-    }
+    };
 
     // 编译
     myVue.prototype._complie = function (root) {
         var _this = this;
         var nodes = root.children;
+
         for (var i = 0; i < nodes.length; i++) {
             var node = nodes[i];
             if (node.children.length) {
@@ -133,42 +133,56 @@
                 ))
             }
         }
-    }
-
-
+    };
+</script>
+<script>
     // 观察者
     function Watcher(name, el, vm, exp, attr) {
-        this.name = name;         //指令名称，例如文本节点，该值设为"text"
-        this.el = el;             //指令对应的DOM元素
-        this.vm = vm;             //指令所属myVue实例
-        this.exp = exp;           //指令对应的值，本例如"number"
-        this.attr = attr;         //绑定的属性值，本例为"innerHTML"
+        //指令名称，例如文本节点，该值设为"text"
+        this.name = name;
+        //指令对应的DOM元素
+        this.el = el;
+
+        //指令所属myVue实例
+        this.vm = vm;
+
+        //指令对应的值，本例如"number"
+        this.exp = exp;
+
+        //绑定的属性值，本例为"innerHTML"
+        this.attr = attr;
 
         this.update();
     }
 
     Watcher.prototype.update = function () {
         this.el[this.attr] = this.vm.$data[this.exp];
-    }
-
+    };
 </script>
-
-
 <script>
+    // 触发时机
     window.onload = function () {
 
         var app = new myVue({
             el: '#app',
             data: {
                 number: 0,
-                count: 0,
             },
             methods: {
                 increment: function () {
                     this.number++;
-                },
-                incre: function () {
-                    this.count++;
+                }
+            }
+        })
+
+        new myVue({
+            el: '#app2',
+            data: {
+                number: 19,
+            },
+            methods: {
+                increment: function () {
+                    this.number--;
                 }
             }
         })
