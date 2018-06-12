@@ -2945,6 +2945,17 @@ var browser = {
     }
   });
 
+
+
+
+
+
+
+
+
+
+
+
   /**
    * 浮动选择控件
    * ================================
@@ -3103,6 +3114,20 @@ var browser = {
   $wq.getFloatSelectBox = function (trigger) {
     return WqFloatSelectBox.get(trigger);
   };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
   /**
@@ -3291,6 +3316,20 @@ var browser = {
       return false;
     }
   };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
   /**
@@ -5090,6 +5129,25 @@ var browser = {
     return new WeqiaFileViewer(files, options);
   }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   /**
    * pagination plugin (分页插件)
    * ======================================
@@ -5710,6 +5768,17 @@ var browser = {
       pager.unload();
   };
 
+
+
+
+
+
+
+
+
+
+
+
   /**
    * Date function (时间函数) ======================
    */
@@ -5924,6 +5993,20 @@ var browser = {
   };
 
   $wq.newDate();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
   /**
@@ -6676,6 +6759,21 @@ var browser = {
     return wqretrievehelper.parseMan(content, mans);
   };
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   /**
    * input contact plugin (文本框输入查询企业联系人选择插件)
    * 通过输入用户名或帐号（通行证帐号，手机号或邮箱）查询企业联系人，然后通过选择联系人item来获取数据
@@ -7170,6 +7268,17 @@ var browser = {
   };
 
 
+
+
+
+
+
+
+
+
+
+
+
   /**
    * at contact plugin (@用户选择插件) =====================================
    * 通过@并输入用户名或帐号（通行证帐号，手机号或邮箱）查询企业联系人，以@的形式插入到文本中
@@ -7481,6 +7590,16 @@ var browser = {
     }
     return tags;
   };
+
+
+
+
+
+
+
+
+
+
 
 
   /**
@@ -9722,6 +9841,21 @@ var browser = {
 
   }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   /** 表情插件 =====================================================**/
   var wqFaceHandler = {
     faces: {
@@ -10075,6 +10209,16 @@ var browser = {
       }
     });
   };
+
+
+
+
+
+
+
+
+
+
 
   /**
    * 地区助手 ======================
@@ -11452,6 +11596,17 @@ var browser = {
   $.wqzone = $wq.zone = wqZoneHandler;
 
 
+
+
+
+
+
+
+
+
+
+
+
   /**
    * 校验 ============================
    */
@@ -11788,6 +11943,16 @@ var browser = {
     return new WqFormPlugin(t, k, a);
   };
   $.wqSingleForm = $wq.singleForm = new WqFormPlugin();
+
+
+
+
+
+
+
+
+
+
 
 
   /**
@@ -12526,6 +12691,16 @@ var browser = {
   });
 
 })(jQuery);
+
+
+
+
+
+
+
+
+
+
 
 //  员工信息鼠标悬浮信息 @caolh ======================
 var employeeView = {
