@@ -44,7 +44,7 @@
 * 异步流程控制
     * 发布订阅
         * [eventproxy](https://github.com/JacksonTian/eventproxy) 朴灵出品
-        * [Arbiter.js](http://arbiterjs.com/) [详细](detail/Arbiter)
+        * [Arbiter.js](http://arbiterjs.com/) [详细](static/tools/Arbiter)
     * [q](https://github.com/kriskowal/q/) Promise风格的
     * [Async.js](https://github.com/caolan/async/)
 * 加载器
@@ -62,7 +62,7 @@
 * [uri.js](https://github.com/medialize/URI.js) uri操作
 * [Cookie](https://github.com/ScottHamper/Cookies) 增删改cookie的工具库
 * [store.js](https://github.com/marcuswestin/store.js/) 对 localStorage 的封装。兼容 IE6+。
-* [director](https://github.com/flatiron/director) 前端路由库 [详细](detail/director)
+* [director](https://github.com/flatiron/director) 前端路由库 [详细](static/tools/director)
 * [JSDoc](http://usejsdoc.org/) 根据javascript文件中注释的信息，生成API文档 [详细](detail/JSDoc)
 * [hotkeys](http://jslite.io/hotkeys/) 键盘事件的封装
 * [MD5](https://github.com/pvorb/node-md5) 用 MD5 的方式加密文件的库
@@ -100,14 +100,14 @@
 * [stickybits](https://github.com/dollarshaveclub/stickybits) `position: sticky` polyfills。
 
 ## <a name="form">表单类</a>
-* [jquery-file-upload](https://github.com/blueimp/jQuery-File-Upload) 上传文件组件 [详细](detail/fileUpload)
+* [jquery-file-upload](https://github.com/blueimp/jQuery-File-Upload) 上传文件组件 [详细](src/fileUpload)
 * [zTree](http://www.treejs.cn/v3/main.php) 文件树形视图控件 [详细](detail/ztree)
 * [Treed](http://colorify.rocks/index.html) 树编辑器。感觉展示的感觉很像思维导图
 * [FileAPI](https://github.com/mailru/FileAPI) 对文件选择框内的文件的一些处理
 * [autosize](https://github.com/jackmoore/autosize) 让 文本域(textarea) 的高度随着文字内容的变高而变高。
 
 ### 表单验证
-* [.Validate](https://github.com/jzaefferer/jquery-validation) [详细](detail/validate)
+* [.Validate](https://github.com/jzaefferer/jquery-validation) [详细](static/plus/form/validate)
 * [jQuery-Validation-Engine](http://posabsolute.github.io/jQuery-Validation-Engine/)
 
 ### 表单元素美化
@@ -246,7 +246,7 @@
 
 ### 幻灯
 * [SuperSlide](http://www.superslide2.com/)/[TouchSlide](http://www.superslide2.com/) 国产库！兼容IE6，焦点图/幻灯片/Tab标签切换/图片滚动/无缝滚动等常见效果，支持移动端
-* [slidesjs](http://slidesjs.com/) 挺好用的，只是那幻灯导航的CSS都要自己写，呵呵 [详细](detail/jquery.slide)
+* [slidesjs](http://slidesjs.com/) 挺好用的，只是那幻灯导航的CSS都要自己写，呵呵 [详细](static/plus/layout/slider)
 * [iSlider](https://github.com/BE-FE/iSlider) 无任何插件依赖的手机平台javascript滑动组件 [详细](detail/iSlider)
 * [bgstretcher](http://www.ajaxblender.com/bgstretcher-2-jquery-stretch-background-plugin-updated.html) 全屏幻灯，会随着页面大小的变化而变化。
 * [Swiper](https://github.com/nolimits4web/swiper/) 开源、免费、强大的移动端触摸滑动插件 [Swiper中文网](http://www.swiper.com.cn/)
@@ -278,7 +278,7 @@
 * [midnight.js](https://github.com/Aerolab/midnight.js) 文字颜色随着背景变，屌炸了
 * [color-animation](http://www.bitstorm.org/jquery/color-animation/) jquery的颜色渐变动画插件。jquery的动画不支持颜色值的变化。改库提供了这个支持。
 * [transit](https://github.com/rstacruz/jquery.transit) 对元素进行css的变换
-* [tagcanvas](http://www.goat1000.com/tagcanvas.php) 3D标签云效果 [详细](detail/tagcanvas)
+* [tagcanvas](http://www.goat1000.com/tagcanvas.php) 3D标签云效果 [详细](static/tools/tagcanvas)
 * [iconate](https://github.com/bitshadow/iconate) 图片切换动画
 * [Snap.js](https://github.com/jakiestfu/Snap.js/) 左/右侧导航的出现效果
 * [CSS shake](http://elrumordelaluz.github.io/csshake/) 抖动动画
