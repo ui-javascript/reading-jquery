@@ -1,6 +1,6 @@
 // This is the webpack config used for unit tests.
 
-var utils = require('./utils')
+var utils = require('./utils/utils')
 var webpack = require('webpack')
 var merge = require('webpack-merge')
 
@@ -15,7 +15,7 @@ var webpackConfig = merge(baseConfig, {
     devtool: '#inline-source-map',
     plugins: [
         new webpack.DefinePlugin({
-            'process.env': require('../config/test.env')
+            'process.env': require('./config/test.env')
         })
     ]
 })

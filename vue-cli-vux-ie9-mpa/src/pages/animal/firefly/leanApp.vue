@@ -1,6 +1,8 @@
 <template>
     <div>
-        <nav-lean></nav-lean>
+        <nav-lean>
+
+        </nav-lean>
     </div>
 </template>
 

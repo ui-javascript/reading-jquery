@@ -1,5 +1,5 @@
 // 检查版本 需要执行
-require('./check-versions')()
+require('./utils/check-versions')()
 
 // 产品环境
 process.env.NODE_ENV = 'production'
@@ -14,7 +14,7 @@ var chalk = require('chalk')
 var webpack = require('webpack')
 
 // 配置导入
-var config = require('../config')
+var config = require('./config')
 var webpackConfig = require('./webpack.prod.conf')
 
 // 开始构造环境

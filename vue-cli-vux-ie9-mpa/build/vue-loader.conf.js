@@ -1,5 +1,5 @@
-var utils = require('./utils')
-var config = require('../config')
+var utils = require('./utils/utils')
+var config = require('./config')
 
 // 是否打包产品
 var isProduction = (process.env.NODE_ENV === 'production')

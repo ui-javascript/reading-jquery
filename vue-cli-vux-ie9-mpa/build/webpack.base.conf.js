@@ -1,11 +1,11 @@
 var path = require('path')
 
 // 导入工具类
-var utils = require('./utils')
+var utils = require('./utils/utils')
 
 // 导入配置
 var webpack = require('webpack')
-var config = require('../config')
+var config = require('./config')
 
 // 路径处理
 var glob = require('glob');

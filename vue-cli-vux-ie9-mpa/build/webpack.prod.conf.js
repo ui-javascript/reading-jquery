@@ -1,11 +1,11 @@
 var path = require('path')
-var utils = require('./utils')
+var utils = require('./utils/utils')
 
 var webpack = require('webpack')
 var merge = require('webpack-merge')
 
 // 配置
-var config = require('../config')
+var config = require('./config')
 var baseWebpackConfig = require('./webpack.base.conf')
 
 
@@ -23,7 +23,7 @@ var chunks = Object.keys(entries);
 
 // 是否为测试
 var env = process.env.NODE_ENV === 'testing'
-    ? require('../config/test.env')
+    ? require('./config/test.env')
     : config.build.env
 
 var webpackConfig = merge(baseWebpackConfig, {

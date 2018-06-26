@@ -4,7 +4,7 @@ var chalk = require('chalk')
 // 版本控制
 var semver = require('semver')
 
-var packageConfig = require('../package.json')
+var packageConfig = require('../../package.json')
 
 // 执行
 function exec(cmd) {
