@@ -18,10 +18,10 @@ $(document).ready(function() {
             if (isNew) {
                 // 新人加入 todo just for test
                 picIndex = Math.floor(Math.random() * 2) + 1;
-                url = 'assets/images/avatar/n-' + picIndex + '.png';
+                url = '/static/images/avatar/n-' + picIndex + '.png';
             } else {
                 picIndex = Math.floor(Math.random() * this.PIC_NUM) + 1;
-                url = 'assets/images/avatar/p-' + picIndex + '.png';
+                url = '/static/images/avatar/p-' + picIndex + '.png';
             }
             return '<li>' +
                 // '<a href="http://www.google.com" target="_blank"><img class="avatar" width=50 height=50 src="' + url + '"><p>' + index + '</p></a>' +
