@@ -1,0 +1,96 @@
+const config = require('../../config/index')
+const gulp = require('gulp')
+const browserSync = require('browser-sync').create()
+const reload = browserSync.reload
+
+// 浏览器同步刷新
+// http://www.browsersync.cn/docs/gulp/
+gulp.task('devSync', function () {
+    browserSync.init({
+        port: 8888,
+        ui: {
+            port: 3005
+        },
+        directory: true,
+        browser: "chrome",
+        server: {
+            baseDir: ['./templates'],
+            routes: {
+                '/static': './static'
+            }
+        },
+        // startPath: "index.html"
+    });
+
+    // 文件监听
+    // fileInclude + browserSync https://www.cnblogs.com/yjzhu/archive/2017/02/27/6474854.html
+    gulp.watch(`${config.dev.devDir}/pages/**/*.html`, ['compileHTML']).on('change', reload);
+    gulp.watch(`${config.dev.assetsDir}/js/**/*.js`, ['compileJS']).on('change', reload);
+    gulp.watch(`${config.dev.assetsDir}/css/**/*.less`, ['compileLess']).on('change', reload);
+});
+
+gulp.task('distSync', function () {
+    browserSync.init({
+        // proxy: "deva.dev",
+        port: 80, //
+        ui: false,
+        directory: true,
+        notify: false,
+        codeSync: false, // 不要发送任何文件改变事件给浏览器
+        logSnippet: false,
+        logFileChanges: false,
+        logConnections: false,
+        ghostMode: false,
+        server: {
+            baseDir: './templates',
+            index: "index.html",
+            routes: {
+                // "/css": distBaseRoot + "/static/css",
+                // "/scss": distBaseRoot + "/static/scss",
+                // "/scripts": distBaseRoot + '/static/scripts',
+                //
+                // "/images": distBaseRoot + '/static/images',
+                // "/plus": distBaseRoot + '/static/plus',
+                // "/mock": distBaseRoot + '/static/mock',
+                // "/fonts": distBaseRoot + '/static/fonts'
+
+                '/static': './static'
+            }
+        },
+        // startPath: "index.html"
+    });
+});
+
+
+gulp.task('PWASync', function () {
+
+    browserSync.init({
+        // @FIXME 代理不知道怎么配置
+        // proxy: "http://192.168.1.250",
+        // serveStatic: ['./templates'],
+
+        server: {
+            baseDir: './templates',
+            index: "index.html",
+            routes: {
+                // "/css": "./static/css",
+                // "/scss": "/static/scss",
+                // "/scripts": '/static/scripts',
+                // "/images": '/static/images',
+                // "/plus": '/static/plus',
+                // "/mock": '/static/mock',
+                // "/fonts": '/static/fonts'
+                '/static': './static'
+            }
+        },
+        port: 8033, // 端口注意
+        ui: false,
+        directory: true,
+        notify: false,
+        codeSync: false, // 不要发送任何文件改变事件给浏览器
+        logSnippet: false,
+        logFileChanges: false,
+        logConnections: false,
+        ghostMode: false
+    });
+});

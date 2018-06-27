@@ -49,6 +49,7 @@
     "imagemin-optipng": "^5.2.1",
     "imagemin-pngquant": "^5.0.0",
     "path": "^0.12.7",
+    "require-dir": "^1.0.0",
     "run-sequence": "^2.2.1",
     "workbox-build": "^3.0.0"
   }
