@@ -1,15 +1,5 @@
 const gulp = require('gulp')
 
-// 搬运一些未正确归类的文件
-gulp.task('distCopy', function () {
-    return gulp.src([
-        './src/pages/**/*.*',
-        '!' + PATHS.html,
-        '!./**/*.inc'
-        ])
-        .pipe(gulp.dest('./templates'))
-})
-
 gulp.task('copyHTMLLeft', function () {
     return gulp.src([
         './src/pages/**/*.*',

@@ -7,9 +7,9 @@ const zip = require('gulp-zip')
 gulp.task('zip', function () {
 
     return gulp.src(['./**/*.*',
-        '.babelrc',
+        '!.babelrc',
         // 排除以下文件
-        '!{node_modules,cmd,src,config}/**/*.*',
+        '!{node_modules,build,src,doc}/**/*.*',
         '!dist.zip',
         // '!{gulpfile.js,package.json,package-lock.json,README.md,.babelrc}'
     ])

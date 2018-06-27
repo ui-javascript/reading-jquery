@@ -16,9 +16,21 @@ gulp.task('cleanDev', function () {
         .pipe(clean())
 })
 
-
-gulp.task('cleanDist', function () {
-    return gulp.src([`${config.prod.distDir}/*`],
+// 清除原来的css
+gulp.task('cleanCSS', function () {
+    return gulp.src([
+            './static/css/*'
+        ],
         {read: false})
         .pipe(clean())
 })
+
+gulp.task('cleanDist', function () {
+    return gulp.src([
+        './dist.zip',
+        `${config.prod.distDir}/*`
+        ],
+        {read: false})
+        .pipe(clean())
+})
+
