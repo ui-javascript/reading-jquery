@@ -25,7 +25,7 @@ gulp.task('devSync', function () {
     // 文件监听
     // fileInclude + browserSync https://www.cnblogs.com/yjzhu/archive/2017/02/27/6474854.html
     gulp.watch(`${config.dev.pagesDir}/**/*.html`, ['compileHTML']).on('change', reload);
-    gulp.watch(`${config.dev.assetsDir}/js/**/*.js`, ['compileJS']).on('change', reload);
+    gulp.watch(`${config.dev.scriptsDir}/**/*.js`, ['compileJS']).on('change', reload);
     gulp.watch(`${config.dev.assetsDir}/css/**/*.less`, ['compileLess']).on('change', reload);
 });
 

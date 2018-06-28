@@ -2,6 +2,7 @@
 exports.dev = {
     devDir: './src',
     assetsDir: './src/assets',
+    imagesDir: './src/assets/images',
 
     pagesDir: './src/pages',
     scriptsDir: './src/assets/js',

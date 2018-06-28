@@ -9,5 +9,5 @@ gulp.task('makeSprite', function () {
             imgName: `images/sprite/_sprite.png`,
             cssName: `css/components/base/sprite.less`
         }))
-        .pipe(gulp.dest(`${config.dev.assetsDir}`));
+        .pipe(gulp.dest(`${config.dev.spriteOutputDir}`));
 });
