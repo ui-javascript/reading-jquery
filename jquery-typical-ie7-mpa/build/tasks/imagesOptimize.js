@@ -29,8 +29,11 @@ gulp.task('optimizeImages', function () {
             optimizationLevel: 7
         });
 
-    return gulp.src(`${config.dev.assetsDir}/images/**/*.{png,jpg,jpeg,ico,gif,svg}`)
-    // gulp.src('./static/images/**/*.*')
+    return gulp.src([
+        `${config.dev.assetsDir}/images/**/*.{png,jpg,jpeg,ico,gif,svg}`,
+        // 雪碧图下面的图片忽略
+        `!${config.dev.spriteDevDir}/*`
+        ])
         .pipe(plumber())
         // .pipe(imagemin({
         //     optimizationLevel: 5, //默认：3  取值范围：0-7（优化等级）

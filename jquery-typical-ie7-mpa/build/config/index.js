@@ -14,9 +14,12 @@ exports.dev = {
     assetsDir: './src/assets',
 
     // 静态页位置修改此处
-    // pagesDir: './src/pages',
-    pagesDir: './src/zjzj',
-    spriteDevDir: './src/assets/images/sprite'
+    pagesDir: './src/pages',
+    // pagesDir: './src/zjzj',
+    spriteDevDir: './src/assets/images/sprite',
+
+    // 要转化字体所在的位置
+    fontSpiderDir: './static/fonts/hyzhj'
 }
 
 // 产品

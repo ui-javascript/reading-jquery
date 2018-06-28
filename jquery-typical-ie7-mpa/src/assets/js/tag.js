@@ -109,7 +109,7 @@ $(document).ready(function() {
         var dfd = $.Deferred();
         $canvas.tagcanvas("pause");
         var $newItem = $(tool.makeItem(true, '', tool.$dataWrap.find('li').length));
-        $animItem = $newItem.clone();
+        var $animItem = $newItem.clone();
         $animItem.addClass('anim-start');
         $canvasWrap.append($animItem);
         $animItem.animate({

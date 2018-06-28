@@ -85,3 +85,18 @@ gulp.task('05-clean-dist', function () {
         ['cleanDev', 'cleanDist']
     );
 });
+
+// 雪碧图
+gulp.task('06-make-sprite', function () {
+    runSequence('makeSprite');
+});
+
+// 图片优化
+gulp.task('07-images-optimize', function () {
+    runSequence('optimizeImages');
+});
+
+// 字体子集化
+gulp.task('08-font-spider', function () {
+    runSequence('fontSpider');
+});

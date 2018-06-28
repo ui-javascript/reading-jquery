@@ -1,17 +1,19 @@
 {
-  "name": "",
+  "name": "gulp-jquery",
   "version": "1.0.0",
-  "description": "less -> css",
+  "description": "gulp-jquery",
   "main": "index.js",
   "scripts": {
     "install": "cnpm install",
     "uninstall": "rimraf node_modules",
     "clean": "gulp 05-clean-dist",
-
     "dev": "gulp 01-build-dev",
     "cssWatch": "gulp 02-css-job",
     "build": "gulp 03-build-dist",
     "buildPWA": "gulp 04-build-pwa",
+    "sprite": "gulp 06-make-sprite",
+    "imagesOptimize": "gulp 07-images-optimize",
+    "fontSpider": "gulp 08-font-spider",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "luo0412",
@@ -31,6 +33,7 @@
     "gulp-concat": "^2.6.0",
     "gulp-concat-dir": "^1.0.0",
     "gulp-file-include": "^2.0.1",
+    "gulp-font-spider": "^0.3.6",
     "gulp-if": "^2.0.2",
     "gulp-imagemin": "^4.1.0",
     "gulp-less": "^3.3.2",
