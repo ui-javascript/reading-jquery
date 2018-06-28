@@ -35,8 +35,8 @@ exports.prod = {
 
 // 根据不同系统配置文件进行覆盖
 // 此处修改
-// var details = require('../system/default')
-var details = require('../system/hibim-sefolio-ie9')
+var details = require('../system/default')
+// var details = require('../system/hibim-sefolio-ie9')
 Object.assign(exports.common, details.common)
 Object.assign(exports.dev, details.dev)
 Object.assign(exports.prod, details.prod)
