@@ -14,9 +14,9 @@ gulp.task('devSync', function () {
         directory: true,
         browser: "chrome",
         server: {
-            baseDir: ['./templates'],
+            baseDir: `${config.common.templatesDir}`,
             routes: {
-                '/static': './static'
+                '/static': `${config.common.staticDir}`
             }
         },
         // startPath: "index.html"
@@ -24,7 +24,7 @@ gulp.task('devSync', function () {
 
     // 文件监听
     // fileInclude + browserSync https://www.cnblogs.com/yjzhu/archive/2017/02/27/6474854.html
-    gulp.watch(`${config.dev.devDir}/pages/**/*.html`, ['compileHTML']).on('change', reload);
+    gulp.watch(`${config.dev.pagesDir}/**/*.html`, ['compileHTML']).on('change', reload);
     gulp.watch(`${config.dev.assetsDir}/js/**/*.js`, ['compileJS']).on('change', reload);
     gulp.watch(`${config.dev.assetsDir}/css/**/*.less`, ['compileLess']).on('change', reload);
 });
@@ -42,19 +42,10 @@ gulp.task('distSync', function () {
         logConnections: false,
         ghostMode: false,
         server: {
-            baseDir: './templates',
-            index: "index.html",
+            baseDir: `${config.common.templatesDir}`,
+            // index: "index.html",
             routes: {
-                // "/css": distBaseRoot + "/static/css",
-                // "/scss": distBaseRoot + "/static/scss",
-                // "/scripts": distBaseRoot + '/static/scripts',
-                //
-                // "/images": distBaseRoot + '/static/images',
-                // "/plus": distBaseRoot + '/static/plus',
-                // "/mock": distBaseRoot + '/static/mock',
-                // "/fonts": distBaseRoot + '/static/fonts'
-
-                '/static': './static'
+                '/static': `${config.common.staticDir}`
             }
         },
         // startPath: "index.html"
@@ -67,20 +58,13 @@ gulp.task('PWASync', function () {
     browserSync.init({
         // @FIXME 代理不知道怎么配置
         // proxy: "http://192.168.1.250",
-        // serveStatic: ['./templates'],
+        // serveStatic: [`${config.common.templatesDir}`],
 
         server: {
-            baseDir: './templates',
+            baseDir: `${config.common.templatesDir}`,
             index: "index.html",
             routes: {
-                // "/css": "./static/css",
-                // "/scss": "/static/scss",
-                // "/scripts": '/static/scripts',
-                // "/images": '/static/images',
-                // "/plus": '/static/plus',
-                // "/mock": '/static/mock',
-                // "/fonts": '/static/fonts'
-                '/static': './static'
+                '/static': `${config.common.staticDir}`
             }
         },
         port: 8033, // 端口注意

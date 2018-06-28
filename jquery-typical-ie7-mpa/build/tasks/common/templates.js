@@ -7,7 +7,7 @@ const md5 = require('gulp-md5-assets')
 
 // 编译compileHTML
 gulp.task('compileHTML', function () {
-    return gulp.src(`${config.dev.devDir}/pages/**/*.html`)
+    return gulp.src(`${config.dev.pagesDir}/**/*.html`)
         .pipe(plumber())
         .pipe(fileInclude({
             prefix: '@@',
@@ -19,7 +19,7 @@ gulp.task('compileHTML', function () {
 
 // 缩编HTML
 gulp.task('distHTML', function () {
-    return gulp.src(`${config.dev.devDir}/pages/**/*.html`)
+    return gulp.src(`${config.dev.pagesDir}/**/*.html`)
         .pipe(plumber())
         .pipe(fileInclude({
             prefix: '@@',

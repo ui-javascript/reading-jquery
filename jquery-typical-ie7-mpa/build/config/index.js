@@ -12,7 +12,10 @@ exports.common = {
 exports.dev = {
     devDir: './src',
     assetsDir: './src/assets',
-    pagesDir: './src/pages',
+
+    // 静态页位置修改此处
+    // pagesDir: './src/pages',
+    pagesDir: './src/zjzj',
     spriteDevDir: './src/assets/images/sprite'
 }
 

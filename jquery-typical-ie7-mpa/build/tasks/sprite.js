@@ -1,5 +1,5 @@
 // 雪碧图
-const config = require('../../config/index')
+const config = require('../config/index')
 const gulp = require('gulp')
 const spritesmith = require('gulp.spritesmith')
 

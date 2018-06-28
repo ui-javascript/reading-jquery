@@ -1,7 +1,7 @@
 /*
  * 图片优化
  */
-const config = require('../../config/index')
+const config = require('../config/index')
 const gulp = require('gulp')
 const plumber = require('gulp-plumber')
 const cache = require('gulp-cache')

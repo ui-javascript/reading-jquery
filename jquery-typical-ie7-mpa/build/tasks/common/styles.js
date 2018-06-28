@@ -6,12 +6,13 @@ const less = require('gulp-less')
 const autoprefixer = require('gulp-autoprefixer')
 const cleanCSS = require('gulp-clean-css')
 const md5 = require('gulp-md5-assets')
+const resolvePath = require("gulp-resolve-path")
+const sourcemaps = require('gulp-sourcemaps')
 
 // CSS监听
 gulp.task('watchCSS', function () {
     gulp.watch(`${config.dev.assetsDir}/css/**/*.less`, ['compileLess']);
 });
-
 
 // less编译
 gulp.task('compileLess', function (cb) {

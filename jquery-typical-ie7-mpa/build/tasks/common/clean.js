@@ -7,19 +7,19 @@ const clean = require('gulp-clean')
 // 清理文件夹
 gulp.task('cleanDev', function () {
     return gulp.src([
-            './static/js/*',
-            './static/css/*',
-            './static/images/*',
-            './templates/*',
-            './sw.js'],
-        {read: false})
+            `${config.common.staticDir}/js/*`,
+            `${config.common.staticDir}/css/*`,
+            `${config.common.staticDir}/images/*`,
+            `${config.common.templatesDir}/*`,
+            // `${config.common.templatesDir}/sw.js`
+        ], {read: false})
         .pipe(clean())
 })
 
 // 清除原来的css
 gulp.task('cleanCSS', function () {
     return gulp.src([
-            './static/css/*'
+            `${config.common.staticDir}/css/*`
         ],
         {read: false})
         .pipe(clean())
