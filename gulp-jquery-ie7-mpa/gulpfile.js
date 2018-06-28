@@ -20,6 +20,8 @@ requireDir('./build/tasks/server/')
 requireDir('./build/tasks')
 
 
+console.log('配置文件 -> ' + JSON.stringify(config))
+
 // 默认任务
 gulp.task('default', function () {
     runSequence('01-build-dev');
@@ -64,6 +66,7 @@ gulp.task('03-build-dist', function () {
 });
 
 // 离线方案
+// 暂时只考虑用在博客文章上
 gulp.task('04-build-pwa', function () {
     runSequence(
         // 1.清理旧文件

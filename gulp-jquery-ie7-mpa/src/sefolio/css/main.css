@@ -278,7 +278,7 @@ textarea {
 	css for header area
 =======================================================================*/
 .header_overlay{
-	background:url(../img/slider-overlay.png) repeat scroll 0 0;
+	background:url(../images/slider-overlay.png) repeat scroll 0 0;
 	position:absolute;
 	height:100%;
 	width:100%;
@@ -406,7 +406,7 @@ margin-top: 10px;
 	css for Hareme area
 =======================================================================*/
 .hireme_text {
-  background: rgba(0, 0, 0, 0) url("../img/hire_bg.jpg") repeat scroll 0 0;
+  background: rgba(0, 0, 0, 0) url("../images/hire_bg.jpg") repeat scroll 0 0;
   display: block;
   height: 585px;
   padding-right: 0;
@@ -554,7 +554,7 @@ padding-bottom:50px;
   text-align: center;
 }
 .sponsor_bg {
-  background: rgba(0, 0, 0, 0) url("../img/sponsor_bg.jpg") no-repeat fixed center center / cover ;
+  background: rgba(0, 0, 0, 0) url("../images/sponsor_bg.jpg") no-repeat fixed center center / cover ;
   height: 100%;
   left: 0;
   position: absolute;
@@ -586,23 +586,23 @@ padding-bottom:50px;
   z-index: 999;
 }
 .sponsor_inner .owl-prev {
-  background: rgba(0, 0, 0, 0) url("../img/left_nav.png") no-repeat scroll 0 0;
+  background: rgba(0, 0, 0, 0) url("../images/left_nav.png") no-repeat scroll 0 0;
   height: 20px;
   width: 20px;
   float: left;
 }
 .sponsor_inner .owl-prev:hover {
-  background: rgba(0, 0, 0, 0) url("../img/left_nav_h.png") no-repeat scroll 0 0;
+  background: rgba(0, 0, 0, 0) url("../images/left_nav_h.png") no-repeat scroll 0 0;
 }
 .sponsor_inner .owl-next{
-  background: rgba(0, 0, 0, 0) url("../img/right_nav.png") no-repeat scroll 0 0;
+  background: rgba(0, 0, 0, 0) url("../images/right_nav.png") no-repeat scroll 0 0;
   float: right;
   height: 20px;
   width: 20px;
   z-index:16;
 }
 .sponsor_inner .owl-next:hover {
-  background: rgba(0, 0, 0, 0) url("../img/right_nav_h.png") no-repeat scroll 0 0;
+  background: rgba(0, 0, 0, 0) url("../images/right_nav_h.png") no-repeat scroll 0 0;
 }
 
 /*=====================================================================
@@ -739,7 +739,7 @@ color:#fff;
 text-align:center;
 }
 .testmonial_bg {
-  background: rgba(0, 0, 0, 0) url("../img/feedback_bg.jpg") no-repeat fixed center center / cover ;
+  background: rgba(0, 0, 0, 0) url("../images/feedback_bg.jpg") no-repeat fixed center center / cover ;
   height: 100%;
   left: 0;
   position: absolute;
@@ -747,7 +747,7 @@ text-align:center;
   width: 100%;
 }
 .testmonial_overlay{
-  background:url(../img/feedback_ov.png) repeat;
+  background:url(../images/feedback_ov.png) repeat;
   content: "";
   height: 100%;
   left: 0;

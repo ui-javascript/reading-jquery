@@ -8,23 +8,33 @@ exports.common = {
     templatesDir: './templates',
 }
 
-// 开发
+// 开发环境
 exports.dev = {
     devDir: './src',
     assetsDir: './src/assets',
 
-    // 修改此处
-    // pagesDir: './src/pages',
-    pagesDir: './src/sefolio',
+    pagesDir: './src/pages',
     scriptsDir: './src/assets/js',
+
+    copyHTMLExclude: [
+        `!./src/pages/**/*.{html,inc}`
+    ],
 
     spriteDevDir: './src/assets/images/sprite',
 
-    // 修改要子集化的字体所在的位置
-    fontSpiderDir: './static/fonts/hyzhj'
+    fontSpiderDir: './static/fonts/hyzhj',
+
+    pwaDir: './templates/jsGrid'
 }
 
 // 产品
 exports.prod = {
     distDir: './dist'
 }
+
+// 根据不同系统配置文件进行覆盖
+// 此处修改
+var details = require('./main')
+Object.assign(exports.common, details.common)
+Object.assign(exports.dev, details.dev)
+Object.assign(exports.prod, details.prod)

@@ -2,11 +2,14 @@ const config = require('../../config')
 const gulp = require('gulp')
 
 gulp.task('copyHTMLLeft', function () {
+    console.log(...config.dev.copyHTMLExclude)
+
     return gulp.src([
         `${config.dev.pagesDir}/**/*.*`,
-        `!${config.dev.pagesDir}/**/*.html`,
-        `!${config.dev.pagesDir}/**/*.inc`,
-        `!${config.dev.pagesDir}/**/*.md`
+        // `!${config.dev.pagesDir}/**/*.html`,
+        // `!${config.dev.pagesDir}/**/*.inc`,
+        // `!${config.dev.pagesDir}/**/*.md`,
+        ...config.dev.copyHTMLExclude
         ])
         .pipe(gulp.dest(`${config.common.templatesDir}`))
 })

@@ -11,7 +11,7 @@ gulp.task('compileJS', function () {
     return gulp.src(`${config.dev.scriptsDir}/**/*.js`)
         .pipe(plumber()) // 错误提示
         // .pipe(concat({ext: '.js'})) //合并同一目录下的所有文件
-        .pipe(babel())
+        // .pipe(babel())
         .pipe(gulp.dest(`${config.common.staticDir}/js`))
 });
 
@@ -21,7 +21,7 @@ gulp.task('distJS', function () {
         .pipe(plumber()) // 错误提示
         // .pipe(concat({ext: '.js'})) //合并同一目录下的所有文件
         .pipe(stripDebug())
-        .pipe(babel())
+        // .pipe(babel())
         .pipe(uglify())
         .pipe(gulp.dest(`${config.common.staticDir}/js`))
         .pipe(md5(10, `${config.common.templatesDir}/*.html`));
