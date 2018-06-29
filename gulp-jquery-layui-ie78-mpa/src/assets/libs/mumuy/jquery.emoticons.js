@@ -37,7 +37,7 @@
             'publisherCls':'publisher',
             'triggerCls':'trigger',
             'activeCls':'active',
-            'path':'public/image/',
+            'path':'/static/images/global/emoji/',
             'list':[
                 {'title':'微笑','url':'weixiao.gif'},
                 {'title':'嘻嘻','url':'xixi.gif'},

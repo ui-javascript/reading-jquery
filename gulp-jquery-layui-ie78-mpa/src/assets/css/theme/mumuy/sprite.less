@@ -18,15 +18,26 @@ At the bottom of this section, we provide information about the spritesheet itse
 @qrcode-offset-y: 0px;
 @qrcode-width: 106px;
 @qrcode-height: 106px;
-@qrcode-total-width: 106px;
+@qrcode-total-width: 204px;
 @qrcode-total-height: 106px;
 @qrcode-image: '_sprite.png';
-@qrcode: 0px 0px 0px 0px 106px 106px 106px 106px '_sprite.png' 'qrcode';
-@spritesheet-width: 106px;
+@qrcode: 0px 0px 0px 0px 106px 106px 204px 106px '_sprite.png' 'qrcode';
+@un-bg-bar-name: 'un_bg_bar';
+@un-bg-bar-x: 106px;
+@un-bg-bar-y: 0px;
+@un-bg-bar-offset-x: -106px;
+@un-bg-bar-offset-y: 0px;
+@un-bg-bar-width: 98px;
+@un-bg-bar-height: 25px;
+@un-bg-bar-total-width: 204px;
+@un-bg-bar-total-height: 106px;
+@un-bg-bar-image: '_sprite.png';
+@un-bg-bar: 106px 0px -106px 0px 98px 25px 204px 106px '_sprite.png' 'un_bg_bar';
+@spritesheet-width: 204px;
 @spritesheet-height: 106px;
 @spritesheet-image: '_sprite.png';
-@spritesheet-sprites: @qrcode;
-@spritesheet: 106px 106px '_sprite.png' @spritesheet-sprites;
+@spritesheet-sprites: @qrcode @un-bg-bar;
+@spritesheet: 204px 106px '_sprite.png' @spritesheet-sprites;
 
 /*
 The provided classes are intended to be used with the array-like variables

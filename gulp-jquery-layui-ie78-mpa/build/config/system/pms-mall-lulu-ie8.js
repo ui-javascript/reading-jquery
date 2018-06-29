@@ -11,11 +11,15 @@ exports.dev = {
     spriteOutputDir: './src/assets/css/theme/mumuy',
     fontSpiderDir: './static/fonts/hyzhj',
 
+    stylesName: 'mumuy',
+    stylesDir: './src/assets/css/theme/mumuy',
+    stylesWatchFiles: [
+        `./src/assets/css/components/**/*.less`,
+        `./src/assets/css/theme/mumuy/**/*.less`
+    ],
+
     libsName: 'mumuy',
     libsDevMods: '*',
-    libsDevDir: './src/assets/libs/mumuy',
-
-    // 离线目录
-    pwaDir: './templates'
+    libsDevDir: './src/assets/libs/mumuy'
 }
 

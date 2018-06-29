@@ -11,7 +11,5 @@ exports.dev = {
     copyHTMLExclude: [
         `!./src/pages/**/*.{html,md,inc}`,
         `!./src/pages/{js,images}/**`
-    ],
-
-    // pwaDir: './templates'
+    ]
 }

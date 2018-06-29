@@ -4,6 +4,7 @@ const gulp = require('gulp')
 const spritesmith = require('gulp.spritesmith')
 
 gulp.task('makeSprite', function () {
+
     return gulp.src(`${config.dev.spriteDevDir}/!(_sprite.png|*.css|*.less)`)
         .pipe(spritesmith({
             imgName: `_sprite.png`,

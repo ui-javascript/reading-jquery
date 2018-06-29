@@ -24,6 +24,12 @@ exports.dev = {
 
     // 项目脚本与图片
     scriptsDir: './src/pages/js',
+    stylesName: 'natural',
+    stylesDir: './src/assets/css/theme/natural',
+    stylesWatchFiles: [
+        `./src/assets/css/components/**/*.less`,
+        `./src/assets/css/theme/natural/**/*.less`
+    ],
     imagesDir: './src/pages/images',
 
     // 搬运要剔除的文件

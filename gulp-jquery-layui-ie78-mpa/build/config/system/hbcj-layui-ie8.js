@@ -9,14 +9,18 @@ exports.dev = {
         `!./src/${systemFolder}/static/**`
     ],
     spriteDevDir: `./src/${systemFolder}/static/images/sprite`,
-    spriteOutputDir: './src/assets/css/theme/natural',
+    spriteOutputDir: './src/assets/css/theme/zhuang',
     fontSpiderDir: './static/fonts/hyzhj',
+
+    stylesName: 'zhuang',
+    stylesDir: './src/assets/css/theme/zhuang',
+    stylesWatchFiles: [
+        `./src/assets/css/components/**/*.less`,
+        `./src/assets/css/theme/zhuang/**/*.less`
+    ],
 
     libsName: 'zhuang',
     libsDevMods: 'ajax,scroll,slider',
     libsDevDir: './src/assets/libs/zhuang/src',
-
-    // 离线目录
-    pwaDir: './templates'
 }
 
