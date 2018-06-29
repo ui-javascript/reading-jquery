@@ -67,7 +67,7 @@ gulp.task('PWASync', function () {
                 '/static': `${config.common.staticDir}`
             }
         },
-        port: 8033, // 端口注意
+        port: 8777, // 端口注意
         ui: false,
         directory: true,
         notify: false,

@@ -9,7 +9,7 @@ gulp.task('generateServiceWorker', () => {
     return workbox
         .generateSW({
             cacheId: 'gulp-pwa-mpa', // 设置前缀
-            globDirectory: `${config.dev.pwaDir}`,
+            globDirectory: './templates',
             globPatterns: ['**/*.{html,js,css,png.jpg}'],
             globIgnores: ['sw.js'],
 

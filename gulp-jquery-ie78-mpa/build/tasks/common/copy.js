@@ -18,7 +18,7 @@ gulp.task('copyHTMLLeft', function () {
 gulp.task('copyImages', function () {
     // 搬运图片
     return gulp.src([
-        `${config.dev.assetsDir}/images/**/*.*`
+        `${config.dev.imagesDir}/**/*.*`
         ])
         .pipe(gulp.dest(`${config.common.staticDir}/images`))
 })

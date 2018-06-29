@@ -32,7 +32,9 @@ gulp.task('01-build-dev', function () {
         // 1.清理旧文件
         ['cleanDev', 'cleanDist'],
         // 2.拷贝资源
-        ['copyHTMLLeft', 'optimizeImages', 'copyCss'],
+        ['copyHTMLLeft', 'copyCss'],
+        // 'optimizeImages',
+        'copyImages',
         // 3.文件编译
         ['compileHTML', 'compileLess', 'compileJS'],
         // 4.开启浏览器同步
@@ -57,7 +59,9 @@ gulp.task('03-build-dist', function () {
         // 1.清理旧文件
         ['cleanDev', 'cleanDist'],
         // 2. 拷贝资源
-        ['copyHTMLLeft', 'optimizeImages', 'copyCss'],
+        ['copyHTMLLeft', 'copyCss'],
+        'optimizeImages',
+        // 'copyImages',
         // 3.文件编译
         ['distHTML', 'distLess', 'distJS'],
         // 'zip',
@@ -72,7 +76,9 @@ gulp.task('04-build-pwa', function () {
         // 1.清理旧文件
         ['cleanDev', 'cleanDist'],
         // 2. 拷贝资源
-        ['copyHTMLLeft', 'optimizeImages', 'copyCss'],
+        ['copyHTMLLeft', 'copyCss'],
+        // 'optimizeImages',
+        'copyImages',
         // 3.文件编译
         ['distHTML', 'distLess', 'distJS'],
         // 4.PWA workbox注册
