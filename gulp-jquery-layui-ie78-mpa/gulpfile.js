@@ -15,9 +15,9 @@ const runSequence = require('run-sequence')
 const requireDir = require('require-dir')
 
 
-requireDir('./build/tasks/common/')
+requireDir('./build/tasks/')
 requireDir('./build/tasks/server/')
-requireDir('./build/tasks')
+requireDir('./build/tasks/extends/')
 
 
 console.log('配置文件 -> ' + JSON.stringify(config))
@@ -32,7 +32,8 @@ gulp.task('01-build-dev', function () {
         // 1.清理旧文件
         ['cleanDev', 'cleanDist'],
         // 2.拷贝资源
-        ['copyHTMLLeft', 'copyCss', 'copyGlobalImages'],
+        ['copyHTMLLeft', 'copyCssLeft', 'copyGlobalImages'],
+        'libsGenerate',
         // 'optimizeImages',
         'copyImages',
         // 3.文件编译
@@ -59,7 +60,8 @@ gulp.task('03-build-dist', function () {
         // 1.清理旧文件
         ['cleanDev', 'cleanDist'],
         // 2. 拷贝资源
-        ['copyHTMLLeft', 'copyCss', 'copyGlobalImages'],
+        ['copyHTMLLeft', 'copyCssLeft', 'copyGlobalImages'],
+        'libsGenerate',
         'optimizeImages',
         // 'copyImages',
         // 3.文件编译
@@ -76,7 +78,8 @@ gulp.task('04-build-pwa', function () {
         // 1.清理旧文件
         ['cleanDev', 'cleanDist'],
         // 2. 拷贝资源
-        ['copyHTMLLeft', 'copyCss', 'copyGlobalImages'],
+        ['copyHTMLLeft', 'copyCssLeft', 'copyGlobalImages'],
+        'libsGenerate',
         // 'optimizeImages',
         'copyImages',
         // 3.文件编译
@@ -108,4 +111,9 @@ gulp.task('07-images-optimize', function () {
 // 字体子集化
 gulp.task('08-font-spider', function () {
     runSequence('fontSpider');
+});
+
+// 生成前端插件库
+gulp.task('09-libs-generate', function () {
+    runSequence('libsGenerate');
 });

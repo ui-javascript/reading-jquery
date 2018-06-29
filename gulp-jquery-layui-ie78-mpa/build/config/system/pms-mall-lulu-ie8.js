@@ -1,0 +1,21 @@
+const systemFolder = '_pms-mall-lulu-ie8'
+exports.dev = {
+    imagesDir: `./src/${systemFolder}/static/images`,
+    pagesDir: `./src/${systemFolder}`,
+    scriptsDir: `./src/${systemFolder}/static/js`,
+    copyHTMLExclude: [
+        `!./src/${systemFolder}/**/*.{html,inc,md}`,
+        `!./src/${systemFolder}/static/**`
+    ],
+    spriteDevDir: `./src/${systemFolder}/static/images/sprite`,
+    spriteOutputDir: './src/assets/css/theme/mumuy',
+    fontSpiderDir: './static/fonts/hyzhj',
+
+    libsName: 'mumuy',
+    libsDevMods: '*',
+    libsDevDir: './src/assets/libs/mumuy',
+
+    // 离线目录
+    pwaDir: './templates'
+}
+
