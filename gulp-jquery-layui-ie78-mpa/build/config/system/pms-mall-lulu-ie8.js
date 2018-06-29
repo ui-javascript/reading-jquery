@@ -20,6 +20,8 @@ exports.dev = {
 
     libsName: 'mumuy',
     libsDevMods: '*',
-    libsDevDir: './src/assets/libs/mumuy'
+    libsDevDir: './src/assets/libs/mumuy',
+
+    pwaDir: './templates'
 }
 
