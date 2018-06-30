@@ -11,7 +11,8 @@ const sourcemaps = require('gulp-sourcemaps')
 
 // CSS监听
 gulp.task('watchCSS', function () {
-    gulp.watch(`${config.dev.stylesWatchFiles}`, ['compileLess']);
+    console.log('less监听路径 ' + config.dev.stylesWatchFiles)
+    gulp.watch(config.dev.stylesWatchFiles, ['compileLess']);
 });
 
 // less编译

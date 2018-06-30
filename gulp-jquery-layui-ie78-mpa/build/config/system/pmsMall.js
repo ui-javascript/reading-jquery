@@ -1,6 +1,6 @@
 // 开发环境
-const pagesName = '_hbcj-layui-ie8'
-const stylesName = 'natural'
+const pagesName = '_pms-mall-lulu-ie8'
+const stylesName = 'mumuy'
 const libsName = 'mumuy'
 
 
@@ -32,7 +32,7 @@ exports.dev = {
     scriptsDir: `./${pagesName}/static/js`,
 
     // 雪碧图
-    spriteDevDir: `./${pagesName}/images/sprite`,
+    spriteDevDir: `./${pagesName}/static/images/sprite`,
     spriteOutputDir: `./src/assets/css/theme/${stylesName}`,
 
     // 字体子集化

@@ -26,10 +26,10 @@ exports.dev = {
     pagesDir: `./${pagesName}`,
     copyHTMLExclude: [
         `!./${pagesName}/**/*.{html,md,inc}`,
-        `!./${pagesName}/static/**`
+        `!./${pagesName}/images/**`
     ],
-    imagesDir: `./${pagesName}/static/images`,
-    scriptsDir: `./${pagesName}/static/js`,
+    imagesDir: `./${pagesName}/images`,
+    scriptsDir: `./${pagesName}/js`,
 
     // 雪碧图
     spriteDevDir: `./${pagesName}/images/sprite`,

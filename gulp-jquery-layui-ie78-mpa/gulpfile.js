@@ -19,8 +19,18 @@ requireDir('./build/tasks/')
 requireDir('./build/tasks/server/')
 requireDir('./build/tasks/extends/')
 
+// 输出提示信息
+console.log('页面主题 -> ' + config.dev.pagesName)
+console.log('样式库 -> ' + config.dev.stylesName)
+console.log('脚本库 -> ' + config.dev.libsName)
 
-console.log('配置文件 -> ' + JSON.stringify(config))
+
+// 清理生成文件
+gulp.task('00-clean-dist', function () {
+    runSequence(
+        ['cleanDev', 'cleanDist']
+    );
+});
 
 // 默认任务
 gulp.task('default', function () {
@@ -66,7 +76,7 @@ gulp.task('03-build-dist', function () {
         // 'copyImages',
         // 3.文件编译
         ['distHTML', 'distLess', 'distJS'],
-        'zip',
+        // 'zip',
         'distSync'
     );
 });
@@ -91,29 +101,22 @@ gulp.task('04-build-pwa', function () {
     )
 });
 
-// 清理生成文件
-gulp.task('05-clean-dist', function () {
-    runSequence(
-        ['cleanDev', 'cleanDist']
-    );
-});
-
 // 雪碧图
-gulp.task('06-make-sprite', function () {
+gulp.task('05-make-sprite', function () {
     runSequence('makeSprite');
 });
 
 // 图片优化
-gulp.task('07-images-optimize', function () {
+gulp.task('06-images-optimize', function () {
     runSequence('optimizeImages');
 });
 
 // 字体子集化
-gulp.task('08-font-spider', function () {
+gulp.task('07-font-spider', function () {
     runSequence('fontSpider');
 });
 
 // 生成前端插件库
-gulp.task('09-libs-generate', function () {
+gulp.task('08-libs-generate', function () {
     runSequence('libsGenerate');
 });

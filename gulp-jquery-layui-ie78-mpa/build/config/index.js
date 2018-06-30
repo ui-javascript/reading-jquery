@@ -15,8 +15,6 @@ exports.dev = {
     devDir: './src',
     assetsDir: './src/assets',
 
-
-
     // 样式库
     stylesName: 'natural',
     stylesDir: './src/assets/css/theme/natural',
@@ -70,13 +68,13 @@ exports.prod = {
 // 根据不同系统配置文件进行覆盖
 // 此处修改
 // 默认配置
-var details = require('./system/default')
+// var details = require('./system/default')
 // H5宣传页
-// var details = require('./system/hibim-sefolio-ie9')
+// var details = require('./system/hibim')
 // 后台管理系统
-// var details = require('./system/hbcj-layui-ie8')
+// var details = require('./system/hbcj')
 // 商城
-// var details = require('./system/pms-mall-lulu-ie8')
+var details = require('./system/pmsMall')
 
 // 配置覆盖
 Object.assign(exports.common, details.common)

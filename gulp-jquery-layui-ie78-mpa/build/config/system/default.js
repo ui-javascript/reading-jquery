@@ -3,7 +3,6 @@ const pagesName = '_default'
 const stylesName = 'natural'
 const libsName = 'mumuy'
 
-
 exports.dev = {
 
     // 样式库
@@ -32,7 +31,7 @@ exports.dev = {
     scriptsDir: `./${pagesName}/static/js`,
 
     // 雪碧图
-    spriteDevDir: `./${pagesName}/images/sprite`,
+    spriteDevDir: `./${pagesName}/static/images/sprite`,
     spriteOutputDir: `./src/assets/css/theme/${stylesName}`,
 
     // 字体子集化
