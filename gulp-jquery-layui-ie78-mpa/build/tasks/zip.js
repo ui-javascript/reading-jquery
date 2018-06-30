@@ -6,13 +6,7 @@ const zip = require('gulp-zip')
 // 压缩
 gulp.task('zip', function () {
 
-    return gulp.src(['./**/*.*',
-        '!.babelrc',
-        // 排除以下文件
-        '!{node_modules,build,src,doc}/**/*.*',
-        '!dist.zip',
-        // '!{gulpfile.js,package.json,package-lock.json,README.md,.babelrc}'
-    ])
+    return gulp.src(config.prod.zipFiles)
         .pipe(plumber())
         .pipe(zip('dist.zip'))
         .pipe(gulp.dest('./'))

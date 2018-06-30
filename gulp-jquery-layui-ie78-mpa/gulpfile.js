@@ -66,7 +66,7 @@ gulp.task('03-build-dist', function () {
         // 'copyImages',
         // 3.文件编译
         ['distHTML', 'distLess', 'distJS'],
-        // 'zip',
+        'zip',
         'distSync'
     );
 });

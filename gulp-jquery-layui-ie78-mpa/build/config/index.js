@@ -4,40 +4,45 @@
 
 // 公共配置
 exports.common = {
+    // 固定
     staticDir: './static',
     templatesDir: './templates',
 }
 
 // 开发环境
 exports.dev = {
+    // 固定
     devDir: './src',
     assetsDir: './src/assets',
 
-    // 视图文件
-    pagesDir: './src/pages',
 
-    // 前端库
-    libsName: 'natural',
-    libsDevDir: './src/assets/libs',
-    libsDevMods: 'browser',  // 'ajax,scroll' 若指定没空格
-    libsOutputDir: './static/vendor/libs',
 
-    // 项目脚本与图片
-    scriptsDir: './src/pages/js',
+    // 样式库
     stylesName: 'natural',
     stylesDir: './src/assets/css/theme/natural',
     stylesWatchFiles: [
         `./src/assets/css/components/**/*.less`,
         `./src/assets/css/theme/natural/**/*.less`
     ],
-    imagesDir: './src/pages/images',
 
-    // 搬运要剔除的文件
+    // 脚本库
+    libsName: 'natural',
+    libsDevDir: './src/assets/libs',
+    libsDevMods: 'browser',  // '{ajax,scroll}' 没空格
+    libsOutputDir: './static/vendor/libs',
+
+    // 视图文件
+    // 项目脚本与图片
+    pagesName: '_default',
+    pagesDir: './src/pages',
     copyHTMLExclude: [
         `!./src/pages/**/*.{html,md,inc}`,
-        `!./src/pages/{js,images}/**`
+        `!./src/pages/static/**`
     ],
-    
+    imagesDir: './src/pages/static/images',
+    scriptsDir: './src/pages/static/js',
+
+
     // 雪碧图
     spriteDevDir: './src/pages/images/sprite',
     spriteOutputDir: './src/assets/css/theme/natural',
@@ -51,19 +56,27 @@ exports.dev = {
 
 // 产品
 exports.prod = {
-    distDir: './dist'
+    // 打包文件夹
+    distDir: './dist',
+
+    // 需打包文件
+    zipFiles: [
+        './**/*.*',
+        '!{node_modules,build,doc,src}/**/*.*',
+        '!{dist.zip,gulpfile.js,package.json,package-lock.json,README.md,.babelrc}'
+    ]
 }
 
 // 根据不同系统配置文件进行覆盖
 // 此处修改
 // 默认配置
-// var details = require('./system/default')
+var details = require('./system/default')
 // H5宣传页
 // var details = require('./system/hibim-sefolio-ie9')
 // 后台管理系统
 // var details = require('./system/hbcj-layui-ie8')
 // 商城
-var details = require('./system/pms-mall-lulu-ie8')
+// var details = require('./system/pms-mall-lulu-ie8')
 
 // 配置覆盖
 Object.assign(exports.common, details.common)
