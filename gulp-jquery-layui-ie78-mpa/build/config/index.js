@@ -81,7 +81,12 @@ exports.prod = {
 // var details = require('./system/display/chivalric')
 // var details = require('./system/display/wechatReading')
 // var details = require('./system/display/flexyCard')
-var details = require('./system/display/html5upStellar')
+// var details = require('./system/display/html5upStellar')
+// var details = require('./system/display/designer')
+// var details = require('./system/display/ophiuchus')
+// var details = require('./system/display/ophiuchus')
+// var details = require('./system/display/monetary')
+var details = require('./system/display/cartoon')
 
 
 // 后台管理系统
@@ -94,6 +99,7 @@ var details = require('./system/display/html5upStellar')
 // 商城
 // var details = require('./system/mall/pmsMall')
 // var details = require('./system/mall/mooc')
+// var details = require('./system/mall/papidenMall')
 
 
 // 配置覆盖
