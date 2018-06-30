@@ -1,5 +1,5 @@
 $(document).ready(function(argument) {
-    // hi
+    // hello 
     var timeTool = {
         formatTime: function(date, split) {
             var y = date.getFullYear();

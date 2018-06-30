@@ -71,10 +71,15 @@ exports.prod = {
 // var details = require('./system/default')
 // H5宣传页
 // var details = require('./system/hibim')
+// var details = require('./system/designStudio')
+// var details = require('./system/win10Blog')
+// var details = require('./system/corner')
+var details = require('./system/natural')
+
 // 后台管理系统
 // var details = require('./system/hbcj')
 // 商城
-var details = require('./system/pmsMall')
+// var details = require('./system/pmsMall')
 
 // 配置覆盖
 Object.assign(exports.common, details.common)

@@ -3,3 +3,5 @@ $(document).ready(function() {
     $(".adplan-slide").slidesjs({
     });
 });
+
+console.log('walalall')
