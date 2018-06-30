@@ -25,7 +25,7 @@ exports.dev = {
     pagesDir: `./${pagesName}`,
     copyHTMLExclude: [
         `!./${pagesName}/**/*.{html,md,inc}`,
-        `!./${pagesName}/static/**`
+        `!./${pagesName}/static/{js,images}/**`
     ],
     imagesDir: `./${pagesName}/static/images`,
     scriptsDir: `./${pagesName}/static/js`,

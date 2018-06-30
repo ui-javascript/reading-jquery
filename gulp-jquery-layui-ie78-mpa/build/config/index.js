@@ -72,12 +72,20 @@ exports.prod = {
 // H5宣传页
 // var details = require('./system/hibim')
 // var details = require('./system/designStudio')
-// var details = require('./system/win10Blog')
+
 // var details = require('./system/corner')
-var details = require('./system/natural')
+// var details = require('./system/natural')
+var details = require('./system/diamond')
+// var details = require('./system/booom')
+
 
 // 后台管理系统
 // var details = require('./system/hbcj')
+// var details = require('./system/win10Blog')
+// var details = require('./system/ama')
+// var details = require('./system/matrix')
+// var details = require('./system/AdminLTE')
+
 // 商城
 // var details = require('./system/pmsMall')
 
