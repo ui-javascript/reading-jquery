@@ -65,29 +65,36 @@ exports.prod = {
     ]
 }
 
-// 根据不同系统配置文件进行覆盖
+// 根据不同系统配置文件进行覆盖默认配置
 // 此处修改
-// 默认配置
 // var details = require('./system/default')
-// H5宣传页
-// var details = require('./system/hibim')
-// var details = require('./system/designStudio')
 
+// H5宣传页
+// var details = require('./system/display/hibim')
+// var details = require('./system/display/designStudio')
 // var details = require('./system/corner')
 // var details = require('./system/natural')
-var details = require('./system/diamond')
-// var details = require('./system/booom')
+// var details = require('./system/display/diamond')
+// var details = require('./system/display/booom')
+// var details = require('./system/display/chuangke')
+// var details = require('./system/display/retina')
+// var details = require('./system/display/chivalric')
+// var details = require('./system/display/wechatReading')
+// var details = require('./system/display/flexyCard')
+var details = require('./system/display/html5upStellar')
 
 
 // 后台管理系统
-// var details = require('./system/hbcj')
-// var details = require('./system/win10Blog')
-// var details = require('./system/ama')
-// var details = require('./system/matrix')
-// var details = require('./system/AdminLTE')
+// var details = require('./system/admin/hbcj')
+// var details = require('./system/admin/win10Blog')
+// var details = require('./system/admin/ama')
+// var details = require('./system/admin/matrix')
+// var details = require('./system/admin/AdminLTE')
 
 // 商城
-// var details = require('./system/pmsMall')
+// var details = require('./system/mall/pmsMall')
+// var details = require('./system/mall/mooc')
+
 
 // 配置覆盖
 Object.assign(exports.common, details.common)
