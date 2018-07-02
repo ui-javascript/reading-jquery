@@ -16,6 +16,7 @@
     "David Hemphill <davidlee.hemphill@gmail.com>"
   ],
   "scripts": {
+    "install": "cnpm install",
     "prebabelify": "rimraf lib",
     "babelify": "babel src --out-dir lib",
     "prepare": "npm run babelify && babel-node src/build.js",
