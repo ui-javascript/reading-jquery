@@ -77,7 +77,8 @@ gulp.task('03-build-dist', function () {
         // 3.文件编译
         ['distHTML', 'distLess', 'distJS'],
         // 'zip',
-        'distSync'
+        // 'distSync',
+        ['sftp:static', 'sftp:templates']
     );
 });
 

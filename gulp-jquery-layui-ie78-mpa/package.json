@@ -50,6 +50,7 @@
     "gulp-rename": "^1.2.2",
     "gulp-replace": "^0.6.1",
     "gulp-resolve-path": "^1.0.4",
+    "gulp-sftp": "^0.1.5",
     "gulp-sourcemaps": "^1.6.0",
     "gulp-strip-debug": "^3.0.0",
     "gulp-uglify": "^3.0.0",

@@ -62,7 +62,14 @@ exports.prod = {
         './**/*.*',
         '!{node_modules,build,doc,src}/**/*.*',
         '!{dist.zip,gulpfile.js,package.json,package-lock.json,README.md,.babelrc}'
-    ]
+    ],
+
+    // 部署
+    host: '47.100.99.127',
+    username: 'root',
+    password: 'Hello%luo',
+    remotePath: '/data/webroot/default'
+
 }
 
 // 根据不同系统配置文件进行覆盖默认配置
@@ -73,7 +80,7 @@ exports.prod = {
 // var details = require('./system/display/hibim')
 // var details = require('./system/display/designStudio')
 // var details = require('./system/corner')
-// var details = require('./system/natural')
+var details = require('./system/natural')
 // var details = require('./system/display/diamond')
 // var details = require('./system/display/booom')
 // var details = require('./system/display/chuangke')
@@ -86,7 +93,7 @@ exports.prod = {
 // var details = require('./system/display/ophiuchus')
 // var details = require('./system/display/ophiuchus')
 // var details = require('./system/display/monetary')
-var details = require('./system/display/cartoon')
+// var details = require('./system/display/cartoon')
 
 
 // 后台管理系统
