@@ -67,8 +67,8 @@ exports.prod = {
     // 部署
     host: '47.100.99.127',
     username: 'root',
-    password: 'Hello%luo',
-    remotePath: '/data/webroot/default'
+    password: '我不告诉你,除非做我女朋友',
+    remotePath: '/data/wwwroot/default'
 
 }
 

@@ -12,7 +12,7 @@ gulp.task('sftp:static', function () {
         }));
 })
 
-gulp.task('sftp:static', function () {
+gulp.task('sftp:templates', function () {
     return gulp.src(['./templates/**'])
         .pipe(sftp({
             host: config.prod.host,
