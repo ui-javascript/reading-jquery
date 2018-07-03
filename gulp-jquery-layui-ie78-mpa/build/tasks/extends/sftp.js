@@ -1,6 +1,7 @@
 const config = require('../../config/index')
-const gulp = require('gulp');
-const sftp = require('gulp-sftp');
+const gulp = require('gulp')
+const sftp = require('gulp-sftp')
+// const flatten = require('gulp-flatten')
 
 gulp.task('sftp:static', function () {
     return gulp.src(['./static/**'])
