@@ -70,7 +70,7 @@
 
 <script>
 
-    import Lib from 'assets/js/Lib';
+    import Lib from 'assets/js/libs/vux';
 
     import {XButton, Box, GroupTitle, Group, Flexbox, FlexboxItem, Divider} from 'vux'
 

@@ -17,12 +17,12 @@
                                                                   target="_blank">https://vux.li</a></p>
             </div>
         </div>
-        <div>
-            <divider>多页面 vue-router 2</divider>
-            <group>
-                <cell title="多页面路由" value="" is-link link="../animal/firefly.html"></cell>
-            </group>
-        </div>
+        <!--<div>-->
+            <!--<divider>多页面 vue-router 2</divider>-->
+            <!--<group>-->
+                <!--<cell title="多页面路由" value="" is-link link="../animal/firefly.html"></cell>-->
+            <!--</group>-->
+        <!--</div>-->
 
         <div class="martop15">
             <divider>iconfont 字体</divider>
@@ -48,7 +48,7 @@
 
 <script>
 
-    import Lib from 'assets/js/Lib';
+    import Lib from 'assets/js/libs/vux';
 
     import {Cell, Group, Divider} from 'vux'
     import FireFly from 'components/animal/FireFly'
@@ -60,15 +60,15 @@
                 'list': [{
                     'id': 0,
                     'name': 'alert弹窗',
-                    'url': '../vuxDemo/alert.html'
+                    'url': '../helloVux/alert.html'
                 }, {
                     'id': 1,
                     'name': 'Calendar时间选择',
-                    'url': '../vuxDemo/calendar.html'
+                    'url': '../helloVux/calendar.html'
                 }, {
                     'id': 2,
                     'name': 'button按钮',
-                    'url': '../vuxDemo/button.html'
+                    'url': '../helloVux/button.html'
                 }]
             }
         },

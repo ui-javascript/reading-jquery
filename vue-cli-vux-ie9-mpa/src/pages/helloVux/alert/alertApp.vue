@@ -1,11 +1,13 @@
 <template>
     <div class="mainWarp">
         <hb-head headfont="alert弹窗"></hb-head>
+
         <group title="prop:content">
             <x-switch title="显示" v-model="show2"></x-switch>
         </group>
+
         <div>
-            <alert v-model="show2" title="温馨提示" content="这里是内容了"></alert>
+            <alert v-model="show2" title="温馨提示" :content="这里是内容了"></alert>
         </div>
 
         <group title="插件">
@@ -16,8 +18,7 @@
 </template>
 
 <script>
-
-    import Lib from 'assets/js/Lib';
+    import Lib from 'assets/js/libs/vux';
 
     import {Alert, Group, XSwitch, Cell} from 'vux'
 
@@ -29,7 +30,8 @@
             Alert,
             Group,
             XSwitch,
-            Cell, HbHead
+            Cell,
+            HbHead
         },
         data() {
             return {

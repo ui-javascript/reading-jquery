@@ -1,4 +1,4 @@
-import conf from './conf';
+import conf from '../conf';
 
 import axios from 'axios';
 
@@ -69,6 +69,8 @@ var Rxports = {
         });
 
     },
+
+
     /*判定是否类数组，如节点集合，纯数组，arguments与拥有非负整数的length属性的纯JS对象*/
     isArrayLike: function (obj) {
         if (!obj)
@@ -91,6 +93,7 @@ var Rxports = {
         }
         return false
     },
+
     /*遍历数组与对象,回调的第一个参数为索引或键名,第二个或元素或键值*/
     each: function (obj, fn) {
         var That = this;
@@ -110,6 +113,7 @@ var Rxports = {
             }
         }
     },
+
     /**
      * 获取url传过来的参数
      * @param name    获取的参数

@@ -14,7 +14,5 @@ import accounting from 'accounting';
  * @param return
  */
 Vue.filter('currency', function (value, symbol = '¥', dat = 2) {
-
     return accounting.formatMoney(value, symbol, dat);
-
 })
