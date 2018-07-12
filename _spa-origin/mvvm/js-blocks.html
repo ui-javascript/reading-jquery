@@ -2,16 +2,16 @@
 <html>
 <head>
     <script src="http://jsblocks.com/blocks/0.3.2/blocks.js"></script>
-    <script>
-        blocks.query({
-            firstName: blocks.observable()
-        });
-    </script>
+
 </head>
 <body>
-Name:
-<input data-query="val(firstName)" placeholder="Enter your name here" />
-<hr />
+Name: <input data-query="val(firstName)" placeholder="Enter your name here" />
 <h1>Hello {{firstName}}!</h1>
+
+<script>
+    blocks.query({
+        firstName: blocks.observable()
+    });
+</script>
 </body>
 </html>
