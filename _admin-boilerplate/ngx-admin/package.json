@@ -10,6 +10,8 @@
     "url": "https://github.com/akveo/ngx-admin/issues"
   },
   "scripts": {
+    "install:cnpm": "cnpm install",
+    "remove": "rimraf node_modules",
     "ng": "ng",
     "conventional-changelog": "conventional-changelog",
     "start": "ng serve",
