@@ -30,6 +30,7 @@ cnpm i -g node-sass
 - 轮播视觉差 https://www.html5tricks.com/jquery-parallax-image-slider.html
 - 做这种箭头 https://www.html5tricks.com/jquery-3d-shadow-image.html
 - 全屏轮播 https://www.html5tricks.com/html5-css3-3d-full-slider.html
+- 3D立体轮播 https://www.html5tricks.com/jquery-css3-3d-image-player.html
 
 # x导航
 
@@ -39,24 +40,6 @@ cnpm i -g node-sass
 # corner.js
 
 - 粘性 https://www.html5tricks.com/css3-gooey-menu.html
-
-# 数据组件
-
-- 表单组件
-- 表格
-- 提示信息
-- 列表
-- 图表
-
-
-
-# 学习模仿List
-
-
-
-# 不烂大街的轮播
-
-- 3D立体轮播 https://www.html5tricks.com/jquery-css3-3d-image-player.html
 
 # 表单
 
