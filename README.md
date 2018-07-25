@@ -1,25 +1,12 @@
-# gulp配置
-
-- http://blog.csdn.net/qq_34645412/article/details/74784603
-
-```shell
-# 尝试
-cnpm i 
-cnpm i --save-dev
-cnpm i --save
-
-—save-dev（缩写-D）输出的会出现在devDependencies，代表着是开发调试时的依赖，等到项目真正发布的时候不会真正出现在项目中。
-—save（缩写-S）输出的会出现在dependencies，代表着是发布后的依赖，等到项目真正发布的时候会真正出现在项目中，缺少它们项目会运行不了。
-
-# 一些需要全局安装
-cnpm i -g node-sass
-```
-
-# 模仿学习列表
+# 导航
 
 - 纯CSS3实现仿Mac系统的Dock菜单 https://www.html5tricks.com/pure-css3-mac-dock.html
 - 纯CSS3下拉菜单导航 子菜单多种展开动画 https://www.html5tricks.com/pure-css3-dropdown-menu-animation.html
+
+# 层叠
+
 - jQuery层叠图片细节对比插件(用于商品使用效果前后对比) https://www.html5tricks.com/jquery-image-stack-compare.html
+
 
 # Tab
 
@@ -69,8 +56,6 @@ cnpm i -g node-sass
 
 # Natural.css
 
-> 对组件自然化(玩具级别UI)
-
 - 基本组件
 
     - 水波按钮(按钮)
@@ -102,6 +87,6 @@ cnpm i -g node-sass
     - 月光 https://codepen.io/samirc/pen/vGKoxj
     - 视觉特效 http://www.zcfy.cc/article/html-css-and-javascript-10-awesome-codepens-to-inspire-you-4101.html?t=new
 
-- 常见问题
+# 常见问题
 
-    - 内容过长 http://zcfy.cc/article/handling-long-and-unexpected-content-in-css-css-tricks-3260.html
+- 内容过长 http://zcfy.cc/article/handling-long-and-unexpected-content-in-css-css-tricks-3260.html
