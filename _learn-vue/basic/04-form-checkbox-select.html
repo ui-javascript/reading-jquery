@@ -21,13 +21,13 @@
 
         <div class="form-group">
             <input type="checkbox" value="Runoob" v-model="checkedNames">
-            <label for="runoob">Runoob</label>
+            <label>Runoob</label>
 
             <input type="checkbox" value="Google" v-model="checkedNames">
-            <label for="google">Google</label>
+            <label>Google</label>
 
             <input type="checkbox" value="Taobao" v-model="checkedNames">
-            <label for="taobao">taobao</label>
+            <label>taobao</label>
 
             <p>选择的值为: {{ checkedNames }}</p>
         </div>
@@ -62,7 +62,7 @@
 
         data: {
             checked: false, // 布尔值
-            checkedNames: [], // 数组
+            checkedNames: ['Runoob'], // 数组
             picked: 'Runoob',
             selected: '' // 初始留空
         }
