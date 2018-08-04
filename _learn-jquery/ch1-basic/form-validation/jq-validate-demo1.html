@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>表单校验jq-validate</title>
+</head>
+<body>
+
+<form class="cmxform" id="commentForm" method="get" action="">
+    <fieldset>
+        <legend>输入您的名字，邮箱，URL，备注。</legend>
+        <p>
+            <label for="cname">Name (必需, 最小两个字母)</label>
+            <input id="cname" name="name" minlength="2" type="text" required>
+        </p>
+        <p>
+            <label for="cemail">E-Mail (必需)</label>
+            <input id="cemail" type="email" name="email" required>
+        </p>
+        <p>
+            <label for="curl">URL (可选)</label>
+            <input id="curl" type="url" name="url">
+        </p>
+        <p>
+            <label for="ccomment">备注 (必需)</label>
+            <textarea id="ccomment" name="comment" required></textarea>
+        </p>
+        <p>
+            <input class="submit" type="submit" value="Submit">
+        </p>
+    </fieldset>
+</form>
+
+<script src="http://static.runoob.com/assets/jquery-validation-1.14.0/lib/jquery.js"></script>
+<script src="http://static.runoob.com/assets/jquery-validation-1.14.0/dist/jquery.validate.min.js"></script>
+<script src="http://static.runoob.com/assets/jquery-validation-1.14.0/dist/localization/messages_zh.js"></script>
+<script>
+    /*
+     * 将校验规则写到控件中
+     */
+    $.validator.setDefaults({
+        submitHandler: function() {
+            alert("提交事件!");
+        }
+    });
+    $().ready(function() {
+        $("#commentForm").validate();
+    });
+</script>
+
+</body>
+</html>

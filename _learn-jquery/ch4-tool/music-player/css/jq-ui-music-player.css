@@ -1,0 +1,27 @@
+/*
+ * 整体设置====================
+ */
+
+body {
+  font-family: "Consolas","Trebuchet MS", "Helvetica", "Arial",  "Verdana";
+  font-size: 62.5%;
+}
+
+
+
+/*
+ * 播放控制面板==============
+ */
+
+#toolbar {
+padding: 4px;
+display: inline-block;
+}
+
+/* support: IE7 */
+*+html #toolbar {
+display: inline;
+}
+
+
+

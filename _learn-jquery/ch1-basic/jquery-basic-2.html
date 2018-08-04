@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>jq初步2</title>
+  <link rel="stylesheet" href="">
+  <style>
+    .ancestors * {
+      display: block;
+      border: 2px solid lightgrey;
+      color: lightgrey;
+      padding: 5px;
+      margin: 15px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <main>
+    <!-- 遍历 ======================== -->
+    <section id="traversal">
+      <div class="ancestors">
+        <div style="width:500px;">div (曾祖父元素)
+          <ul>ul (祖父元素)
+            <li>li (父元素)
+              <span>span</span></li>
+          </ul>
+        </div>
+
+        <div style="width:500px;">div (祖父元素)
+          <p>p (父元素)
+            <span>span</span></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ajax操作 ====================== -->
+    <section id="ajax-operation">
+      <div id="ajax-div1">
+        <h2>使用 jQuery AJAX 修改文本</h2></div>
+      <button id="ajax-btn">获取外部内容</button>
+
+      <button id="ajax-get-btn">发送HTTP GET请求</button>
+      <button id="ajax-post-btn">发送HTTP POST请求页面</button>
+
+
+    </section>
+
+  </main>
+  <aside>
+
+  </aside>
+
+  <script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      /*
+       * 遍历======================================================
+       * 遍历方法中最大的种类是树遍历
+       * 在 DOM 树中向上、下以及同级移动
+       * parent() parents() parentsUntil()
+       * children()仅下一级  find()
+       * $("div").children("p.1");
+       * $("div").find("span");
+       * $("div").find("*");
+       * siblings() 同胞
+       * next() nextAll() nextUntil()
+       * prev() prevAll() prevUntil()
+       * $("div p").first();
+       * $("div p").last();
+       * $("p").eq(1);  index从0开始
+       * $("p").filter(".url");    $("p").not(".url");
+       */
+
+      $("section#traversal span")
+        // .parent().css({"color":"red","border":"2px solid red"})
+        .parentsUntil("div").css({
+          "color": "red",
+          "border": "2px solid red"
+        });
+
+
+      /*
+       * ajax操作===============================================
+       * AJAX = 异步 JavaScript 和 XML（Asynchronous JavaScript and XML）。
+       * 在不重载整个网页的情况下，AJAX 通过后台加载数据，并在网页上进行显示
+       * 编写常规的 AJAX 代码并不容易，因为不同的浏览器对 AJAX 的实现并不相同
+       * load方法
+       * responseTxt - 包含调用成功时的结果内容
+       * statusTXT - 包含调用的状态
+       * xhr - 包含 XMLHttpRequest 对象
+       * GET 基本上用于从服务器获得（取回）数据。
+       * GET 方法可能返回缓存数据。
+       * POST 也可用于从服务器获取数据。
+       * POST 方法不会缓存数据，并且常用于连同请求一起发送数据。
+       */
+
+      $("#ajax-btn").click(function() {
+        $("#ajax-div1").load("demo-test.txt #second", function(responseTxt, statusTxt, xhr) {
+          if (statusTxt == "success")
+            alert("外部内容加载成功!");
+          if (statusTxt == "error")
+            alert("Error: " + xhr.status + ": " + xhr.statusText);
+        });
+      });
+
+      $("#ajax-get-btn").click(function() {
+        $.get("demo-test.php", function(data, status) {
+          alert("数据: " + data + "\n状态: " + status);
+        });
+      });
+
+      $("#ajax-post-btn").click(function() {
+        $.post("demo_test_post.php", {
+            name: "菜鸟教程",
+            url: "http://www.runoob.com"
+          },
+          function(data, status) {
+            alert("数据: \n" + data + "\n状态: " + status);
+          });
+      });
+
+    });
+  </script>
+</body>
+
+</html>

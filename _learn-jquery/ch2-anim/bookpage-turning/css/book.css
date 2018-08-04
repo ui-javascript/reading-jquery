@@ -1,0 +1,227 @@
+/* 全局设置 */
+* {
+    padding: 0px;
+    margin: 0px;
+    font-size: 16px;
+    color: #333;
+    font-family: "Microsoft YaHei";
+}
+
+/* 链接默认样式 */
+a, a:link, a:visited, a:hover, a:active {
+    text-decoration: none;
+}
+
+/*
+    选中文字状态
+    http://www.w3school.com.cn/tiy/t.asp?f=css_sel_selection
+    注意-webkit-selection已不存在了
+ */
+::-moz-selection {
+    background: #FFFF8D; /* 原来 #338FFF */
+    /*color: #fff;*/
+}
+
+::selection {
+    background: #FFFF8D;
+    /*color: #fff;*/
+}
+
+/* 清除浮动负效应 */
+.clear::after {
+    content: "";
+    display: block;
+    height: 0px;
+    clear: both;
+    visibility: hidden;
+}
+
+/*
+    响应式图片
+    尽可能占到100%
+*/
+.response-img {
+    display: block;
+    max-width: 100%;
+}
+
+/* 文字溢出处理 */
+.text-overflow {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; /* 省略 */
+}
+
+/* global settings */
+body {
+    width: 100%;
+    max-width: 1920px;
+    min-width: 1200px;
+    /*height: 100%;*/
+}
+
+/* 图书最外围容器 */
+#knowledge {
+    width: 100%;
+    position: relative;
+    background-color: #ccc;
+    padding: 40px 0;
+}
+
+/* 第二层容器,即带翻动效果的图书 */
+.bookBox {
+    width: 1000px;
+    height: 500px;
+    position: relative;
+    margin: 30px auto;
+    -webkit-perspective-origin: 50% 60%;
+    perspective-origin: 50% 60%;
+    -webkit-perspective: 1500px;
+    perspective: 1500px;
+    background: url(../img/bookBg.png) no-repeat 0 0;
+    background-size: 100% 100%;
+}
+
+/* 鼠标悬浮在bookbox上 显示翻页按钮 */
+.bookBox:hover .lastBtn {
+    display: block;
+}
+
+.bookBox:hover .nextBtn {
+    display: block;
+}
+
+/*
+    书页的样式
+    preserve-3d 翻页效果 linear线性变化
+*/
+.bookPage {
+    position: absolute; /* relative上的absolute */
+    width: 500px;
+    height: 500px;
+    top: 0;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transition: all linear 2s;
+    transition: all linear 2s;
+    background: url(../img/bookLeft.png) no-repeat;
+    background-size: 479.26px 483.33px;
+    background-position: 20.74px 8.3px;
+}
+
+.bookPage img {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    display: inline-block;
+    width: 400px;
+}
+
+/*
+    书页中文字
+    http://www.w3school.com.cn/cssref/pr_word-break.asp 文字断行
+*/
+.bookWord {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    display: inline-block;
+    width: 360px;
+    height: 360px;
+    padding: 20px;
+    font-size: 20px;
+    line-height: 27px;
+    -webkit-backface-visibility: visible;
+    backface-visibility: visible; /* 隐藏被旋转的 div 元素的背面 */
+    background-color: #f0f0f0;
+    word-break: break-all; /* 允许在单词内换行 */
+    -webkit-column-count: 2;
+    column-count: 2; /* 两栏 */
+    -webkit-column-gap: 40px;
+    column-gap: 40px; /* 栏间距 */
+}
+
+.bookWord span {
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 40px;
+}
+
+/* 首页 */
+.frist {
+    left: 0;
+    z-index: 1;
+}
+
+.frist img {
+    z-index: 1;
+}
+
+.last {
+    right: 0;
+    z-index: 1;
+}
+
+.last p {
+    z-index: 1;
+}
+
+/* 可旋转页面*/
+.runPage {
+    right: 0;
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+}
+
+/* 右侧页(可旋转页，包括最后一页)的背景 */
+.runPage,
+.bookPage:last-child {
+    background: url(../img/bookRight.png) no-repeat;
+    background-size: 479.26px 483.33px;
+    background-position: 0 8.3px;
+}
+
+/* 翻页效果 旋转180度 */
+.runClass {
+    -webkit-transform: rotateY(-180deg);
+    transform: rotateY(-180deg);
+}
+
+.lastBtn,
+.nextBtn {
+    display: none; /* 初始时不可见 */
+    position: absolute;
+    top: 200px;
+    cursor: pointer;
+    z-index: 999; /* 置顶 */
+    font-size: 50px;
+    line-height: 100px;
+    color: #fff;
+    /*text-decoration: none;*/
+    background-color: rgba(0, 0, 0, .5);
+}
+
+.lastBtn {
+    left: 0;
+}
+
+.nextBtn {
+    right: 0;
+}
+
+/*.canvasBox {*/
+/*display: block;*/
+/*width: 158px;*/
+/*height: 158px;*/
+/*}*/
+
+/* 页码 */
+.pageNumber {
+    position: absolute;
+    bottom: -40px;
+    right: 0;
+    font-size: 20px !important;
+    line-height: 30px;
+}
+
+/*# sourceMappingURL=data:application/json;base64,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b2suY3NzIiwic291cmNlc0NvbnRlbnQiOlsiKiB7XHJcbiAgICBwYWRkaW5nOiAwcHg7XHJcbiAgICBtYXJnaW46IDBweDtcclxuICAgIGZvbnQtc2l6ZTogMTZweDtcclxuICAgIGNvbG9yOiAjMzMzO1xyXG4gICAgZm9udC1mYW1pbHk6IFwiTWljcm9zb2Z0IFlhSGVpXCI7XHJcbn1cclxuXHJcbmEsIGE6bGluaywgYTp2aXNpdGVkLCBhOmhvdmVyLCBhOmFjdGl2ZSB7XHJcbiAgICB0ZXh0LWRlY29yYXRpb246IG5vbmU7XHJcbn1cclxuXHJcbjo6LW1vei1zZWxlY3Rpb24ge1xyXG4gICAgYmFja2dyb3VuZDogIzMzOEZGRjtcclxuICAgIGNvbG9yOiAjZmZmO1xyXG59XHJcblxyXG4vKjo6LXdlYmtpdC1zZWxlY3Rpb24geyovXHJcbiAgICAvKmJhY2tncm91bmQ6ICMzMzhGRkY7Ki9cclxuICAgIC8qY29sb3I6ICNmZmY7Ki9cclxuLyp9Ki9cclxuXHJcbjo6c2VsZWN0aW9uIHtcclxuICAgIGJhY2tncm91bmQ6ICMzMzhGRkY7XHJcbiAgICBjb2xvcjogI2ZmZjtcclxufVxyXG5cclxuLmNsZWFyOjphZnRlciB7XHJcbiAgICBjb250ZW50OiBcIlwiO1xyXG4gICAgZGlzcGxheTogYmxvY2s7XHJcbiAgICBoZWlnaHQ6IDBweDtcclxuICAgIGNsZWFyOiBib3RoO1xyXG4gICAgdmlzaWJpbGl0eTogaGlkZGVuO1xyXG59XHJcblxyXG4ucmVzcG9uc2UtaW1nIHtcclxuICAgIGRpc3BsYXk6IGJsb2NrO1xyXG4gICAgbWF4LXdpZHRoOiAxMDAlO1xyXG59XHJcblxyXG4udGV4dC1vdmVyZmxvdyB7XHJcbiAgICB3aGl0ZS1zcGFjZTogbm93cmFwO1xyXG4gICAgb3ZlcmZsb3c6IGhpZGRlbjtcclxuICAgIHRleHQtb3ZlcmZsb3c6IGVsbGlwc2lzO1xyXG59XHJcblxyXG5ib2R5IHtcclxuICAgIHdpZHRoOiAxMDAlO1xyXG4gICAgbWF4LXdpZHRoOiAxOTIwcHg7XHJcbiAgICBtaW4td2lkdGg6IDEyMDBweDtcclxufVxyXG5cclxuI2tub3dsZWRnZSB7XHJcbiAgICB3aWR0aDogMTAwJTtcclxuICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcclxuICAgIGJhY2tncm91bmQtY29sb3I6ICNjY2M7XHJcbiAgICBwYWRkaW5nOiA0MHB4IDA7XHJcbn1cclxuXHJcbi5ib29rQm94IHtcclxuICAgIHdpZHRoOiAxMDAwcHg7XHJcbiAgICBoZWlnaHQ6IDUwMHB4O1xyXG4gICAgcG9zaXRpb246IHJlbGF0aXZlO1xyXG4gICAgbWFyZ2luOiAzMHB4IGF1dG87XHJcbiAgICAtd2Via2l0LXBlcnNwZWN0aXZlLW9yaWdpbjogNTAlIDYwJTtcclxuICAgIHBlcnNwZWN0aXZlLW9yaWdpbjogNTAlIDYwJTtcclxuICAgIC13ZWJraXQtcGVyc3BlY3RpdmU6IDE1MDBweDtcclxuICAgIHBlcnNwZWN0aXZlOiAxNTAwcHg7XHJcbiAgICBiYWNrZ3JvdW5kOiB1cmwoLi4vaW1nL2Jvb2tCZy5wbmcpIG5vLXJlcGVhdCAwIDA7XHJcbiAgICBiYWNrZ3JvdW5kLXNpemU6IDEwMCUgMTAwJTtcclxufVxyXG5cclxuLmJvb2tCb3g6aG92ZXIgLmxhc3RCdG4ge1xyXG4gICAgZGlzcGxheTogYmxvY2s7XHJcbn1cclxuXHJcbi5ib29rQm94OmhvdmVyIC5uZXh0QnRuIHtcclxuICAgIGRpc3BsYXk6IGJsb2NrO1xyXG59XHJcblxyXG4uYm9va1BhZ2Uge1xyXG4gICAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gICAgd2lkdGg6IDUwMHB4O1xyXG4gICAgaGVpZ2h0OiA1MDBweDtcclxuICAgIHRvcDogMDtcclxuICAgIC13ZWJraXQtdHJhbnNmb3JtLXN0eWxlOiBwcmVzZXJ2ZS0zZDtcclxuICAgIC1tb3otdHJhbnNmb3JtLXN0eWxlOiBwcmVzZXJ2ZS0zZDtcclxuICAgIC1tcy10cmFuc2Zvcm0tc3R5bGU6IHByZXNlcnZlLTNkO1xyXG4gICAgLW8tdHJhbnNmb3JtLXN0eWxlOiBwcmVzZXJ2ZS0zZDtcclxuICAgIHRyYW5zZm9ybS1zdHlsZTogcHJlc2VydmUtM2Q7XHJcbiAgICAtd2Via2l0LXRyYW5zaXRpb246IGFsbCBsaW5lYXIgMnM7XHJcbiAgICAtbW96LXRyYW5zaXRpb246IGFsbCBsaW5lYXIgMnM7XHJcbiAgICAtbXMtdHJhbnNpdGlvbjogYWxsIGxpbmVhciAycztcclxuICAgIC1vLXRyYW5zaXRpb246IGFsbCBsaW5lYXIgMnM7XHJcbiAgICB0cmFuc2l0aW9uOiBhbGwgbGluZWFyIDJzO1xyXG4gICAgYmFja2dyb3VuZDogdXJsKC4uL2ltZy9ib29rTGVmdC5wbmcpIG5vLXJlcGVhdDtcclxuICAgIGJhY2tncm91bmQtc2l6ZTogNDc5LjI2cHggNDgzLjMzcHg7XHJcbiAgICBiYWNrZ3JvdW5kLXBvc2l0aW9uOiAyMC43NHB4IDguM3B4O1xyXG59XHJcblxyXG4uYm9va1BhZ2UgaW1nIHtcclxuICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICAgIHRvcDogNTBweDtcclxuICAgIGxlZnQ6IDUwcHg7XHJcbiAgICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XHJcbiAgICB3aWR0aDogNDAwcHg7XHJcbn1cclxuXHJcbi5ib29rV29yZCB7XHJcbiAgICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgICB0b3A6IDUwcHg7XHJcbiAgICBsZWZ0OiA1MHB4O1xyXG4gICAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xyXG4gICAgd2lkdGg6IDM2MHB4O1xyXG4gICAgaGVpZ2h0OiAzNjBweDtcclxuICAgIHBhZGRpbmc6IDIwcHg7XHJcbiAgICBmb250LXNpemU6IDIwcHg7XHJcbiAgICBsaW5lLWhlaWdodDogMjdweDtcclxuICAgIGJhY2tmYWNlLXZpc2liaWxpdHk6IHZpc2libGU7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjZjBmMGYwO1xyXG4gICAgd29yZC1icmVhazogYnJlYWstYWxsO1xyXG4gICAgLXdlYmtpdC1jb2x1bW4tY291bnQ6IDI7XHJcbiAgICAtd2Via2l0LWNvbHVtbi1nYXA6IDQwcHg7XHJcbiAgICAtbW96LWNvbHVtbi1jb3VudDogMjtcclxuICAgIC1tb3otY29sdW1uLWdhcDogNDBweDtcclxuICAgIC1tcy1jb2x1bW4tY291bnQ6IDI7XHJcbiAgICAtbXMtY29sdW1uLWdhcDogNDBweDtcclxuICAgIGNvbHVtbi1jb3VudDogMjtcclxuICAgIGNvbHVtbi1nYXA6IDQwcHg7XHJcbn1cclxuXHJcbi5ib29rV29yZCBzcGFuIHtcclxuICAgIGZvbnQtc2l6ZTogMzBweDtcclxuICAgIGZvbnQtd2VpZ2h0OiA2MDA7XHJcbiAgICBsaW5lLWhlaWdodDogNDBweDtcclxufVxyXG5cclxuLmZyaXN0IHtcclxuICAgIGxlZnQ6IDA7XHJcbiAgICB6LWluZGV4OiAxO1xyXG59XHJcblxyXG4uZnJpc3QgaW1nIHtcclxuICAgIHotaW5kZXg6IDE7XHJcbn1cclxuXHJcbi5sYXN0IHtcclxuICAgIHJpZ2h0OiAwO1xyXG4gICAgei1pbmRleDogMTtcclxufVxyXG5cclxuLmxhc3QgcCB7XHJcbiAgICB6LWluZGV4OiAxO1xyXG59XHJcblxyXG4ucnVuUGFnZSB7XHJcbiAgICByaWdodDogMDtcclxuICAgIC13ZWJraXQtdHJhbnNmb3JtLW9yaWdpbjogMCAwO1xyXG4gICAgLW1vei10cmFuc2Zvcm0tb3JpZ2luOiAwIDA7XHJcbiAgICAtbXMtdHJhbnNmb3JtLW9yaWdpbjogMCAwO1xyXG4gICAgLW8tdHJhbnNmb3JtLW9yaWdpbjogMCAwO1xyXG4gICAgdHJhbnNmb3JtLW9yaWdpbjogMCAwO1xyXG59XHJcblxyXG4ucnVuUGFnZSxcclxuLmJvb2tQYWdlOmxhc3QtY2hpbGQge1xyXG4gICAgYmFja2dyb3VuZDogdXJsKC4uL2ltZy9ib29rUmlnaHQucG5nKSBuby1yZXBlYXQ7XHJcbiAgICBiYWNrZ3JvdW5kLXNpemU6IDQ3OS4yNnB4IDQ4My4zM3B4O1xyXG4gICAgYmFja2dyb3VuZC1wb3NpdGlvbjogMCA4LjNweDtcclxufVxyXG5cclxuLnJ1bkNsYXNzIHtcclxuICAgIC13ZWJraXQtdHJhbnNmb3JtOiByb3RhdGVZKC0xODBkZWcpO1xyXG4gICAgLW1vei10cmFuc2Zvcm06IHJvdGF0ZVkoLTE4MGRlZyk7XHJcbiAgICAtbXMtdHJhbnNmb3JtOiByb3RhdGVZKC0xODBkZWcpO1xyXG4gICAgLW8tdHJhbnNmb3JtOiByb3RhdGVZKC0xODBkZWcpO1xyXG4gICAgdHJhbnNmb3JtOiByb3RhdGVZKC0xODBkZWcpO1xyXG59XHJcblxyXG4ubGFzdEJ0bixcclxuLm5leHRCdG4ge1xyXG4gICAgZGlzcGxheTogbm9uZTtcclxuICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICAgIHRvcDogMjAwcHg7XHJcbiAgICBjdXJzb3I6IHBvaW50ZXI7XHJcbiAgICB6LWluZGV4OiA5OTk7XHJcbiAgICBmb250LXNpemU6IDUwcHg7XHJcbiAgICBsaW5lLWhlaWdodDogMTAwcHg7XHJcbiAgICBjb2xvcjogI2ZmZjtcclxuICAgIHRleHQtZGVjb3JhdGlvbjogbm9uZTtcclxuICAgIGJhY2tncm91bmQtY29sb3I6IHJnYmEoMCwgMCwgMCwgLjUpO1xyXG59XHJcblxyXG4ubGFzdEJ0biB7XHJcbiAgICBsZWZ0OiAwO1xyXG59XHJcblxyXG4ubmV4dEJ0biB7XHJcbiAgICByaWdodDogMDtcclxufVxyXG5cclxuLmNhbnZhc0JveCB7XHJcbiAgICBkaXNwbGF5OiBibG9jaztcclxuICAgIHdpZHRoOiAxNThweDtcclxuICAgIGhlaWdodDogMTU4cHg7XHJcbn1cclxuXHJcbi5wYWdlTnVtYmVyIHtcclxuICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICAgIGJvdHRvbTogLTQwcHg7XHJcbiAgICByaWdodDogMDtcclxuICAgIGZvbnQtc2l6ZTogMjBweCAhaW1wb3J0YW50O1xyXG4gICAgbGluZS1oZWlnaHQ6IDMwcHg7XHJcbn0iXX0= */
