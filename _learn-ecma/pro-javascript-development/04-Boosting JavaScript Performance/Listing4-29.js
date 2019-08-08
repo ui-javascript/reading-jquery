@@ -1,1 +1,0 @@
-var workerThread = new Worker("filename.js");
